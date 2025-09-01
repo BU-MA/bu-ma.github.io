@@ -1,0 +1,13 @@
+/*
+The global theme used by the website. current theme is a dark theme with blue accents because like thats the
+most generic possible good-looking theme
+ */
+
+
+:root {
+    --primary-color: #3497db;
+    --background-color: #0e1e1e;
+    --surface-color: #1d2d2d;
+    --text-color: #e-1e0e0;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

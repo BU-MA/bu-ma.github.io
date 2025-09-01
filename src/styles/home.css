@@ -1,15 +1,9 @@
 /*
-AI generated placeholder theme, ill work on the theme later
+the theming for the homepage
  */
 
+@import url(/src/styles/main.css);
 
-:root {
-    --primary-color: #3498db;
-    --background-color: #1e1e1e;
-    --surface-color: #2d2d2d;
-    --text-color: #e0e0e0;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 * {
     margin: 0;
