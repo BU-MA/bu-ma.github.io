@@ -2,7 +2,7 @@
 the theming for the homepage
  */
 
-@import url(/src/styles/main.css);
+@import url(/src/styles/theme.css);
 
 
 * {
