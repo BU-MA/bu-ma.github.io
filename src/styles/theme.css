@@ -7,7 +7,7 @@ most generic possible good-looking theme
 :root {
     --primary-color: #3497db;
     --background-color: #0e1e1e;
-    --surface-color: #1d2d2d;
-    --text-color: #e-1e0e0;
+    --surface-color: #2d2d2d;
+    --text-color: #e1e0e0;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
