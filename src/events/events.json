@@ -1,0 +1,44 @@
+[
+  {
+    "title": "EVENT-TITLE",
+    "date": "EVENT-DATE",
+    "time": "EVENT-TIME",
+    "location": "EVENT-LOCATION",
+    "description": "yknow if i want to type <code>\\forall\\varpepsilon>0\\exists\\delta>0\\text{ s.t. }\\left|x-a\\right|<\\delta\\implies\\left|f(x)-L\\right|<\\varepsilon</code> in LaTeX, i just type AA;ve>0EE;d>0s.t.absx-a<;d=>absf(x)-L<;ve (i hit tab a few times)"
+  },
+  {
+    "title": "EVENT-TITLE",
+    "date": "EVENT-DATE",
+    "time": "EVENT-TIME",
+    "location": "EVENT-LOCATION",
+    "description": "EVENT-DESCRIPTION"
+  },
+  {
+    "title": "EVENT-TITLE",
+    "date": "EVENT-DATE",
+    "time": "EVENT-TIME",
+    "location": "EVENT-LOCATION",
+    "description": "EVENT-DESCRIPTION"
+  },
+  {
+    "title": "EVENT-TITLE",
+    "date": "EVENT-DATE",
+    "time": "EVENT-TIME",
+    "location": "EVENT-LOCATION",
+    "description": "EVENT-DESCRIPTION"
+  },
+  {
+    "title": "EVENT-TITLE",
+    "date": "EVENT-DATE",
+    "time": "EVENT-TIME",
+    "location": "EVENT-LOCATION",
+    "description": "EVENT-DESCRIPTION"
+  },
+  {
+    "title": "EVENT-TITLE",
+    "date": "EVENT-DATE",
+    "time": "EVENT-TIME",
+    "location": "EVENT-LOCATION",
+    "description": "EVENT-DESCRIPTION"
+  }
+]
