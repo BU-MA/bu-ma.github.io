@@ -90,6 +90,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr; /* 1 column by default */
     gap: 1.5rem;
+    padding-top: 2.5rem;
 }
 
 .event-card {
