@@ -77,7 +77,7 @@
                     <p>I'm a junior, but this is only my second year at BU since I transferred. I love discussing and teaching advanced and abstract mathematics, whether that be through pedagogical writing or talks. I'm the treasurer of BUMA, so officially I
                     manage spending and funding, although I also contribute quite a bit to decisions about event hosting. If you have questions about our budget, suggestions for events we could run, or really anything club-related, feel free to contact me.</p>
                     <p>I'm a double major in mathematical physics. I am extremely interested in higher category theory, homotopy theory, and some of their applications in theoretical physics, especially related to Yang-Mills. I am currently learning basic
-                        \((\infty,1)\)-category theory, the theory of simplicial homotopy under Quillen's model structure, and elementary differential topology.</p>
+                        $(\infty,1)$-category theory, the theory of simplicial homotopy under Quillen's model structure, and elementary differential topology.</p>
                     <p>Feel free to contact me at <a href="mailto:gtalbert@bu.edu" target="_blank">gtalbert@bu.edu</a>, or you can contact me on my Discord, which you can find in the club's <a href="/contact.html">Discord server</a>.</p>
                 </article>
 
@@ -142,5 +142,20 @@
     </div>
 </footer>
 
+<!-- script for rendering latex using katex
+    it listens for common delimiters for entering math environments and renders the code appropriately -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            // KaTeX options
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false}
+            ]
+        });
+    });
+</script>
 </body>
 </html>
