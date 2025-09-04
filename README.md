@@ -9,5 +9,5 @@ The remainder of the contents of this file are a todo list for this website.
 - lets also have a page for past leadership, so like we list what our leadership was in the past and have a permanent record of it
 - the "upcoming events" on the home page can be a script to if we end up putting the events in a json it can just pull current datetime and be like yo these r the next 2 events
 - include all socials in contact.html
-- constitution
+- constitution (this can be absorbed into the link to terrier central)
 - link this site to sao terrier central btw

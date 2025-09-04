@@ -36,27 +36,24 @@
             <h2>Our Mission</h2>
             <p>insert description on math dept (ok actually we need to rewrite it. uhh)<br>
             Bringing together the Math Department of BU with social events, talks by students and professors, advising on courses and research&mdash;and, for the bold, problem-solving sessions and the INTEGRATION BEE!<br>
-            guys this is just the pitch that we gave a million times on 9/1 it could be better idk xd oh this should be down in the next section,</p>
+            guys this is just the pitch that we gave a million times on 9/1 it could be better idk xd oh this should be down in the next section,</p> <!-- dont use em-dashes they make it look ai generated -->
         </section>
 
         <section id="event-types" class="about-section">
             <h2>Events</h2>
             <p>brief description of what events we host, and noting that they can see past events + our events for the current semester at <a href="/events.html">the events page</a>.</p>
             <ul>
-                <li><strong>Problem-solving sessions:</strong> led mostly by Professor Jared Weinstein (insert link to his site if he has one??? or BU faculty page? one of those), they are fun</li>
-                <li><strong>Talks:</strong> you can pick between abstract nonsense and tangentially related music. choose wisely. oh wait there are profs too</li>
-                <li><strong>Integration bee:</strong> taken after MIT, but it's mostly to watch physicists struggle with the Gaussian integral</li>
+                <li><strong>Putnam Problem-solving sessions:</strong> Practice for the <a href="https://maa.org/putnam/" target="_blank">Putnam exam</a>, and solving problems from past exams. Lead by Professor <a href="https://sites.google.com/view/jared-weinstein/home" target="_blank">Jared Weinstein</a>.</li>
+                <li><strong>Talks:</strong> Both professor-led and student-led talks, on everything from math in music theory to the most abstract nonsense humanity has conceived of. If you're interested in giving
+                a talk, <a href="/contact.html">contact us!</a></li>
+                <li><strong>Integration bee:</strong> A fun end to the semester. Inspired by MIT's integration bee, but less competitive and more fun. Even if you don't want to participate, you can come to watch
+                physicists fail at solving Gaussians.</li>
                 <li><strong>Social events:</strong> more chill nights where we do things like puzzles or crafts, or host an ice cream social, or have inter-club events.</li>
                 <li><strong>Advising:</strong> helping students figure out their course trajectory, sharing research experience, possibly even discussing grad school</li>
-                <li><strong>Other:</strong> we want to hear from YOU! (say something about how math tangential majors can cook up stuff because we're kinda algebra-pilled rn)</li>
+                <li><strong>Other:</strong> We're always coming up with ideas for new meetings. If there's an event you would like to see happen, we would LOVE to hear from you! You can find our contact information <a href="/contact.html">here</a>.</li>
                 <!--li><strong>pizza fight night:</strong> at the end of the year we should have a pizza fight night where we throw pizza at each other until we run out of budget.</li>
                 why did u comment it out i think this is an amazing idea-->
             </ul>
-        </section>
-
-        <section id="constitution-grant-add-this-id-to-css-or-something" class="about-section"> <!-- thanks katherine -->
-            <p>insert constitution here</p>
-            <p>i just want to point out that katherine decided to give this section the id "constitution-grant-add-this-id-to-css-or-something"</p>
         </section>
 
         <section id="leadership" class="about-section">
@@ -74,10 +71,10 @@
                     <div class="profile-img"><span>Photo</span></div>
                     <h3>Grant Talbert</h3>
                     <span class="profile-title">Treasurer</span>
-                    <p>I'm a junior, but this is only my second year at BU since I transferred. I love discussing and teaching advanced and abstract mathematics, whether that be through pedagogical writing or talks. I'm the treasurer of BUMA, so officially I
+                    <p class="profile-blurb">I'm a junior, but this is only my second year at BU since I transferred. I love discussing and teaching advanced and abstract mathematics, whether that be through pedagogical writing or talks. I'm the treasurer of BUMA, so officially I
                     manage spending and funding, although I also contribute quite a bit to decisions about event hosting. If you have questions about our budget, suggestions for events we could run, or really anything club-related, feel free to contact me.</p>
                     <p>I'm a double major in mathematical physics. I am extremely interested in higher category theory, homotopy theory, and some of their applications in theoretical physics, especially related to Yang-Mills. I am currently learning basic
-                        $(\infty,1)$-category theory, the theory of simplicial homotopy under Quillen's model structure, and elementary differential topology.</p>
+                        (∞,1)-category theory, differential geometry, and improving my knowledge of the homotopy theory of simplicial sets.</p>
                     <p>Feel free to contact me at <a href="mailto:gtalbert@bu.edu" target="_blank">gtalbert@bu.edu</a>, or you can contact me on my Discord, which you can find in the club's <a href="/contact.html">Discord server</a>.</p>
                 </article>
 
@@ -133,6 +130,12 @@
             </div>
         </section>
 
+
+        <!-- we can prolly remove this and just be happy with the link to terriercentral -->
+        <section id="constitution-grant-add-this-id-to-css-or-something" class="about-section"> <!-- thanks katherine -->
+            <p>insert constitution here</p>
+            <p>i just want to point out that katherine decided to give this section the id "constitution-grant-add-this-id-to-css-or-something"</p>
+        </section>
     </div>
 </main>
 
@@ -142,20 +145,5 @@
     </div>
 </footer>
 
-<!-- script for rendering latex using katex
-    it listens for common delimiters for entering math environments and renders the code appropriately -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            // KaTeX options
-            delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "\\[", right: "\\]", display: true},
-                {left: "$", right: "$", display: false},
-                {left: "\\(", right: "\\)", display: false}
-            ]
-        });
-    });
-</script>
 </body>
 </html>
