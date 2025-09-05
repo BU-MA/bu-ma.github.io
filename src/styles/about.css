@@ -123,16 +123,16 @@ footer {
     font-size: 0.8rem;
     color: #aaa;
     object-fit: cover;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 /*
 i decided i wanted to make the images hover when u hover on them
  */
 .profile-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
     z-index: 10;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 .profile-card h3 {
