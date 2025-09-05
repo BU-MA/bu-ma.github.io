@@ -3,11 +3,23 @@ The global theme used by the website. current theme is a dark theme with blue ac
 most generic possible good-looking theme
  */
 
-
+/* original randomass theme
 :root {
     --primary-color: #3497db;
     --background-color: #0e1e1e;
     --surface-color: #2d2d2d;
     --text-color: #e1e0e0;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #9b59b6; /* A nice, muted purple */
+    --background-color: #1e1e1e;
+    --surface-color: #2a2a2a;
+    --text-color: #e0e0e0;
+    --font-family-headings: 'Roboto Mono', monospace;
+    --font-family-body: 'Roboto', sans-serif;
 }
