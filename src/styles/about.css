@@ -70,7 +70,6 @@ footer {
 }
 
 
-/* --- About Page Specific Styles --- */
 .about-section {
     margin-bottom: 2.5rem;
     margin-top: 2.5rem;
@@ -87,7 +86,10 @@ footer {
     font-family: var(--font-family-headings);
 }
 
-/* --- Leadership Section --- */
+.about-section ul {
+    padding-left: 10pt;
+}
+
 .leadership-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
