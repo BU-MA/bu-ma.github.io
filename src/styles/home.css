@@ -101,3 +101,42 @@ footer {
     margin-top: 2rem;
     border-top: 1px solid #444;
 }
+
+/* --- Add these new styles to the end of src/styles/main.css --- */
+
+/* Styles for the new hero section on the homepage */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--background-color); /* Consistent background */
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    max-width: 60ch; /* Limit line length for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles for the new two-column layout on the homepage */
+.home-columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 width for about, 1/3 for events */
+    gap: 3rem; /* Space between the columns */
+    padding: 2rem 0;
+}
+
+/* Override the default section styling for the homepage columns */
+.home .home-columns > section {
+    background: none;
+    padding: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+}
