@@ -16,7 +16,7 @@ most generic possible good-looking theme
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #9b59b6; /* A nice, muted purple */
+    --primary-color: #ff3c3c; /* A nice, muted purple */
     --background-color: #1e1e1e;
     --surface-color: #2a2a2a;
     --text-color: #e0e0e0;
