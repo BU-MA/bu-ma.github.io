@@ -89,6 +89,10 @@ main section {
 #about h2 {
     font-size: 2rem;
 }
+#about p {
+    margin: 1rem;
+    font-size: 14pt;
+}
 
 /* --- Footer --- */
 footer {
