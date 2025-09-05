@@ -1,10 +1,4 @@
-/*
-more ai generated themeing (a)woooooo
- */
-
 @import url('/src/styles/theme.css');
-
-
 
 * {
     margin: 0;
@@ -13,7 +7,7 @@ more ai generated themeing (a)woooooo
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family-body);
     line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -40,6 +34,7 @@ header {
 header h1 {
     font-size: 2.5rem;
     margin: 0;
+    font-family: var(--font-family-headings);
 }
 
 nav {
@@ -58,6 +53,7 @@ nav ul li a {
     padding: 0.5rem 1rem;
     display: block;
     transition: background-color 0.3s ease;
+    font-family: var(--font-family-headings);
 }
 
 nav ul li a:hover {
@@ -88,6 +84,7 @@ footer {
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    font-family: var(--font-family-headings);
 }
 
 /* --- Leadership Section --- */
@@ -99,7 +96,7 @@ footer {
 }
 
 .profile-card {
-    background-color: #3a3a3a; /* Slightly lighter than the section background */
+    background-color: #3a3a3a;
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
@@ -118,7 +115,6 @@ footer {
     background-color: #555;
     margin: 0 auto 1rem auto;
     border: 3px solid var(--primary-color);
-    /* In a real scenario, you'd use an <img> tag */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,6 +126,7 @@ footer {
     margin-bottom: 0.25rem;
     font-size: 1.4rem;
     color: #fff;
+    font-family: var(--font-family-headings);
 }
 
 .profile-title {

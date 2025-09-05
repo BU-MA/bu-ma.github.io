@@ -1,9 +1,4 @@
-/*
-the theming for the homepage
- */
-
 @import url(/src/styles/theme.css);
-
 
 * {
     margin: 0;
@@ -12,7 +7,7 @@ the theming for the homepage
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family-body);
     line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -27,6 +22,7 @@ body {
 h1, h2, h3, h4 {
     margin-bottom: 0.75rem;
     color: var(--primary-color);
+    font-family: var(--font-family-headings);
 }
 
 p {
@@ -68,6 +64,7 @@ nav ul li a {
     padding: 0.5rem 1rem;
     display: block;
     transition: background-color 0.3s ease;
+    font-family: var(--font-family-headings);
 }
 
 nav ul li a:hover {
