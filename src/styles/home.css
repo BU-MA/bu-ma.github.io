@@ -90,8 +90,9 @@ main section {
     font-size: 2rem;
 }
 #about p {
-    margin: 1rem;
-    font-size: 14pt;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 15pt;
 }
 
 /* --- Footer --- */
