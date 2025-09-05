@@ -11,14 +11,14 @@
     "date": "September 11th",
     "time": "5-7 PM",
     "location": "CDS 365",
-    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https:\/\/sites.google.com/view/jared-weinstein/home\">Professor Jared Weinstein</a>."
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>."
   },
   {
-    "title": "EVENT-TITLE",
-    "date": "EVENT-DATE",
-    "time": "EVENT-TIME",
-    "location": "EVENT-LOCATION",
-    "description": "yknow if i want to type <code>\\forall\\varpepsilon>0\\exists\\delta>0\\text{ s.t. }\\left|x-a\\right|<\\delta\\implies\\left|f(x)-L\\right|<\\varepsilon</code> in LaTeX, i just type AA;ve>0EE;d>0s.t.absx-a<;d=>absf(x)-L<;ve (i hit tab a few times)"
+    "title": "What is a quasi-category?",
+    "date": "?????",
+    "time": "HOW HAVE WE STILL NOT FINALIZED THE FUCKING TIMES IS IT 5-6 OR 6-7 OR 6:30-7:30 OR WHAT THE FUCK IS IT",
+    "location": "CDS 365",
+    "description": "Our club member <a href=\"will link something here later\" target=\"_blank\">Grant Talbert</a> will give an introductory talk on the theory of quasi-categories. The abstract of his talk is listed below.<br>Quasi-categories are simplicial sets which fill inner horns, and are an extremely powerful model for (∞,1)-categories. First introduced by Boardman and Vogt in 1973, their theory was developed extensively by Joyal and Lurie in the early 2000s. In this talk, we will <i>define</i> quasi-categories, and then we will explain why they are excellent models for (∞,1)-categories."
   },
   {
     "title": "EVENT-TITLE",
