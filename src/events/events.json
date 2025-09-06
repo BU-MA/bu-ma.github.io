@@ -1,10 +1,10 @@
 [
   {
-    "title": "UN FUCKING KNOWN",
+    "title": "Puzzle Night",
     "date": "September 8th",
     "time": "5-6 PM",
     "location": "CDS 365",
-    "description": "I DONT KNOW YET LOL"
+    "description": "Come hang out with us to kick off the semester! There will be the funny arithmetic sudokus, the 24 game, a bunch of logic puzzles, and possibly more, or you can just come and chat. Come help us kick off the year with some fun!"
   },
   {
     "title": "Putnam Problem Solving Session",
@@ -16,9 +16,16 @@
   {
     "title": "What is a quasi-category?",
     "date": "?????",
-    "time": "HOW HAVE WE STILL NOT FINALIZED THE FUCKING TIMES IS IT 5-6 OR 6-7 OR 6:30-7:30 OR WHAT THE FUCK IS IT",
+    "time": "HOW HAVE WE STILL NOT FINALIZED THE FUCKING TIMES WHEN ARE WE MEETING IS IT 5-6 OR 6-7 OR 6:30-7:30 OR WHAT THE FUCK IS IT",
     "location": "CDS 365",
-    "description": "Our club member <a href=\"will link something here later\" target=\"_blank\">Grant Talbert</a> will give an introductory talk on the theory of quasi-categories, which are simplicial sets that fill inner horns. They are excellent models for (∞,1)-categories, and as such have seen significant use in recent decades in fields such as homotopy theory. In this talk, Grant will define quasi-categories, and then will explain why they are excellent models for (∞,1)-categories."
+    "description": "Our club member <a href=\"will link something here later\" target=\"_blank\">Grant Talbert</a> will give an introductory talk on the theory of quasi-categories, which are simplicial sets that fill inner horns. They are excellent models for (∞,1)-categories, and as such have seen significant use in recent decades in fields such as homotopy theory. In this talk, Grant will define quasi-categories, and then will explain why they are excellent models for (∞,1)-categories. Lecture notes will be linked when available."
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "date": "September 18th",
+    "time": "5-7 PM",
+    "location": "CDS 365",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>."
   },
   {
     "title": "EVENT-TITLE",
