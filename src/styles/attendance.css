@@ -18,6 +18,7 @@ body {
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center vertically */
     align-items: center;     /* Center horizontally */
+    color: var(--text-color);
 
     /* Apply styles from the theme */
     background-color: var(--background-color);

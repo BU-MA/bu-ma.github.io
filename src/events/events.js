@@ -1,7 +1,3 @@
-/*
-ai generated script to do the thing i want i to do
- */
-
 (async function loadEvents() {
     const eventListContainer = document.querySelector('.event-list');
     if (!eventListContainer) {
@@ -10,31 +6,50 @@ ai generated script to do the thing i want i to do
     }
 
     try {
-        // Fetch the JSON data
         const response = await fetch('/src/events/events.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const events = await response.json();
 
-        if (events.length === 0) {
+        const now = new Date();
+        const upcomingEvents = events.filter(event => {
+            if (event.datetime === "TBD" || !event.duration) {
+                return false;
+            }
+            const startTime = new Date(event.datetime);
+            const endTime = new Date(startTime.getTime() + event.duration * 60000); // duration in minutes
+            return endTime > now;
+        });
+
+        if (upcomingEvents.length === 0) {
             eventListContainer.innerHTML = '<p>No upcoming events. Please check back soon!</p>';
             return;
         }
 
-        // Clear any existing content (e.g., a loading message)
         eventListContainer.innerHTML = '';
 
-        // Loop through each event and create an HTML card for it
-        events.forEach(event => {
+        upcomingEvents.forEach(event => {
             const eventCard = document.createElement('article');
             eventCard.className = 'event-card';
+
+            const startTime = new Date(event.datetime);
+            const endTime = new Date(startTime.getTime() + event.duration * 60000);
+
+            const formatDate = (date) => {
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            };
+
+            const formatTime = (time) => {
+                return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+            };
 
             eventCard.innerHTML = `
                 <h3>${event.title}</h3>
                 <div class="event-details">
-                    <p><strong>Date:</strong> ${event.date}</p>
-                    <p><strong>Time:</strong> ${event.time}</p>
+                    <p><strong>Date:</strong> ${formatDate(startTime)}</p>
+                    <p><strong>Time:</strong> ${formatTime(startTime)} - ${formatTime(endTime)}</p>
                     <p><strong>Location:</strong> ${event.location}</p>
                 </div>
                 <p class="event-description">${event.description}</p>
