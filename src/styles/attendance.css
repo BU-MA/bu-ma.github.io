@@ -1,0 +1,41 @@
+/* Import the global theme variables */
+@import url('theme.css');
+
+/* Basic reset and full-height setup */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Use Flexbox on the body to center content.
+  This is a modern and reliable way to achieve both
+  vertical and horizontal alignment.
+*/
+body {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center;     /* Center horizontally */
+
+    /* Apply styles from the theme */
+    background-color: var(--background-color);
+    font-family: var(--font-family-body);
+}
+
+h1 {
+    font-family: var(--font-family-headings);
+    color: var(--text-color);
+    margin-bottom: 2rem; /* Add some space above the QR code */
+}
+
+/* Style the container for the QR code to give it a nice frame.
+  The QR code itself is generated as an <img> inside this div.
+*/
+#qrcode {
+    padding: 1rem; /* Space between the QR code and the border */
+    background-color: white; /* The QR code needs a light background to be scannable */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Add depth */
+}
