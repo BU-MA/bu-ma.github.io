@@ -126,3 +126,16 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.past-events-container h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    color: #fff;
+    font-family: var(--font-family-headings);
+}
+
+.past-events-container ul {
+    padding: 10pt;
+}
