@@ -1,0 +1,21 @@
+@import url('theme.css');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family-body);
+}
+
+.container {
+    text-align: center;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
