@@ -8,10 +8,66 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
     "datetime": "2025-09-11T17:00:00",
     "duration": 120
+  },
+  {
+    "title": "REU Discussions and Advising",
+    "location": "CDS 548",
+    "description": "An REU is a <i>research experience for undergraduates</i>, usually he;d diromg the summer. Our club members Katherine and Ophelia will discuss their REU experiences this past summer, as well as giving advice for those interested in doing an REU.",
+    "datetime": "2025-09-14T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 548",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-09-18T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "Ice Cream Social",
+    "location": "CDS 548",
+    "description": "The ice cream social is an event held every semester by BUMA. Come to chill, chat about math, and have some good ice cream.",
+    "datetime": "2025-09-22T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 548",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-09-25T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "A Friendly Introduction to Abstract Nonsense",
+    "location": "CDS 548",
+    "description": "Our club member <a href=\"will link something here later\" target=\"_blank\">Grant Talbert</a> will give an introduction to <i>category theory</i>, which is a beautiful unifying language for mathematics. He will define the elementary notions of categories, functors, natural transformations, and universals, with motivation pulled from basic set theory and algebra. Basic knowledge of sets and functions is recommended. Lecture notes will be linked when available.",
+    "datetime": "2025-09-29T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Photon Collab: Trivia Night",
+    "location": "bro idk",
+    "description": "BUMA is collaborating with <a href=\"https://www.instagram.com/buphoton/?hl=en\" target=\"blank\">Photon</a>, the BU Physics club! We will be joining them for a trivia night.",
+    "datetime": "2025-10-01T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 548",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-10-02T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "And more...",
+    "location": "ignore the date/time it has to be there for the script to work",
+    "description": "We haven't finished finalizing our schedule for the semester! Check back later for more, or <a href=\"/contact.html\">contact us</a> to get added to our weekly email list!",
+    "datetime": "2025-10-03T18:00:00",
+    "duration": 10
   },
   {
     "title": "What is a quasi-category?",
@@ -19,47 +75,5 @@
     "description": "Our club member <a href=\"will link something here later\" target=\"_blank\">Grant Talbert</a> will give an introductory talk on the theory of quasi-categories, which are simplicial sets that fill inner horns. They are excellent models for (∞,1)-categories, and as such have seen significant use in recent decades in fields such as homotopy theory. In this talk, Grant will define quasi-categories, and then will explain why they are excellent models for (∞,1)-categories. Lecture notes will be linked when available.",
     "datetime": "TBD",
     "duration": 60
-  },
-  {
-    "title": "Putnam Problem Solving Session",
-    "location": "CDS 365",
-    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-09-18T17:00:00",
-    "duration": 120
-  },
-  {
-    "title": "EVENT-TITLE",
-    "location": "EVENT-LOCATION",
-    "description": "EVENT-DESCRIPTION",
-    "datetime": "TBD",
-    "duration": 0
-  },
-  {
-    "title": "EVENT-TITLE",
-    "location": "EVENT-LOCATION",
-    "description": "EVENT-DESCRIPTION",
-    "datetime": "TBD",
-    "duration": 0
-  },
-  {
-    "title": "EVENT-TITLE",
-    "location": "EVENT-LOCATION",
-    "description": "EVENT-DESCRIPTION",
-    "datetime": "TBD",
-    "duration": 0
-  },
-  {
-    "title": "EVENT-TITLE",
-    "location": "EVENT-LOCATION",
-    "description": "EVENT-DESCRIPTION",
-    "datetime": "TBD",
-    "duration": 0
-  },
-  {
-    "title": "EVENT-TITLE",
-    "location": "EVENT-LOCATION",
-    "description": "EVENT-DESCRIPTION",
-    "datetime": "TBD",
-    "duration": 0
   }
 ]
