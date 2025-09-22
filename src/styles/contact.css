@@ -123,6 +123,6 @@ main .container {
 .contact-item a {
     font-size: 1.1rem;
     color: var(--primary-color);
-    word-break: break-all;
-    text-underline: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
 }
