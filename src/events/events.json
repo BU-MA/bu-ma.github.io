@@ -44,7 +44,7 @@
   {
     "title": "A Friendly Introduction to Abstract Nonsense",
     "location": "CDS 548",
-    "description": "Our club member <a href=\"will link something here later\" target=\"_blank\">Grant Talbert</a> will give an introduction to <i>category theory</i>, which is a beautiful unifying language for mathematics. He will define the elementary notions of categories, functors, natural transformations, and universals, with motivation pulled from basic set theory and algebra. Basic knowledge of sets and functions is recommended. Lecture notes will be linked when available.",
+    "description": "Our club member <a href=\"will link something here later\" target=\"_blank\">Grant Talbert</a> will give an introduction to <i>category theory</i>, which is a beautiful unifying language for mathematics. He will define the elementary notions of categories, functors, natural transformations, and universals, with motivation pulled from basic set theory and algebra. Basic knowledge of sets and functions is recommended. <a href=\"/src/talks/categories-grant-f25.pdf\" target=\"_blank\">Lecture Notes</a>.",
     "datetime": "2025-09-29T18:00:00",
     "duration": 60
   },
