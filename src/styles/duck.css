@@ -6,7 +6,8 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font-family-body);
-    text-align: center; /* Center all text */
+    text-align: center;
+    overflow-x: hidden; /* Good practice to prevent horizontal scrollbars */
 }
 
 nav ul {
@@ -33,38 +34,47 @@ img {
     margin-top: 5rem;
 }
 
-/* --- Animation for "homotopy" text --- */
-#flashing-text {
+
+/* --- Blinking Text --- */
+#blinking-text {
     font-size: 4rem;
     font-family: var(--font-family-headings);
-    animation: rainbow-flash 1.5s linear infinite;
+    color: var(--primary-color);
+    animation: blink 0.3s step-end infinite;
 }
 
-/* --- Animation for spinning image --- */
-#spinning-image {
-    animation: spin 3s linear infinite;
+/* --- Spinning and Rainbow Image --- */
+#rainbow-image {
+    /* Two animations are applied here, separated by a comma */
+    animation:
+            spin 1s linear infinite;
 }
+#rainbow-image-container:before {
+    animation: rainbow-flash 1s linear infinite;
+}
+
 
 /* --- Keyframe Definitions --- */
 
-/* Defines the spinning motion */
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Blinking animation for the text */
+@keyframes blink {
+    from, to { visibility: visible; }
+    50% { visibility: hidden; }
 }
 
-/* Defines the rainbow color cycle and flashing */
+/* Spinning animation for the image */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* A forceful, guaranteed rainbow flash using solid background colors */
 @keyframes rainbow-flash {
-    0%   { color: red;    opacity: 1; }
-    15%  { color: orange; }
-    30%  { color: yellow; }
-    45%  { color: lime;   opacity: 0.5; }
-    60%  { color: cyan;   }
-    75%  { color: blue;   }
-    90%  { color: purple; opacity: 1; }
-    100% { color: red;    }
+    0%   { background-color: rgba(255, 0, 0, 0.5); } /* Red */
+    16%  { background-color: rgba(255, 165, 0, 0.5); } /* Orange */
+    32%  { background-color: rgba(255, 255, 0, 0.5); } /* Yellow */
+    48%  { background-color: rgba(0, 255, 0, 0.5); } /* Green */
+    64%  { background-color: rgba(0, 0, 255, 0.5); } /* Blue */
+    80%  { background-color: rgba(75, 0, 130, 0.5); } /* Indigo */
+    100% { background-color: rgba(238, 130, 238, 0.5); } /* Violet */
 }
