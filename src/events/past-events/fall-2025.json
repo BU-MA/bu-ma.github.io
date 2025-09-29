@@ -16,15 +16,29 @@
   {
     "title": "REU Discussions and Advising",
     "location": "CDS 548",
-    "description": "An REU is a <i>research experience for undergraduates</i>, usually he;d diromg the summer. Our club members Katherine and Ophelia will discuss their REU experiences this past summer, as well as giving advice for those interested in doing an REU.",
+    "description": "An REU is a <i>research experience for undergraduates</i>, usually held during the summer. Our club members Katherine and Ophelia will discuss their REU experiences this past summer, as well as giving advice for those interested in doing an REU.",
     "datetime": "2025-09-14T18:00:00",
     "duration": 60
   },
   {
     "title": "Putnam Problem Solving Session",
     "location": "CDS 548",
-    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>, substituting for <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
     "datetime": "2025-09-18T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "Ice Cream Social",
+    "location": "CDS 548",
+    "description": "The ice cream social is an event held every semester by BUMA. Come to chill, chat about math, and have some good ice cream.",
+    "datetime": "2025-09-22T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 548",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-09-25T17:00:00",
     "duration": 120
   }
 ]
