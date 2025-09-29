@@ -49,17 +49,24 @@
     "duration": 60
   },
   {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-10-02T17:00:00",
+    "duration": 120
+  },
+  {
     "title": "Photon Collab: Trivia Night",
-    "location": "bro idk",
-    "description": "BUMA is collaborating with <a href=\"https://www.instagram.com/buphoton/?hl=en\" target=\"blank\">Photon</a>, the BU Physics club! We will be joining them for a trivia night.",
-    "datetime": "2025-10-01T18:00:00",
+    "location": "SCI 352",
+    "description": "BUMA is collaborating with <a href=\"https://www.instagram.com/buphoton/?hl=en\" target=\"blank\">Photon</a>, the BU Physics club! We will be joining them for a trivia night. There will be questions about both math and physics, and we will try to make those questions accessible to everyone. Prizes will be given to the winners!",
+    "datetime": "2025-10-08T18:00:00",
     "duration": 60
   },
   {
     "title": "Putnam Problem Solving Session",
     "location": "CDS 548",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-10-02T17:00:00",
+    "datetime": "2025-10-09T17:00:00",
     "duration": 120
   },
   {
