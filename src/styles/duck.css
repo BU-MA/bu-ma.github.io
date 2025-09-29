@@ -1,0 +1,70 @@
+/* Import the main theme for consistency */
+@import url('theme.css');
+
+/* --- Basic page styles --- */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family-body);
+    text-align: center; /* Center all text */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background: #333;
+    padding: 0.5rem 0;
+}
+nav ul li a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+a {
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.animation-container {
+    margin-top: 5rem;
+}
+
+/* --- Animation for "homotopy" text --- */
+#flashing-text {
+    font-size: 4rem;
+    font-family: var(--font-family-headings);
+    animation: rainbow-flash 1.5s linear infinite;
+}
+
+/* --- Animation for spinning image --- */
+#spinning-image {
+    animation: spin 3s linear infinite;
+}
+
+/* --- Keyframe Definitions --- */
+
+/* Defines the spinning motion */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Defines the rainbow color cycle and flashing */
+@keyframes rainbow-flash {
+    0%   { color: red;    opacity: 1; }
+    15%  { color: orange; }
+    30%  { color: yellow; }
+    45%  { color: lime;   opacity: 0.5; }
+    60%  { color: cyan;   }
+    75%  { color: blue;   }
+    90%  { color: purple; opacity: 1; }
+    100% { color: red;    }
+}
