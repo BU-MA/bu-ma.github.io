@@ -17,13 +17,13 @@
     "title": "REU Discussions and Advising",
     "location": "CDS 548",
     "description": "An REU is a <i>research experience for undergraduates</i>, usually held during the summer. Our club members Katherine and Ophelia will discuss their REU experiences this past summer, as well as giving advice for those interested in doing an REU.",
-    "datetime": "2025-09-14T18:00:00",
+    "datetime": "2025-09-15T18:00:00",
     "duration": 60
   },
   {
     "title": "Putnam Problem Solving Session",
     "location": "CDS 548",
-    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>, substituting for <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
     "datetime": "2025-09-18T17:00:00",
     "duration": 120
   },
@@ -37,8 +37,15 @@
   {
     "title": "Putnam Problem Solving Session",
     "location": "CDS 548",
-    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>, substituting for <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
     "datetime": "2025-09-25T17:00:00",
     "duration": 120
+  },
+  {
+    "title": "A Friendly Introduction to Abstract Nonsense",
+    "location": "CDS 548",
+    "description": "Our club member <a href=\"/duck.html\" target=\"_blank\">Grant Talbert</a> will give an introduction to <i>category theory</i>, which is a beautiful unifying language for mathematics. He will define the elementary notions of categories, functors, natural transformations, and universals, with motivation pulled from basic set theory and algebra. Basic knowledge of sets and functions is recommended. <a href=\"/src/talks/categories-grant-f25.pdf\" target=\"_blank\">Lecture Notes</a>.",
+    "datetime": "2025-09-29T18:00:00",
+    "duration": 60
   }
 ]

@@ -17,7 +17,7 @@
     "title": "REU Discussions and Advising",
     "location": "CDS 548",
     "description": "An REU is a <i>research experience for undergraduates</i>, usually held during the summer. Our club members Katherine and Ophelia will discuss their REU experiences this past summer, as well as giving advice for those interested in doing an REU.",
-    "datetime": "2025-09-14T18:00:00",
+    "datetime": "2025-09-15T18:00:00",
     "duration": 60
   },
   {
@@ -128,7 +128,7 @@
   {
     "title": "\\(L^1\\) Geometry",
     "location": "CDS 548",
-    "description": "Our club member Katherine will talk about \\(L^1\\) geometry. Details will be made available when she responds to my text.",
+    "description": "Our club member Katherine Guo will talk about \\(L^1\\) geometry. We will introduce the notion of a metric as an abstraction of distance, with particular emphasis on the \\(L^p\\) metrics. Focusing on the special case of \\(L^1\\), we will explore common geometric constructions and divergences from standard results in Euclidean (\\(L^2\\)) geometry.",
     "datetime": "2025-11-10T17:00:00",
     "duration": 60
   },
