@@ -51,6 +51,10 @@
                 <p>${event.description}</p>
             `;
             upcomingEventsContainer.appendChild(eventItem);
+
+            if (window.MathJax) {
+                window.MathJax.typesetPromise();
+            }
         });
 
     } catch (error) {

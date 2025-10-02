@@ -50,10 +50,10 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-10-02T17:00:00",
-    "duration": 120
+    "datetime": "2025-10-02T17:30:00",
+    "duration": 60
   },
   {
     "title": "Photon Collab: Trivia Night",
@@ -64,23 +64,114 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "CDS 548",
+    "location": "TBD",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
     "datetime": "2025-10-09T17:00:00",
     "duration": 120
   },
   {
-    "title": "And more...",
-    "location": "ignore the date/time it has to be there for the script to work",
-    "description": "We haven't finished finalizing our schedule for the semester! Check back later for more, or <a href=\"/contact.html\">contact us</a> to get added to our weekly email list!",
-    "datetime": "2025-10-03T18:00:00",
-    "duration": 10
+    "title": "polygons",
+    "location": "CDS 548",
+    "description": "Our club member Yoga is going to talk about polygons. More details will become available when he responds to my text. It will be more interesting than it sounds.",
+    "datetime": "2025-10-14T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-10-16T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "Estimathon",
+    "location": "CDS 548",
+    "description": "Our club member Alex is hosting an <i>estimathon</i>! This is a competitive event where you must estimate extremely large numbers, and whoever is closest wins! Prizes will be available.",
+    "datetime": "2025-10-20T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-10-23T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "Course Registration Advice",
+    "location": "CDS 548",
+    "description": "With course registration right around the corner, drop by for advice on what math courses to register for. We will go over the available courses for next semester, and will offer advice for anyone who is wondering what courses they want to take.",
+    "datetime": "2025-10-27T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-10-30T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "Book Club",
+    "location": "CDS 548",
+    "description": "We will be hosting a math book club! We will be reading <a href=\"/src/assets/LockhartsLament.pdf\" target=\"_blank\"><i>A Mathematician's Lament</i></a>, by Paul Lockhart. This is a wonderful short article criticizing mathematics education for failing to teach the beauty of mathematics, and instead pushing for rote memorization.",
+    "datetime": "2025-11-03T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-11-06T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "\\(L^1\\) Geometry",
+    "location": "CDS 548",
+    "description": "Our club member Katherine will talk about \\(L^1\\) geometry. Details will be made available when she responds to my text.",
+    "datetime": "2025-11-10T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-11-13T17:00:00",
+    "duration": 120
   },
   {
     "title": "What is a quasi-category?",
     "location": "CDS 365",
-    "description": "Our club member <a href=\"/duck.html\" target=\"_blank\">Grant Talbert</a> will give an introductory talk on the theory of quasi-categories, which are simplicial sets that fill inner horns. They are excellent models for (∞,1)-categories, and as such have seen significant use in recent decades in fields such as homotopy theory. In this talk, Grant will define quasi-categories, and then will explain why they are excellent models for (∞,1)-categories. Lecture notes will be linked when available.",
-    "datetime": "TBD",
+    "description": "Our club member <a href=\"/duck.html\" target=\"_blank\">Grant Talbert</a> will give a talk on quasi-categories. A quasi-category is a simplicial set which admits fillers for inner horns, and have seen extensive use as excellent models for \\((\\infty,1)\\)-categories. In this talk, we will introduce the elementary theory of simplicial sets required to define quasi-categories, and then will use them to explore what \\((\\infty,1)\\)-categories look like. Lecture notes will be linked when available.",
+    "datetime": "2025-11-17T17:00:00",
     "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-11-20T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "Integration Techniques",
+    "location": "CDS 548",
+    "description": "To prepare for the Integration Bee next week, our club member Yoga will teach advanced integration tricks and techniques often used on integration bee problems. This is a great way to have fun while honing your calculus skills before finals!",
+    "datetime": "2025-12-01T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-12-04T17:00:00",
+    "duration": 120
+  },
+  {
+    "title": "Integration Bee",
+    "location": "CDS 548",
+    "description": "The time has finally come! The Integration Bee, modeled off of MIT's annual Integration Bee, is a fun competition to see who is the best at integration. Even if you don't want to participate, you can still come make fun of physicists as they fail Gaussians (somehow)!",
+    "datetime": "2025-12-08T17:00:00",
+    "duration": 120
   }
 ]

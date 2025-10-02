@@ -56,6 +56,10 @@
             `;
 
             eventListContainer.appendChild(eventCard);
+
+            if (window.MathJax) {
+                window.MathJax.typesetPromise();
+            }
         });
 
     } catch (error) {
