@@ -72,16 +72,16 @@
   {
     "title": "polygons",
     "location": "CDS 548",
-    "description": "Our club member Yoga is going to talk about polygons. More details will become available when he responds to my text. It will be more interesting than it sounds.",
+    "description": "Our club member Yoga is going to give an interesting talk about polygons. When asked to describe the talk, he responded with only \"polygons\".",
     "datetime": "2025-10-14T17:00:00",
     "duration": 60
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-10-16T17:00:00",
-    "duration": 120
+    "datetime": "2025-10-16T17:30:00",
+    "duration": 90
   },
   {
     "title": "Estimathon",
@@ -92,10 +92,10 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-10-23T17:00:00",
-    "duration": 120
+    "datetime": "2025-10-23T17:30:00",
+    "duration": 90
   },
   {
     "title": "Course Registration Advice",
@@ -106,10 +106,10 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-10-30T17:00:00",
-    "duration": 120
+    "datetime": "2025-10-30T17:30:00",
+    "duration": 90
   },
   {
     "title": "Book Club",
@@ -120,10 +120,10 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-11-06T17:00:00",
-    "duration": 120
+    "datetime": "2025-11-06T17:30:00",
+    "duration": 90
   },
   {
     "title": "\\(L^1\\) Geometry",
@@ -134,24 +134,24 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-11-13T17:00:00",
-    "duration": 120
+    "datetime": "2025-11-13T17:30:00",
+    "duration": 90
   },
   {
     "title": "What is a quasi-category?",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "Our club member <a href=\"/duck.html\" target=\"_blank\">Grant Talbert</a> will give a talk on quasi-categories, which are excellent models for \\((\\infty,1)\\)-categories. In this talk, we will introduce the elementary theory of simplicial sets, which we will use to define quasi-categories. We will conclude by exploring what \\((\\infty,1)\\)-categories look like. Lecture notes will be linked when available.",
     "datetime": "2025-11-17T17:00:00",
     "duration": 60
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-11-20T17:00:00",
-    "duration": 120
+    "datetime": "2025-11-20T17:30:00",
+    "duration": 90
   },
   {
     "title": "Integration Techniques",
@@ -162,10 +162,10 @@
   },
   {
     "title": "Putnam Problem Solving Session",
-    "location": "TBD",
+    "location": "CDS 365",
     "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
-    "datetime": "2025-12-04T17:00:00",
-    "duration": 120
+    "datetime": "2025-12-04T17:30:00",
+    "duration": 90
   },
   {
     "title": "Integration Bee",

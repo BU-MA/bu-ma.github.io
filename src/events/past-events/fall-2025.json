@@ -47,5 +47,39 @@
     "description": "Our club member <a href=\"/duck.html\" target=\"_blank\">Grant Talbert</a> will give an introduction to <i>category theory</i>, which is a beautiful unifying language for mathematics. He will define the elementary notions of categories, functors, natural transformations, and universals, with motivation pulled from basic set theory and algebra. Basic knowledge of sets and functions is recommended. <a href=\"/src/talks/categories-grant-f25.pdf\" target=\"_blank\">Lecture Notes</a>.",
     "datetime": "2025-09-29T18:00:00",
     "duration": 60
+  },  {
+  "title": "Putnam Problem Solving Session",
+  "location": "CDS 365",
+  "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+  "datetime": "2025-10-02T17:30:00",
+  "duration": 90
+},
+  {
+    "title": "Photon Collab: Trivia Night",
+    "location": "SCI 352",
+    "description": "BUMA is collaborating with <a href=\"https://www.instagram.com/buphoton/?hl=en\" target=\"blank\">Photon</a>, the BU Physics club! We will be joining them for a trivia night. There will be questions about both math and physics, and we will try to make those questions accessible to everyone. Prizes will be given to the winners!",
+    "datetime": "2025-10-08T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "TBD",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-10-09T17:30:00",
+    "duration": 90
+  },
+  {
+    "title": "polygons",
+    "location": "CDS 548",
+    "description": "Our club member Yoga is going to give an interesting talk about polygons. When asked to describe the talk, he responded with only \"polygons\".",
+    "datetime": "2025-10-14T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from past Putnam exams, and other difficult problems. Pizza and drinks will be provided. Hosted in collaboration with <a href=\"https://sites.google.com/view/jared-weinstein/home\" target=\"_blank\">Professor Jared Weinstein</a>.",
+    "datetime": "2025-10-16T17:30:00",
+    "duration": 90
   }
 ]
