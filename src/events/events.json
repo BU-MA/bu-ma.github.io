@@ -182,10 +182,10 @@
     "duration": 60
   },
   {
-    "title": "Coming soon",
-    "location": "probably cds365 or 548",
-    "description": "We will be posting our first few events in the coming few days, with more to come throughout the semester!",
-    "datetime": "2026-02-10T10:00:00",
-    "duration": 10
+    "title": "Proof Workshop",
+    "location": "CDS 365",
+    "description": "We will be introducing proof techniques, and generally giving advice on how to come up with and write better proofs.",
+    "datetime": "2026-02-1T18:00:00",
+    "duration": 60
   }
 ]
