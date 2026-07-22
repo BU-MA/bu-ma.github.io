@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <!--
-    uncomment this line to redirect to contact.html
+    uncomment this line to redirect to index.html
     <meta http-equiv="refresh" content="0; url=https://bu-ma.github.io/contact.html">
     -->
+    <!-- Why did I write that comment? -grant -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Home</title>
     <link rel="stylesheet" href="/src/styles/home.css">
-    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+    <link rel="icon" type="image/png" href="./src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -19,14 +22,37 @@
     </div>
 </header>
 
+<!-- FALL 2026 PREP NOTES
+  TODO -----------------------------------------------------------------------------------------------------------------
+  - Should the title have a newline? I feel like it shouldnt, but I also feel like having the navbar be more down the
+    screen than usual is good for this page. maybe "Boston University\nMathematics Association"?
+  - The CSS looks boring. I want to re-style the "About Us" section.
+  - I honestly want to redesign this entire page.
+    - What if the top bar said "Boston...Association     Home..Contact" and scrolled with you. I have the css for this
+    - and we could have like two columns, "About us" which has about us and some past events and pictures n stuff, and
+      "Upcoming events" which lists the upcoming events
+    - Alternatively OR additionally we could put an upcoming event in the navbar. But that could be fucky on mobile
+      formatting
+  - Want to move the Upcoming Events blurb under [upcoming-events]
+  - The css color scheme needs to be redone.
+  - Why is our logo not here? Also lowkey let's redesign the logo
+  TODO -----------------------------------------------------------------------------------------------------------------
+  GENERAL WEBSITE NOTES
+  - I want to move each ${name}.html file to /${name}/index.html so I can query them with ${name} rather than
+    ${name}.html when passing <a>. Doesn't change anything else though since you could already search ...io/${name} to
+    pull ${name}.html
+  - I want to move the navbar css and some other very standard css into theme.css
+  TODO -----------------------------------------------------------------------------------------------------------------
+-->
+
 <nav>
     <div class="container">
         <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/events.html">Events</a></li>
-            <li><a href="/talks.html">Talks</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/talks/">Talks</a></li>
+            <li><a href="/contact/">Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -37,15 +63,14 @@
             <h2>About Us</h2>
             <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
 
-            <p>We have meetings every Monday from 6-7 PM (18:00-19:00) in CDS 548, as well as Putnam problem solving sessions every Thursday from 5:30-7 PM (17:30-19:00) in CDS 365. Swing by to learn something new,
-            or just to chat and have pizza.</p>
+            <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
 
-            <p>To learn more about us, visit out <a href="/about.html">about page</a>!</p>
+            <p>To learn more about us, visit out <a href="about/index.html">about page</a>!</p>
         </div>
 
         <section id="events">
             <h3>Upcoming Events</h3>
-            <p>For more details, see our <a href="/events.html">events page</a>!</p>
+            <p>For more details, see our <a href="events/index.html">events page</a>!</p>
             <div id="upcoming-events">
             </div>
         </section>
@@ -54,7 +79,7 @@
 
 <footer>
     <div class="container">
-        <p>&copy; 2025 Boston University Mathematics Association. All Rights Reserved.</p>
+        <p>&copy; 2026 Boston University Mathematics Association. All Rights Reserved.</p>
         <p>This website was developed by Grant Talbert.</p>
     </div>
 </footer>

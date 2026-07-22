@@ -4,14 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - Not Found</title>
-  <link rel="stylesheet" href="/src/styles/404.css">
-  <link rel="icon" type="image/png" href="/src/assets/logo.png">
+  <link rel="stylesheet" href="./src/styles/404.css">
+  <link rel="icon" type="image/png" href="./src/assets/logo.png">
 </head>
+
+<!-- FALL 2026 PREP NOTES
+  I believe this page is ready.
+  - Added a spinning frowny face
+  - Added a note to email us telling us this page is broken
+  - improved how the return to homepage button looks
+-->
 <body>
 <div class="container">
+  <div id="spinning-image-container">
+    <img id="spinning-image" src="./src/assets/sad-face.png" alt="A sad face which is spinning" width="300">
+  </div>
   <h1>404 - Not Found</h1>
-  <p>The page you're looking for is in a superposition of states, none of which are here.<br>
-    <a href="/index.html">Return to homepage.</a></p>
+  <p>The page you're looking for is in a superposition of states, none of which are here.</p>
+  <p>(maybe email us at <a href="mailto:bu-ma@bu.edu">bu-ma@bu.edu</a> to tell us to fix it)</p>
+    <a class="button" href="/index.html">Return to homepage</a>
 </div>
 </body>
 </html>

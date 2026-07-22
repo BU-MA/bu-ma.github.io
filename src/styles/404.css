@@ -17,5 +17,32 @@ body, html {
 
 a {
     color: var(--primary-color);
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#spinning-image {
+    animation: spin 1.3s linear infinite;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    padding: 1em;
+    border-radius: 30px;
+    text-align: center;
+    color: #000000;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+}
+.button:hover {
+    background-color: var(--primary-color-darker);
 }

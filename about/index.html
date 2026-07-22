@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <!--
-    uncomment this line to redirect to contact.html
+    uncomment this line to redirect to index.html
     <meta http-equiv="refresh" content="0; url=https://bu-ma.github.io/contact.html">
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - About</title>
-    <link rel="stylesheet" href="/src/styles/about.css">
-    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+    <link rel="stylesheet" href="../src/styles/about.css">
+    <link rel="icon" type="image/png" href="../src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -19,14 +19,41 @@
     </div>
 </header>
 
+<!-- FALL 2026 PREP NOTES
+  TODO -----------------------------------------------------------------------------------------------------------------
+  1. Our Mission
+    - Do we want to update this? I kinda wanna. Ill brainstorm
+  2. Events
+    - Do we wanna update this? I think it's good
+  3. The Society of Mathematics
+    - I want to keep some mention of SOM on our website, but IDK if it should be on this page. and definitely it should
+      go further down
+  4. Leadership
+    - Status of Alysa? I assume she's going to a general board member but would like to confirm
+    - Add Bala as Secretary
+    - Why isn't Nick here? Add Nick as treasurer
+    - All update bio
+    - Ophelia has graduated. I commented her out. Should we add a legacy leadership page?
+    - Should leadership be its own page?
+  5. More?
+    - When I think of an "About" page, I wanna know a lot more about the club.
+    - Add notes on low committment, past events
+    - Current sem meeting times
+    - how to give a talk
+    - how meetings generally look
+    - we are friendly
+    - pictures of meetings (GET THESE)
+  TODO -----------------------------------------------------------------------------------------------------------------
+-->
+
 <nav>
     <div class="container">
         <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/events.html">Events</a></li>
-            <li><a href="/talks.html">Talks</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/talks/">Talks</a></li>
+            <li><a href="/contact/">Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -41,27 +68,29 @@
 
         <section id="event-types" class="about-section">
             <h2>Events</h2>
-            <p>These are a few of the types of events we host. A list of the exact events we plan to host this semester, as well as dates and times, can be found on our <a href="/events.html">events page</a>. We do our best to keep this updated,
-            but we're not perfect, so make sure to join the <a href="/contact.html">discord</a> to stay up to date.</p>
+            <p>These are a few of the types of events we host. A list of the exact events we plan to host this semester, as well as dates and times, can be found on our <a href="/events/index.html">events page</a>. We do our best to keep this updated,
+            but we're not perfect, so make sure to join the <a href="/contact/index.html">discord</a> to stay up to date.</p>
             <ul>
                 <li><strong>Putnam Problem-solving sessions:</strong> Practice for the <a href="https://maa.org/putnam/" target="_blank">Putnam exam</a>, and solving problems from past exams. Led by Professor <a href="https://sites.google.com/view/jared-weinstein/home" target="_blank">Jared Weinstein</a>.</li>
                 <li><strong>Talks:</strong> Both professor-led and student-led talks, on everything from math in music theory to the most abstract nonsense humanity has conceived of. If you're interested in giving
-                a talk, <a href="/contact.html">contact us!</a></li>
+                a talk, <a href="/contact/index.html">contact us!</a></li>
                 <li><strong>Integration bee:</strong> A fun end to the semester. Inspired by MIT's integration bee, but less competitive and more fun. Even if you don't want to participate, you can come to watch
                 physicists fail at solving Gaussians.</li>
                 <li><strong>Social events:</strong> We have chill nights where we do things like puzzles or crafts, an ice cream social, and other inter-club events. Come to just chill and chat with friends.</li>
                 <li><strong>Advising:</strong> We have occasional advising sessions on course registration, getting involved in research, and grad school applications.</li>
-                <li><strong>Other:</strong> We're always coming up with ideas for new meetings. If there's an event you would like to see happen, we would LOVE to hear from you! To get in contact with us, visit our <a href="/contact.html">contacts page</a>!</li>
+                <li><strong>Other:</strong> We're always coming up with ideas for new meetings. If there's an event you would like to see happen, we would LOVE to hear from you! To get in contact with us, visit our <a href="/contact/index.html">contacts page</a>!</li>
                 <!--<li><strong>pizza fight night:</strong> at the end of the year we should have a pizza fight night where we throw pizza at each other until we run out of budget</li>-->
                 <!--why did u comment it out i think this is an amazing idea-->
             </ul>
         </section>
 
+        <!--
         <section id="SOM" class="about-section">
             <h2>The Society of Mathematics</h2>
             <p>The Society of Mathematics (SOM) is another student organization at BU, which hosts a Colloquium and weekly meetings. As of fall 2025, BUMA and SOM have entered an official partnership. Unfortunately,
             our meeting times this semester coincide, but we are hoping to have many interesting collaborations next semester. You can visit SOM's website <a href="https://societyofmathematics.github.io/" target="_blank">here</a>.</p>
         </section>
+        -->
 
 
         <!-- i want to have a section on just the club stats cuz its cool
@@ -82,13 +111,17 @@
                         <p class="profile-blurb">You can contact me at <a href="mailto:kqlguo@bu.edu" target="_blank">kqlguo@bu.edu</a> or mathoderaytube on Discord (long story) for questions & concerns about the club, math, or anything you'd like!</p>
                 </article>
 
+                <!-- unclear whart -->
                 <article class="profile-card">
                     <img class="profile-img" src="/src/about/images/alysa.jpeg" alt="Photo of Alysa">
                     <h3>Alysa Zhao</h3>
-                    <span class="profile-title">copresident</span>
+                    <span class="profile-title">general board member</span>
                     <p class="profile-blurb">My main aspiration is to be able to understand homotopy type theory. That means I am currently working on understanding categories, types, logics, and topologies. I am deeply motivated by the curiosities in the foundations of mathematics. My favorite animal is fish. I like to look at them and eat them. Contact me on discord at spuddy5379, or email me at <a href="mailto:azhao@bu.edu" target="_blank">azhao04@bu.edu</a> if you like math or like our club.</p>
                 </article>
 
+                <!--
+                GRADUATED 2026
+                went for PhD at the University of Arizona
                 <article class="profile-card">
                     <img class="profile-img" src="/src/about/images/ophelia.jpg" alt="Photo of Ophelia You">
                     <h3>Ophelia You</h3>
@@ -96,12 +129,13 @@
                     <p class="profile-blurb">I am a senior studying pure math and English. My main math interest lies in number theory. I am trying to understand Dirichlet's Theorem on Arithmetic Progression right now. I would love to talk to anyone about anything in number theory. Also, some of my favorite authors are Jane Austen and John Milton. I love Paradise Lost. Besides that, I like Rick and Morty and watching anime.</p>
                     <p class="profile-blurb">You can contact me at <a href="mailto:xcyou@bu.edu">xcyou@bu.edu</a>, or on Discord (@Tubbybear).</p>
                 </article>
+                -->
 
                 <article class="profile-card">
                     <img class="profile-img" src="/src/about/images/grant.jpg" alt="Photo of Grant Talbert">
                     <h3>Grant Talbert</h3>
-                    <span class="profile-title">treasurer</span>
-                    <p class="profile-blurb">I'm a junior, but this is only my second year at BU since I transferred. I love discussing and teaching advanced and abstract mathematics, whether that be through pedagogical writing or talks. I'm the treasurer of BUMA, so officially I
+                    <span class="profile-title">vice president</span>
+                    <p class="profile-blurb">I'm a senior, but this is only my third year at BU since I transferred. I love discussing and teaching advanced and abstract mathematics, whether that be through pedagogical writing or talks. I'm the treasurer of BUMA, so officially I
                     manage spending and funding, although I also contribute quite a bit to decisions about event hosting. If you have questions about our budget, suggestions for events we could run, or really anything club-related, feel free to contact me.</p>
                     <p class="profile-blurb">I'm a double major in mathematical physics. I am extremely interested in higher category theory, homotopy theory, and some of their applications in theoretical physics, especially related to Yang-Mills. I am currently learning basic
                         \(\infty,1)\)-category theory, differential geometry, and improving my knowledge of the homotopy theory of simplicial sets.</p>

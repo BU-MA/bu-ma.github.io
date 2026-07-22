@@ -1,22 +1,16 @@
 /*
-The global theme used by the website. current theme is a dark theme with blue accents because like thats the
-most generic possible good-looking theme
+Defines the root colors used by the website. Many other CSS files import this to set their colors and fonts.
  */
 
-/* original randomass theme
-:root {
-    --primary-color: #3497db;
-    --background-color: #0e1e1e;
-    --surface-color: #2d2d2d;
-    --text-color: #e1e0e0;a
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
- */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --primary-color: #ff3c3c; /* A nice, muted purple */
+    --primary-color: #ff3c3c;
+
+    /* a darker variant of the primary color. good for hovering clickable items like buttons */
+    --primary-color-darker: #d63030;
+
     --background-color: #1e1e1e;
     --surface-color: #2a2a2a;
     --text-color: #e0e0e0;
