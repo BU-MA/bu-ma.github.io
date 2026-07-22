@@ -1,3 +1,13 @@
+/*
+ * Renders event cards for past events. See events.js for descriptions on what most things do; most of the code is
+ * unchanged. The main differences are that we don't filter out TBD and past events, and we pass the json location
+ * as data to the past-event-list element.
+ * To use, do something like
+ * ```
+ * <div class="past-event-list" data-semester="fall-2025.json></div>
+ * ```
+ */
+
 (async function loadPastEvents() {
     const eventListContainer = document.querySelector('.past-event-list');
     if (!eventListContainer) {
@@ -5,8 +15,14 @@
         return;
     }
 
+    const targetJson = eventListContainer.getAttribute('data-semester')
+    if (!targetJson) {
+        console.error("No data-semester attribute provided on the event container.");
+        return;
+    }
+
     try {
-        const response = await fetch('/src/events/past-events/fall-2025.json');
+        const response = await fetch(`/src/events/past-events/${targetJson}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

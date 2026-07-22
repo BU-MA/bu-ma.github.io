@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Game Night!",
+    "location": "CS 365",
+    "description": "To kick off the semester, we are hosting a game night!!! We will have board games and card games and poker and stuff to play to kick off the semester!",
+    "datetime": "2026-02-02T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Proof Workshop",
+    "location": "CDS 365",
+    "description": "We will be introducing proof techniques, and generally giving advice on how to come up with and write better proofs.",
+    "datetime": "2026-02-15T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Registration advising",
+    "location": "CDS 365",
+    "description": "Courses are out for this coming fall! We will be giving advice on what courses you might be interested in, or might still need to complete your major.",
+    "datetime": "2026-03-16T18:00:00",
+    "duration": 60
+  }
+]

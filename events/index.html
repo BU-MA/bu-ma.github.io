@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Events</title>
-    <link rel="stylesheet" href="/src/styles/events.css">
-    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+    <link rel="stylesheet" href="../src/styles/events.css">
+    <link rel="icon" type="image/png" href="../src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -20,9 +20,15 @@
 </header>
 
 <!-- FALL 2026 PREP NOTES
-  TODO -----------------------------------------------------------------------------------------------------------------
+TODO -------------------------------------------------------------------------------------------------------------------
   - Maintenance on this page is minimal
-  TODO -----------------------------------------------------------------------------------------------------------------
+  1. Write Spring 2026 page for past events
+      - This will require looking back at what our events actually were since I didn't keep up with it that well
+  2. After updating the css, make changes to events.js
+  3. oh yeah clean up events.js why am i keeping events from fucking last fall in it
+TODO -------------------------------------------------------------------------------------------------------------------
+so far I have added spring-2026.html and spring-2026.json, finally updated fall-2025.json, added too many comments to
+event.js, and made past-events.js modular so i can important any semester's json to it
 -->
 
 <nav>
@@ -47,6 +53,7 @@
             <h2>Past Events</h2>
             <ul>
                 <li><a href="/src/events/past-events/fall-2025.html">Fall 2025</a></li>
+                <li><a href="/src/events/past-events/spring-2026.html">Spring 2026</a></li>
             </ul>
         </section>
     </div>
@@ -54,12 +61,12 @@
 
 <footer>
     <div class="container">
-        <p>&copy; 2025 Boston University Mathematics Association. All Rights Reserved.</p>
+        <p>&copy; 2026 Boston University Mathematics Association. All Rights Reserved.</p>
         <p>This website was developed by Grant Talbert.</p>
     </div>
 </footer>
 
-<script src="/src/events/events.js" defer></script> <!-- yo wtf does defer do lol -->
+<script src="/src/events/events.js" defer></script>
 
 </body>
 </html>

@@ -7,12 +7,13 @@
     <meta http-equiv="refresh" content="0; url=https://bu-ma.github.io/contact.html">
     -->
     <!-- Why did I write that comment? -grant -->
+    <!-- Why did I write that comment on every single page? -grant -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Home</title>
-    <link rel="stylesheet" href="/src/styles/home.css">
-    <link rel="icon" type="image/png" href="./src/assets/logo.png">
+    <link rel="stylesheet" href="src/styles/home.css">
+    <link rel="icon" type="image/png" href="src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -23,11 +24,11 @@
 </header>
 
 <!-- FALL 2026 PREP NOTES
-  TODO -----------------------------------------------------------------------------------------------------------------
-  - Should the title have a newline? I feel like it shouldnt, but I also feel like having the navbar be more down the
+TODO -------------------------------------------------------------------------------------------------------------------
+  - Should the title have a line break? I feel like it shouldnt, but I also feel like having the navbar be more down the
     screen than usual is good for this page. maybe "Boston University\nMathematics Association"?
   - The CSS looks boring. I want to re-style the "About Us" section.
-  - I honestly want to redesign this entire page.
+  - actually I want to redesign this entire page.
     - What if the top bar said "Boston...Association     Home..Contact" and scrolled with you. I have the css for this
     - and we could have like two columns, "About us" which has about us and some past events and pictures n stuff, and
       "Upcoming events" which lists the upcoming events
@@ -36,13 +37,12 @@
   - Want to move the Upcoming Events blurb under [upcoming-events]
   - The css color scheme needs to be redone.
   - Why is our logo not here? Also lowkey let's redesign the logo
-  TODO -----------------------------------------------------------------------------------------------------------------
+TODO -------------------------------------------------------------------------------------------------------------------
   GENERAL WEBSITE NOTES
-  - I want to move each ${name}.html file to /${name}/index.html so I can query them with ${name} rather than
-    ${name}.html when passing <a>. Doesn't change anything else though since you could already search ...io/${name} to
-    pull ${name}.html
   - I want to move the navbar css and some other very standard css into theme.css
-  TODO -----------------------------------------------------------------------------------------------------------------
+  - Question: right now the pages are in their own folders, but the assets they pull live in a subdir of /src of the
+    same name. Should I just move all the assets under /src/${name} to /${name} and swap src -> general resources?
+TODO -------------------------------------------------------------------------------------------------------------------
 -->
 
 <nav>
