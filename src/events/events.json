@@ -2,7 +2,7 @@
   {
     "title": "TEST EVENT",
     "location": "CDS 365",
-    "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some code \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
+    "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
     "datetime": "2026-09-08T17:00:00",
     "duration": 60
   }
