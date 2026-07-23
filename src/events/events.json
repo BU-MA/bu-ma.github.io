@@ -12,5 +12,12 @@
     "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
     "datetime": "2026-09-09T17:00:00",
     "duration": 60
+  },
+  {
+    "title": "TEST EVENT 3",
+    "location": "CDS 365",
+    "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
+    "datetime": "2026-09-09T18:00:00",
+    "duration": 60
   }
 ]

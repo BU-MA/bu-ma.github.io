@@ -6,8 +6,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const eventsPath = path.join(__dirname, '../src/events/events.json');
-const outputPath = path.join(__dirname, '../src/events/buma-events.ics');
+const eventsPath = path.join(__dirname, '../events/events.json');
+const outputPath = path.join(__dirname, '../events/buma-events.ics');
 
 const events = JSON.parse(fs.readFileSync(eventsPath, 'utf8'));
 
