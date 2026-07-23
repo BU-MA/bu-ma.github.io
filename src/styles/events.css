@@ -72,7 +72,7 @@
     margin-top: auto;
 }
 
-.add-to-calendar {
+.add-to-calendar, .subscribe-to-calendar-button {
     display: inline-block;
     background-color: var(--primary-color);
     color: #fff;
@@ -84,6 +84,17 @@
     border: none;
 }
 
-.add-to-calendar:hover {
+.add-to-calendar:hover, .subscribe-to-calendar-button:hover {
     background-color: var(--primary-color-darker);
+}
+
+.subscribe-container {
+    background-color: var(--surface-color);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+}
+
+.subscribe-to-calendar-button a {
+    color: #ffffff;
 }

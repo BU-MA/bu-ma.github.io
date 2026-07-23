@@ -127,6 +127,6 @@ nav a.active {
     nav .container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
 }

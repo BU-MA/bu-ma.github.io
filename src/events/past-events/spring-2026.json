@@ -1,16 +1,30 @@
 [
   {
     "title": "Game Night!",
-    "location": "CS 365",
+    "location": "CDS 365",
     "description": "To kick off the semester, we are hosting a game night!!! We will have board games and card games and poker and stuff to play to kick off the semester!",
     "datetime": "2026-02-02T18:00:00",
     "duration": 60
   },
   {
+    "title": "Chill hangout",
+    "location": "CDS 365",
+    "description": "It's the second weekl of the semester and we're already out of plans! Swing by to just generally hang out and chill.",
+    "datetime": "2026-02-09T18:00:00",
+    "duration": "60"
+  },
+  {
     "title": "Proof Workshop",
     "location": "CDS 365",
-    "description": "We will be introducing proof techniques, and generally giving advice on how to come up with and write better proofs.",
-    "datetime": "2026-02-15T18:00:00",
+    "description": "We will be introducing proof techniques, and generally giving advice on how to come up with and write better proofs. We will cover direct proofs, proofs by contradiction, induction, contrapositives, and proof by two-sided inclusions.",
+    "datetime": "2026-02-17T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Introduction to Group Theory",
+    "location": "CDS 365",
+    "description": "A group is a very simple type of algebra, but with just enough structure that their theory is a very rich subject. They offer a simple introduction to many ideas that are pervasive throughout mathematics, but are also very important in their own right: it turns out that the collection of symmetries of any object can be organized into a group. In this talk, we will introduce the basics of groups, elementary examples, group homomorphisms, and various constructions.",
+    "datetime": "2026-03-02T18:00:00",
     "duration": 60
   },
   {
@@ -19,5 +33,40 @@
     "description": "Courses are out for this coming fall! We will be giving advice on what courses you might be interested in, or might still need to complete your major.",
     "datetime": "2026-03-16T18:00:00",
     "duration": 60
+  },
+  {
+    "title": "We have no idea what we are doing",
+    "location": "CDS 365",
+    "description": "No real plans for today, so swing by to just chill and stuff.",
+    "datetime": "2026-03-23T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Defintions Bash",
+    "location": "CDS 365",
+    "description": "We throw a bunch of names at you from the wildest parts of math, and whoever comes up with the closest (or funniest) definition wins! Hope to see you guys for some fun :)",
+    "datetime": "2026-03-30T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Just hanging out",
+    "location": "CDS 365",
+    "description": "Since the year is ending and many of us are burning out, today you can just swing by to chill and vibe with us.",
+    "datetime": "2026-04-06T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Dirichlet's Prime Number Theorem",
+    "location": "CDS 365",
+    "description": "Our board member Ophelia You will be presenting a proof of Dirichlet's prime number theorem, which is part of her senior thesis. The theorem states that any two positive coprime integers \\(a\\) and \\(d\\), the series of numbers \\(\\{a,a+d,a+2d,a+3d,\\ldots\\}\\) contains infinitely many prime numbers.",
+    "datetime:": "2026-04-13T18:00:00",
+    "duration": 60
+  },
+  {
+    "title": "Integration Bee",
+    "location": "SCI 352",
+    "description": "To finish out the year, join us for our semesterly integration bee! This time, the event is hosted in collaboration with <a href=\"https://www.instagram.com//buphoton\">Photon</a>, the BU physics club.",
+    "datetime": "2026-04-29T18:00:00",
+    "duration": 120
   }
 ]

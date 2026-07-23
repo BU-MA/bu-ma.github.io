@@ -33,7 +33,8 @@ TODO ---------------------------------------------------------------------------
 so far I have added spring-2026.html and spring-2026.json, finally updated fall-2025.json, added too many comments to
 event.js, and made past-events.js modular so i can important any semester's json to it. I added an option to download an
 ics file for adding individual events to your calendar, which runs through /src/misc-js/ics-manager.js. This exports
-two functions that are now imported by events.js.
+two functions that are now imported by events.js. I have now updated the fall-2025 and spring-2026 jsons. I fixed the
+title of this page, which incorrectly said Fall 2025.
 
 NOTE: Do not make css changes yet, just focus on functionality, because I want to rewrite all of the css.
 -->
@@ -42,6 +43,17 @@ NOTE: Do not make css changes yet, just focus on functionality, because I want t
 
 <main>
     <div class="container">
+
+        <div class="subscribe-container">
+            <h2>Subscribe to our event calendar</h2>
+            <p>By subscribing to our event calendar, your Google or Apple calendar will automatically create events in your
+            calendar for all of our events, and will update them any time we change them. You can unsubscribe easily at
+            any time from your calendar app.</p>
+            <div class="subscribe-to-calendar-button">
+                <a href="webcal://bu-ma.github.io/src/events/buma-events.ics">Subscribe</a>
+            </div>
+        </div>
+
         <section class="event-list-container">
             <h2>Upcoming Events</h2>
             <div class="event-list"></div>
