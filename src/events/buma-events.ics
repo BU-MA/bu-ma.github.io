@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//BUMA//Events//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:BUMA Events
+BEGIN:VEVENT
+UID:buma-event-0-1788886800000@bu-ma.github.io
+DTSTAMP:20260723T035526Z
+DTSTART:20260908T170000Z
+DTEND:20260908T180000Z
+SUMMARY:TEST EVENT
+LOCATION:CDS 365
+DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-1-1788973200000@bu-ma.github.io
+DTSTAMP:20260723T035526Z
+DTSTART:20260909T170000Z
+DTEND:20260909T180000Z
+SUMMARY:TEST EVENT 2
+LOCATION:CDS 365
+DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-2-1788976800000@bu-ma.github.io
+DTSTAMP:20260723T035526Z
+DTSTART:20260909T180000Z
+DTEND:20260909T190000Z
+SUMMARY:TEST EVENT 3
+LOCATION:CDS 365
+DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
+END:VEVENT
+END:VCALENDAR
