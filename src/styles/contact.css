@@ -1,75 +1,5 @@
 @import url('/src/styles/theme.css');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-header {
-    background: var(--surface-color);
-    padding: 2rem 0;
-    text-align: center;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-family: var(--font-family-headings);
-}
-
-nav {
-    background: #333;
-    padding: 0.5rem 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li a {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background-color 0.3s ease;
-    font-family: var(--font-family-headings);
-}
-
-nav ul li a:hover {
-    background-color: var(--primary-color);
-    border-radius: 4px;
-}
-
-footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background: var(--surface-color);
-    margin-top: 2rem;
-    border-top: 1px solid #444;
-}
-
-
 /* Center the content vertically within the main area */
 main .container {
     min-height: 50vh;
@@ -92,7 +22,6 @@ main .container {
 .contact-container h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
-    font-family: var(--font-family-headings);
 }
 
 .contact-methods {
@@ -117,7 +46,6 @@ main .container {
 .contact-item h3 {
     margin-bottom: 0.5rem;
     color: var(--text-color);
-    font-family: var(--font-family-headings);
 }
 
 .contact-item a {

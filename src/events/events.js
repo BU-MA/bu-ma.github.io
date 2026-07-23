@@ -10,6 +10,10 @@
  * ```
  */
 
+
+import { downloadICS } from '../misc-js/ics-manager.js';
+
+
 (async function loadEvents() {
     // Looks for an instance of the event-list css class to populate
     const eventListContainer = document.querySelector('.event-list');
@@ -91,7 +95,14 @@
                     <p><strong>Location:</strong> ${event.location}</p>
                 </div>
                 <p class="event-description">${event.description}</p>
+                <div class="add-to-calendar-container">
+                    <button class="add-to-calendar"><strong>Add to Calendar</strong></button>
+                </div>
             `;
+
+            eventCard.querySelector('.add-to-calendar').addEventListener('click', () => {
+                downloadICS(event, startTime, endTime)
+            })
 
             eventListContainer.appendChild(eventCard);
 

@@ -26,7 +26,6 @@ body {
 }
 
 h1 {
-    font-family: var(--font-family-headings);
     color: var(--text-color);
     margin-bottom: 2rem; /* Add some space above the QR code */
 }

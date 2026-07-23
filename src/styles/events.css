@@ -1,74 +1,5 @@
 @import url('/src/styles/theme.css');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-header {
-    background: var(--surface-color);
-    padding: 2rem 0;
-    text-align: center;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-family: var(--font-family-headings);
-}
-
-nav {
-    background: #333;
-    padding: 0.5rem 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li a {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background-color 0.3s ease;
-    font-family: var(--font-family-headings);
-}
-
-nav ul li a:hover {
-    background-color: var(--primary-color);
-    border-radius: 4px;
-}
-
-footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background: var(--surface-color);
-    margin-top: 2rem;
-    border-top: 1px solid #444;
-}
-
 /* --- Events Page Specific Styles --- */
 .event-list-container h2 {
     text-align: center;
@@ -76,7 +7,6 @@ footer {
     margin-bottom: 2rem;
     padding-top: 2rem;
     color: #fff;
-    font-family: var(--font-family-headings);
 }
 
 .event-list {
@@ -102,7 +32,6 @@ footer {
 .event-card h3 {
     margin-top: 0;
     font-size: 1.5rem;
-    font-family: var(--font-family-headings);
 }
 
 .event-details {
@@ -133,9 +62,28 @@ footer {
     margin-bottom: 2rem;
     padding-top: 2rem;
     color: #fff;
-    font-family: var(--font-family-headings);
 }
 
 .past-events-container ul {
     padding: 10pt;
+}
+
+.add-to-calendar-container { /* i want this on the right */
+    margin-top: auto;
+}
+
+.add-to-calendar {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-family: var(--font-family-body);
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.add-to-calendar:hover {
+    background-color: var(--primary-color-darker);
 }

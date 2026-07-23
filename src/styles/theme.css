@@ -17,3 +17,116 @@ Defines the root colors used by the website. Many other CSS files import this to
     --font-family-headings: 'Roboto Mono', monospace;
     --font-family-body: 'Roboto', sans-serif;
 }
+
+/* Universal styles */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-family-headings);
+}
+
+header {
+    background: var(--surface-color);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: var(--surface-color);
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* navbar */
+
+nav {
+    background: #333;
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    font-family: var(--font-family-headings);
+}
+
+nav ul li a:hover {
+    background-color: var(--surface-color);
+    /* border-radius: 4px; */
+}
+
+nav a.active {
+    color: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* mobile navbar */
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .nav-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

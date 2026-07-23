@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../src/styles/about.css">
     <link rel="icon" type="image/png" href="../src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
 </head>
 <body>
 <header>
@@ -46,17 +47,7 @@ TODO ---------------------------------------------------------------------------
 TODO -------------------------------------------------------------------------------------------------------------------
 -->
 
-<nav>
-    <div class="container">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/events/">Events</a></li>
-            <li><a href="/talks/">Talks</a></li>
-            <li><a href="/contact/">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+<nav data-page="about"></nav>
 
 <main>
     <div class="container">
@@ -213,12 +204,7 @@ TODO ---------------------------------------------------------------------------
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Boston University Mathematics Association. All Rights Reserved.</p>
-        <p>This website was developed by Grant Talbert.</p>
-    </div>
-</footer>
+<footer></footer>
 
 </body>
 </html>

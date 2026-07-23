@@ -11,10 +11,21 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>BUMA - Home</title>
     <link rel="stylesheet" href="src/styles/home.css">
-    <link rel="icon" type="image/png" href="src/assets/logo.png">
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="icon" type="image/png" href="src/assets/logo.png"> <!-- sets the website icon to be the logo -->
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <!-- latex support -->
+    <script src="src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
+
+    <!-- metadata for like pasting into discord and stuff -->
+    <meta property="og:title" content="BUMA - Home">
+    <meta property="og:description" content="???????????">
+    <meta property="og:image" content="src/assets/logo.png"> <!-- i think this might break i think it needs a full url -->
+    <meta property="og:url" content="https://bu-ma.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <header>
@@ -42,20 +53,12 @@ TODO ---------------------------------------------------------------------------
   - I want to move the navbar css and some other very standard css into theme.css
   - Question: right now the pages are in their own folders, but the assets they pull live in a subdir of /src of the
     same name. Should I just move all the assets under /src/${name} to /${name} and swap src -> general resources?
+  - We should add an alumni page i think that would be cool
+  - We could have a rotating weekly math problem (putnam style) and/or an interesting theorem
 TODO -------------------------------------------------------------------------------------------------------------------
 -->
-
-<nav>
-    <div class="container">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/events/">Events</a></li>
-            <li><a href="/talks/">Talks</a></li>
-            <li><a href="/contact/">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+<!-- navbar is automatically generated -->
+<nav data-page="home"></nav>
 
 <main>
     <div class="container">
@@ -77,12 +80,8 @@ TODO ---------------------------------------------------------------------------
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Boston University Mathematics Association. All Rights Reserved.</p>
-        <p>This website was developed by Grant Talbert.</p>
-    </div>
-</footer>
+<!-- footer is automatically generated -->
+<footer></footer>
 
 <script src="/src/events/home-events.js" defer></script>
 </body>

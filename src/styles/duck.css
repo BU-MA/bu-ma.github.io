@@ -1,39 +1,8 @@
 @import url('theme.css');
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family-body);
     text-align: center;
     overflow-x: hidden; /* for some reason i wanted to prevent horizontal scrollbars, im scared to touch it */
-}
-
-nav {
-    background: #333;
-    padding: 0.5rem 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li a {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background-color 0.3s ease;
-    font-family: var(--font-family-headings);
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    background-color: var(--primary-color);
-    border-radius: 4px;
-}
-a {
-    color: var(--primary-color);
 }
 
 img {
@@ -55,12 +24,12 @@ img {
 }
 
 /* --- Spinning and Rainbow Image --- */
-#rainbow-image {
+#spinny-image {
     /* Two animations are applied here, separated by a comma */
     animation:
             spin 1s linear infinite;
 }
-#rainbow-image-container:before {
+#spinny-image-container:before {
     animation: rainbow-flash 1s linear infinite;
 }
 

@@ -11,37 +11,34 @@
     <link rel="stylesheet" href="../src/styles/events.css">
     <link rel="icon" type="image/png" href="../src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
 </head>
 <body>
 <header>
     <div class="container">
-        <h1>Fall 2025 Events</h1>
+        <h1>Fall 2026 Events</h1>
     </div>
 </header>
 
 <!-- FALL 2026 PREP NOTES
 TODO -------------------------------------------------------------------------------------------------------------------
-  - Maintenance on this page is minimal
+  - Maintenance on this page is minimal, but there are upgrades I want to do
   1. Write Spring 2026 page for past events
       - This will require looking back at what our events actually were since I didn't keep up with it that well
-  2. After updating the css, make changes to events.js
-  3. oh yeah clean up events.js why am i keeping events from fucking last fall in it
+  2. Brainstorm sweeping changes. Like maybe event cards link to pages for that particular event? Maybe there is a
+     button to subscribe to all of our events somehow?
+  3. Update the css (requires updating events.js)
+  4. oh yeah clean up events.json why am i keeping events from fucking last fall in it
 TODO -------------------------------------------------------------------------------------------------------------------
 so far I have added spring-2026.html and spring-2026.json, finally updated fall-2025.json, added too many comments to
-event.js, and made past-events.js modular so i can important any semester's json to it
+event.js, and made past-events.js modular so i can important any semester's json to it. I added an option to download an
+ics file for adding individual events to your calendar, which runs through /src/misc-js/ics-manager.js. This exports
+two functions that are now imported by events.js.
+
+NOTE: Do not make css changes yet, just focus on functionality, because I want to rewrite all of the css.
 -->
 
-<nav>
-    <div class="container">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/events/">Events</a></li>
-            <li><a href="/talks/">Talks</a></li>
-            <li><a href="/contact/">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+<nav data-page="events"></nav>
 
 <main>
     <div class="container">
@@ -59,14 +56,9 @@ event.js, and made past-events.js modular so i can important any semester's json
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Boston University Mathematics Association. All Rights Reserved.</p>
-        <p>This website was developed by Grant Talbert.</p>
-    </div>
-</footer>
+<footer></footer>
 
-<script src="/src/events/events.js" defer></script>
+<script type="module" src="/src/events/events.js"></script>
 
 </body>
 </html>
