@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BUMA - Control</title>
+    <script>
+        (function () {
+            const saved = localStorage.getItem('buma-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+    </script>
+    <link rel="stylesheet" href="../css/control.css">
+    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/src/components/load-components.js" defer></script>
+    <script src="../js/theme-switcher.js" defer></script>
+
+    <meta property="og:title" content="BUMA - Home">
+    <meta property="og:description" content="???????????">
+    <meta property="og:image" content="https://bu-ma.github.io/src/assets/logo.png">
+    <meta property="og:url" content="https://bu-ma.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="back-link" href="../index.html">&larr; Back to showcase</a>
+<header>
+    <div class="container">
+        <h1>BUMA CSS Redesign: Control</h1>
+    </div>
+</header>
+
+<nav data-page="home"></nav>
+
+<main>
+    <div class="container">
+        <div id="about">
+            <h2>About Us</h2>
+            <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+
+            <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+
+            <p>To learn more about us, visit out <a href="/about/index.html">about page</a>!</p>
+        </div>
+
+        <section id="events">
+            <h3>Upcoming Events</h3>
+            <p>For more details, see our <a href="/events/index.html">events page</a>!</p>
+            <div id="upcoming-events">
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer></footer>
+
+<script src="/src/events/home-events.js" defer></script>
+</body>
+</html>

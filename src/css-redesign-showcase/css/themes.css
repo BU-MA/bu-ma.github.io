@@ -1,0 +1,402 @@
+/*
+ * Defines the root colors used by the website. Many other CSS files import this to set their colors and fonts.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@400;700&family=Cinzel:wght@600;700&family=Orbitron:wght@600;700&family=Merriweather:wght@700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css');
+
+/* ============================
+   Control (default / original theme)
+   ============================ */
+:root,
+[data-theme="control"] {
+    --primary-color: #ff3c3c;
+    --primary-color-darker: #d63030;
+    --primary-color-lighter: #ff6b6b;
+    --primary-rgb: 255, 60, 60;
+    --text-on-primary: #ffffff;
+    --secondary-color: #4fd1c5;
+    --secondary-rgb: 79, 209, 197;
+
+    --background-color: #1e1e1e;
+    --surface-color: #2a2a2a;
+    --surface-color-alt: #333333;
+    --border-color: #444444;
+
+    --text-color: #e0e0e0;
+    --text-color-muted: #a0a0a0;
+
+    --shadow-rgb: 0, 0, 0;
+
+    --radius: 8px;
+    --radius-sm: 4px;
+
+    --font-family-headings: 'Roboto Mono', monospace;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Abyssal Violet (dark, cool-toned, soft rounded shapes)
+   ============================ */
+[data-theme="abyssal-violet"] {
+    --primary-color: #a78bfa;
+    --primary-color-darker: #8b5cf6;
+    --primary-color-lighter: #c4b5fd;
+    --primary-rgb: 167, 139, 250;
+    --text-on-primary: #1a1225;
+    --secondary-color: #f472b6;
+    --secondary-rgb: 244, 114, 182;
+
+    --background-color: #14101f;
+    --surface-color: #1f1830;
+    --surface-color-alt: #2a2140;
+    --border-color: #3a2d55;
+
+    --text-color: #e6e1f5;
+    --text-color-muted: #9d94b8;
+
+    --shadow-rgb: 10, 5, 20;
+
+    --radius: 14px;
+    --radius-sm: 8px;
+
+    --font-family-headings: 'Roboto Mono', monospace;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Terminal Green (dark, monospace-only, CLI/hacker aesthetic)
+   ============================ */
+[data-theme="terminal-green"] {
+    --primary-color: #39ff88;
+    --primary-color-darker: #1fd66a;
+    --primary-color-lighter: #7dffb0;
+    --primary-rgb: 57, 255, 136;
+    --text-on-primary: #041208;
+    --secondary-color: #ffb454;
+    --secondary-rgb: 255, 180, 84;
+
+    --background-color: #0a0e0c;
+    --surface-color: #111714;
+    --surface-color-alt: #182019;
+    --border-color: #2a3a30;
+
+    --text-color: #c8f5d8;
+    --text-color-muted: #6f9c81;
+
+    --shadow-rgb: 0, 0, 0;
+
+    --radius: 2px;
+    --radius-sm: 0px;
+
+    --font-family-headings: 'JetBrains Mono', monospace;
+    --font-family-body: 'JetBrains Mono', monospace;
+}
+
+/* ============================
+   Copper Noir (warm, elegant, low-contrast metallics)
+   ============================ */
+[data-theme="copper-noir"] {
+    --primary-color: #c9822c;
+    --primary-color-darker: #a8681c;
+    --primary-color-lighter: #e0a552;
+    --primary-rgb: 201, 130, 44;
+    --text-on-primary: #1a1006;
+    --secondary-color: #7fb3a3;
+    --secondary-rgb: 127, 179, 163;
+
+    --background-color: #150f0a;
+    --surface-color: #221912;
+    --surface-color-alt: #2c2118;
+    --border-color: #3d2e20;
+
+    --text-color: #ede2d3;
+    --text-color-muted: #a8927c;
+
+    --shadow-rgb: 10, 5, 0;
+
+    --radius: 10px;
+    --radius-sm: 6px;
+
+    --font-family-headings: 'Playfair Display', serif;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Deep Ocean (navy, cyan/coral, crisp monospace headings)
+   ============================ */
+[data-theme="deep-ocean"] {
+    --primary-color: #38bdf8;
+    --primary-color-darker: #0ea5e9;
+    --primary-color-lighter: #7dd3fc;
+    --primary-rgb: 56, 189, 248;
+    --text-on-primary: #001824;
+    --secondary-color: #fb7185;
+    --secondary-rgb: 251, 113, 133;
+
+    --background-color: #071422;
+    --surface-color: #0d1f30;
+    --surface-color-alt: #12293e;
+    --border-color: #1e3a52;
+
+    --text-color: #dceaf5;
+    --text-color-muted: #7a97ac;
+
+    --shadow-rgb: 0, 10, 20;
+
+    --radius: 12px;
+    --radius-sm: 6px;
+
+    --font-family-headings: 'Space Mono', monospace;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Blood Moon (gothic, high-contrast red on near-black)
+   ============================ */
+[data-theme="blood-moon"] {
+    --primary-color: #e11d3c;
+    --primary-color-darker: #b8112c;
+    --primary-color-lighter: #f0475f;
+    --primary-rgb: 225, 29, 60;
+    --text-on-primary: #ffffff;
+    --secondary-color: #8a7a5c;
+    --secondary-rgb: 138, 122, 92;
+
+    --background-color: #120607;
+    --surface-color: #1e0c0e;
+    --surface-color-alt: #291014;
+    --border-color: #3d181d;
+
+    --text-color: #ecd8d8;
+    --text-color-muted: #9c7a7d;
+
+    --shadow-rgb: 20, 0, 0;
+
+    --radius: 4px;
+    --radius-sm: 2px;
+
+    --font-family-headings: 'Cinzel', serif;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Neon Arcade (synthwave, magenta/cyan, rounded display font)
+   ============================ */
+[data-theme="neon-arcade"] {
+    --primary-color: #ff2fb0;
+    --primary-color-darker: #d4128e;
+    --primary-color-lighter: #ff70cb;
+    --primary-rgb: 255, 47, 176;
+    --text-on-primary: #1a0012;
+    --secondary-color: #22d3ee;
+    --secondary-rgb: 34, 211, 238;
+
+    --background-color: #0a0116;
+    --surface-color: #170826;
+    --surface-color-alt: #210c34;
+    --border-color: #3a1a54;
+
+    --text-color: #f0e6fa;
+    --text-color-muted: #9884b3;
+
+    --shadow-rgb: 30, 0, 40;
+
+    --radius: 16px;
+    --radius-sm: 10px;
+
+    --font-family-headings: 'Orbitron', sans-serif;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Forest Ink (earthy, muted sage/mustard, slab serif headings)
+   ============================ */
+[data-theme="forest-ink"] {
+    --primary-color: #8fbf6f;
+    --primary-color-darker: #679751;
+    --primary-color-lighter: #a6d187;
+    --primary-rgb: 143, 191, 111;
+    --text-on-primary: #0a1407;
+    --secondary-color: #d9a441;
+    --secondary-rgb: 217, 164, 65;
+
+    --background-color: #0d130d;
+    --surface-color: #161f16;
+    --surface-color-alt: #1e2b1e;
+    --border-color: #2e402e;
+
+    --text-color: #dbe8d8;
+    --text-color-muted: #8ba587;
+
+    --shadow-rgb: 0, 10, 0;
+
+    --radius: 8px;
+    --radius-sm: 4px;
+
+    --font-family-headings: 'Merriweather', serif;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+/* ============================
+   Catppuccin Mocha
+   Source: the real Catppuccin Mocha palette (catppuccin.com), MIT-licensed.
+   Named colors used: Base, Mantle/Crust (surfaces), Text, Subtext0, Overlay0
+   (border), Mauve (primary), Peach (secondary). Not an original palette —
+   used as-is per the brief.
+   ============================ */
+[data-theme="catppuccin-mocha"] {
+    --primary-color: #cba6f7;        /* Mauve */
+    --primary-color-darker: #a674e0; /* manually darkened, no official "dark mauve" */
+    --primary-color-lighter: #b4befe; /* Lavender */
+    --primary-rgb: 203, 166, 247;
+    --text-on-primary: #11111b;      /* Crust — dark text needed on pastel mauve */
+    --secondary-color: #fab387;      /* Peach */
+    --secondary-rgb: 250, 179, 135;
+
+    --background-color: #1e1e2e; /* Base */
+    --surface-color: #313244;    /* Surface0 */
+    --surface-color-alt: #45475a; /* Surface1 */
+    --border-color: #6c7086;     /* Overlay0 */
+
+    --text-color: #cdd6f4;       /* Text */
+    --text-color-muted: #a6adc8; /* Subtext0 */
+
+    --shadow-rgb: 17, 17, 27;    /* Crust, as RGB */
+
+    --radius: 10px;
+    --radius-sm: 6px;
+
+    --font-family-headings: 'STIX Two Text', serif;
+    --font-family-body: 'STIX Two Text', serif;
+}
+
+/* ============================
+   Rosé Pine
+   Source: https://rosepinetheme.com/palette/
+   ============================ */
+[data-theme="rose-pine"] {
+    --primary-color: #ebbcba;
+    --primary-color-darker: #e5a6a4;
+    --primary-color-lighter: #f9eceb;
+    --primary-rgb: 235, 188, 186;
+    --text-on-primary: #21202e;
+    --secondary-color: #31748f;
+    --secondary-rgb: 49, 116, 143;
+
+    --background-color: #191724;
+    --surface-color: #1f1d2e;
+    --surface-color-alt: #26233a;
+    --border-color: #9ccfd8; /* or eb6f92 */
+
+    --text-color: #e0def4;
+    --text-color-muted: #6e6a86;
+
+    --shadow-rgb: 33, 32, 46;
+
+    --radius: 16px;
+    --radius-sm: 8px;
+
+    --font-family-headings: 'STIX Two Text', serif;
+    --font-family-body: 'STIX Two Text', serif;
+}
+
+/* ============================
+   Dracula
+   Source: the official Dracula Theme spec (draculatheme.com/spec) — "the most
+   famous theme ever created," 400+ supported apps. Values taken directly from
+   their published Color Palette + UI Color Palette tables (Background, Selection,
+   Foreground, Comment, Purple, Pink, and their official "Background Light/Lighter/
+   Darker" surface tokens).
+   ============================ */
+[data-theme="dracula"] {
+    --primary-color: #bd93f9;         /* Purple */
+    --primary-color-darker: #9d79e6;  /* manually darkened, no official "dark purple" */
+    --primary-color-lighter: #d6acff; /* official AnsiBrightPurple tint */
+    --primary-rgb: 189, 147, 249;
+    --text-on-primary: #191a21;       /* Background Darker */
+    --secondary-color: #ff79c6;       /* Pink */
+    --secondary-rgb: 255, 121, 198;
+
+    --background-color: #282a36; /* Background */
+    --surface-color: #343746;    /* Background Light */
+    --surface-color-alt: #424450; /* Background Lighter */
+    --border-color: #6272a4;     /* Current Line / Comment — officially the same token */
+
+    --text-color: #f8f8f2;       /* Foreground */
+    --text-color-muted: #6272a4; /* Comment */
+
+    --shadow-rgb: 25, 26, 33;    /* Background Darker, as RGB */
+
+    --radius: 12px;
+    --radius-sm: 6px;
+
+    --font-family-headings: 'Space Grotesk', sans-serif;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+
+
+/*
+ * styles for the theme switcher
+ * these do not change
+ */
+
+.theme-switcher {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.theme-switcher-toggle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: var(--surface-color);
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(var(--shadow-rgb), 0.35);
+    transition: transform 0.2s ease;
+}
+
+.theme-switcher-toggle:hover {
+    transform: scale(1.08);
+}
+
+.theme-switcher-panel {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.75rem;
+    box-shadow: 0 8px 24px rgba(var(--shadow-rgb), 0.35);
+}
+
+.theme-switcher-panel.open {
+    display: flex;
+}
+
+.theme-swatch {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-swatch:hover {
+    transform: scale(1.1);
+}
+
+.theme-swatch.active {
+    border-color: var(--text-color);
+}

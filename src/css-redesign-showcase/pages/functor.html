@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUMA CSS Redesign: Functor</title>
+
+    <script>
+      (function () {
+          const saved = localStorage.getItem('buma-theme');
+          if (saved) document.documentElement.setAttribute('data-theme', saved);
+      })();
+    </script>
+
+    <link rel="stylesheet" href="../css/functor.css">
+    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--
+    This page renders a custom navbar, and thus doesn't use load-components.js. If this page/navbar design is chosen for
+    the site, then load-components.js will be rewritten to accommodate this, so you may safely ignore this fact.
+    -->
+    <script src="../js/theme-switcher.js" defer></script>
+    <script src="../js/functor.js" defer></script>
+</head>
+<body>
+
+<!--
+TODO
+    - clean up functor.css. its very messy right now and id like to at least comment out various sections
+    - add intro animations. open manifold.html for inspiration. something like that.
+    - add animations to the grid, the background, and the floaters for in/out when scrolling
+    - build the rest of the page lol
+        - see confetti for some layout inspo and also a card could be nice
+        - see functor for a nice animation on the cards
+    - note: rosepine goes SO HARD with this page but the catppuccin shadow is also really nice... if i can fix the catppuccin
+      surfaces then it might take the W but idk man... a rosepine color update could also sweep
+-->
+
+<a class="back-link" href="../index.html">&larr; Back to showcase</a>
+
+<!-- this spacer manages the title-card height during the animation -->
+<div id="title-spacer"></div>
+
+<div class="title-card" id="titleCard">
+
+    <!-- floating math symbols -->
+    <div class="title-field" aria-hidden="true">
+        <span class="floater f1">\( \sum \)</span>
+        <span class="floater f2">\( \pi \)</span>
+        <span class="floater f3">\( \infty \)</span>
+        <span class="floater f4">\( \int \)</span>
+        <span class="floater f5">\( \partial \)</span>
+        <span class="floater f6">\( \cong \)</span>
+    </div>
+
+    <!-- header line -->
+    <div class="title-primary">
+        <span class="brand text-full">Boston University Mathematics Association</span>
+        <span class="brand text-scrolled">Boston University Mathematics Association</span>
+        <span class="brand text-mobile">BUMA</span>
+    </div>
+
+    <div class="title-extra">
+        <!--
+        The inner div is required to restrict text width; otherwise when animating bar -> card you get a weird-looking
+        animation where the text spawns in too long, and then the characters stream into new lines as the card shrinks
+        in width.
+        -->
+        <div class="title-extra-inner">
+            <p>We're just a bunch of people who like math, and want to show others how interesting it is. We're just a bunch of people who like math, and want to show others how interesting it is. We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+            <p>\[ \int_M \mathrm{d}\omega = \int_{\partial M} \omega \]</p>
+        </div>
+    </div>
+
+    <nav class="title-nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/" data-page="home">Home</a></li>
+            <li><a href="/about/" data-page="about">About</a></li>
+            <li><a href="/events/" data-page="events">Events</a></li>
+            <li><a href="/talks/" data-page="talks">Talks</a></li>
+            <li><a href="/contact/" data-page="contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<div class="container">
+    <section class="section-surface">
+    <h2>About us</h2>
+        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
+    </section>
+
+    <section class="section-surface">
+        <h2><span aria-hidden="true"></span>Upcoming Events</h2>
+        <p class="section-note">For more details, see our <a href="/events/index.html">events page</a>!</p>
+        <div id="upcoming-events" class="event-grid">
+        </div>
+    </section>
+    <section class="section-surface">
+        <h2>About us</h2>
+        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
+    </section>
+    <section class="section-surface">
+        <h2>About us</h2>
+        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
+    </section>
+    <section class="section-surface">
+        <h2>About us</h2>
+        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
+    </section>
+    <section class="section-surface">
+        <h2>About us</h2>
+        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
+    </section>
+    <section class="section-surface">
+        <h2>About us</h2>
+        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
+    </section>
+</div>
+
+</body>
+</html>
