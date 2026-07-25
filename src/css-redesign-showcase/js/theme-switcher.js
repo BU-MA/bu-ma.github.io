@@ -5,16 +5,9 @@
 
 const THEMES = [
     { id: 'control', name: 'Control', swatch: '#ff3c3c' },
-    { id: 'abyssal-violet', name: 'Abyssal Violet', swatch: '#a78bfa' },
-    { id: 'terminal-green', name: 'Terminal Green', swatch: '#39ff88' },
-    { id: 'copper-noir', name: 'Copper Noir', swatch: '#c9822c' },
-    { id: 'deep-ocean', name: 'Deep Ocean', swatch: '#38bdf8' },
-    { id: 'blood-moon', name: 'Blood Moon', swatch: '#e11d3c' },
-    { id: 'neon-arcade', name: 'Neon Arcade', swatch: '#ff2fb0' },
-    { id: 'forest-ink', name: 'Forest Ink', swatch: '#8fbf6f' },
     { id: 'catppuccin-mocha', name: 'Catppuccin Mocha', swatch: '#cba6f7' },
     { id: 'rose-pine', name: 'Rose Pine', swatch: '#ebbcba' },
-    { id: 'dracula', name: 'Dracula', swatch: '#bd93f9' },
+    { id: 'paradise', name: 'Paradise', swatch: '#b66467' },
 ];
 
 const STORAGE_KEY = 'buma-theme';

@@ -48,6 +48,7 @@
                 <h4>${event.title}</h4>
                 <p><strong>Date:</strong> ${formatDate(startTime)}</p>
                 <p><strong>Time:</strong> ${formatTime(startTime)}</p>
+                <p><strong>Location:</strong> ${event.location}</p>
                 <p>${event.description}</p>
             `;
             upcomingEventsContainer.appendChild(eventItem);

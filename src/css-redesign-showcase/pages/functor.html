@@ -24,6 +24,7 @@
     <script src="../js/functor.js" defer></script> <!-- handles scrolling -->
     <script src="../js/functor-symbols.js" defer></script> <!-- handles the math characters in the background when scrolled -->
     <script src="../js/functor-event-strip.js" defer></script> <!-- handles the sliding strip of event types -->
+    <script src="/src/events/home-events.js" defer></script> <!-- loads the next 2 events -->
 </head>
 <body>
 
@@ -36,12 +37,11 @@ TODO
         - see manifold for a nice animation on the cards
     - note: rosepine goes SO HARD with this page but the catppuccin shadow is also really nice... if i can fix the catppuccin
       surfaces then it might take the W but idk man... a rosepine color update could also sweep
-    - currently working on event strip
 -->
 
 <a class="back-link" href="../index.html">&larr; Back to showcase</a>
 
-<!-- this spacer manages the title-card height during the animation -->
+<!-- this spacer div manages the title-card height during the animation. dont remove -->
 <div id="title-spacer"></div>
 
 <div class="title-card" id="titleCard">
@@ -88,6 +88,7 @@ TODO
     </nav>
 </div>
 
+
 <!-- theorem of the week here -->
 <div id="theorem-of-the-week" class="side-clamp-card shine-card">
     <div id="theorem-eyebrow" class="card-eyebrow">Theorem of the Week (#5)</div>
@@ -95,11 +96,13 @@ TODO
     <div class="theorem-body">
         <p>
             <span class="theorem-word">Theorem</span> <span class="theorem-name">(Yoneda's Lemma)</span><span class="theorem-word">.</span>
-            Let \( \mathcal{C} \) be a locally small category, let \( \mathcal{S}et \) be the category of sets, and let \( F : \mathcal{C}\to\mathcal{S}et \) be any functor. Then for all objects \( c\in\mathcal{C}\), there is an isomorphism of sets (i.e. a bijection)
+            Let \( \mathcal{C} \) be a locally small category, let \( \mathcal{S}et \) be the category of sets, and let
+            \( F : \mathcal{C}\to\mathcal{S}et \) be any functor. Then for all objects \( x\in\mathcal{C}\), there is an
+            isomorphism of sets (i.e. a bijection)
             \[
-            \varphi_c : \operatorname{Nat}(\mathcal{C}(c,-),F)\cong F(c),
+            \varphi_x : \operatorname{Nat}(\mathcal{C}(x,-),F)\cong F(x),
             \]
-            natural in \( c \).
+            natural in \( x \).
         </p>
     </div>
 
@@ -120,11 +123,14 @@ TODO
     <div class="about-text">
         <p>
             We're a community of people who are enthusiastic about all mathematics, and related fields like physics
-            and CS. We host students from a wide range of backgrounds, from freshmen who haven't taken calculus to seniors
-            who are writing a thesis on topics that sound completely made up.
+            and CS. We host students from a wide range of backgrounds, from freshmen who haven't taken calculus, to seniors
+            who are writing theses on topics that sound completely made up.
         </p>
+        <a id="meet-leadership" href="/about/">Meet the leadership &rarr;</a>
     </div>
 </div>
+
+
 
 <div class="event-strip-container">
     <div class="event-strip-track" id="eventTrack">
@@ -156,52 +162,25 @@ TODO
     </div>
 </div>
 
-
-<div class="container">
-    <section class="section-surface">
-    <h2>About us</h2>
-        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
-        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
-        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
-    </section>
-
-    <section class="section-surface">
-        <h2><span aria-hidden="true"></span>Upcoming Events</h2>
-        <p class="section-note">For more details, see our <a href="/events/index.html">events page</a>!</p>
-        <div id="upcoming-events" class="event-grid">
-        </div>
-    </section>
-    <section class="section-surface">
-        <h2>About us</h2>
-        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
-        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
-        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
-    </section>
-    <section class="section-surface">
-        <h2>About us</h2>
-        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
-        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
-        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
-    </section>
-    <section class="section-surface">
-        <h2>About us</h2>
-        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
-        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
-        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
-    </section>
-    <section class="section-surface">
-        <h2>About us</h2>
-        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
-        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
-        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
-    </section>
-    <section class="section-surface">
-        <h2>About us</h2>
-        <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
-        <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
-        <p><a href="/about/index.html">Meet the leadership &rarr;</a></p>
-    </section>
+<div class="upcoming-events">
+    <h2>Upcoming Events</h2>
+    <div id="upcoming-events" class="event-grid">
+    </div>
+    <span class="events-page-button shine-card"><a href="/events/">See what else is coming up &rarr;</a></span>
 </div>
 
+<div class="faq">
+    <div class="item-card">
+        <h3>TODO:</h3>
+        <p>this</p>
+    </div>
+    <h2>FAQ</h2>
+</div>
+
+
+<footer>
+    <p>&copy; 2026 Boston University Mathematics Association.</p>
+    <p>Website developed by Grant Talbert.</p>
+</footer>
 </body>
 </html>
