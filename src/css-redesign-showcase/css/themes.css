@@ -288,6 +288,7 @@
     --surface-color: #1f1d2e;
     --surface-color-alt: #26233a;
     --border-color: #9ccfd8; /* or eb6f92 */
+    --border-color-secondary: #eb6f92;
 
     --text-color: #e0def4;
     --text-color-muted: #6e6a86;

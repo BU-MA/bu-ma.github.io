@@ -23,6 +23,57 @@ body {
     align-items: center;
 }
 
+/*
+ * the body::before handles the cool colors that get applied to the background when title-card is scrolled
+ */
+body::before {
+    content: '';
+    position: fixed;
+    inset: -15%;
+    z-index: -1;
+    pointer-events: none;
+
+    background: var(--background-color);
+    opacity: 0;
+    transition: opacity ease-in-out 1s;
+}
+
+body.scrolled::before {
+    opacity: 1;
+    background:
+            radial-gradient(circle at 30% 30%, rgba(var(--primary-rgb), 0.16), transparent 35%),
+            radial-gradient(circle at 70% 70%, rgba(var(--secondary-rgb), 0.12), transparent 35%),
+            var(--background-color);
+    animation: drift 22s ease-in-out infinite alternate;
+    filter: blur(50px);
+}
+
+/*
+ * handles the math symbols that appear in the background when title-card is scrolled
+ */
+#math-background-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-math-symbol {
+    position: absolute;
+    color: var(--primary-color);
+    font-size: var(--font-family-headings);
+    opacity: 0; /* increased by js when scrolled */
+    user-select: none;
+    animation: fadeInOut ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.8) rotate(var(--start-rot)); } /* --start-rot and --end-rot are set by js */
+    50% { opacity: 0.12; transform: scale(1.1) rotate(var(--end-rot)); }
+    100% { opacity: 0; transform: scale(0.8) rotate(var(--start-rot)); }
+}
+
 a {
     text-decoration: none;
     color: var(--secondary-color);
@@ -256,15 +307,13 @@ a {
 .title-primary {
     position: absolute;
     top: 2rem;
-    /* left: var(--expanded-center-x, 50%); */
     left: 40vw;
     transform: translate(-50%, 0);
     white-space: nowrap;
     transition: all var(--transition-scroll);
 }
 .title-card.scrolled .title-primary { /* shifts it over to the left when passing to scrolled state */
-    /* top: var(--collapsed-center-y, 50%); /* dont change this */
-    top: 2.25rem;
+    top: 2.25rem; /* dont change this */
     left: 2rem;
     transform: translate(0, -50%);
 }
@@ -297,6 +346,7 @@ a {
     display: block;
 }
 @media (max-width: 600px) {
+    .title-extra { max-height: 400px; }
     .title-card.scrolled .text-scrolled { display: none; }
     .title-card.scrolled .text-mobile { display: block; }
 }
@@ -348,9 +398,10 @@ a {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    max-height: 400px;
+    max-height: 12rem;
     opacity: 1;
     transition: max-height var(--transition-scroll), opacity 0.4s ease;
+    padding-bottom: 1rem;
 }
 
 /*
@@ -362,10 +413,16 @@ a {
     * replace XX% with XXvw in the below calculation
     * the term on the left is the corresponding term in .title-card, and the term on the right is the left/right margin
     */
-    width: calc(80vw - 4rem);
-    max-width: calc(80vw - 4rem);
+    width: calc(80vw - 40vw);
+    max-width: calc(80vw - 40vw);
     text-align: center;
     flex-shrink: 0;
+}
+
+.title-extra-inner .muted-text {
+    font-size: 1rem;
+    color: var(--text-color-muted);
+    margin-bottom: 10px;
 }
 
 /* remove this section when scrolled */
@@ -382,7 +439,6 @@ a {
 .title-nav {
     position: absolute;
     bottom: 2rem;
-    /* left: var(--expanded-center-x, 50%); */
     left: 40vw;
     transform: translate(-50%, 0);
     white-space: nowrap;
@@ -391,14 +447,12 @@ a {
 
 /* move navbar to the right when scrolled */
 .title-card.scrolled .title-nav {
-    /* bottom: var(--collapsed-center-y, 50%); /* dont change this */
-    bottom: 2.25rem;
+    bottom: 2.25rem; /* dont change this */
     left: calc(100vw - 2rem);
-    /* left: calc(var(--collapsed-width, 100%) - 2rem); */
     transform: translate(-100%, 50%); /* Shifts left by 100% of its own width to lock to the right edge */
 }
 
-/* Navigation Links */
+/* the links themselves */
 nav {
     background: transparent;
     padding: 1.25rem 0 0.5rem;
@@ -422,6 +476,12 @@ nav ul.nav-links li a {
     display: block;
     padding: 0.5rem 1rem;
 }
+/*
+ * the ::after pseudo-element handles the underlines on hover
+ * by essentially drawing a colored box that starts hidden, and scales in size on hover.
+ * the left, right, and bottom are connected to the size and position of the underlines
+ * and can be pretty finicky to change.
+ */
 nav ul.nav-links li a::after {
     content: '';
     position: absolute;
@@ -430,7 +490,7 @@ nav ul.nav-links li a::after {
     bottom: 0.35rem;
     height: 2px;
     background: var(--primary-color);
-    transform: scaleX(0);
+    transform: scaleX(0); /* hide underline when not hovered */
     transform-origin: center;
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -442,15 +502,17 @@ nav ul.nav-links li a:hover::after {
     transform: scaleX(1);
 }
 
+/* TODO handles mobile menu logic */
 .nav-toggle {
-    display: none; /* Add media queries later to handle mobile menu logic */
+    display: none;
 }
 
 /* ======================
-   Section Styling
+   General styling
    ====================== */
 
 
+/* TODO will remove later */
 .container {
     width: 90%;
     max-width: 800px;
@@ -475,11 +537,233 @@ nav ul.nav-links li a:hover::after {
     margin-bottom: 1rem;
 }
 
-.eyebrow {
-    font-size: 0.85rem;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: 0.14rem;
-    margin-bottom: 0.75rem;
+/*
+ * a lot of our components live in some kind of card.
+ * here we define all the different cards I used.
+ */
+
+/*
+ * .side-clamp-card is a transparent card with a border on the left and right.
+ * the border curves around the rounded edges, giving a sort of "clamp" look.
+ * it lifts slightly when hovered, and adds a background shadow.
+ * margins are a bit large due to use as theorem of the week, might shrink and
+ * increase .side-clamp-card#theorem-of-the-week's margins
+ */
+.side-clamp-card {
+    border-radius: var(--radius);
+    padding: 2rem 2.25rem;
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    max-width: 800px;
+    border-left: 4px solid var(--primary-color);
+    border-right: 4px solid var(--primary-color);
+    margin: 4rem 2rem 2rem;
+}
+.side-clamp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
 }
 
+/* ======================
+   About Section
+   ====================== */
+
+/* main container */
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    text-align: left;
+    margin: 2rem 10vw;
+    padding: 2rem;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.about-header h2 {
+    font-family: var(--font-family-headings);
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.about-text {
+    line-height: 2;
+}
+
+.item-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    padding: 2rem 2.25rem; /* Increased padding slightly for breathing room */
+    box-shadow: 0 6px 18px rgba(var(--shadow-rgb), 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color); /* Anchors the card visually */
+}
+
+.item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
+}
+
+.shine-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(var(--primary-rgb), 0.14), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+}
+.shine-card:hover:hover::after {
+    left: 120%;
+}
+
+.item-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(var(--primary-rgb), 0.14), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+}
+
+.item-card:hover::after { left: 120%; }
+
+/* Typography and Layout Additions */
+.card-eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--secondary-color);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.card-eyebrow#theorem-eyebrow {
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.theorem-body p {
+    margin: 0;
+    line-height: 1.8;
+    font-style: italic; /* Emulates LaTeX theorem bodies */
+    color: var(--text-color);
+}
+
+.side-clamp-card#theorem-of-the-week .theorem-word {
+    color: var(--primary-color);
+    font-family: var(--font-family-headings);
+    font-weight: bold;
+    font-style: normal; /* Keeps the label upright against the italic body */
+}
+
+.side-clamp-card#theorem-of-the-week .theorem-name {
+    font-weight: 600;
+    font-style: normal;
+}
+
+.card-watermark {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    font-size: 8rem;
+    color: var(--primary-color);
+    opacity: 0.04;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+/* Ensure the text stays above the watermark */
+.theorem-body, .card-eyebrow {
+    position: relative;
+    z-index: 1;
+}
+
+.event-strip-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+
+    /* Adds a subtle fade at the left and right edges so cards don't just abruptly clip */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.event-strip-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: strip-drift linear infinite;
+}
+
+.event-strip-set {
+    display: flex;
+    gap: 2rem;
+}
+
+.event-card {
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    width: 320px; /* Fixed width prevents the track length from shifting dynamically */
+    flex-shrink: 0; /* Prevents flexbox from crushing the cards to fit the screen */
+
+    background: var(--surface-color);
+    border-bottom: 2px solid var(--border-color);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(var(--shadow-rgb), 0.3);
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    font-family: var(--font-family-headings);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.event-card p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.event-card .card-watermark {
+    transition: opacity 0.6s ease, color 0.6s ease;
+}
+.event-card:hover .card-watermark {
+    opacity: 0.08;
+    color: var(--primary-color);
+}
+
+@keyframes strip-drift {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
