@@ -25,6 +25,7 @@
     <script src="../js/functor-symbols.js" defer></script> <!-- handles the math characters in the background when scrolled -->
     <script src="../js/functor-event-strip.js" defer></script> <!-- handles the sliding strip of event types -->
     <script src="/src/events/home-events.js" defer></script> <!-- loads the next 2 events -->
+    <script src="../js/functor-faq.js" defer></script> <!-- handles button presses on the faq entries -->
 </head>
 <body>
 
@@ -170,11 +171,51 @@ TODO
 </div>
 
 <div class="faq">
-    <div class="item-card">
-        <h3>TODO:</h3>
-        <p>this</p>
+    <h2 id="faq-label">FAQ</h2>
+    <div class="faq-question-wrapper">
+        <div class="faq-question">
+            <button class="faq-toggle" aria-expanded="false">
+                <h3>Do I have to be a math major?</h3>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+                <div class="faq-content-inner">
+                    <p>
+                        No! All sorts of people attend our meetings, from physics majors to music majors. If you're
+                        interested in math, feel free to stop by!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-question">
+            <button class="faq-toggle" aria-expanded="false">
+                <h3>Am I required to come to all meetings?</h3>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+                <div class="faq-content-inner">
+                    <p>
+                        No! Our club is very low commitment, and we're focused more on making sure everyone has a good time, and
+                        fostering the mathematical community here at BU. Feel free to check out our <a href="/events/">schedule</a>,
+                        and just come to any events you feel like!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-question">
+            <button class="faq-toggle" aria-expanded="false">
+                <h3>idk</h3>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+                <div class="faq-content-inner">
+                    <p>
+                        idk either bruh
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <h2>FAQ</h2>
 </div>
 
 

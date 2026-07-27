@@ -2,7 +2,8 @@
  * This file generates the cool math symbols that pop in and out of the background when in the scrolled state
  */
 
-// add more if you want! i cant get tex to work here tho :(
+// add more if you want!
+// dont use latex tho otherwise you get a memory leak
 const symbolOptions = ['∫', '∑', '⊆', '∞', '∂', '≅', 'π', '⊗', 'Δ', 'Ω', 'μ', 'λ', 'θ', 'Φ', 'Ψ'];
 
 const bgContainer = document.createElement('div');

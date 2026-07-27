@@ -721,6 +721,8 @@ nav ul.nav-links li a:hover::after {
 
 /* ==================
    Event Strip
+   event-cards get the cool background character from .card-watermark
+   which is in the theorem-of-the-week section
    ================== */
 
 
@@ -730,7 +732,7 @@ nav ul.nav-links li a:hover::after {
     position: relative;
     padding: 2rem 0;
 
-    /* Adds a subtle fade at the left and right edges so cards don't just abruptly clip */
+    /* adds a subtle fade at the left and right edges */
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -750,8 +752,8 @@ nav ul.nav-links li a:hover::after {
 .event-card {
     border-radius: var(--radius);
     padding: 1.5rem;
-    width: 320px; /* Fixed width prevents the track length from shifting dynamically */
-    flex-shrink: 0; /* Prevents flexbox from crushing the cards to fit the screen */
+    width: 320px; /* fixed width prevents the track length from shifting dynamically */
+    flex-shrink: 0; /* prevents flexbox from crushing the cards to fit the screen */
 
     background: var(--surface-color);
     border-bottom: 2px solid var(--border-color);
@@ -796,6 +798,9 @@ nav ul.nav-links li a:hover::after {
 
 /* ================
    Upcoming events
+   note the unfortunate similar naming schema to the event-strip
+   i had not forseen this when i named the event-strip classes and i do
+   not want to fix it
    ================ */
 
 .upcoming-events {
@@ -890,15 +895,32 @@ i wanna see if i can add a light glow to the card
  */
 
 
+
+/* ================================
+  FAQ section
+   ================================ */
+
 /* main container */
 .faq {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
     gap: 3rem;
     align-items: start;
     text-align: left;
     margin: 2rem 10vw;
     padding: 2rem;
+}
+
+/* i want the faq questions to be laid out with 2 per row so I wrap them in this */
+.faq-question-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+@media (max-width: 768px) { /* 1 per row on mobile */
+    .faq-question-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
 .faq h2 {
@@ -911,6 +933,94 @@ i wanna see if i can add a light glow to the card
     align-self: center;
 }
 
+.faq h2#faq-label {
+    margin-bottom: 2rem;
+}
+
+/* question-container */
+.faq-question {
+    background: rgba(var(--shadow-rgb), 0.3);
+
+    /* the blur makes it lok rlly cool its like its transparent but its also not */
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+/* the button for expanding or closing the faq entry */
+.faq-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.faq-toggle h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-family: var(--font-family-headings);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/*
+ * the grid expansion math
+ * 0fr crushes the row down to 0 pixels.
+ * 1fr forces the row to exactly match the true height of its internal content.
+ * when expanding, the .open class is added. so we set this to 0fr and
+ * set .faq-content.open to 1fr.
+ */
+.faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.faq-content-inner {
+    overflow: hidden;
+}
+
+.faq-content-inner p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* reveal the internal contents when in expanded state */
+.faq-question.open .faq-content {
+    grid-template-rows: 1fr;
+}
+/* Rotates the '+' into an 'x' when opened */
+.faq-question.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+/* ========================
+   FOOTER
+   ======================== */
 footer {
     color: var(--text-color-muted);
     text-align: center;
