@@ -4,7 +4,7 @@
 
 // add more if you want!
 // dont use latex tho otherwise you get a memory leak
-const symbolOptions = ['∫', '∑', '⊆', '∞', '∂', '≅', 'π', '⊗', 'Δ', 'Ω', 'μ', 'λ', 'θ', 'Φ', 'Ψ'];
+const symbolOptions = ['\\(\\int\\)', '\\(\\Sigma\\)', '\\(\\subseteq\\)', '\\(\\infty\\)', '\\(\\partial\\)', '\\(\\cong\\)', '\\(\\pi\\)', '\\(\\otimes\\)', 'Δ', 'Ω', 'μ', 'λ', 'θ', 'Φ', 'Ψ'];
 
 const bgContainer = document.createElement('div');
 bgContainer.id = 'math-background-container';
