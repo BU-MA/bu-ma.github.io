@@ -2,7 +2,7 @@
  * Defines the root colors used by the website. Many other CSS files import this to set their colors and fonts.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:wght@600;700&family=Space+Mono:wght@400;700&family=Cinzel:wght@600;700&family=Orbitron:wght@600;700&family=Merriweather:wght@700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css');
 
 /* ============================

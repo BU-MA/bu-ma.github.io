@@ -1,73 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!--
-    uncomment this line to redirect to index.html
-    <meta http-equiv="refresh" content="0; url=https://bu-ma.github.io/contact.html">
-    -->
-    <!-- Why did I write that comment? -grant -->
-    <!-- Why did I write that comment on every single page? -grant -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUMA CSS Redesign: Functor</title>
 
-    <title>BUMA - Home</title>
-    <link rel="stylesheet" href="src/styles/home.css">
-    <link rel="icon" type="image/png" href="src/assets/logo.png"> <!-- sets the website icon to be the logo -->
+    <script>
+        (function () {
+            const saved = localStorage.getItem('buma-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+    </script>
 
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <!-- latex support -->
-    <script src="src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
+    <link rel="stylesheet" href="/src/styles/functor.css">
+    <link rel="icon" type="image/png" href="/src/assets/logo.png">
 
-    <!-- metadata for like pasting into discord and stuff -->
-    <meta property="og:title" content="BUMA - Home">
-    <meta property="og:description" content="???????????">
-    <meta property="og:image" content="https://bu-ma.github.io/src/assets/logo.png">
-    <meta property="og:url" content="https://bu-ma.github.io/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--
+    This page renders a custom navbar, and thus doesn't use load-components.js. If this page/navbar design is chosen for
+    the site, then load-components.js will be rewritten to accommodate this, so you may safely ignore this fact.
+    -->
+    <script src="/src/misc-js/theme-switcher.js" defer></script>
+    <script src="/src/home/titlecard-scroller.js" defer></script> <!-- handles scrolling the title card -->
+    <script src="/src/home/floating-symbols.js" defer></script> <!-- handles the math characters in the background when scrolled -->
+    <script src="/src/home/event-strip.js" defer></script> <!-- handles the sliding strip of event types -->
+    <script src="/src/events/home-events.js" defer></script> <!-- loads the next 2 events -->
+    <script src="/src/home/faq.js" defer></script> <!-- handles button presses on the faq entries -->
 </head>
 <body>
-<header>
-    <div class="container">
-        <h1>Boston University<br>Mathematics Association</h1> <!-- the line break looks better -->
-    </div>
-</header>
 
-<!-- FALL 2026 PREP NOTES
-TODO -------------------------------------------------------------------------------------------------------------------
-  GENERAL WEBSITE NOTES
-  - We should add an alumni page i think that would be cool
-  - We could have a rotating weekly math problem (putnam style) and/or an interesting theorem
-  - add navbar link to a silly webpage
-TODO -------------------------------------------------------------------------------------------------------------------
+<!--
+TODO
+    - add intro animations. open manifold.html for inspiration. something like that.
+    - add animations to the grid, the background, and the floaters for in/out when scrolling
+    - build the rest of the page lol
+        - see confetti for some layout inspo and also a card could be nice
+        - see manifold for a nice animation on the cards
+    - note: rosepine goes SO HARD with this page but the catppuccin shadow is also really nice... if i can fix the catppuccin
+      surfaces then it might take the W but idk man... a rosepine color update could also sweep
 -->
-<!-- navbar is automatically generated -->
-<nav data-page="home"></nav>
 
-<main>
-    <div class="container">
-        <div id="about">
-            <h2>About Us</h2>
-            <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
 
-            <p>We are currently planning our meetings for the Fall 2026 Semester. Stay tuned!</p>
+<!-- this spacer div manages the title-card height during the animation. dont remove -->
+<div id="title-spacer"></div>
 
-            <p>To learn more about us, visit out <a href="about/index.html">about page</a>!</p>
-        </div>
+<div class="title-card" id="titleCard">
 
-        <section id="events">
-            <h3>Upcoming Events</h3>
-            <p>For more details, see our <a href="events/index.html">events page</a>!</p>
-            <div id="upcoming-events">
-            </div>
-        </section>
+    <!-- floating math symbols -->
+    <div class="title-field" aria-hidden="true">
+        <span class="floater f1">\( \sum \)</span>
+        <span class="floater f2">\( \pi \)</span>
+        <span class="floater f3">\( \infty \)</span>
+        <span class="floater f4">\( \int \)</span>
+        <span class="floater f5">\( \partial \)</span>
+        <span class="floater f6">\( \cong \)</span>
     </div>
-</main>
 
-<!-- footer is automatically generated -->
-<footer></footer>
+    <!-- header line -->
+    <div class="title-primary">
+        <span class="brand text-full">Boston University Mathematics Association</span>
+        <span class="brand text-scrolled">Boston University Mathematics Association</span>
+        <span class="brand text-mobile">BUMA</span>
+    </div>
 
-<script src="/src/events/home-events.js" defer></script>
+    <div class="title-extra">
+        <!--
+        The inner div is required to restrict text width; otherwise when animating bar -> card you get a weird-looking
+        animation where the text spawns in too long, and then the characters stream into new lines as the card shrinks
+        in width.
+        -->
+        <div class="title-extra-inner">
+            <p class="muted-text">\(\operatorname{Nat}(\mathcal{C}(x,-),F)\cong F(x)\)</p>
+            <p>We're just a bunch of people who like math, and want to show others how interesting it is.</p>
+            <!-- <p class="muted-text">\[ \int_M \mathrm{d}\omega = \int_{\partial M} \omega \]</p> -->
+        </div>
+    </div>
+
+    <nav class="title-nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/" data-page="home">Home</a></li>
+            <li><a href="/about/" data-page="about">About</a></li>
+            <li><a href="/events/" data-page="events">Events</a></li>
+            <li><a href="/talks/" data-page="talks">Talks</a></li>
+            <li><a href="/contact/" data-page="contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- theorem of the week here -->
+<div id="theorem-of-the-week" class="side-clamp-card shine-card">
+    <div id="theorem-eyebrow" class="card-eyebrow">Theorem of the Week (#5)</div>
+
+    <div class="theorem-body">
+        <p>
+            <span class="theorem-word">Theorem</span> <span class="theorem-name">(Yoneda's Lemma)</span><span class="theorem-word">.</span>
+            Let \( \mathcal{C} \) be a locally small category, let \( \mathcal{S}et \) be the category of sets, and let
+            \( F : \mathcal{C}\to\mathcal{S}et \) be any functor. Then for all objects \( x\in\mathcal{C}\), there is an
+            isomorphism of sets (i.e. a bijection)
+            \[
+            \varphi_x : \operatorname{Nat}(\mathcal{C}(x,-),F)\cong F(x),
+            \]
+            natural in \( x \).
+        </p>
+    </div>
+
+    <!-- Decorative background element -->
+    <div class="card-watermark" aria-hidden="true">∎</div>
+
+    <div class="learn-more">
+        <a href="/404.html">Learn what this means &rarr;</a>
+    </div>
+</div>
+
+
+
+<div id="about">
+    <div class="about-header">
+        <h2>What is BUMA?</h2>
+    </div>
+    <div class="about-text">
+        <p>
+            We're a community of people who are enthusiastic about all mathematics, and related fields like physics
+            and CS. We host students from a wide range of backgrounds, from freshmen who haven't taken calculus, to seniors
+            who are writing theses on topics that sound completely made up.
+        </p>
+        <a id="meet-leadership" href="/about/">Meet the leadership &rarr;</a>
+    </div>
+</div>
+
+
+
+<div class="event-strip-container">
+    <div class="event-strip-track" id="eventTrack">
+        <div class="event-card shine-card">
+            <h3>Social Events</h3>
+            <p>Hangouts, game nights, our ice cream social, casual discussions.</p>
+            <div class="card-watermark" aria-hidden="true">\( \mathcal{E}^\bullet \)</div>
+        </div>
+        <div class="event-card shine-card">
+            <h3>Student Seminars</h3>
+            <p>Undergraduate and professor talks, thesis presentations.</p>
+            <div class="card-watermark" aria-hidden="true">\( \amalg \)</div>
+        </div>
+        <div class="event-card shine-card">
+            <h3>Advising</h3>
+            <p>Course registration, REU advice, graduate school applications.</p>
+            <div class="card-watermark" aria-hidden="true">\( \mathfrak{g} \)</div>
+        </div>
+        <div class="event-card shine-card">
+            <h3>Competitions (with prizes!)</h3>
+            <p>Trivia night, The integration bee.</p>
+            <div class="card-watermark" aria-hidden="true">\( \iint \)</div>
+        </div>
+        <div class="event-card shine-card">
+            <h3>The Putnam Exam</h3>
+            <p>Professor led Putnam practice, weekly in the fall.</p>
+            <div class="card-watermark" aria-hidden="true">\( \mathbb{R} \)</div>
+        </div>
+    </div>
+</div>
+
+<div class="upcoming-events">
+    <h2>Upcoming Events</h2>
+    <div id="upcoming-events" class="event-grid">
+    </div>
+    <span class="events-page-button shine-card"><a href="/events/">See what else is coming up &rarr;</a></span>
+</div>
+
+<div class="faq">
+    <h2 id="faq-label">FAQ</h2>
+    <div class="faq-question-wrapper">
+        <div class="faq-question">
+            <button class="faq-toggle" aria-expanded="false">
+                <h3>Do I have to be a math major?</h3>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+                <div class="faq-content-inner">
+                    <p>
+                        No! All sorts of people attend our meetings, from physics majors to music majors. If you're
+                        interested in math, feel free to stop by!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-question">
+            <button class="faq-toggle" aria-expanded="false">
+                <h3>Am I required to come to all meetings?</h3>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+                <div class="faq-content-inner">
+                    <p>
+                        No! Our club is very low commitment, and we're focused more on making sure everyone has a good time, and
+                        fostering the mathematical community here at BU. Feel free to check out our <a href="/events/">schedule</a>,
+                        and just come to any events you feel like!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-question">
+            <button class="faq-toggle" aria-expanded="false">
+                <h3>idk</h3>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-content">
+                <div class="faq-content-inner">
+                    <p>
+                        idk either bruh
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <p>&copy; 2026 Boston University Mathematics Association.</p>
+    <p>Website developed by Grant Talbert.</p>
+</footer>
 </body>
 </html>

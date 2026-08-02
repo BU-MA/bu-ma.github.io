@@ -1,0 +1,1033 @@
+@import url('/src/css-redesign-showcase/css/themes.css');
+
+/* ======================
+   Basic Styles
+   ====================== */
+:root {
+    --transition-scroll: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family-body);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+ * the body::before handles the cool colors that get applied to the background when title-card is scrolled
+ */
+body::before {
+    content: '';
+    position: fixed;
+    inset: -15%;
+    z-index: -1;
+    pointer-events: none;
+
+    background: var(--background-color);
+    opacity: 0;
+    transition: opacity ease-in-out 1s;
+}
+
+body.scrolled::before {
+    opacity: 1;
+    background:
+            radial-gradient(circle at 30% 30%, rgba(var(--primary-rgb), 0.16), transparent 35%),
+            radial-gradient(circle at 70% 70%, rgba(var(--secondary-rgb), 0.12), transparent 35%),
+            var(--background-color);
+    animation: drift 22s ease-in-out infinite alternate;
+    filter: blur(50px);
+}
+
+/*
+ * handles the math symbols that appear in the background when title-card is scrolled
+ */
+#math-background-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-math-symbol {
+    position: absolute;
+    color: var(--primary-color);
+    font-size: var(--font-family-headings);
+    opacity: 0; /* increased by js when scrolled */
+    user-select: none;
+    animation: fadeInOut ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.8) rotate(var(--start-rot)); } /* --start-rot and --end-rot are set by js */
+    50% { opacity: 0.12; transform: scale(1.1) rotate(var(--end-rot)); }
+    100% { opacity: 0; transform: scale(0.8) rotate(var(--start-rot)); }
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.back-link { /* For the "back to showcase" button, will be removed if we push to prod */
+    position: fixed;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    background: rgba(var(--surface-color), 0.85);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-color-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px -12px rgba(var(--shadow-rgb), 0.6);
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ======================
+   Title Card
+   The title card's animation where it collapses into a title bar is suprisingly complex
+   it has two states: unscrolled and scrolled
+   in the unscrolled state, it appears as a floating card atop the screen
+   the scrolled state is activated by scrolling down
+   the scrolled state anchors the title card into a non-floating bar on top of the screen
+   ====================== */
+
+/*
+ * the title spacer constrains the physical area that the title card can appear in
+ * this prevents various bugs such as overlapping with other elements
+ * the title card is designed to have nothing to its left or right, meaning it can take up the full screen width
+ * this means the only complex sizing parameter is height
+ * the height of the title-spacer is handled by the functor.js script
+ */
+#title-spacer {
+    width: 100%;
+    transition: height var(--transition-scroll);
+    /* height is injected via js*/
+}
+
+/*
+ * title card
+ * the physically visible container for the actual contents
+ */
+.title-card {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    right: 0;
+
+    /* CHANGES TO THE WIDTH LOGIC MUST BE EXACTLY REPLICATED IN .title-extra-inner OR STUFF WILL BREAK */
+    /* XX% = XXvw */
+    width: 80vw;
+    max-width: 80vw;
+
+
+    margin: 0 auto; /* Centers the fixed element horizontally */
+    padding: 5rem 2rem 4.5rem;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+
+    box-sizing: border-box;
+    box-shadow: 0 8px 24px rgba(var(--shadow-rgb), 0.6);
+    z-index: 1000;
+
+    transition: all var(--transition-scroll);
+}
+
+
+/*
+ * the unscrolled title card background is handled by .title-card::before and .title-card::after.
+ * these are examples of what are known as "pseudo-elements".
+ * these can roughly be thought of as elements with the same physical shape as .title-card
+ * that we can style independently.
+ * the backgrounds are disabled/modified when passing to the scrolled state.
+ * the floating math characters are not handled by ::before or ::after; they are separate children of .title-card.
+ */
+
+/*
+ * the ::after pseudo-element draws the dotted grid in the background.
+ * the code can be modified to draw other things; simply change the background logic as indicated
+ * in the following css block.
+ */
+.title-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+    transition: opacity var(--transition-scroll);
+
+    /* background logic  */
+    background-image: radial-gradient(circle, var(--border-color) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.15;
+
+
+    /* alternate background example: grid lines */
+    /*
+    background-image:
+            linear-gradient(var(--border-color) 1px, transparent 1px),
+            linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.1;
+     */
+
+    /* alternate background example: circular grid lines */
+    /*
+    background-image:
+        repeating-radial-gradient(
+            circle at 0 0,
+            transparent 0,
+            var(--border-color) 1px,
+            transparent 2px,
+            transparent 32px
+        );
+    opacity: 0.15;
+     */
+
+
+    /* alternate background using a kinda shitty visualization of Hopf's fibration
+    i included this to point out that we can do more complex, cooler looking backgrounds as well
+     */
+    /*
+    background-color: var(--border-color);
+    -webkit-mask-image: url("../../assets/hopf.svg");
+    mask-image: url("../../assets/hopf.svg");
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    opacity: 0.25;
+     */
+}
+
+
+/*
+ * the ::before pseudo-element handle the colors in the background of the unscrolled title-card.
+ * ive provided a few example backgrounds that look cool.
+ * most involve some kind of gradient and some kind of blur.
+ * the background can spill out past the title-card, but wont show on top of any other elements
+ * unless the other elements have a z-index of less or equal to -1, which is false by default.
+ * by default, I apply the drift animation (see below) to make the colors slowly move around,
+ * making it feel more alive.
+ */
+.title-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+    transition: opacity var(--transition-scroll);
+
+    /* background logic */
+    background:
+            radial-gradient(circle at 30% 30%, rgba(var(--primary-rgb), 0.16), transparent 55%),
+            radial-gradient(circle at 70% 70%, rgba(var(--secondary-rgb), 0.12), transparent 55%);
+    filter: blur(50px);
+    animation: drift 22s ease-in-out infinite alternate;
+
+    /* alternate background example */
+    /*
+    background:
+            radial-gradient(circle at 50% 50%, rgba(var(--primary-rgb), 0.12), transparent 60%),
+            radial-gradient(circle at 80% 20%, rgba(var(--secondary-rgb), 0.12), transparent 50%),
+            radial-gradient(circle at 20% 80%, rgba(var(--primary-rgb), 0.08), transparent 50%);
+    background-size: 200% 200%;
+    background-blend-mode: screen;
+    filter: blur(20px);
+
+    animation: side-shift 15s ease-in-out infinite alternate;
+     */
+}
+@keyframes side-shift {
+    0% { background-position: 0% 0%, 50% 50%, 100% 100%; }
+    100% { background-position: 100% 100%, 0% 100%, 50% 0%; }
+}
+
+/*
+ * just a basic animation for drifting around. can be made more complex pretty easily
+ */
+@keyframes drift {
+    0%      { transform: translate(0, 0) scale(1); }
+    50%     { transform: translate(3%, -4%) scale(1.06); }
+    100%    { transform: translate(-3%, 3%) scale(1); }
+}
+
+
+/*
+ * handles the backgrounds for the scrolled state
+ * ive defaulted to just disabling them, but you could add something here if you wanted
+ */
+.title-card.scrolled::after { opacity: 0; }
+.title-card.scrolled::before { opacity: 0; }
+
+/* styles for the scrolled title-card */
+.title-card.scrolled {
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    min-height: 4.5rem; /* Ensures height remains stable when content is hidden */
+
+    background-color: var(--surface-color); /* can be made more complex if desired */
+}
+
+/* elements inside the title card */
+
+/* wrapper for the .brand title line */
+.title-primary {
+    position: absolute;
+    top: 2rem;
+    left: 40vw;
+    transform: translate(-50%, 0);
+    white-space: nowrap;
+    transition: all var(--transition-scroll);
+}
+.title-card.scrolled .title-primary { /* shifts it over to the left when passing to scrolled state */
+    top: 2.25rem; /* dont change this */
+    left: 2rem;
+    transform: translate(0, -50%);
+}
+
+/*
+ * the title header on top of the title card.
+ * a brand element should also be passed with either the text-full, text-scrolled, or text-mobile class
+ * to tell that element which mode to render it in. by default, text-mobile works for mobile clients when
+ * scrolled, but all unscrolled clients default to text-full.
+ */
+.brand {
+    font-family: var(--font-family-headings);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* brand subclass logic -- probably dont touch */
+.text-full {
+    display: block;
+    text-align: center;
+}
+.text-scrolled, .text-mobile {
+    display: none;
+}
+.title-card.scrolled .text-full {
+    display: none;
+}
+.title-card.scrolled .text-scrolled {
+    display: block;
+}
+@media (max-width: 600px) {
+    .title-extra { max-height: 400px; }
+    .title-card.scrolled .text-scrolled { display: none; }
+    .title-card.scrolled .text-mobile { display: block; }
+}
+
+/*
+ * This section handles the floating math symbols.
+ * The floating math symbols live in the title-field div
+ */
+.title-field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+/* remove the floating math symbols on scroll -- could modify this to keep one or two */
+.title-card.scrolled .floater {
+    display: none;
+}
+
+/* stylings for floating math symbols*/
+.floater {
+    position: absolute;
+    font-family: var(--font-family-headings);
+    color: var(--primary-color);
+    opacity: 0.1;
+    animation: floatSymbol 14s ease-in-out infinite;
+}
+/* each floating math symbol also has one of these classes to manage position, size, and animation */
+.f1 { top: 12%; left: 8%;  font-size: 4.5rem; animation-duration: 16s; }
+.f2 { top: 65%; left: 18%; font-size: 3rem;   animation-duration: 13s; animation-delay: -3s; }
+.f3 { top: 20%; left: 82%; font-size: 5rem;   animation-duration: 18s; animation-delay: -6s; }
+.f4 { top: 75%; left: 78%; font-size: 3.5rem; animation-duration: 15s; animation-delay: -2s; }
+.f5 { top: 45%; left: 50%; font-size: 2.5rem; animation-duration: 12s; animation-delay: -8s; opacity: 0.07; }
+.f6 { top: 8%;  left: 45%; font-size: 3rem;   animation-duration: 17s; animation-delay: -4s; }
+@keyframes floatSymbol {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-18px) rotate(4deg); }
+}
+
+
+/*
+ * any other content in the title-card goes in title-extra-inner.
+ * in order to prevent some issues that happen during the scrolling animation,
+ * title-extra-inner sits inside of the title-extra wrapper.
+ */
+.title-extra {
+    width: 100%; /* Maintaining 100% width prevents horizontal text shifting */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 12rem;
+    opacity: 1;
+    transition: max-height var(--transition-scroll), opacity 0.4s ease;
+    padding-bottom: 1rem;
+}
+
+/*
+ * stylings for extra stuff inside the title-card
+ */
+.title-extra-inner {
+    /*
+    * CHANGES TO THE WIDTH LOGIC MUST BE EXACTLY REPLICATED IN .title-card OR STUFF WILL BREAK
+    * replace XX% with XXvw in the below calculation
+    * the term on the left is the corresponding term in .title-card, and the term on the right is the left/right margin
+    */
+    width: calc(80vw - 40vw);
+    max-width: calc(80vw - 40vw);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.title-extra-inner .muted-text {
+    font-size: 1rem;
+    color: var(--text-color-muted);
+    margin-bottom: 10px;
+}
+
+/* remove this section when scrolled */
+.title-card.scrolled .title-extra {
+    max-height: 0;
+    opacity: 0;
+}
+
+
+/*
+ * styles for the navbar
+ */
+
+.title-nav {
+    position: absolute;
+    bottom: 2rem;
+    left: 40vw;
+    transform: translate(-50%, 0);
+    white-space: nowrap;
+    transition: all var(--transition-scroll);
+}
+
+/* move navbar to the right when scrolled */
+.title-card.scrolled .title-nav {
+    bottom: 2.25rem; /* dont change this */
+    left: calc(100vw - 2rem);
+    transform: translate(-100%, 50%); /* Shifts left by 100% of its own width to lock to the right edge */
+}
+
+/* the links themselves */
+nav {
+    background: transparent;
+    padding: 1.25rem 0 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+nav ul.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+nav ul.nav-links li a {
+    position: relative;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.2s ease;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+/*
+ * the ::after pseudo-element handles the underlines on hover
+ * by essentially drawing a colored box that starts hidden, and scales in size on hover.
+ * the left, right, and bottom are connected to the size and position of the underlines
+ * and can be pretty finicky to change.
+ */
+nav ul.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.35rem;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0); /* hide underline when not hovered */
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+nav ul.nav-links li a:hover {
+    color: var(--primary-color-darker);
+}
+nav ul.nav-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* TODO handles mobile menu logic */
+.nav-toggle {
+    display: none;
+}
+
+/* ======================
+   General styling
+   ====================== */
+
+
+/* TODO will remove later */
+.container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+.section-surface {
+    background-color: var(--surface-color-alt);
+    padding: 2rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(var(--shadow-rgb), 0.3);
+}
+
+.section-surface h2 {
+    color: var(--primary-color);
+    font-family: var(--font-family-headings);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/*
+ * a lot of our components live in some kind of card.
+ * here we define all the different cards I used.
+ */
+
+/*
+ * .side-clamp-card is a transparent card with a border on the left and right.
+ * the border curves around the rounded edges, giving a sort of "clamp" look.
+ * it lifts slightly when hovered, and adds a background shadow.
+ * margins are a bit large due to use as theorem of the week, might shrink and
+ * increase .side-clamp-card#theorem-of-the-week's margins
+ */
+.side-clamp-card {
+    border-radius: var(--radius);
+    padding: 2rem 2.25rem;
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    max-width: 800px;
+    border-left: 4px solid var(--primary-color);
+    border-right: 4px solid var(--primary-color);
+    margin: 4rem 2rem 2rem;
+}
+.side-clamp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
+}
+
+/*
+ * i dont think .item-card is currently used and i will probably delete it
+ */
+.item-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    padding: 2rem 2.25rem; /* Increased padding slightly for breathing room */
+    box-shadow: 0 6px 18px rgba(var(--shadow-rgb), 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color); /* Anchors the card visually */
+}
+
+.item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
+}
+
+/*
+ * .shine-card is not designed to be a standalone class. it is designed so that you add it to a card
+ * that already has another class, and it applies a shine/wipe animation on hover.
+ * eg. `<div class="event-card shine-card">owo</div>`
+ */
+.shine-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(var(--primary-rgb), 0.14), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+}
+.shine-card:hover:hover::after {
+    left: 120%;
+}
+
+/* =====================
+   Card text stylings
+   ===================== */
+
+/*
+ * applies a mostly transparent, large watermark in the bottom right of the card.
+ * should be invoked with code like
+ * `<div class="card-watermark" aria-hidden="true">[SYMBOL]</div>`
+ */
+.card-watermark {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    font-size: 8rem;
+    color: var(--primary-color);
+    opacity: 0.04;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+/*
+ * an all-caps top line for cards. can be used as a sort of title.
+ */
+.card-eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--secondary-color);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+
+
+/* ===================
+   Theorem of the Week
+   lives in a .side-clamp-card
+   =================== */
+
+/* center-align the top line and increase font size slightly for asthetic reasons */
+.card-eyebrow#theorem-eyebrow {
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.theorem-body p {
+    margin: 0;
+    line-height: 1.8;
+    font-style: italic; /* standard convention is that theorem bodies are italic in papers; we emulate that here */
+    color: var(--text-color);
+}
+
+/* Used for "Theorem" */
+.side-clamp-card#theorem-of-the-week .theorem-word {
+    color: var(--primary-color);
+    font-family: var(--font-family-headings);
+    font-weight: bold;
+    font-style: normal; /* Keeps the label upright against the italic body */
+}
+
+/* Used for the name of the theorem */
+.side-clamp-card#theorem-of-the-week .theorem-name {
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Ensure the text stays above the watermark */
+.theorem-body, .card-eyebrow {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* ======================
+   About Section
+   ====================== */
+
+/* main container */
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    text-align: left;
+    margin: 2rem 10vw;
+    padding: 2rem;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.about-header h2 {
+    font-family: var(--font-family-headings);
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.about-text {
+    line-height: 2;
+}
+
+
+/* ==================
+   Event Strip
+   event-cards get the cool background character from .card-watermark
+   which is in the theorem-of-the-week section
+   ================== */
+
+
+.event-strip-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+
+    /* adds a subtle fade at the left and right edges */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.event-strip-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: strip-drift linear infinite;
+}
+
+.event-strip-set {
+    display: flex;
+    gap: 2rem;
+}
+
+.event-card {
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    width: 320px; /* fixed width prevents the track length from shifting dynamically */
+    flex-shrink: 0; /* prevents flexbox from crushing the cards to fit the screen */
+
+    background: var(--surface-color);
+    border-bottom: 2px solid var(--border-color);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(var(--shadow-rgb), 0.3);
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    font-family: var(--font-family-headings);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.event-card p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.event-card .card-watermark {
+    transition: opacity 0.6s ease, color 0.6s ease;
+}
+.event-card:hover .card-watermark {
+    opacity: 0.08;
+    color: var(--primary-color);
+}
+
+@keyframes strip-drift {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+
+/* ================
+   Upcoming events
+   note the unfortunate similar naming schema to the event-strip
+   i had not forseen this when i named the event-strip classes and i do
+   not want to fix it
+   ================ */
+
+.upcoming-events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.upcoming-events h2 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.25rem 1.5rem;
+}
+
+.event-item {
+    position: relative;
+    background: var(--surface-color);
+    border-radius: var(--radius-sm);
+    padding: 1.75rem 2rem;
+    box-shadow: 0 8px 20px rgba(var(--shadow-rgb), 0.28);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
+}
+
+.event-item::before {
+    content: '📌';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-8deg);
+    font-size: 1.4rem;
+    filter: drop-shadow(0 3px 3px rgba(var(--shadow-rgb), 0.45));
+    transition: transform 0.3s ease;
+}
+.event-item:hover::before {
+    filter: drop-shadow(0 5px 5px rgba(var(--shadow-rgb), 0.45));
+    transform: translate(10px, -15px);
+}
+
+.event-item h4 {
+    font-family: var(--font-family-headings);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.event-item p {
+    font-size: 1rem;
+    color: var(--text-color-muted);
+    margin-bottom: 0.3rem;
+}
+.events-page-button {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--radius);
+    padding: 0.85rem 1.9rem;
+    background: var(--primary-color);
+    box-shadow: 0 6px 18px rgba(var(--primary-rgb), 0.35);
+    transition: box-shadow 0.3s ease;
+}
+.events-page-button:hover {
+    box-shadow: 0 12px 26px rgba(var(--primary-rgb), 0.45);
+}
+.events-page-button a {
+    color: var(--text-on-primary);
+    font-weight: bold;
+}
+.events-page-button.shine-card::after {
+    background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+}
+
+/* can do smt with children
+i wanna see if i can add a light glow to the card
+.event-item:nth-child(3n+1) { transform: rotate(-1.4deg); }
+.event-item:nth-child(3n+2) { transform: rotate(1deg); }
+.event-item:nth-child(3n)   { transform: rotate(-0.5deg); }
+
+.event-item:nth-child(3n+1):hover { transform: rotate(-2.2deg) translateY(-8px) scale(1.02); }
+.event-item:nth-child(3n+2):hover { transform: rotate(1.8deg) translateY(-8px) scale(1.02); }
+.event-item:nth-child(3n):hover   { transform: rotate(-1.2deg) translateY(-8px) scale(1.02); }
+ */
+
+
+
+/* ================================
+  FAQ section
+   ================================ */
+
+/* main container */
+.faq {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: start;
+    text-align: left;
+    margin: 2rem 10vw;
+    padding: 2rem;
+}
+
+/* i want the faq questions to be laid out with 2 per row so I wrap them in this */
+.faq-question-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+@media (max-width: 768px) { /* 1 per row on mobile */
+    .faq-question-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.faq h2 {
+    color: var(--primary-color);
+    font-family: var(--font-family-headings);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.faq h2#faq-label {
+    margin-bottom: 2rem;
+}
+
+/* question-container */
+.faq-question {
+    background: rgba(var(--shadow-rgb), 0.3);
+
+    /* the blur makes it lok rlly cool its like its transparent but its also not */
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+/* the button for expanding or closing the faq entry */
+.faq-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.faq-toggle h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-family: var(--font-family-headings);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/*
+ * the grid expansion math
+ * 0fr crushes the row down to 0 pixels.
+ * 1fr forces the row to exactly match the true height of its internal content.
+ * when expanding, the .open class is added. so we set this to 0fr and
+ * set .faq-content.open to 1fr.
+ */
+.faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.faq-content-inner {
+    overflow: hidden;
+}
+
+.faq-content-inner p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* reveal the internal contents when in expanded state */
+.faq-question.open .faq-content {
+    grid-template-rows: 1fr;
+}
+/* Rotates the '+' into an 'x' when opened */
+.faq-question.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+/* ========================
+   FOOTER
+   ======================== */
+footer {
+    color: var(--text-color-muted);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    padding: 2rem;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
