@@ -35,12 +35,12 @@ const spawnSymbol = () => {
     el.style.animationDuration = `${duration}s`;
 
     bgContainer.appendChild(el);
-    window.MathJax.typesetPromise(el);
+    window.MathJax.typesetPromise([el]);
 
     // remove the element from the div after its animation completes to prevent mem leak
     setTimeout(() => {
         if (bgContainer.contains(el)) {
-            window.MathJax.typesetClear(el);
+            window.MathJax.typesetClear([el]);
             el.remove();
         }
     }, duration * 1000);
