@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUMA CSS Redesign: Functor</title>
+    <title>BUMA - Home</title>
 
     <script>
         (function () {
@@ -12,14 +12,11 @@
         })();
     </script>
 
-    <link rel="stylesheet" href="/src/styles/functor.css">
+    <link rel="stylesheet" href="/src/styles/home.css">
     <link rel="icon" type="image/png" href="/src/assets/logo.png">
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!--
-    This page renders a custom navbar, and thus doesn't use load-components.js. If this page/navbar design is chosen for
-    the site, then load-components.js will be rewritten to accommodate this, so you may safely ignore this fact.
-    -->
+    <script src="/src/components/load-components.js" defer></script>
     <script src="/src/misc-js/theme-switcher.js" defer></script>
     <script src="/src/home/titlecard-scroller.js" defer></script> <!-- handles scrolling the title card -->
     <script src="/src/home/floating-symbols.js" defer></script> <!-- handles the math characters in the background when scrolled -->
@@ -31,13 +28,10 @@
 
 <!--
 TODO
-    - add intro animations. open manifold.html for inspiration. something like that.
-    - add animations to the grid, the background, and the floaters for in/out when scrolling
-    - build the rest of the page lol
-        - see confetti for some layout inspo and also a card could be nice
-        - see manifold for a nice animation on the cards
-    - note: rosepine goes SO HARD with this page but the catppuccin shadow is also really nice... if i can fix the catppuccin
-      surfaces then it might take the W but idk man... a rosepine color update could also sweep
+    - i want to have the following pages:
+    home | about | leadership | events | talks | contact | posts | silly
+    - add a light theme
+    - add notifications on theme switch so when someone swaps to light theme i can say "why...?"
 -->
 
 
@@ -76,16 +70,7 @@ TODO
         </div>
     </div>
 
-    <nav class="title-nav" aria-label="Primary">
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="/" data-page="home">Home</a></li>
-            <li><a href="/about/" data-page="about">About</a></li>
-            <li><a href="/events/" data-page="events">Events</a></li>
-            <li><a href="/talks/" data-page="talks">Talks</a></li>
-            <li><a href="/contact/" data-page="contact">Contact</a></li>
-        </ul>
-    </nav>
+    <nav data-page="home"></nav>
 </div>
 
 
@@ -218,9 +203,6 @@ TODO
 </div>
 
 
-<footer>
-    <p>&copy; 2026 Boston University Mathematics Association.</p>
-    <p>Website developed by Grant Talbert.</p>
-</footer>
+<footer></footer>
 </body>
 </html>

@@ -1,0 +1,36 @@
+@import url(/src/styles/theme.css);
+
+h1, h2, h3, h4 {
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* --- Main Content --- */
+main .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+main section {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    background: var(--surface-color);
+    border-radius: 8px;
+}
+
+#about {
+    text-align: center;
+}
+#about h2 {
+    font-size: 2rem;
+}
+#about p {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-size: 15pt;
+}
+

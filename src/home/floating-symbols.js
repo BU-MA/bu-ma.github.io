@@ -7,8 +7,10 @@ const spawnSpeed = 1500;
 
 // add more if you want!
 // make sure to escape all backslashes by typing \\ instead of \
+// also pls try to keep it organized thanks
+// i didnt include some common symbols like \cdot cuz ithought ti would look silly
 const symbolOptions = [
-    // Lowercase Greek
+    // lowercase greek
     '\\(\\alpha\\)', '\\(\\beta\\)', '\\(\\gamma\\)', '\\(\\delta\\)',
     '\\(\\epsilon\\)', '\\(\\varepsilon\\)', '\\(\\zeta\\)', '\\(\\eta\\)',
     '\\(\\theta\\)', '\\(\\vartheta\\)', '\\(\\iota\\)', '\\(\\kappa\\)',
@@ -17,87 +19,100 @@ const symbolOptions = [
     '\\(\\varsigma\\)', '\\(\\tau\\)', '\\(\\upsilon\\)', '\\(\\phi\\)',
     '\\(\\varphi\\)', '\\(\\chi\\)', '\\(\\psi\\)', '\\(\\omega\\)',
 
-    // Uppercase Greek
+    // uppercase greek
     '\\(\\Gamma\\)', '\\(\\Delta\\)', '\\(\\Theta\\)', '\\(\\Lambda\\)',
     '\\(\\Xi\\)', '\\(\\Pi\\)', '\\(\\Sigma\\)', '\\(\\Upsilon\\)',
     '\\(\\Phi\\)', '\\(\\Psi\\)', '\\(\\Omega\\)',
 
-    // Calculus & analysis
+    // common mathbb letters
+    '\\(\\mathbb{R}\\)', '\\(\\mathbb{N}\\)', '\\(\\mathbb{Z}\\)', '\\(\\mathbb{Q}\\)',
+    '\\(\\mathbb{C}\\)', '\\(\\mathbb{H}\\)', '\\(\\mathbb{T}\\)', '\\(\\mathbb{F}\\)',
+    '\\(\\mathbb{O}\\)', '\\(\\mathbb{S}\\)', '\\(\\mathbb{P}\\)',
+
+    // mathcal letters
+    '\\(\\mathcal{A}\\)', '\\(\\mathcal{B}\\)', '\\(\\mathcal{C}\\)', '\\(\\mathcal{D}\\)',
+    '\\(\\mathcal{E}\\)', '\\(\\mathcal{F}\\)', '\\(\\mathcal{G}\\)', '\\(\\mathcal{H}\\)',
+    '\\(\\mathcal{I}\\)', '\\(\\mathcal{J}\\)', '\\(\\mathcal{K}\\)','\\(\\mathcal{L}\\)',
+    '\\(\\mathcal{M}\\)', '\\(\\mathcal{N}\\)', '\\(\\mathcal{O}\\)', '\\(\\mathcal{P}\\)',
+    '\\(\\mathcal{Q}\\)', '\\(\\mathcal{R}\\)', '\\(\\mathcal{S}\\)', '\\(\\mathcal{T}\\)',
+    '\\(\\mathcal{U}\\)', '\\(\\mathcal{V}\\)', '\\(\\mathcal{W}\\)', '\\(\\mathcal{X}\\)',
+    '\\(\\mathcal{Y}\\)', '\\(\\mathcal{Z}\\)',
+
+    // common mathscr letters
+    '\\(\\mathscr{A}\\)', '\\(\\mathscr{B}\\)', '\\(\\mathscr{C}\\)', '\\(\\mathscr{D}\\)',
+    '\\(\\mathscr{F}\\)', '\\(\\mathscr{G}\\)', '\\(\\mathscr{H}\\)', '\\(\\mathscr{K}\\)',
+    '\\(\\mathscr{L}\\)', '\\(\\mathscr{O}\\)', '\\(\\mathscr{P}\\)', '\\(\\mathscr{S}\\)',
+    '\\(\\mathscr{U}\\)', '\\(\\mathscr{V}\\)', '\\(\\mathscr{X}\\)',
+
+    // common mathfrak lettrs
+    '\\(\\mathfrak{g}\\)', '\\(\\mathfrak{h}\\)', '\\(\\mathfrak{a}\\)', '\\(\\mathfrak{m}\\)',
+    '\\(\\mathfrak{p}\\)', '\\(\\mathfrak{i}\\)',
+
+    // calculus & analysis
     '\\(\\int\\)', '\\(\\iint\\)', '\\(\\oint\\)', '\\(\\partial\\)',
     '\\(\\nabla\\)', '\\(\\infty\\)', '\\(\\lim\\)', '\\(\\sum\\)', '\\(\\prod\\)',
+    '\\(L^p\\)',
 
     // Set theory
     '\\(\\subseteq\\)', '\\(\\subset\\)', '\\(\\supseteq\\)', '\\(\\supset\\)',
     '\\(\\in\\)', '\\(\\notin\\)', '\\(\\cup\\)', '\\(\\cap\\)', '\\(\\varnothing\\)',
     '\\(\\emptyset\\)', '\\(\\forall\\)', '\\(\\exists\\)', '\\(\\nexists\\)',
 
-    // Logic
-    '\\(\\neg\\)', '\\(\\wedge\\)', '\\(\\vee\\)', '\\(\\Rightarrow\\)',
-    '\\(\\Leftrightarrow\\)', '\\(\\therefore\\)',
+    // logic
+    '\\(\\neg\\)', '\\(\\wedge\\)', '\\(\\vee\\)', '\\(\\therefore\\)',
+    '\\(\\vDash\\)', '\\(\\Vdash\\)', '\\(\\models\\)', '\\(\\top\\)', '\\(\\bot\\)',
+    '\\(\\vdash\\)',
 
-    // Relations & operators
-    '\\(\\cong\\)', '\\(\\equiv\\)', '\\(\\sim\\)', '\\(\\simeq\\)',
-    '\\(\\approx\\)', '\\(\\neq\\)', '\\(\\leq\\)', '\\(\\geq\\)',
-    '\\(\\propto\\)', '\\(\\otimes\\)', '\\(\\oplus\\)', '\\(\\pm\\)',
-    '\\(\\mp\\)', '\\(\\cdot\\)', '\\(\\times\\)', '\\(=\\)',
-
-    // Arrows
+    // arrows
     '\\(\\to\\)', '\\(\\mapsto\\)', '\\(\\leftrightarrow\\)', '\\(\\rightharpoonup\\)',
-    '\\(\\leftrightarrows\\)', '\\(\\Rightarrow\\)', '\\(\\longrightarrow\\)', '\\(\\rightarrowtail\\)',
+    '\\(\\leftrightarrows\\)', '\\(\\longrightarrow\\)', '\\(\\rightarrowtail\\)',
+    '\\(\\Rightarrow\\)', '\\(\\Leftrightarrow\\)', '\\(\\twoheadrightarrow\\)',
+    '\\(\\hookrightarrow\\)',
 
-    // Number sets (blackboard bold)
-    '\\(\\mathbb{R}\\)', '\\(\\mathbb{N}\\)', '\\(\\mathbb{Z}\\)',
-    '\\(\\mathbb{Q}\\)', '\\(\\mathbb{C}\\)', '\\(\\mathbb{H}\\)',
+    // geometry
+    '\\(\\mathbb{S}^n\\)', '\\(\\star\\)', '\\(C^\\infty\\)', '\\(\\mathbb{A}_{\\Bbbk}^n\\)',
+    '\\(\\Gamma(X,-)\\)', '\\(\\mathrm{d}\\)', '\\(\\mathcal{O}_X\\)',
+    '\\(\\mathcal{H}om\\)', '\\(\\mathbb{H}\\mathrm{om}\\)', '\\(\\mathfrak{so}\\)',
+    '\\(\\mathfrak{sl}\\)', '\\(\\mathfrak{o}\\)', '\\(\\mathfrak{su}\\)',
+    '\\(\\mathfral{gl}\\)', '\\(\\Omega^{p,q}\\)',
 
-    // Geometry & misc
-    '\\(\\angle\\)', '\\(\\perp\\)', '\\(\\parallel\\)', '\\(\\triangle\\)',
-    '\\(\\square\\)', '\\(\\diamond\\)', '\\(\\star\\)', '\\(\\aleph\\)',
-    '\\(\\hbar\\)', '\\(\\ell\\)', '\\(\\wp\\)',
+    // category theory
+    '\\(\\circ\\)', '\\(\\dashv\\)', '\\(\\pitchfork\\)', '\\(\\varinjlim\\)',
+    '\\(\\varprojlim\\)', '\\(\\mathrm{Hom}\\)', '\\(\\mathrm{Nat}\\)',
+    '\\(\\mathrm{Fun}\\)', '\\(\\mathrm{Ho}\\)', '\\(\\mathrm{h}\\mathcal{C}\\)',
+    '\\(\\amalg\\)', '\\(*\\)', '\\(\\boxtimes\\)', '\\(\\widehat{\\otimes}\\)',
+    '\\(\\widehat{\\pitchfork}\\)',
 
-    // Calligraphic letters
-    '\\(\\mathcal{F}\\)', '\\(\\mathcal{L}\\)', '\\(\\mathcal{O}\\)', '\\(\\mathcal{H}\\)',
-    '\\(\\mathcal{A}\\)', '\\(\\mathcal{B}\\)', '\\(\\mathcal{D}\\)', '\\(\\mathcal{E}\\)',
-    '\\(\\mathcal{G}\\)', '\\(\\mathcal{M}\\)', '\\(\\mathcal{N}\\)', '\\(\\mathcal{P}\\)',
-    '\\(\\mathcal{S}\\)', '\\(\\mathcal{T}\\)', '\\(\\mathcal{U}\\)', '\\(\\mathcal{V}\\)', '\\(\\mathcal{X}\\)',
+    // algebra
+    '\\(H^\\bullet\\)', '\\(H_\\bullet\\)', '\\(\\mathrm{Tor}_\\bullet^R\\)',
+    '\\(\\mathrm{Ext}_R^\\bullet\\)', '\\(\\mathbb{L}_\\bullet F\\)',
+    '\\(\\mathbb{R}^\\bullet F\\)', '\\(\\otimes\\)', '\\(\\oplus\\)',
 
-    // category theory and logic
-    '\\(\\circ\\)', '\\(\\dashv\\)', '\\(\\vdash\\)', '\\(\\vDash\\)', '\\(\\Vdash\\)',
-    '\\(\\models\\)', '\\(\\hookrightarrow\\)', '\\(\\twoheadrightarrow\\)', '\\(\\pitchfork\\)',
-    '\\(\\top\\)', '\\(\\bot\\)',
-
-    // Order theory
+    // order theory
     '\\(\\sqsubseteq\\)', '\\(\\sqsupseteq\\)', '\\(\\sqcup\\)', '\\(\\sqcap\\)',
     '\\(\\prec\\)', '\\(\\succ\\)', '\\(\\preceq\\)', '\\(\\succeq\\)',
-    '\\(\\ll\\)', '\\(\\gg\\)', '\\(\\asymp\\)', '\\(\\bowtie\\)',
+    '\\(\\asymp\\)', '\\(\\bowtie\\)',
 
-    // More relations
-    '\\(\\frown\\)', '\\(\\smile\\)', '\\(\\nmid\\)',
-
-    // Operator names (same family as \lim above)
+    // named operators
     '\\(\\det\\)', '\\(\\dim\\)', '\\(\\ker\\)', '\\(\\deg\\)', '\\(\\gcd\\)',
-    '\\(\\sup\\)', '\\(\\inf\\)', '\\(\\max\\)', '\\(\\min\\)', '\\(\\varinjlim\\)',
-    '\\(\\varprojlim\\)',
+    '\\(\\sup\\)', '\\(\\inf\\)', '\\(\\max\\)', '\\(\\min\\)',
 
     // Complex analysis
     '\\(\\Re\\)', '\\(\\Im\\)',
 
-    // Algebra extras
-    '\\(\\dagger\\)', '\\(\\ddagger\\)', '\\(\\boxtimes\\)', '\\(\\boxplus\\)', '\\(\\boxminus\\)',
+    // physics
+    '\\(\\hbar\\)', '\\(\\dagger\\)', '\\(\\ddagger\\)',
 
-    // More blackboard bold
-    '\\(\\mathbb{F}\\)', '\\(\\mathbb{H}\\)', '\\(\\mathbb{P}\\)',
+    // misc relations & operators
+    '\\(\\cong\\)', '\\(\\equiv\\)', '\\(\\sim\\)', '\\(\\simeq\\)',
+    '\\(\\approx\\)', '\\(\\neq\\)', '\\(\\leq\\)', '\\(\\geq\\)',
+    '\\(\\propto\\)', '\\(\\pm\\)',
+    '\\(\\mp\\)', '\\(\\times\\)', '\\(=\\)',
+    '\\(\\gg\\)', '\\(\\ll\\)', '\\(\\frown\\)', '\\(\\smile\\)',
+    '\\(\\circledast\\)',
 
-    // Fraktur
-    '\\(\\mathfrak{g}\\)', '\\(\\mathfrak{a}\\)', '\\(\\mathfrak{m}\\)',
-    '\\(\\mathfrak{p}\\)', '\\(\\mathfrak{S}\\)', '\\*\\mathfrak{so}\\)',
-    '\\(\\mathfrak{sl}\\)', '\\(\\mathfrak{o}\\)', '\\(\\mathfrak{su}\\)',
-
-    // Hebrew letters (rare — used for infinite cardinals)
-    '\\(\\beth\\)', '\\(\\gimel\\)', '\\(\\daleth\\)',
-
-    // Rare / decorative flavor — obscure, prune freely if they don't read as "math" at a glance
-    '\\(\\hslash\\)', '\\(\\digamma\\)', '\\(\\eth\\)', '\\(\\Bbbk\\)',
-    '\\(\\lozenge\\)', '\\(\\mho\\)', '\\(\\circledast\\)', '\\(\\circleddash\\)', '\\(\\circledcirc\\)',
+    // misc
+    '\\(\\square\\)', '\\(\\blacksquare\\)', '\\(\\ell\\)'
 ];
 
 symbolOptions.forEach((option) => {

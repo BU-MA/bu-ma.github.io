@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUMA - Leadership</title>
+
+    <script>
+        (function () {
+            const saved = localStorage.getItem('buma-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/src/styles/leadership.css">
+    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/src/misc-js/theme-switcher.js" defer></script>
+    <script src="/src/components/load-components.js" defer></script>
+
+    <meta property="og:title" content="BUMA - Leadership">
+    <meta property="og:description" content="Meet the students who run the Boston University Mathematics Association.">
+    <meta property="og:image" content="https://bu-ma.github.io/src/assets/logo.png">
+    <meta property="og:url" content="https://bu-ma.github.io/leadership/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+    <div class="site-nav-inner">
+        <span class="brand">Boston University Mathematics Association</span>
+        <nav data-page="leadership" aria-label="Primary"></nav>
+    </div>
+</header>
+
+<div class="page-hero">
+    <div class="hero-field" aria-hidden="true">
+        <span class="floater f1">\( \widehat{\otimes} \)</span>
+        <span class="floater f2">\( \pi \)</span>
+        <span class="floater f3">\( \infty \)</span>
+        <span class="floater f4">\( \bar{\partial} \)</span>
+    </div>
+    <div class="container">
+        <p class="eyebrow">Meet the team</p>
+        <h1>Leadership</h1>
+        <p class="hero-sub">The students who plan our events, run our meetings, and keep BUMA going semester to semester.</p>
+    </div>
+</div>
+
+<main>
+
+    <div class="profile-container">
+
+        <!-- katherine -->
+        <article class="profile-card-right"
+                 style="
+                    --bg-image-left: url('/src/assets/decor/cayley-graph-F2.svg');
+                    --bg-image-right: url('/src/assets/decor/hopf.svg');
+                    --accent-color: var(--primary-color);
+                    --bg-size-left: 1000px;
+                    --bg-translate-X-left: -32%;
+                    --bg-translate-Y-left: 45%;
+                    --bg-size-right: 500px;
+                    --bg-translate-X-right: 40%;
+                    --bg-translate-Y-right: -50%;
+                    --margin-left-side-for-right-cards: 0;
+        ">
+            <div class="profile-card-inner">
+                <img class="profile-photo" src="/src/about/images/katherine.jpeg" alt="Photo of Katherine">
+                <div class="profile-text">
+                    <h3>Katherine Guo</h3>
+                    <span class="profile-title">president</span>
+                    <p class="profile-blurb">
+                        I have many interests, among which reside writing, playing really old games, and classical music
+                        (I gave a talk about music theory last year and got away with it). In terms of more immediately
+                        relevant interests, long have I been torn between math and physics, but now, in my third year, I
+                        feel that pure math is my true calling. Like everyone else, I am an algebra fiend, though number
+                        theory holds a special place in my heart, and differential geometry looks to be a burgeoning
+                        subject to chase after.
+                    </p>
+                    <p class="profile-blurb">
+                        Feel free to reach out to me for questions & concerns about the club, math, or anything you'd like!
+                    </p>
+                </div>
+
+                <div class="profile-extras">
+
+                    <div class="extra-block">
+                        <h4>u can say stuff here</h4>
+                        <p>u can say even more stuff down here</p>
+                    </div>
+
+                    <div class="extra-block">
+                        <h4>Contact</h4>
+                        <div class="contact-links">
+                            <!-- email link -->
+                            <a href="mailto:kqlguo@bu.edu" aria-label="email">
+                                <span class="icon icon-email"></span>
+                                kqlguo@bu.edu
+                            </a>
+
+                            <!-- discord item -->
+                            <span class="contact-item">
+                                <span class="icon icon-discord"></span>
+                                mathoderaytube
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- grant -->
+        <article class="profile-card-left"
+                 style="
+                    --bg-image-left: url('/src/assets/decor/cy-mfld.svg');
+                    --bg-image-right: url('/src/assets/decor/commutative-tesseract.svg');
+                    --accent-color: var(--secondary-color);
+                    --bg-size-left: 500px;
+                    --bg-translate-X-left: -50%;
+                    --bg-translate-Y-left: -40%;
+                    --bg-size-right: 1000px;
+                    --bg-translate-X-right: 40%;
+                    --bg-translate-Y-right: 50%;
+                    --content-width-for-left-cards: 100%;
+        ">
+            <div class="profile-card-inner">
+                <img class="profile-photo" src="/src/about/images/grant.jpg" alt="Photo of Grant Talbert">
+                <div class="profile-text">
+                    <h3>Grant Talbert</h3>
+                    <span class="profile-title">vice president</span>
+                    <p class="profile-blurb">
+                        I'm a senior, but I've only been at BU for 3 years since I transferred. I love discussing and writing
+                        about advanced and abstract math, and spend a lot of my free time reading or writing about interesting
+                        mathematical topics.
+                    </p>
+                    <p class="profile-blurb">
+                        Although I am officially the vice president, internally we think of Katherine and me as "copresidents",
+                        and we take on similar responsibilities. I handle planning for a lot of our events, as well as the
+                        website (along with some help from Bala), E-board recruitment, and some collaborations with other
+                        clubs. I am also somewhat involved in our financials and <a href="/contact/">social media presence.</a>
+                        Feel free to reach out to me directly with any questions or requests about the club, or
+                        <a href="/contact/">contact the club directly</a>.
+                    </p>
+                    <p class="profile-blurb">
+                        My main interest is in mathematically rigorous quantum field theory. I'm currently learning about
+                        the <a href="https://websites.umass.edu/ogwilliam/">factorization algebras of Kevin Costello and
+                        Owen Gwilliam</a>, and the BV-formalism. I'm also interested in topological QFT, homotopy theory,
+                        and \(\infty\)-category theory. This means I work heavily with differential and algebraic geometry,
+                        homological algebra, and related fields Outside of math, I like milk tea, ice skating, food, and
+                        playing Minecraft.
+                    </p>
+                </div>
+                <div class="profile-extras">
+
+                    <div class="extra-block">
+                        <h4>Favorite Theorem</h4>
+                        <p>Yoneda's lemma is my spirit animal</p>
+                    </div>
+
+                    <div class="extra-block">
+                        <h4>Contact</h4>
+                        <div class="contact-links">
+                            <!-- email link -->
+                            <a href="mailto:gtalbert@bu.edu" aria-label="email">
+                                <span class="icon icon-email"></span>
+                                gtalbert@bu.edu
+                            </a>
+
+                            <!-- discord item -->
+                            <span class="contact-item">
+                                <span class="icon icon-discord"></span>
+                                theholychickn
+                            </span>
+
+                            <!-- website link -->
+                            <a href="/duck.html" target="_blank" aria-label="Personal Website">
+                                <span class="icon icon-website"></span>
+                                Personal Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- nick -->
+        <article class="profile-card-right"
+                 style="
+                    --bg-image-left: url('/src/assets/decor/torus_wireframe.svg');
+                    --bg-image-right: url('/src/assets/decor/hopf.svg');
+                    --accent-color: var(--primary-color);
+                    --bg-size-left: 1000px;
+                    --bg-translate-X-left: -50%;
+                    --bg-translate-Y-left: 40%;
+                    --bg-size-right: 500px;
+                    --bg-translate-X-right: 40%;
+                    --bg-translate-Y-right: -50%;
+                    --margin-left-side-for-right-cards: 0;
+        ">
+            <div class="profile-card-inner">
+                <!-- <img class="profile-photo" src="/src/about/images/nick.jpg" alt="Photo of Nick Sun"> -->
+                <div class="profile-photo">placeholder text</div>
+                <div class="profile-text">
+                    <h3>Ningke "Nick" Sun</h3>
+                    <span class="profile-title">treasurer</span>
+                    <p class="profile-blurb">
+                        I’m a rising senior at BU and the treasurer of BUMA, majoring in (Pure) Mathematics and minoring
+                        in Computer Science.
+                    </p>
+                    <p class="profile-blurb">
+                        My research interests are in number theory, including both algebraic number
+                        theory and analytic number theory, with a focus on Elliptic curves and Modular forms. Recently,
+                        I’ve been learning about murmuration theory and the BSD-conjecture. Additionally, I’m learning some
+                        basic coding in Magma and Sage to gain experience with computational number theory. Beyond my
+                        primary research interests, I'm also interested in knot theory, and the use of AI in math.
+                    </p>
+                    <p class="profile-blurb">
+                        If you are interested in our club, or any of the topics listed above, feel free to contact me via
+                        email.
+                    </p>
+                </div>
+
+                <div class="profile-extras">
+
+                    <div class="extra-block">
+                        <h4>u can say stuff here</h4>
+                        <p>SIX SEVENNNNNNNNNNNNN</p>
+                    </div>
+
+                    <div class="extra-block">
+                        <h4>Contact</h4>
+                        <div class="contact-links">
+                            <!-- email link -->
+                            <a href="mailto:ningke@bu.edu" aria-label="email">
+                                <span class="icon icon-email"></span>
+                                ningke@bu.edu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- bala -->
+        <article class="profile-card-left"
+                 style="
+                    --bg-image-left: url('/src/assets/decor/cy-mfld.svg');
+                    --bg-image-right: url('/src/assets/decor/snake-lemma.svg');
+                    --accent-color: var(--primary-color);
+                    --bg-size-left: 700px;
+                    --bg-translate-X-left: -50%;
+                    --bg-translate-Y-left: -60%;
+                    --bg-size-right: 800px;
+                    --bg-translate-X-right: 10%;
+                    --bg-translate-Y-right: 45%;
+                    --margin-left-side-for-right-cards: 0;
+        ">
+            <div class="profile-card-inner">
+                <!-- <img class="profile-photo" src="/src/about/images/bala.jpg" alt="Photo of Bala"> -->
+                <div class="profile-photo">placeholder text</div>
+                <div class="profile-text">
+                    <h3>Bala M I actually dont know ur last name LOL</h3>
+                    <span class="profile-title">secretary</span>
+                    <p class="profile-blurb">
+                        TODO: get bala to write this
+                    </p>
+                </div>
+
+                <div class="profile-extras">
+
+                    <div class="extra-block">
+                        <h4>:D</h4>
+                        <p>happy face</p>
+                    </div>
+
+                    <div class="extra-block">
+                        <h4>Contact</h4>
+                        <div class="contact-links">
+                            <!-- email link -->
+                            <a href="mailto:??????@bu.edu" aria-label="email">
+                                <span class="icon icon-email"></span>
+                                idk ur email either ill have to look tomorrow
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- Yoga -->
+        <article class="profile-card-right"
+                 style="
+                    --bg-image-left: url('/src/assets/decor/torus_wireframe.svg');
+                    --bg-image-right: url('/src/assets/decor/hopf.svg');
+                    --accent-color: var(--primary-color);
+                    --bg-size-left: 1000px;
+                    --bg-translate-X-left: -50%;
+                    --bg-translate-Y-left: 40%;
+                    --bg-size-right: 500px;
+                    --bg-translate-X-right: 40%;
+                    --bg-translate-Y-right: -50%;
+                    --margin-left-side-for-right-cards: 0;
+        ">
+            <div class="profile-card-inner">
+                <!-- <img class="profile-photo" src="/src/about/images/nick.jpg" alt="Photo of Yoga Long"> -->
+                <div class="profile-photo">Insert photo of generic physics major here</div>
+                <div class="profile-text">
+                    <h3>Prayoga "Yoga" Long</h3>
+                    <span class="profile-title">event coordinator</span>
+                    <p class="profile-blurb">
+                        When asked to submit a bio for the website, Yoga responded with "unnecessary", so the other board
+                        members wrote his bio for him.
+                    </p>
+                    <p class="profile-blurb">
+                        we can do smt funny here
+                    </p>
+                </div>
+
+                <div class="profile-extras">
+
+                    <div class="extra-block">
+                        <h4>Favorite Theorem</h4>
+                        <p>The generalized Dold-Kan correspondence:</p>
+                        <p>
+                            Given an abelian category \(\mathcal{A}\), There is an<br>
+                            equivalence of categories
+                            \(\mathcal{C}h(\mathcal{A})_{\geq 0}\simeq \operatorname{Fun}(\boldsymbol{\Delta}^{\mathrm{op}},\mathcal{A})\)<br>
+                            between non-negatively graded chain complexes<br>
+                            in \(\mathcal{A}\), and simplicial objects of\(\mathcal{A}\).
+                        </p>
+                    </div>
+
+                    <div class="extra-block">
+                        <h4>Contact</h4>
+                        <div class="contact-links">
+                            <!-- email link -->
+                            <a href="mailto:??????@bu.edu" aria-label="email">
+                                <span class="icon icon-email"></span>
+                                ??????@bu.edu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- Alysa -->
+        <article class="profile-card-left"
+                 style="
+                    --bg-image-left: url('/src/assets/decor/cy-mfld.svg');
+                    --bg-image-right: url('/src/assets/decor/snake-lemma.svg');
+                    --accent-color: var(--primary-color);
+                    --bg-size-left: 700px;
+                    --bg-translate-X-left: -50%;
+                    --bg-translate-Y-left: -60%;
+                    --bg-size-right: 800px;
+                    --bg-translate-X-right: 10%;
+                    --bg-translate-Y-right: 45%;
+                    --margin-left-side-for-right-cards: 0;
+        ">
+            <div class="profile-card-inner">
+                <img class="profile-photo" src="/src/about/images/alysa.jpeg" alt="Photo of Alyza Zhao">
+                <div class="profile-text">
+                    <h3>Alysa Zhao</h3>
+                    <span class="profile-title">general board member</span>
+                    <p class="profile-blurb">
+                        My main aspiration is to be able to understand homotopy type theory. That means I am currently
+                        working on understanding categories, types, logics, and topologies. I am deeply motivated by the
+                        curiosities in the foundations of mathematics. My favorite animal is fish. I like to look at them
+                        and eat them. Feel free to contact ,e if you like math or like our club.
+                    </p>
+                </div>
+
+                <div class="profile-extras">
+
+                    <div class="extra-block">
+                        <h4>A comonad is</h4>
+                        <p>an algebra over \(\mathcal{A}ss\) in \((\mathrm{End}^{\mathrm{op}}, \circ)\)</p>
+                    </div>
+
+                    <div class="extra-block">
+                        <h4>Contact</h4>
+                        <div class="contact-links">
+                            <!-- email link -->
+                            <a href="mailto:azhao@bu.edu" aria-label="email">
+                                <span class="icon icon-email"></span>
+                                azhao@bu.edu
+                            </a>
+
+                            <!-- discord item -->
+                            <span class="contact-item">
+                                <span class="icon icon-discord"></span>
+                                spuddy5379
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</main>
+
+<footer></footer>
+
+<script src="/src/leadership/leadership.js" defer></script>
+
+</body>
+</html>

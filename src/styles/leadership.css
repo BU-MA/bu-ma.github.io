@@ -1,0 +1,563 @@
+@import url(/src/styles/theme.css);
+
+/* ======================
+   Basic styles (ported from functor.css)
+   ====================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family-body);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ======================
+   Persistent top nav
+   Visually this is the homepage's title-card in its ALREADY-scrolled state,
+   permanently — no spacer, no measurement JS, no collapse animation.
+   ====================== */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+.site-nav.scrolled {
+    box-shadow: 0 8px 24px rgba(var(--shadow-rgb), 0.35);
+}
+
+.site-nav-inner {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.brand {
+    font-family: var(--font-family-headings);
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+.site-nav nav {
+    position: relative;
+}
+
+ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0.25rem;
+}
+ul.nav-links li a {
+    position: relative;
+    color: var(--text-color);
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease;
+}
+ul.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.35rem;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+ul.nav-links li a:hover,
+ul.nav-links li a.active {
+    color: var(--primary-color-darker);
+}
+ul.nav-links li a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .nav-toggle { display: block; }
+    ul.nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        padding: 0.5rem;
+        box-shadow: 0 8px 20px rgba(var(--shadow-rgb), 0.3);
+    }
+    ul.nav-links.open { display: flex; }
+}
+
+/* ======================
+   Page hero
+   A lighter stand-in for the homepage's title-card — static, no collapsing,
+   just a header band with a couple of drifting math symbols for texture.
+   ====================== */
+
+.page-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+.hero-field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.floater {
+    position: absolute;
+    font-family: var(--font-family-headings);
+    color: var(--primary-color);
+    opacity: 0.1;
+    animation: floatSymbol 14s ease-in-out infinite;
+}
+.f1 { top: 15%; left: 10%; font-size: 3.5rem; animation-duration: 16s; }
+.f2 { top: 60%; left: 20%; font-size: 2.5rem; animation-duration: 13s; animation-delay: -3s; }
+.f3 { top: 25%; left: 82%; font-size: 4rem;   animation-duration: 18s; animation-delay: -6s; }
+.f4 { top: 70%; left: 78%; font-size: 3rem;   animation-duration: 15s; animation-delay: -2s; }
+@keyframes floatSymbol {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-18px) rotate(4deg); }
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.14rem;
+    margin-bottom: 0.75rem;
+}
+.page-hero h1 {
+    font-family: var(--font-family-headings);
+    color: var(--primary-color);
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    margin-bottom: 0.75rem;
+}
+.hero-sub {
+    max-width: 520px;
+    margin: 0 auto;
+    color: var(--text-color-muted);
+}
+
+/* ======================
+   Content section (ported from functor.css)
+   ====================== */
+
+main {
+    width: 100%;
+}
+main .container {
+    padding-bottom: 4rem;
+}
+
+.section-surface {
+    background-color: var(--surface-color-alt);
+    padding: 2rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(var(--shadow-rgb), 0.3);
+}
+
+/*
+ * redo leaderhsip
+ */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    /* Shared fallback decor, used by any card that doesn't set its own —
+       keeps every card looking intentional even before you've sourced a
+       full library of custom diagrams. */
+    --bg-image-left: url('/src/assets/decor/grid.svg');
+    --bg-image-right: url('/src/assets/decor/grid.svg');
+
+    margin: 2rem 0;
+}
+
+.profile-card-left, .profile-card-right {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    background-color: var(--surface-color);
+    filter: drop-shadow(0 6px 16px rgba(var(--shadow-rgb), 0.3));
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    /* Shared layout variables */
+    --accent-color: var(--primary-color); /* per-card override via inline style */
+    --slant-top: 28px;
+    --slant-bottom: 170px;
+    --gutter-side: 7.5rem;
+}
+
+.profile-card-left {
+    transform: translateX(-4px);
+    padding: 2rem calc(var(--slant-bottom) + 2rem) 2rem var(--gutter-side);
+    clip-path: polygon(
+            0 0,
+            calc(100% - var(--slant-top)) 0,
+            calc(100% - var(--slant-bottom)) 100%,
+            0 100%
+    );
+}
+.profile-card-left:hover {
+    transform: translateX(0);
+}
+
+.profile-card-right {
+    transform: translateX(4px);
+    padding: 2rem var(--gutter-side) 2rem calc(var(--slant-bottom) + 2rem);
+    clip-path: polygon(var(--slant-top) 0, 100% 0, 100% 100%, var(--slant-bottom) 100%);
+}
+.profile-card-right:hover {
+    transform: translateX(0px);
+}
+.profile-card-right .profile-card-inner {
+    flex-direction: row-reverse; /* Puts the photo on the right */
+}
+
+/* --- Decorative background layers, one per side. Using ::before/::after
+   instead of extra <div>s keeps the HTML clean — and since custom properties
+   inherit into pseudo-elements, the inline --bg-image-* / --accent-color
+   overrides on .profile-card-left reach these automatically. --- */
+.profile-card-left::before, .profile-card-left::after,
+.profile-card-right::before, .profile-card-right::after {
+    content: '';
+    position: absolute;
+    background-color: var(--text-color-muted);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+}
+/* Top Left Corner */
+.profile-card-left::before {
+    top: 0;
+    left: 0;
+    width: var(--bg-size-left, 350px);
+    height: var(--bg-size-left, 350px);
+    /* Push it outward so it bleeds off the top-left edge */
+    transform: translate(var(--bg-translate-X-left, -30%), var(--bg-translate-Y-left, -30%));
+    -webkit-mask-image: var(--bg-image-left);
+    mask-image: var(--bg-image-left);
+}
+
+/* Bottom Right Corner */
+.profile-card-left::after {
+    bottom: 0;
+    right: 0;
+    width: var(--bg-size-right, 350px);
+    height: var(--bg-size-right, 350px);
+    /* Push it outward so it bleeds off the bottom-right edge & slant */
+    transform: translate(var(--bg-translate-X-right, 30%), var(--bg-translate-Y-right, 30%));
+    -webkit-mask-image: var(--bg-image-right);
+    mask-image: var(--bg-image-right);
+}
+
+/* --- Right Card Corners (Mirrored) --- */
+.profile-card-right::before {
+    top: 0;
+    right: 0;
+    width: var(--bg-size-right, 350px);
+    height: var(--bg-size-right, 350px);
+    transform: translate(var(--bg-translate-X-right, 30%), var(--bg-translate-Y-right, -30%));
+    -webkit-mask-image: var(--bg-image-right);
+    mask-image: var(--bg-image-right);
+}
+.profile-card-right::after {
+    bottom: 0;
+    left: 0;
+    width: var(--bg-size-left, 450px);
+    height: var(--bg-size-left, 450px);
+    transform: translate(var(--bg-translate-X-left, -30%), var(--bg-translate-Y-left, 30%));
+    -webkit-mask-image: var(--bg-image-left); mask-image: var(--bg-image-left);
+}
+
+/* --- Foreground content --- */
+.profile-card-inner {
+    position: relative;
+    z-index: 2; /* explicit stacking above the decor pseudo-elements */
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75rem;
+    max-width: var(--content-width-for-left-cards, 100%);
+    margin-left: var(--margin-left-side-for-right-cards, 0);
+}
+
+.profile-photo {
+    flex-shrink: 0;
+    width: 256px;
+    height: 256px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+}
+
+.profile-text {
+    min-width: 0; /* lets long bios wrap correctly inside a flex child */
+    flex: 1; /* prevents extras from being crushed */
+}
+.profile-text h3 {
+    font-family: var(--font-family-headings);
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+.profile-title {
+    display: block;
+    font-style: italic;
+    color: var(--third-color);
+    margin-bottom: 0.75rem;
+}
+.profile-blurb {
+    font-size: 0.92rem;
+    color: var(--text-color);
+    margin-bottom: 0.6rem;
+}
+.profile-blurb:last-child { margin-bottom: 0; }
+.profile-blurb a { color: var(--accent-color); }
+
+.profile-card-right .profile-text h3,
+.profile-card-right .profile-title {
+    text-align: right;
+}
+
+/* ======================
+   Profile Extras (Sidebar)
+   ====================== */
+.profile-extras {
+    /* flex: 0 0 220px; /* Locks the extras column to 220px wide */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--secondary-color);
+}
+
+/* Mirror the border and text alignment for Right Cards */
+.profile-card-right .profile-extras {
+    padding-left: 0;
+    padding-right: 1.5rem;
+    border-left: none;
+    border-right: 2px solid var(--secondary-color);
+    text-align: right;
+}
+
+.extra-block h4 {
+    font-family: var(--font-family-headings);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--third-color); /* Or var(--accent-color) if you prefer! */
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.08rem;
+}
+
+.extra-block p {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* --- Social & Contact Icons --- */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.contact-links a,
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Flips the icon to the right side on Right Cards */
+.profile-card-right .contact-links a,
+.profile-card-right .contact-item {
+    flex-direction: row-reverse;
+}
+
+.contact-links a:hover {
+    color: var(--accent-color);
+}
+
+/* --- Social & Contact Icons (Using Masks) --- */
+.icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+
+    /* The color is applied to the background, and the SVG punches a hole in it */
+    background-color: currentColor;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
+/* Link the specific files to their modifiers */
+.icon-email {
+    -webkit-mask-image: url('/src/assets/mail-icon.svg');
+    mask-image: url('/src/assets/mail-icon.svg');
+}
+
+.icon-discord {
+    -webkit-mask-image: url('/src/assets/discord-icon.svg');
+    mask-image: url('/src/assets/discord-icon.svg');
+}
+
+.icon-website {
+    -webkit-mask-image: url('/src/assets/website-icon.svg');
+    mask-image: url('/src/assets/website-icon.svg');
+}
+
+
+
+/* --- Mobile: drop the diagonal, stack top-to-bottom, decor moves to corners --- */
+@media (max-width: 700px) {
+    .profile-card-left,
+    .profile-card-right {
+        clip-path: none;
+        filter: none;
+        box-shadow: 0 4px 12px rgba(var(--shadow-rgb), 0.3);
+        padding: 2rem 1.5rem;
+        transform: translateX(0);
+    }
+    .profile-card-inner {
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+    }
+    .profile-photo {
+        width: 256px;
+        height: 256px;
+    }
+    .profile-blurb {
+        text-align: left; /* body copy stays left-aligned for readability */
+    }
+
+    .profile-card-left::before, .profile-card-left::after,
+    .profile-card-right::before, .profile-card-right::after {
+        width: 200px;
+        height: 200px;
+    }
+    .profile-card-left::before, .profile-card-right::after {
+        top: 0; left: 0; bottom: auto; right: auto;
+        transform: translate(-20%, -20%);
+    }
+    .profile-card-left::after, .profile-card-right::before {
+        top: auto; left: auto; bottom: 0; right: 0;
+        transform: translate(20%, 20%);
+    }
+
+    .profile-card-right .profile-text h3,
+    .profile-card-right .profile-title {
+        text-align: center;
+    }
+
+    /* Reformat extras as a bottom-stacked block for mobile */
+    .profile-extras {
+        flex: none;
+        width: 100%;
+        padding: 1.25rem 0 0 0;
+        border-left: none;
+        border-right: none !important; /* Forces right-cards to drop the border too */
+        border-top: 2px solid var(--border-color);
+        text-align: left !important;
+    }
+
+    /* Reset the icons to sit on the left for all mobile cards */
+    .profile-card-right .contact-links a,
+    .profile-card-right .contact-item {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+/* ======================
+   Footer
+   ====================== */
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    background: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+footer p {
+    color: var(--text-color-muted);
+    font-size: 0.85rem;
+}
