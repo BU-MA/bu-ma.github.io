@@ -65,7 +65,30 @@ import { downloadICS } from '../misc-js/ics-manager.js';
 
         // removes any contents of the eventListContainer just to be safe
         // comment this out if you want to include something in there
+        // but idk why youd want that
         eventListContainer.innerHTML = '';
+
+        const formatDateBadge = (startTime) => {
+            const startDay = new Date(startTime.getFullYear(), startTime.getMonth(), startTime.getDate());
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const diffDays = Math.round((startDay - today) / 86400000);
+
+            if (diffDays === 0) return 'Today';
+            if (diffDays === 1) return 'Tomorrow';
+            if (diffDays > 1 && diffDays < 7) {
+                return `This ${startTime.toLocaleDateString('en-US', { weekday: 'long' })}`;
+            }
+            return startTime.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        };
+
+        const formatDate = (date) => {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        };
+
+        const formatTime = (time) => {
+            return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+        };
 
         // this block constructs an eventCard for each event, which is the card that is displayed for this event on the page
         upcomingEvents.forEach(event => {
@@ -75,29 +98,21 @@ import { downloadICS } from '../misc-js/ics-manager.js';
             const startTime = new Date(event.datetime);
             const endTime = new Date(startTime.getTime() + event.duration * 60000);
 
-            const formatDate = (date) => {
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                return date.toLocaleDateString('en-US', options);
-            };
-
-            const formatTime = (time) => {
-                return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-            };
-
             // the exact layout of the eventCard is defined here
             // feel free to change it if you want
             // to change the styles, look at events.css
             eventCard.innerHTML = `
+                <div class="card-top">
+                    <span class="date-badge">${formatDateBadge(startTime)}</span>
+                    <button class="add-to-calendar" aria-label="Add to calendar">
+                        <span class="add-to-calendar-icon">+</span>
+                        <span class="tooltip" role="tooltip">Add to calendar</span>
+                    </button>
+                </div>
                 <h3>${event.title}</h3>
-                <div class="event-details">
-                    <p><strong>Date:</strong> ${formatDate(startTime)}</p>
-                    <p><strong>Time:</strong> ${formatTime(startTime)} - ${formatTime(endTime)}</p>
-                    <p><strong>Location:</strong> ${event.location}</p>
-                </div>
-                <p class="event-description">${event.description}</p>
-                <div class="add-to-calendar-container">
-                    <button class="add-to-calendar"><strong>Add to Calendar</strong></button>
-                </div>
+                <p class="event-meta">${formatDate(startTime)} · ${formatTime(startTime)} – ${formatTime(endTime)} · ${event.location}</p>
+                <p class="event-description desc-clamp">${event.description}</p>
+                <button class="read-more-toggle" aria-expanded="false" hidden>Read more</button>
             `;
 
             eventCard.querySelector('.add-to-calendar').addEventListener('click', () => {
@@ -106,11 +121,31 @@ import { downloadICS } from '../misc-js/ics-manager.js';
 
             eventListContainer.appendChild(eventCard);
 
+            const finishSetup = () => setUpReadMore(eventCard);
             // renders any latex code
             if (window.MathJax) {
-                window.MathJax.typesetPromise();
+                window.MathJax.typesetPromise([eventCard]).then(finishSetup);
+            } else {
+                finishSetup();
             }
         });
+
+
+        // Only reveals "Read more" if the description is actually being clamped —
+        // short descriptions never show the button at all.
+        function setUpReadMore(card) {
+            const desc = card.querySelector('.desc-clamp');
+            const toggle = card.querySelector('.read-more-toggle');
+
+            if (desc.scrollHeight > desc.clientHeight + 1) {
+                toggle.hidden = false;
+                toggle.addEventListener('click', () => {
+                    const expanded = desc.classList.toggle('expanded');
+                    toggle.textContent = expanded ? 'Show less' : 'Read more';
+                    toggle.setAttribute('aria-expanded', expanded);
+                });
+            }
+        }
 
     } catch (error) {
         // this code executes if there was an error when fetching the json file

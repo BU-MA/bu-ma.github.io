@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-    uncomment this line to redirect to index.html
-    <meta http-equiv="refresh" content="0; url=https://bu-ma.github.io/contact.html">
-    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - About</title>
+
+    <script>
+        const saved = localStorage.getItem('buma-theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+
     <link rel="stylesheet" href="../src/styles/about.css">
     <link rel="icon" type="image/png" href="../src/assets/logo.png">
+
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
 </head>
@@ -19,33 +22,6 @@
         <h1>About BUMA</h1>
     </div>
 </header>
-
-<!-- FALL 2026 PREP NOTES
-TODO -------------------------------------------------------------------------------------------------------------------
-  1. Our Mission
-    - Do we want to update this? I kinda wanna. Ill brainstorm
-  2. Events
-    - Do we wanna update this? I think it's good
-  3. The Society of Mathematics
-    - I want to keep some mention of SOM on our website, but IDK if it should be on this page. and definitely it should
-      go further down
-  4. Leadership
-    - Status of Alysa? I assume she's going to a general board member but would like to confirm
-    - Add Bala as Secretary
-    - Why isn't Nick here? Add Nick as treasurer
-    - All update bio
-    - Ophelia has graduated. I commented her out. Should we add a legacy leadership page?
-    - Should leadership be its own page?
-  5. More?
-    - When I think of an "About" page, I wanna know a lot more about the club.
-    - Add notes on low committment, past events
-    - Current sem meeting times
-    - how to give a talk
-    - how meetings generally look
-    - we are friendly
-    - pictures of meetings (GET THESE)
-TODO -------------------------------------------------------------------------------------------------------------------
--->
 
 <nav data-page="about"></nav>
 
@@ -215,3 +191,31 @@ TODO ---------------------------------------------------------------------------
 
 </body>
 </html>
+
+
+<!-- FALL 2026 PREP NOTES
+TODO -------------------------------------------------------------------------------------------------------------------
+  1. Our Mission
+    - Do we want to update this? I kinda wanna. Ill brainstorm
+  2. Events
+    - Do we wanna update this? I think it's good
+  3. The Society of Mathematics
+    - I want to keep some mention of SOM on our website, but IDK if it should be on this page. and definitely it should
+      go further down
+  4. Leadership
+    - Status of Alysa? I assume she's going to a general board member but would like to confirm
+    - Add Bala as Secretary
+    - Why isn't Nick here? Add Nick as treasurer
+    - All update bio
+    - Ophelia has graduated. I commented her out. Should we add a legacy leadership page?
+    - Should leadership be its own page?
+  5. More?
+    - When I think of an "About" page, I wanna know a lot more about the club.
+    - Add notes on low committment, past events
+    - Current sem meeting times
+    - how to give a talk
+    - how meetings generally look
+    - we are friendly
+    - pictures of meetings (GET THESE)
+TODO -------------------------------------------------------------------------------------------------------------------
+-->

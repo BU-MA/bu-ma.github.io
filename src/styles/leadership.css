@@ -1,7 +1,7 @@
 @import url(/src/styles/theme.css);
 
 /* ======================
-   Basic styles (ported from functor.css)
+   basic styles
    ====================== */
 
 * {
@@ -32,9 +32,9 @@ a {
 }
 
 /* ======================
-   Persistent top nav
-   Visually this is the homepage's title-card in its ALREADY-scrolled state,
-   permanently — no spacer, no measurement JS, no collapse animation.
+   navbar styles
+   adds a persistent top nav
+   issue: spacing is wrong. fix later
    ====================== */
 
 .site-nav {
