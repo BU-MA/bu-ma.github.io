@@ -192,6 +192,109 @@
     border-color: var(--text-color);
 }
 
+/* ======================
+   some types of cards
+   ====================== */
+
+/*
+ * .side-clamp-card is a transparent card with a border on the left and right.
+ * the border curves around the rounded edges, giving a sort of "clamp" look.
+ * it lifts slightly when hovered, and adds a background shadow.
+ * margins are a bit large due to use as theorem of the week, might shrink and
+ * increase .side-clamp-card#theorem-of-the-week's margins
+ */
+.side-clamp-card {
+    border-radius: var(--radius);
+    padding: 2rem 2.25rem;
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    max-width: 800px;
+    border-left: 4px solid var(--primary-color);
+    border-right: 4px solid var(--primary-color);
+    margin: 4rem 2rem 2rem;
+}
+.side-clamp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
+}
+
+
+/*
+ * .shine-card is not designed to be a standalone class. it is designed so that you add it to a card
+ * that already has another class, and it applies a shine/wipe animation on hover.
+ * eg. `<div class="event-card shine-card">owo</div>`
+ */
+.shine-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(var(--primary-rgb), 0.14), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+}
+.shine-card:hover:hover::after {
+    left: 120%;
+}
+
+/* =====================
+   Card text stylings
+   ===================== */
+
+/*
+ * applies a mostly transparent, large watermark in the bottom right of the card.
+ * should be invoked with code like
+ * `<div class="card-watermark" aria-hidden="true">[SYMBOL]</div>`
+ */
+.card-watermark {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    font-size: 8rem;
+    color: var(--primary-color);
+    opacity: 0.04;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+/*
+ * an all-caps top line for cards. can be used as a sort of title.
+ */
+.card-eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--secondary-color);
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+/* ======================
+   floating math symbols
+   ====================== */
+
+/* stylings for floating math symbols*/
+.floater {
+    position: absolute;
+    font-family: var(--font-family-headings);
+    color: var(--primary-color);
+    opacity: 0.1;
+    animation: floatSymbol 14s ease-in-out infinite;
+}
+@keyframes floatSymbol {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-18px) rotate(4deg); }
+}
+
+
 @media (max-width: 600px) { /* displays hamburger style menu if website is <= 600px wide */
     .nav-toggle {
         display: block;

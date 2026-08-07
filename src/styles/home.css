@@ -79,27 +79,6 @@ a {
     color: var(--secondary-color);
 }
 
-.back-link { /* For the "back to showcase" button, will be removed if we push to prod */
-    position: fixed;
-    left: 1.25rem;
-    bottom: 1.25rem;
-    z-index: 900;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.55rem 1rem;
-    background: rgba(var(--surface-color), 0.85);
-    border: 1px solid var(--border-color);
-    border-radius: 999px;
-    color: var(--text-color-muted);
-    text-decoration: none;
-    font-size: 0.85rem;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 10px 24px -12px rgba(var(--shadow-rgb), 0.6);
-    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 /* ======================
    Title Card
    The title card's animation where it collapses into a title bar is suprisingly complex
@@ -367,14 +346,7 @@ a {
     display: none;
 }
 
-/* stylings for floating math symbols*/
-.floater {
-    position: absolute;
-    font-family: var(--font-family-headings);
-    color: var(--primary-color);
-    opacity: 0.1;
-    animation: floatSymbol 14s ease-in-out infinite;
-}
+
 /* each floating math symbol also has one of these classes to manage position, size, and animation */
 .f1 { top: 12%; left: 8%;  font-size: 4.5rem; animation-duration: 16s; }
 .f2 { top: 65%; left: 18%; font-size: 3rem;   animation-duration: 13s; animation-delay: -3s; }
@@ -382,10 +354,6 @@ a {
 .f4 { top: 75%; left: 78%; font-size: 3.5rem; animation-duration: 15s; animation-delay: -2s; }
 .f5 { top: 45%; left: 50%; font-size: 2.5rem; animation-duration: 12s; animation-delay: -8s; opacity: 0.07; }
 .f6 { top: 8%;  left: 45%; font-size: 3rem;   animation-duration: 17s; animation-delay: -4s; }
-@keyframes floatSymbol {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50%      { transform: translateY(-18px) rotate(4deg); }
-}
 
 
 /*
@@ -543,29 +511,6 @@ nav ul.nav-links li a:hover::after {
  */
 
 /*
- * .side-clamp-card is a transparent card with a border on the left and right.
- * the border curves around the rounded edges, giving a sort of "clamp" look.
- * it lifts slightly when hovered, and adds a background shadow.
- * margins are a bit large due to use as theorem of the week, might shrink and
- * increase .side-clamp-card#theorem-of-the-week's margins
- */
-.side-clamp-card {
-    border-radius: var(--radius);
-    padding: 2rem 2.25rem;
-    transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-    max-width: 800px;
-    border-left: 4px solid var(--primary-color);
-    border-right: 4px solid var(--primary-color);
-    margin: 4rem 2rem 2rem;
-}
-.side-clamp-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
-}
-
-/*
  * i dont think .item-card is currently used and i will probably delete it
  */
 .item-card {
@@ -585,64 +530,6 @@ nav ul.nav-links li a:hover::after {
     transform: translateY(-6px);
     box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.3);
 }
-
-/*
- * .shine-card is not designed to be a standalone class. it is designed so that you add it to a card
- * that already has another class, and it applies a shine/wipe animation on hover.
- * eg. `<div class="event-card shine-card">owo</div>`
- */
-.shine-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.shine-card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -60%;
-    width: 40%; height: 100%;
-    background: linear-gradient(115deg, transparent, rgba(var(--primary-rgb), 0.14), transparent);
-    transform: skewX(-15deg);
-    transition: left 0.65s ease;
-    pointer-events: none;
-}
-.shine-card:hover:hover::after {
-    left: 120%;
-}
-
-/* =====================
-   Card text stylings
-   ===================== */
-
-/*
- * applies a mostly transparent, large watermark in the bottom right of the card.
- * should be invoked with code like
- * `<div class="card-watermark" aria-hidden="true">[SYMBOL]</div>`
- */
-.card-watermark {
-    position: absolute;
-    bottom: -20px;
-    right: 20px;
-    font-size: 8rem;
-    color: var(--primary-color);
-    opacity: 0.04;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-}
-
-/*
- * an all-caps top line for cards. can be used as a sort of title.
- */
-.card-eyebrow {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--secondary-color);
-    margin-bottom: 1.25rem;
-    font-weight: 700;
-}
-
 
 
 /* ===================

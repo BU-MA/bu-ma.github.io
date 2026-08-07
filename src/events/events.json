@@ -1,6 +1,27 @@
 [
   {
-    "title": "TEST EVENT",
+    "title": "TEST EVENT -3",
+    "location": "CDS 365",
+    "description": "This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \\(\\sigma : \\Delta^n \\to X \\)",
+    "datetime": "2026-08-07T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "TEST EVENT -2",
+    "location": "CDS 365",
+    "description": "This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \\(\\sigma : \\Delta^n \\to X \\)",
+    "datetime": "2026-08-09T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "TEST EVENT -1",
+    "location": "CDS 365",
+    "description": "This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \\(\\sigma : \\Delta^n \\to X \\)",
+    "datetime": "2026-08-12T17:00:00",
+    "duration": 60
+  },
+  {
+    "title": "TEST EVENT 0",
     "location": "CDS 365",
     "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
     "datetime": "2026-09-08T17:00:00",

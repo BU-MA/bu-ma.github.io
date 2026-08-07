@@ -1,142 +1,223 @@
 /*
- * Loads events.json and generates the html contents of the events block in /events/.
- * Written by grant talbert.
- * i do not know why the entire thing is wrapped in a function call. -grant, a year after writing this
+ * Loads events.json and populates the three tiers on the events page:
+ *   1. #eventFeatured     - the single next upcoming event (big, prominent)
+ *   2. #eventHighlights   - anything else happening in the next 14 days (medium)
+ *   3. #eventAccordion    - everything further out, as collapsed rows
  *
- * This script looks for any html element with the `event-list` css class, and populates it with cards for any upcoming
- * events listed in events.json. Most likely you should use a div element, so your html code would look like
- * ```
- * <div class="event-list"></div>
- * ```
+ * Written by grant talbert. Rewritten fall 2026 for the tiered layout.
+ *
+ * HOW THE SPLIT WORKS
+ * All non-TBD, non-past events are sorted chronologically. The first one
+ * becomes "featured". Of the ones left, anything starting within
+ * HIGHLIGHT_WINDOW_DAYS of *today* (not of the featured event) becomes
+ * "highlighted". Everything else falls into the collapsed accordion.
+ * Change HIGHLIGHT_WINDOW_DAYS below to widen/narrow that window.
  */
-
 
 import { downloadICS } from '../misc-js/ics-manager.js';
 
+const HIGHLIGHT_WINDOW_DAYS = 14;
 
 (async function loadEvents() {
-    // Looks for an instance of the event-list css class to populate
-    const eventListContainer = document.querySelector('.event-list');
-    if (!eventListContainer) {
-        console.error("Event list container not found!");
+    const featuredContainer = document.getElementById('eventFeatured');
+    const highlightsContainer = document.getElementById('eventHighlights');
+    const accordionContainer = document.getElementById('eventAccordion');
+
+    // this page might not have all three tiers present (e.g. a future stripped-down
+    // version) so bail gracefully rather than assuming all of them exist
+    if (!featuredContainer && !highlightsContainer && !accordionContainer) {
         return;
     }
 
+    // declared here (not inside the try block) so that renderHighlights() below,
+    // which is defined outside the try block, can still see it when it runs
+    const now = new Date();
+
     try {
-        // import the events.json file
         const response = await fetch('/src/events/events.json');
-        // throws an error if there was an error importing the json file
-        // in this case, the rest of the `try` block is skipped
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // this comment is here to tell you that this line is self-explanatory and does not need a comment
-        const now = new Date();
+        const highlightCutoff = new Date(now.getTime() + HIGHLIGHT_WINDOW_DAYS * 86400000);
 
-        // stores the contents of events.json
         const upcomingEvents = (await response.json())
-            /*
-             * Events with a datetime marked as "TBD" are filtered out and not rendered. This is nice for a variety of
-             * reasons, such as if you don't know the specifics of an event yet and thus don't want to make it public
-             * This also discards all events that already happened. If you want to render previous events, remove the
-             * block that filters them (marked below)
-             */
             .filter(event => {
-                // this block filters out events with TBD datetime or no duration
-                if (event.datetime === "TBD" || !event.duration) {
-                    return false;
-                }
-
-                // this block filters out all previous events
+                if (event.datetime === "TBD" || !event.duration) return false;
                 const startTime = new Date(event.datetime);
-                /* datetime measures time in ms. event.duration is measured in minutes. One minute is 60 seconds is
-                60 * 1000 = 60000 ms */
-                const endTime = new Date(startTime.getTime() + event.duration * 60000)
+                const endTime = new Date(startTime.getTime() + event.duration * 60000);
                 return endTime > now;
             })
+            .sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
 
-        // checks if there are any upcoming events; exits if none are found
         if (upcomingEvents.length === 0) {
-            eventListContainer.innerHTML = '<p style="text-align: center;">' +
-                'No upcoming events. Please check back soon!</p>';
+            renderEmptyState();
             return;
         }
 
-        // removes any contents of the eventListContainer just to be safe
-        // comment this out if you want to include something in there
-        // but idk why youd want that
-        eventListContainer.innerHTML = '';
+        const [featured, ...rest] = upcomingEvents;
+        const highlighted = rest.filter(e => new Date(e.datetime) <= highlightCutoff);
+        const later = rest.filter(e => new Date(e.datetime) > highlightCutoff);
 
-        const formatDateBadge = (startTime) => {
-            const startDay = new Date(startTime.getFullYear(), startTime.getMonth(), startTime.getDate());
-            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-            const diffDays = Math.round((startDay - today) / 86400000);
+        renderFeatured(featured);
+        renderHighlights(highlighted);
+        renderAccordion(later);
 
-            if (diffDays === 0) return 'Today';
-            if (diffDays === 1) return 'Tomorrow';
-            if (diffDays > 1 && diffDays < 7) {
-                return `This ${startTime.toLocaleDateString('en-US', { weekday: 'long' })}`;
-            }
-            return startTime.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        };
+        if (window.MathJax) {
+            window.MathJax.typesetPromise();
+        }
 
-        const formatDate = (date) => {
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString('en-US', options);
-        };
+    } catch (error) {
+        console.error("Failed to load upcoming events:", error);
+        renderErrorState();
+    }
 
-        const formatTime = (time) => {
-            return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-        };
+    // ---------------------------------------------------------------
+    // Tier 1: Featured
+    // ---------------------------------------------------------------
+    function renderFeatured(event) {
+        if (!featuredContainer) return;
 
-        // this block constructs an eventCard for each event, which is the card that is displayed for this event on the page
-        upcomingEvents.forEach(event => {
-            const eventCard = document.createElement('article');
-            eventCard.className = 'event-card';
+        const startTime = new Date(event.datetime);
+        const endTime = new Date(startTime.getTime() + event.duration * 60000);
 
+        featuredContainer.innerHTML = `
+            <div class="event-featured-date">
+                <span class="event-featured-weekday">${startTime.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+                <span class="event-featured-day">${startTime.getDate()}</span>
+                <span class="event-featured-month">${startTime.toLocaleDateString('en-US', { month: 'short' })}</span>
+            </div>
+            <div class="event-featured-body">
+                <span class="event-featured-eyebrow">Up Next</span>
+                <h3>${event.title}</h3>
+                <p class="event-featured-meta">${formatTime(startTime)} &ndash; ${formatTime(endTime)} &middot; ${event.location}</p>
+                <p class="event-featured-description">${event.description}</p>
+                <button class="cta-button event-featured-cta">Add to Calendar</button>
+            </div>
+        `;
+
+        featuredContainer.querySelector('.event-featured-cta').addEventListener('click', () => {
+            downloadICS(event, startTime, endTime);
+        });
+    }
+
+    // ---------------------------------------------------------------
+    // Tier 2: Highlighted (next two weeks)
+    // ---------------------------------------------------------------
+    function renderHighlights(events) {
+        const section = document.getElementById('coming-up-section');
+        if (!highlightsContainer || !section) return;
+
+        if (events.length === 0) {
+            section.hidden = true;
+            return;
+        }
+        section.hidden = false;
+        highlightsContainer.innerHTML = '';
+
+        events.forEach(event => {
             const startTime = new Date(event.datetime);
             const endTime = new Date(startTime.getTime() + event.duration * 60000);
 
-            // the exact layout of the eventCard is defined here
-            // feel free to change it if you want
-            // to change the styles, look at events.css
-            eventCard.innerHTML = `
+            const card = document.createElement('article');
+            card.className = 'event-card';
+            card.innerHTML = `
                 <div class="card-top">
-                    <span class="date-badge">${formatDateBadge(startTime)}</span>
+                    <span class="date-badge">${formatDateBadge(startTime, now)}</span>
                     <button class="add-to-calendar" aria-label="Add to calendar">
                         <span class="add-to-calendar-icon">+</span>
                         <span class="tooltip" role="tooltip">Add to calendar</span>
                     </button>
                 </div>
                 <h3>${event.title}</h3>
-                <p class="event-meta">${formatDate(startTime)} · ${formatTime(startTime)} – ${formatTime(endTime)} · ${event.location}</p>
+                <p class="event-meta">${formatDate(startTime)} &middot; ${formatTime(startTime)} &ndash; ${formatTime(endTime)} &middot; ${event.location}</p>
                 <p class="event-description desc-clamp">${event.description}</p>
                 <button class="read-more-toggle" aria-expanded="false" hidden>Read more</button>
             `;
 
-            eventCard.querySelector('.add-to-calendar').addEventListener('click', () => {
-                downloadICS(event, startTime, endTime)
-            })
+            card.querySelector('.add-to-calendar').addEventListener('click', () => {
+                downloadICS(event, startTime, endTime);
+            });
 
-            eventListContainer.appendChild(eventCard);
-
-            const finishSetup = () => setUpReadMore(eventCard);
-            // renders any latex code
-            if (window.MathJax) {
-                window.MathJax.typesetPromise([eventCard]).then(finishSetup);
-            } else {
-                finishSetup();
-            }
+            highlightsContainer.appendChild(card);
+            setUpReadMore(card);
         });
+    }
 
+    // ---------------------------------------------------------------
+    // Tier 3: Collapsed accordion (rest of the semester)
+    // ---------------------------------------------------------------
+    function renderAccordion(events) {
+        const section = document.getElementById('rest-of-sem-section');
+        if (!accordionContainer || !section) return;
 
-        // Only reveals "Read more" if the description is actually being clamped —
-        // short descriptions never show the button at all.
-        function setUpReadMore(card) {
+        if (events.length === 0) {
+            section.hidden = true;
+            return;
+        }
+        section.hidden = false;
+        accordionContainer.innerHTML = '';
+
+        events.forEach(event => {
+            const startTime = new Date(event.datetime);
+            const endTime = new Date(startTime.getTime() + event.duration * 60000);
+
+            const row = document.createElement('div');
+            row.className = 'event-row';
+            row.innerHTML = `
+                <button class="event-row-toggle" aria-expanded="false">
+                    <span class="event-row-date">${startTime.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                    <span class="event-row-title">${event.title}</span>
+                    <span class="event-row-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="event-row-content">
+                    <div class="event-row-content-inner">
+                        <p class="event-meta">${formatDate(startTime)} &middot; ${formatTime(startTime)} &ndash; ${formatTime(endTime)} &middot; ${event.location}</p>
+                        <p class="event-description">${event.description}</p>
+                        <button class="event-row-cta shine-card">Add to Calendar</button>
+                    </div>
+                </div>
+            `;
+
+            row.querySelector('.event-row-toggle').addEventListener('click', () => {
+                const toggle = row.querySelector('.event-row-toggle');
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                row.classList.toggle('open');
+            });
+
+            row.querySelector('.event-row-cta').addEventListener('click', (e) => {
+                e.stopPropagation();
+                downloadICS(event, startTime, endTime);
+            });
+
+            accordionContainer.appendChild(row);
+        });
+    }
+
+    function renderEmptyState() {
+        if (featuredContainer) {
+            featuredContainer.innerHTML = '<p class="event-empty-state">No upcoming events. Please check back soon!</p>';
+        }
+        document.getElementById('coming-up-section')?.setAttribute('hidden', '');
+        document.getElementById('rest-of-sem-section')?.setAttribute('hidden', '');
+    }
+
+    function renderErrorState() {
+        if (featuredContainer) {
+            featuredContainer.innerHTML = '<p class="event-empty-state">Sorry, we were unable to load the event schedule. ' +
+                '(If this error persists, maybe email us at <a href="mailto:bumaa@bu.edu" target="_blank">bumaa@bu.edu</a> to let us know this is broken)</p>';
+        }
+        document.getElementById('coming-up-section')?.setAttribute('hidden', '');
+        document.getElementById('rest-of-sem-section')?.setAttribute('hidden', '');
+    }
+
+    // Only reveals "Read more" if the description is actually being clamped —
+    // short descriptions never show the button at all.
+    function setUpReadMore(card) {
+        const finish = () => {
             const desc = card.querySelector('.desc-clamp');
             const toggle = card.querySelector('.read-more-toggle');
-
             if (desc.scrollHeight > desc.clientHeight + 1) {
                 toggle.hidden = false;
                 toggle.addEventListener('click', () => {
@@ -145,14 +226,33 @@ import { downloadICS } from '../misc-js/ics-manager.js';
                     toggle.setAttribute('aria-expanded', expanded);
                 });
             }
+        };
+        if (window.MathJax) {
+            window.MathJax.typesetPromise([card]).then(finish);
+        } else {
+            finish();
         }
+    }
 
-    } catch (error) {
-        // this code executes if there was an error when fetching the json file
-        // it just renders a short message
-        console.error("Failed to load events:", error);
-        eventListContainer.innerHTML = '<p>Sorry, we were unable to load the event schedule. Please try again.</p>' +
-            '<p>(If this error persists, maybe email us at <a href="mailto:bumaa@bu.edu" target="_blank">bumaa@bu.edu</a>' +
-            'to let us know this is broken)</p>';
+    function formatDateBadge(startTime, now) {
+        const startDay = new Date(startTime.getFullYear(), startTime.getMonth(), startTime.getDate());
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const diffDays = Math.round((startDay - today) / 86400000);
+
+        if (diffDays === 0) return 'Today';
+        if (diffDays === 1) return 'Tomorrow';
+        if (diffDays > 1 && diffDays < 7) {
+            return `This ${startTime.toLocaleDateString('en-US', { weekday: 'long' })}`;
+        }
+        return startTime.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    }
+
+    function formatDate(date) {
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
+
+    function formatTime(time) {
+        return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
     }
 })();

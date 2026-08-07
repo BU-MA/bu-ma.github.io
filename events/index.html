@@ -8,55 +8,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Events</title>
+
+    <script>
+        const saved = localStorage.getItem('buma-theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+
+
     <link rel="stylesheet" href="../src/styles/events.css">
     <link rel="icon" type="image/png" href="../src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
+    <script src="/src/css-redesign-showcase/js/theme-switcher.js" defer></script>
+    <script src="/src/events/hero-canvas.js" defer></script>
+
+
 </head>
-<body>
-<header>
-    <div class="container">
-        <h1>Fall 2026 Events</h1>
-    </div>
-</header>
+
 
 <!-- FALL 2026 PREP NOTES
 TODO -------------------------------------------------------------------------------------------------------------------
-  - Maintenance on this page is minimal, but there are upgrades I want to do
-  1. Write Spring 2026 page for past events
-      - This will require looking back at what our events actually were since I didn't keep up with it that well
-  2. Brainstorm sweeping changes. Like maybe event cards link to pages for that particular event? Maybe there is a
-     button to subscribe to all of our events somehow?
-  3. Update the css (requires updating events.js)
+  1. each event can possibly get its own page? this would require adding a workflow but not too bad
+  2. test the subscription + add event on both mobile and desktop w/ various browsers, add additional instructions
+    - it just downlods the ics file on mobile, how do i make it default to going into cal
 TODO -------------------------------------------------------------------------------------------------------------------
 so far I have added spring-2026.html and spring-2026.json, finally updated fall-2025.json, added too many comments to
 event.js, and made past-events.js modular so i can important any semester's json to it. I added an option to download an
 ics file for adding individual events to your calendar, which runs through /src/misc-js/ics-manager.js. This exports
 two functions that are now imported by events.js. I have now updated the fall-2025 and spring-2026 jsons. I fixed the
 title of this page, which incorrectly said Fall 2025. Ok now I have added a subscription button.
-
-NOTE: Do not make css changes yet, just focus on functionality, because I want to rewrite all of the css.
 -->
 
-<nav data-page="events"></nav>
+
+<body>
+
+<header class="site-nav" id="siteNav">
+    <div class="site-nav-inner">
+        <span class="brand">Boston University Mathematics Association</span>
+        <nav data-page="events" aria-label="Primary"></nav>
+    </div>
+</header>
+
+<div class="events-hero">
+    <div class="hero-field" aria-hidden="true">
+        <span class="floater f1">\( \mathcal{O}_X \)</span>
+        <span class="floater f2">\( \Sigma \)</span>
+        <span class="floater f3">\( \mathbb{Z}_p \)</span>
+        <span class="floater f4">\( \prod \)</span>
+    </div>
+    <div class="container hero-split-container">
+        <div class="hero-text">
+            <h1>Fall 2026<br>Schedule</h1>
+            <p class="hero-sub">
+                Wednesdays, 6-7pm in CDS 365. See what's coming up.
+            </p>
+        </div>
+
+        <div class="subscribe-hero-card">
+            <div class="subscribe-content">
+                <h3>Never miss a meeting</h3>
+                <p>Sync our schedule directly to your Google or Apple calendar. We'll automatically update times and locations for you.</p>
+
+                <p class="troubleshoot-text">
+                    <em>If the link fails on desktop, try subscribing directly from your phone.</em>
+                </p>
+
+                <a href="webcal://bu-ma.github.io/src/events/buma-events.ics" class="cta-button subscribe-btn">
+                    Subscribe to our Calendar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <main>
     <div class="container">
 
-        <div class="subscribe-container">
-            <h2>Subscribe to our event calendar</h2>
-            <p>By subscribing to our event calendar, your Google or Apple calendar will automatically create events in your
-            calendar for all of our events, and will update them any time we change them. You can unsubscribe easily at
-            any time from your calendar app.</p>
-            <div class="subscribe-to-calendar-button">
-                <a href="webcal://bu-ma.github.io/src/events/buma-events.ics">Subscribe</a>
+        <!-- Tier 1: the single next upcoming event. Big and hard to miss. -->
+        <section class="event-list-container" id="up-next-section">
+            <h2>Up Next</h2>
+            <div class="event-featured" id="eventFeatured">
+                <!-- populated by events.js -->
             </div>
-        </div>
-
-        <section class="event-list-container">
-            <h2>Upcoming Events</h2>
-            <div class="event-list"></div>
         </section>
+
+        <!-- Tier 2: anything else happening in the next two weeks. Still called
+             out, but smaller than the featured event above it. Hidden entirely
+             if there's nothing in this window. -->
+        <section class="event-list-container" id="coming-up-section" hidden>
+            <h2>The Next Two Weeks</h2>
+            <div class="event-highlight-grid" id="eventHighlights">
+                <!-- populated by events.js -->
+            </div>
+        </section>
+
+        <!-- Tier 3: everything else on the schedule. Collapsed rows, expand
+             on click to see the rest of the details. -->
+        <section class="event-list-container" id="rest-of-sem-section" hidden>
+            <h2>Rest of the Semester</h2>
+            <div class="event-accordion" id="eventAccordion">
+                <!-- populated by events.js -->
+            </div>
+        </section>
+
         <section class="past-events-container">
             <h2>Past Events</h2>
             <ul>
@@ -70,6 +125,7 @@ NOTE: Do not make css changes yet, just focus on functionality, because I want t
 <footer></footer>
 
 <script type="module" src="/src/events/events.js"></script>
+<script src="/src/leadership/leadership.js" defer></script>
 
 </body>
 </html>

@@ -1,115 +1,580 @@
 @import url('/src/styles/theme.css');
 
-/* --- Events Page Specific Styles --- */
-.event-list-container h2 {
+/* ======================
+   Basic styles
+   ====================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-family-headings);
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ======================
+   Site nav
+   ====================== */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: box-shadow 0.3s ease;
+}
+.site-nav.scrolled {
+    box-shadow: 0 8px 24px rgba(var(--shadow-rgb), 0.35);
+}
+
+.site-nav-inner {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.brand {
+    font-family: var(--font-family-headings);
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+.site-nav nav {
+    position: relative;
+}
+
+ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0.25rem;
+}
+ul.nav-links li a {
+    position: relative;
+    color: var(--text-color);
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease;
+}
+ul.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.35rem;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+ul.nav-links li a:hover,
+ul.nav-links li a.active {
+    color: var(--primary-color-darker);
+}
+ul.nav-links li a:hover::after,
+ul.nav-links li a.active::after {
+    transform: scaleX(1);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .nav-toggle { display: block; }
+    ul.nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        padding: 0.5rem;
+        box-shadow: 0 8px 20px rgba(var(--shadow-rgb), 0.3);
+    }
+    ul.nav-links.open { display: flex; }
+}
+
+/* ======================
+   Page hero
+   ====================== */
+
+/* --- Hero Layout --- */
+.events-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 0;
+    background-color: transparent; /* Removed the solid background so the canvas is visible */
+}
+
+.hero-split-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1; /* Keeps content above the canvas */
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+    pointer-events: none;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-color-muted);
+    max-width: 400px;
+}
+
+/* --- Glassmorphic Subscribe Card --- */
+.subscribe-hero-card {
+    flex: 0 1 420px;
+    /* Hardcoded dark fallback with transparency so the blur works across all themes */
+    background: rgba(20, 20, 25, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.subscribe-content h3 { font-size: 1.4rem; margin-bottom: 0.75rem; color: var(--text-color); }
+.subscribe-content p { font-size: 0.95rem; color: var(--text-color-muted); margin-bottom: 1rem; }
+
+.troubleshoot-text {
+    font-size: 0.85rem !important;
+    color: var(--secondary-color) !important;
+    opacity: 0.9;
+    margin-bottom: 1.5rem !important;
+    border-left: 2px solid var(--secondary-color);
+    padding-left: 0.75rem;
+}
+
+.subscribe-btn { width: 100%; text-align: center; display: block; }
+
+.hero-field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* each floating math symbol also has one of these classes to manage position, size, and animation */
+.f1 { top: 15%; left: 10%; font-size: 3.5rem; animation-duration: 16s; }
+.f2 { top: 60%; left: 20%; font-size: 2.5rem; animation-duration: 13s; animation-delay: -3s; }
+.f3 { top: 25%; left: 82%; font-size: 4rem;   animation-duration: 18s; animation-delay: -6s; }
+.f4 { top: 70%; left: 78%; font-size: 3rem;   animation-duration: 15s; animation-delay: -2s; }
+
+
+/* Same cta-button treatment used in home.css / manifold.css / sheaf.css */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--text-on-primary);
+    padding: 0.85rem 1.9rem;
+    border-radius: var(--radius);
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(var(--primary-rgb), 0.35);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(var(--primary-rgb), 0.45);
+}
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.65s ease;
+}
+.cta-button:hover::after { left: 130%; }
+
+/* ======================
+   Main content
+   ====================== */
+
+main {
+    width: 100%;
+}
+main .container {
+    padding-bottom: 4rem;
+}
+
+.event-list-container h2,
+.past-events-container h2 {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    padding-top: 2.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.section-note {
+    color: var(--text-color-muted);
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-empty-state {
+    color: var(--text-color-muted);
+    padding: 2rem;
     text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    padding-top: 2rem;
-    color: #fff;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+}
+
+
+/* ==========================================================================
+   TIER 1: FEATURED EVENT ("Up Next")
+   The single next upcoming event. This should be the loudest thing on the
+   page. Current treatment: a "ticket stub" — a date block torn off from
+   the details, dashed perforation line between them.
+   ========================================================================== */
+
+.event-featured {
+    display: flex;
+    align-items: stretch;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 14px 34px rgba(var(--shadow-rgb), 0.35);
+    margin-top: 1.5rem;
+}
+
+.event-featured-date {
+    flex: 0 0 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 2rem 1rem;
+    background: var(--primary-color);
+    color: var(--text-on-primary);
+    text-align: center;
+    border-right: 3px dashed rgba(var(--shadow-rgb), 0.35);
+}
+.event-featured-weekday {
+    font-family: var(--font-family-headings);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+}
+.event-featured-day {
+    font-family: var(--font-family-headings);
+    font-size: 3.25rem;
+    font-weight: bold;
+    line-height: 1;
+}
+.event-featured-month {
+    font-family: var(--font-family-headings);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.event-featured-body {
+    position: relative;
+    flex: 1;
+    padding: 2rem 2.25rem;
+    overflow: hidden;
+}
+.event-featured-eyebrow {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.event-featured-body h3 {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+.event-featured-meta {
+    color: var(--text-color-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+.event-featured-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 60ch;
+    position: relative;
+    z-index: 1;
+}
+.event-featured-cta {
+    position: relative;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    .event-featured {
+        flex-direction: column;
+    }
+    .event-featured-date {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 3px dashed rgba(var(--shadow-rgb), 0.35);
+    }
+    .event-featured-day { font-size: 2rem; }
+}
+
+
+/* ==========================================================================
+   TIER 2: HIGHLIGHTED EVENTS ("Coming Up" — next two weeks)
+   Reuses .event-card (below) so it stays visually related to the featured
+   card, just smaller and grid-packed instead of full width.
+   ========================================================================== */
+
+.event-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* small accent that only applies inside the highlight grid, so the plain
+   .event-card used on the past-events pages is untouched */
+.event-highlight-grid .event-card {
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+
+/* ==========================================================================
+   TIER 3: REST OF THE SEMESTER (collapsed accordion)
+   Same expand/collapse mechanism as the homepage FAQ (grid-template-rows
+   0fr -> 1fr), just re-skinned as a compact row instead of a question card.
+   ========================================================================== */
+
+.event-accordion {
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 1rem;
+    box-shadow: 0px 0px 15px var(--third-color);}
+
+.event-row {
+    border-bottom: 1px solid var(--border-color);
+}
+.event-row:last-child {
+    border-bottom: none;
+}
+
+.event-row-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    transition: background-color 0.2s ease;
+}
+.event-row-toggle:hover {
+    background: var(--surface-color-alt);
+}
+
+.event-row-date {
+    flex-shrink: 0;
+    min-width: 4.5rem;
+    font-family: var(--font-family-headings);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--secondary-color);
+}
+.event-row-title {
+    flex: 1;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.event-row-icon {
+    flex-shrink: 0;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.event-row.open .event-row-icon {
+    transform: rotate(45deg);
+}
+
+.event-row-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.event-row.open .event-row-content {
+    grid-template-rows: 1fr;
+}
+.event-row-content-inner {
+    overflow: hidden;
+}
+.event-row-content-inner .event-meta {
+    padding: 0 1.5rem;
+}
+.event-row-content-inner .event-description {
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+}
+.event-row-cta {
+    margin: 0 1.5rem 1.25rem;
+    padding: 0.5rem 1.1rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--primary-color);
+    color: var(--text-on-primary);
+    font-family: var(--font-family-headings);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.event-row-cta:hover {
+    background: var(--primary-color-darker);
 }
 
 .event-list {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
+}
+
+/* ---- event card (used on the main events page) ---- */
+
+.next-up-container {
+    display: block;
+    align-content: center;
+}
+.next-up-container h2 {
+    text-align: center;
+    color: var(--primary-color);
 }
 
 .event-card {
+    position: relative;
+    overflow: hidden;
     background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    box-shadow: 0 6px 18px rgba(var(--shadow-rgb), 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(var(--shadow-rgb), 0.32);
 }
+/* shine sweep on hover, same mechanism as .card / .event-item elsewhere */
+.event-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(var(--primary-rgb), 0.14), transparent);
+    transform: skewX(-15deg);
+    transition: left 0.65s ease;
+    pointer-events: none;
+}
+.event-card:hover::after { left: 120%; }
 
 .event-card h3 {
-    margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin: 0.75rem 0 0.4rem;
+    position: relative;
+    z-index: 1;
 }
 
-.event-details {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    color: #ccc;
-}
-
-.event-details p {
-    margin-bottom: 0.5rem;
-}
-
-.event-description {
-    margin-top: 1rem;
-}
-
-/* Responsive layout for wider screens */
-@media (min-width: 768px) {
-    .event-list {
-        /* Switch to 2 columns on tablets and larger */
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.past-events-container h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    padding-top: 2rem;
-    color: #fff;
-}
-
-.past-events-container ul {
-    padding: 10pt;
-}
-
-
-.subscribe-to-calendar-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-align: center;
-    font-family: var(--font-family-body);
-    transition: background-color 0.3s ease;
-    border: none;
-}
-
-.subscribe-to-calendar-button:hover {
-    background-color: var(--primary-color-darker);
-}
-
-.subscribe-container {
-    background-color: var(--surface-color);
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 1.5rem 0;
-}
-
-.subscribe-to-calendar-button a {
-    color: #ffffff;
-}
 .card-top {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .date-badge {
     display: inline-block;
-    background: rgba(255, 60, 60, 0.15);
+    background: rgba(var(--primary-rgb), 0.15);
     color: var(--primary-color-lighter);
-    font-size: 0.8rem;
+    font-family: var(--font-family-headings);
+    font-size: 0.78rem;
     font-weight: bold;
+    letter-spacing: 0.03em;
     padding: 0.3rem 0.7rem;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
 }
 
 .add-to-calendar {
@@ -126,41 +591,53 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-
 .add-to-calendar:hover {
     background: var(--primary-color);
     border-color: var(--primary-color);
-    color: #fff;
+    color: var(--text-on-primary);
+    transform: scale(1.08);
 }
-
 .add-to-calendar .tooltip {
     position: absolute;
     bottom: calc(100% + 0.5rem);
     right: 0;
-    background: #111;
-    color: #fff;
+    background: var(--surface-color-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
     font-size: 0.75rem;
     padding: 0.35rem 0.6rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
     transform: translateY(4px);
     transition: opacity 0.15s ease, transform 0.15s ease;
 }
-
 .add-to-calendar:hover .tooltip,
 .add-to-calendar:focus-visible .tooltip {
     opacity: 1;
     transform: translateY(0);
 }
 
-.event-meta {
+.event-meta,
+.event-details {
     color: var(--text-color-muted);
     font-size: 0.9rem;
     margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+/* .event-details is the simpler <p><strong> layout used by past-events.js */
+.event-details p { margin-bottom: 0.25rem; }
+.event-details strong { color: var(--text-color); }
+
+.event-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 .desc-clamp {
@@ -169,7 +646,6 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
 .desc-clamp.expanded {
     display: block;
     -webkit-line-clamp: unset;
@@ -177,135 +653,79 @@
 
 .read-more-toggle {
     display: inline-block;
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
     background: none;
     border: none;
     padding: 0;
     color: var(--primary-color);
     font-size: 0.85rem;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
+.read-more-toggle:hover { text-decoration: underline; }
 
-.read-more-toggle:hover {
-    text-decoration: underline;
+/* ---- past events links ---- */
+
+.past-events-container ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 1.5rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-h1, h2, h3, h4 {
-    font-family: var(--font-family-headings);
-}
-
-header {
+.past-events-container li a {
+    display: inline-block;
     background: var(--surface-color);
-    padding: 2rem 0;
-    text-align: center;
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    font-family: var(--font-family-headings);
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(var(--shadow-rgb), 0.2);
+    transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.past-events-container li a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(var(--shadow-rgb), 0.3);
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
+/* ======================
+   Footer
+   ====================== */
 
 footer {
+    width: 100%;
     text-align: center;
     padding: 1.5rem 0;
     background: var(--surface-color);
+    border-top: 1px solid var(--border-color);
     margin-top: 2rem;
-    border-top: 1px solid #444;
+}
+footer p {
+    color: var(--text-color-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
-/* navbar */
+/* ======================
+   Reduced motion
+   ====================== */
 
-nav {
-    background: #333;
-    padding: 0.5rem 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li a {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background-color 0.3s ease;
-    border-radius: 4px;
-    font-family: var(--font-family-headings);
-}
-
-nav ul li a:hover {
-    background-color: var(--surface-color);
-    /* border-radius: 4px; */
-}
-
-nav a.active {
-    color: var(--primary-color);
-    border-radius: 4px;
-}
-
-/* mobile navbar */
-
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-@media (max-width: 600px) { /* displays hamburger style menu if website is <= 600px wide */
-    .nav-toggle {
-        display: block;
+@media (prefers-reduced-motion: reduce) {
+    .floater {
+        animation: none !important;
     }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-    .nav-links.open {
-        display: flex;
-    }
-    nav .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+    .event-card,
+    .past-events-container li a,
+    .cta-button,
+    .add-to-calendar,
+    .event-row-content,
+    .event-row-icon,
+    .event-row-toggle,
+    .event-row-cta {
+        transition: none;
     }
 }
