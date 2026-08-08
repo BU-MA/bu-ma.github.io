@@ -126,6 +126,70 @@
     --font-family-body: 'STIX Two Text', serif;
 }
 
+/* ============================
+   Kanagawa
+   ============================ */
+[data-theme="kanagawa"] {
+    --primary-color: #7e9cd8;
+    --primary-color-darker: #5d7ebf;
+    --primary-color-lighter: #a3b8e1;
+    --primary-rgb: 126, 156, 216;
+    --text-on-primary: #1f1f28;
+
+    --secondary-color: #ffa066;
+    --secondary-rgb: 255, 160, 102;
+
+    --third-color: #98bb6c;
+    --third-rgb: 152, 187, 108;
+
+    --background-color: #1f1f28;
+    --surface-color: #2a2a37;
+    --surface-color-alt: #363646;
+    --border-color: #54546d;
+
+    --text-color: #dcd7ba;
+    --text-color-muted: #727169;
+
+    --shadow-rgb: 22, 22, 29;
+
+    --radius: 4px;
+    --radius-sm: 2px;
+
+    --font-family-headings: 'STIX Two Text', serif;
+    --font-family-body: 'STIX Two Text', serif;
+}
+/* ============================
+   Carbonfox
+   ============================ */
+[data-theme="carbonfox"] {
+    --primary-color: #33b1ff;
+    --primary-color-darker: #1a9cee;
+    --primary-color-lighter: #78caff;
+    --primary-rgb: 51, 177, 255;
+    --text-on-primary: #161616;
+
+    --secondary-color: #ff7eb6;
+    --secondary-rgb: 255, 126, 182;
+
+    --third-color: #25a249;
+    --third-rgb: 37, 162, 73;
+
+    --background-color: #161616;
+    --surface-color: #282828;
+    --surface-color-alt: #393939;
+    --border-color: #525252;
+
+    --text-color: #f2f4f8;
+    --text-color-muted: #7b7c7e;
+
+    --shadow-rgb: 11, 11, 11;
+
+    --radius: 0px;
+    --radius-sm: 0px;
+
+    --font-family-headings: 'Roboto Mono', monospace;
+    --font-family-body: 'Roboto', sans-serif;
+}
 
 
 /*

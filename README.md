@@ -22,3 +22,19 @@ brainstorming some ideas for stuff to add
   - need to pass over the css and ensure accessibility features and people who prefer low motion get what they want
 - add a light mode for each theme and remove the default theme
   - maybe add notifications for when you change themes so if ppl change to light mode i can say "Why...?"
+
+## some todo stuff
+
+- see comments in /events/index.html for comments on how to finish that page
+- css for (talks -> posts)
+- css for contacts
+- css for about
+- silly page
+- alum page
+- css for past sem events pages
+- set up theorems of the week
+- set up weekly putnam problem
+- light mode & notifs
+- set a default theme
+- mobile + accessibility considerations
+- fix up the backgrounds in /leadership/index.html

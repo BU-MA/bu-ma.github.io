@@ -16,11 +16,64 @@
 
 
     <link rel="stylesheet" href="../src/styles/events.css">
+    <!--<link rel="stylesheet" href="../src/styles/events-testing.css">-->
+    <link rel="stylesheet" href="../src/styles/events-test-2.css">
     <link rel="icon" type="image/png" href="../src/assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
-    <script src="/src/css-redesign-showcase/js/theme-switcher.js" defer></script>
+    <script src="/src/misc-js/theme-switcher.js" defer></script>
     <script src="/src/events/hero-canvas.js" defer></script>
+    <script src="/src/css-redesign-showcase/js/manifold.js" defer></script>
+
+    <!-- %TEST% -->
+    <!-- i fucking hate this shit
+    <script>
+        // 3D Tilt — runs after events.js renders the card
+        function initTilt() {
+            const card = document.querySelector('.event-featured');
+            if (!card) return;
+
+            // Ensure preserve-3d is set (in case CSS didn't catch it)
+            card.style.transformStyle = 'preserve-3d';
+
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const cx = rect.width / 2;
+                const cy = rect.height / 2;
+                const rx = ((y - cy) / cy) * -6;
+                const ry = ((x - cx) / cx) * 6;
+
+                // Use setProperty with !important to beat any CSS !important rules
+                card.style.setProperty('transform', `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`, 'important');
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('transform', 'perspective(1000px) rotateX(0) rotateY(0)', 'important');
+                card.style.transition = 'transform 0.5s ease-out';
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.08s ease-out';
+            });
+        }
+
+        // Wait for events.js to populate the DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => setTimeout(initTilt, 100));
+        } else {
+            setTimeout(initTilt, 100);
+        }
+    </script>
+    -->
+
+    <meta property="og:title" content="BUMA - Events">
+    <meta property="og:description" content="See what's coming up.">
+    <meta property="og:image" content="https://bu-ma.github.io/src/assets/logo.png">
+    <meta property="og:url" content="https://bu-ma.github.io/events/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
 
 </head>
@@ -28,15 +81,11 @@
 
 <!-- FALL 2026 PREP NOTES
 TODO -------------------------------------------------------------------------------------------------------------------
-  1. each event can possibly get its own page? this would require adding a workflow but not too bad
-  2. test the subscription + add event on both mobile and desktop w/ various browsers, add additional instructions
-    - it just downlods the ics file on mobile, how do i make it default to going into cal
+    mostly happy with this. heres some remarks.
+    1. i will probs remove a lot ofthe add to calendar buttons, or at least will make it more clear how to use an ics file.
+    2. there are two possible themes, events-testing.css and events-test-2.css. just comment out the one u dont wnat above.
+    whichever i end up preferring will be used.
 TODO -------------------------------------------------------------------------------------------------------------------
-so far I have added spring-2026.html and spring-2026.json, finally updated fall-2025.json, added too many comments to
-event.js, and made past-events.js modular so i can important any semester's json to it. I added an option to download an
-ics file for adding individual events to your calendar, which runs through /src/misc-js/ics-manager.js. This exports
-two functions that are now imported by events.js. I have now updated the fall-2025 and spring-2026 jsons. I fixed the
-title of this page, which incorrectly said Fall 2025. Ok now I have added a subscription button.
 -->
 
 
@@ -58,13 +107,13 @@ title of this page, which incorrectly said Fall 2025. Ok now I have added a subs
     </div>
     <div class="container hero-split-container">
         <div class="hero-text">
-            <h1>Fall 2026<br>Schedule</h1>
-            <p class="hero-sub">
+            <h1 class="reveal">Fall 2026<br>Schedule</h1>
+            <p class="hero-sub reveal">
                 Wednesdays, 6-7pm in CDS 365. See what's coming up.
             </p>
         </div>
 
-        <div class="subscribe-hero-card">
+        <div class="subscribe-hero-card reveal">
             <div class="subscribe-content">
                 <h3>Never miss a meeting</h3>
                 <p>Sync our schedule directly to your Google or Apple calendar. We'll automatically update times and locations for you.</p>
@@ -87,8 +136,8 @@ title of this page, which incorrectly said Fall 2025. Ok now I have added a subs
 
         <!-- Tier 1: the single next upcoming event. Big and hard to miss. -->
         <section class="event-list-container" id="up-next-section">
-            <h2>Up Next</h2>
             <div class="event-featured" id="eventFeatured">
+                <!-- <div class="glow-aura"></div> %TEST% -->
                 <!-- populated by events.js -->
             </div>
         </section>
@@ -113,7 +162,7 @@ title of this page, which incorrectly said Fall 2025. Ok now I have added a subs
         </section>
 
         <section class="past-events-container">
-            <h2>Past Events</h2>
+            <h2>Past Semesters</h2>
             <ul>
                 <li><a href="/src/events/past-events/fall-2025.html">Fall 2025</a></li>
                 <li><a href="/src/events/past-events/spring-2026.html">Spring 2026</a></li>
