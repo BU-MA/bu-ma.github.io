@@ -4,17 +4,44 @@ PRODID:-//BUMA//Events//EN
 CALSCALE:GREGORIAN
 X-WR-CALNAME:BUMA Events
 BEGIN:VEVENT
-UID:buma-event-0-1788886800000@bu-ma.github.io
-DTSTAMP:20260723T035526Z
+UID:buma-event-0-1786122000000@bu-ma.github.io
+DTSTAMP:20260807T045153Z
+DTSTART:20260807T170000Z
+DTEND:20260807T180000Z
+SUMMARY:TEST EVENT -3
+LOCATION:CDS 365
+DESCRIPTION:This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \(\sigma : \Delta^n \to X \)
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-1-1786294800000@bu-ma.github.io
+DTSTAMP:20260807T045153Z
+DTSTART:20260809T170000Z
+DTEND:20260809T180000Z
+SUMMARY:TEST EVENT -2
+LOCATION:CDS 365
+DESCRIPTION:This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \(\sigma : \Delta^n \to X \)
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-2-1786554000000@bu-ma.github.io
+DTSTAMP:20260807T045153Z
+DTSTART:20260812T170000Z
+DTEND:20260812T180000Z
+SUMMARY:TEST EVENT -1
+LOCATION:CDS 365
+DESCRIPTION:This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \(\sigma : \Delta^n \to X \)
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-3-1788886800000@bu-ma.github.io
+DTSTAMP:20260807T045153Z
 DTSTART:20260908T170000Z
 DTEND:20260908T180000Z
-SUMMARY:TEST EVENT
+SUMMARY:TEST EVENT 0
 LOCATION:CDS 365
 DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
 END:VEVENT
 BEGIN:VEVENT
-UID:buma-event-1-1788973200000@bu-ma.github.io
-DTSTAMP:20260723T035526Z
+UID:buma-event-4-1788973200000@bu-ma.github.io
+DTSTAMP:20260807T045153Z
 DTSTART:20260909T170000Z
 DTEND:20260909T180000Z
 SUMMARY:TEST EVENT 2
@@ -22,8 +49,8 @@ LOCATION:CDS 365
 DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
 END:VEVENT
 BEGIN:VEVENT
-UID:buma-event-2-1788976800000@bu-ma.github.io
-DTSTAMP:20260723T035526Z
+UID:buma-event-5-1788976800000@bu-ma.github.io
+DTSTAMP:20260807T045153Z
 DTSTART:20260909T180000Z
 DTEND:20260909T190000Z
 SUMMARY:TEST EVENT 3
