@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-    uncomment this line to redirect to index.html
-    <meta http-equiv="refresh" content="0; url=https://bu-ma.github.io/contact.html">
-    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Events</title>
@@ -24,49 +20,6 @@
     <script src="/src/misc-js/theme-switcher.js" defer></script>
     <script src="/src/events/hero-canvas.js" defer></script>
     <script src="/src/css-redesign-showcase/js/manifold.js" defer></script>
-
-    <!-- %TEST% -->
-    <!-- i fucking hate this shit
-    <script>
-        // 3D Tilt — runs after events.js renders the card
-        function initTilt() {
-            const card = document.querySelector('.event-featured');
-            if (!card) return;
-
-            // Ensure preserve-3d is set (in case CSS didn't catch it)
-            card.style.transformStyle = 'preserve-3d';
-
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const cx = rect.width / 2;
-                const cy = rect.height / 2;
-                const rx = ((y - cy) / cy) * -6;
-                const ry = ((x - cx) / cx) * 6;
-
-                // Use setProperty with !important to beat any CSS !important rules
-                card.style.setProperty('transform', `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`, 'important');
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.setProperty('transform', 'perspective(1000px) rotateX(0) rotateY(0)', 'important');
-                card.style.transition = 'transform 0.5s ease-out';
-            });
-
-            card.addEventListener('mouseenter', () => {
-                card.style.transition = 'transform 0.08s ease-out';
-            });
-        }
-
-        // Wait for events.js to populate the DOM
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => setTimeout(initTilt, 100));
-        } else {
-            setTimeout(initTilt, 100);
-        }
-    </script>
-    -->
 
     <meta property="og:title" content="BUMA - Events">
     <meta property="og:description" content="See what's coming up.">
@@ -109,7 +62,8 @@ TODO ---------------------------------------------------------------------------
         <div class="hero-text">
             <h1 class="reveal">Fall 2026<br>Schedule</h1>
             <p class="hero-sub reveal">
-                Wednesdays, 6-7pm in CDS 365. See what's coming up.
+                General meetings are on Wednesdays, 6-7pm in CDS 365. Putnam practice sessions are on Mondays,
+                5:30-7:30pm in CDS 365.
             </p>
         </div>
 
@@ -119,7 +73,7 @@ TODO ---------------------------------------------------------------------------
                 <p>Sync our schedule directly to your Google or Apple calendar. We'll automatically update times and locations for you.</p>
 
                 <p class="troubleshoot-text">
-                    <em>If the link fails on desktop, try subscribing directly from your phone.</em>
+                    <em>If the link does nothing on your computer, try opening the page on your phone.</em>
                 </p>
 
                 <a href="webcal://bu-ma.github.io/src/events/buma-events.ics" class="cta-button subscribe-btn">
@@ -134,17 +88,14 @@ TODO ---------------------------------------------------------------------------
 <main>
     <div class="container">
 
-        <!-- Tier 1: the single next upcoming event. Big and hard to miss. -->
+        <!-- next event, big card -->
         <section class="event-list-container" id="up-next-section">
             <div class="event-featured" id="eventFeatured">
-                <!-- <div class="glow-aura"></div> %TEST% -->
                 <!-- populated by events.js -->
             </div>
         </section>
 
-        <!-- Tier 2: anything else happening in the next two weeks. Still called
-             out, but smaller than the featured event above it. Hidden entirely
-             if there's nothing in this window. -->
+        <!-- anything happening in the next 2 weeks, smaller cards -->
         <section class="event-list-container" id="coming-up-section" hidden>
             <h2>The Next Two Weeks</h2>
             <div class="event-highlight-grid" id="eventHighlights">
@@ -152,8 +103,7 @@ TODO ---------------------------------------------------------------------------
             </div>
         </section>
 
-        <!-- Tier 3: everything else on the schedule. Collapsed rows, expand
-             on click to see the rest of the details. -->
+        <!-- everything else scheduled, list of expandable cards -->
         <section class="event-list-container" id="rest-of-sem-section" hidden>
             <h2>Rest of the Semester</h2>
             <div class="event-accordion" id="eventAccordion">
@@ -161,6 +111,7 @@ TODO ---------------------------------------------------------------------------
             </div>
         </section>
 
+        <!-- past events -->
         <section class="past-events-container">
             <h2>Past Semesters</h2>
             <ul>

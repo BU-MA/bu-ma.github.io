@@ -14,181 +14,202 @@
     <link rel="icon" type="image/png" href="../src/assets/logo.png">
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
+    <script src="/src/components/load-components.js" defer></script>
+    <script src="/src/leadership/leadership.js" defer></script>
+    <script src="/src/css-redesign-showcase/js/manifold.js" defer></script>
+
+    <meta property="og:title" content="BUMA - About">
+    <meta property="og:description" content="All about the best math club at BU.">
+    <meta property="og:image" content="https://bu-ma.github.io/src/assets/logo.png">
+    <meta property="og:url" content="https://bu-ma.github.io/about/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<header>
-    <div class="container">
-        <h1>About BUMA</h1>
+<header class="site-nav" id="siteNav">
+    <div class="site-nav-inner">
+        <span class="brand">Boston University Mathematics Association</span>
+        <nav data-page="about" aria-label="Primary"></nav>
     </div>
 </header>
-
-<nav data-page="about"></nav>
 
 <main>
     <div class="container">
 
-        <section id="mission" class="about-section">
-            <h2>Our Mission</h2>
-            <p>At BUMA, we want to bring together the Math Department of BU at our various events. We host social events, talks by students and professors, advising on courses and research, Putnam problem solving sessions (fall semester only), and a semesterly integration bee.<br>
+        <!-- hero -->
+        <section class="about-hero">
+            <div class="hero-field" aria-hidden="true">
+                <span class="floater f1">\( \oint \)</span>
+                <span class="floater f2">\( \Psi \)</span>
+                <span class="floater f3">\( \mathscr{F} \)</span>
+                <span class="floater f4">\( \nabla \)</span>
+            </div>
+            <div class="about-hero-text reveal">
+                <h1>About BUMA</h1>
+                <p class="about-hero-blurb reveal">\(e^{i\pi}=-1\)</p>
+            </div>
         </section>
 
-        <section id="event-types" class="about-section">
-            <h2>Events</h2>
-            <p>These are a few of the types of events we host. A list of the exact events we plan to host this semester, as well as dates and times, can be found on our <a href="/events/index.html">events page</a>. We do our best to keep this updated,
-            but we're not perfect, so make sure to join the <a href="/contact/index.html">discord</a> to stay up to date.</p>
-            <ul>
-                <li><strong>Putnam Problem-solving sessions:</strong> Practice for the <a href="https://maa.org/putnam/" target="_blank">Putnam exam</a>, and solving problems from past exams. Led by Professor <a href="https://sites.google.com/view/jared-weinstein/home" target="_blank">Jared Weinstein</a>.</li>
-                <li><strong>Talks:</strong> Both professor-led and student-led talks, on everything from math in music theory to the most abstract nonsense humanity has conceived of. If you're interested in giving
-                a talk, <a href="/contact/index.html">contact us</a>!</li>
-                <li><strong>Integration bee:</strong> A fun end to the semester. Inspired by MIT's integration bee, but less competitive and more fun. Even if you don't want to participate, you can come to watch
-                physicists fail at solving Gaussians.</li>
-                <li><strong>Social events:</strong> We have chill nights where we do things like puzzles or crafts, an ice cream social, and other inter-club events. Come to just chill and chat with friends.</li>
-                <li><strong>Advising:</strong> We have occasional advising sessions on course registration, getting involved in research, and grad school applications.</li>
-                <li><strong>Other:</strong> We're always coming up with ideas for new meetings. If there's an event you would like to see happen, we would LOVE to hear from you! To get in contact with us, visit our <a href="/contact/index.html">contacts page</a>!</li>
-                <!--<li><strong>pizza fight night:</strong> at the end of the year we should have a pizza fight night where we throw pizza at each other until we run out of budget</li>-->
-                <!--why did u comment it out i think this is an amazing idea-->
-            </ul>
-        </section>
+        <!-- mission statement or whtever -->
+        <section class="mission-section" id="mission-section">
+            <div class="mission-content">
+                <div class="mission-rule rule-top"></div>
 
-        <!--
-        WHAT do we want to do about this????
-        <section id="SOM" class="about-section">
-            <h2>The Society of Mathematics</h2>
-            <p>The Society of Mathematics (SOM) is another student organization at BU, which hosts a Colloquium and weekly meetings. As of fall 2025, BUMA and SOM have entered an official partnership. Unfortunately,
-            our meeting times this semester coincide, but we are hoping to have many interesting collaborations next semester. You can visit SOM's website <a href="https://societyofmathematics.github.io/" target="_blank">here</a>.</p>
-        </section>
-        -->
-
-
-        <!-- i want to have a section on just the club stats cuz its cool
-        <section id="demographics" class="about-section">
-            <h2>Who</h2>
-        </section>
-        -->
-
-        <section id="leadership" class="about-section">
-            <h2>Leadership</h2>
-            <div class="leadership-grid">
-
-                <article class="profile-card">
-                    <img class="profile-img" src="/src/about/images/katherine.jpeg" alt="Photo of Katherine">
-                    <h3>Katherine Guo</h3>
-                    <span class="profile-title">president</span>
-                    <p class="profile-blurb">
-                        I have many interests, among which reside writing, playing really old games, and classical music
-                        (I gave a talk about music theory last year and got away with it). In terms of more immediately
-                        relevant interests, long have I been torn between math and physics, but now, in my third year, I
-                        feel that pure math is my true calling. Like everyone else, I am an algebra fiend, though number
-                        theory holds a special place in my heart, and differential geometry looks to be a burgeoning
-                        subject to chase after.
+                <div class="mission-text">
+                    <p>
+                        The Boston University Mathematics Association brings together the mathematics department for talks, problem-solving sessions, social events, and academic advising.
                     </p>
-                        <p class="profile-blurb">You can contact me at <a href="mailto:kqlguo@bu.edu" target="_blank">kqlguo@bu.edu</a> or mathoderaytube on Discord (long story) for questions & concerns about the club, math, or anything you'd like!</p>
-                </article>
+                    <div class="mission-divider">
+                        <span class="divider-line"></span>
+                        <span class="divider-node"></span>
+                        <span class="divider-line"></span>
+                    </div>
+                    <p>
+                        Our goal is to make mathematics accessible to everyone, and to foster the mathematical community
+                        here at BU. Membership is extremely low-committment, and the only prerequisite is interest.
+                    </p>
+                </div>
+                <div class="card-watermark">\(\mathrm{d}\omega\otimes\gamma^*\eta\)</div>
 
-                <!--
-                GRADUATED 2026
-                went for PhD at the University of Arizona
-                <article class="profile-card">
-                    <img class="profile-img" src="/src/about/images/ophelia.jpg" alt="Photo of Ophelia You">
-                    <h3>Ophelia You</h3>
-                    <span class="profile-title">vice president</span>
-                    <p class="profile-blurb">I am a senior studying pure math and English. My main math interest lies in number theory. I am trying to understand Dirichlet's Theorem on Arithmetic Progression right now. I would love to talk to anyone about anything in number theory. Also, some of my favorite authors are Jane Austen and John Milton. I love Paradise Lost. Besides that, I like Rick and Morty and watching anime.</p>
-                    <p class="profile-blurb">You can contact me at <a href="mailto:xcyou@bu.edu">xcyou@bu.edu</a>, or on Discord (@Tubbybear).</p>
-                </article>
-                -->
+                <div class="mission-rule rule-bottom"></div>
+            </div>
+        </section>
 
-                <article class="profile-card">
-                    <img class="profile-img" src="/src/about/images/grant.jpg" alt="Photo of Grant Talbert">
-                    <h3>Grant Talbert</h3>
-                    <span class="profile-title">vice president</span>
-                    <p class="profile-blurb">I'm a senior, but this is only my third year at BU since I transferred. I love discussing and teaching advanced and abstract mathematics, whether that be through pedagogical writing or talks. I'm the treasurer of BUMA, so officially I
-                    manage spending and funding, although I also contribute quite a bit to decisions about event hosting. If you have questions about our budget, suggestions for events we could run, or really anything club-related, feel free to contact me.</p>
-                    <p class="profile-blurb">I'm a double major in mathematical physics. I am extremely interested in higher category theory, homotopy theory, and some of their applications in theoretical physics, especially related to Yang-Mills. I am currently learning basic
-                        \(\infty,1)\)-category theory, differential geometry, and improving my knowledge of the homotopy theory of simplicial sets.</p>
-                    <p class="profile-blurb">Feel free to contact me at <a href="mailto:gtalbert@bu.edu" target="_blank">gtalbert@bu.edu</a>, or you can contact me on my Discord (theholychickn).</p>
-                </article>
+        <!-- types of meetings we run -->
+        <section class="events-section" id="events-section">
+            <span class="events-bracket tl"></span>
+            <span class="events-bracket tr"></span>
+            <span class="events-bracket bl"></span>
+            <span class="events-bracket br"></span>
 
-                <!-- unclear whart -->
-                <article class="profile-card">
-                    <img class="profile-img" src="/src/about/images/alysa.jpeg" alt="Photo of Alysa">
-                    <h3>Alysa Zhao</h3>
-                    <span class="profile-title">general board member</span>
-                    <p class="profile-blurb">My main aspiration is to be able to understand homotopy type theory. That means I am currently working on understanding categories, types, logics, and topologies. I am deeply motivated by the curiosities in the foundations of mathematics. My favorite animal is fish. I like to look at them and eat them. Contact me on discord at spuddy5379, or email me at <a href="mailto:azhao@bu.edu" target="_blank">azhao04@bu.edu</a> if you like math or like our club.</p>
-                </article>
+            <div class="events-watermark" aria-hidden="true">\(\partial\omega\)</div>
 
-                <article class="profile-card">
-                    <div class="profile-img"><span>insert generic photo of physics major here</span></div>
-                    <h3>Prayoga "Yoga" Liong</h3>
-                    <span class="profile-title">event coordinator</span>
-                    <p class="profile-blurb">When asked to submit a bio for the website, Yoga responded with "unnecessary".</p>
-                </article>
+            <div class="events-header reveal">
+                <h2>What We Do</h2>
             </div>
 
-            <!--<div class="leadership-grid">
-                <article class="profile-card">
-                    <div class="profile-img"><span>Photo</span></div>
-                    <h3>Evan</h3>
-                    <span class="profile-title">president</span>
-                    <p class="profile-blurb">there was a guy in my high school (and also my middle school) named evan. he was swag. i liked evan. he was cool.</p>
-                </article>
+            <div class="events-body">
+                <div class="event-entry">
+                    <div class="meridian">
+                        <div class="meridian-node"></div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Putnam Problem Solving</h3>
+                        <p class="reveal">
+                            Fall semester sessions led by <a href="https://www.bu.edu/math/profile/david-fried/" target="_blank">
+                            Professor David Fried</a>. We solve practice problems for the annual
+                            <a href="https://maa.org/putnam/" target="_blank">Putnam exam</a>, a difficult and prestigious
+                            competitive math exam for college students. This is the closest BU has to a proper competitive
+                            math team. Feel free to come and tryhard the practice, or just hang out and have fun solving
+                            some tricky problems.
+                        </p>
+                    </div>
+                </div>
 
-                <article class="profile-card">
-                    <div class="profile-img"><span>Photo</span></div>
-                    <h3>alex</h3>
-                    <span class="profile-title">anti-president</span>
-                    <p class="profile-blurb">alex was evans brother. he was also cool. evan was the chill one and alex was the more rambunctious one. evan and alex. they were cool.</p>
-                </article>
+                <div class="event-entry">
+                    <div class="meridian">
+                        <div class="meridian-node"></div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Talks</h3>
+                        <p class="reveal">
+                            Professor-led and student-led talks on anything we consider interesting. Our topics range
+                            from music theory to the most abstract nonsense humanity has conceived of. Prerequisites are
+                            kept minimal.
+                        </p>
+                    </div>
+                </div>
 
-                <article class="profile-card">
-                    <div class="profile-img"><span>Photo</span></div>
-                    <h3>chris</h3>
-                    <span class="profile-title">semi-president</span>
-                    <p class="profile-blurb">chris was another guy who went to my high school. i think he plays tennis. he was also cool. i like chris.</p>
-                </article>
+                <div class="event-entry">
+                    <div class="meridian">
+                        <div class="meridian-node"></div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Social Events</h3>
+                        <p class="reveal">
+                            Puzzle nights, ice cream socials, trivial nights, competitions, and more. Often in
+                            collaboration with other clubs.
+                        </p>
+                    </div>
+                </div>
 
-                <article class="profile-card">
-                    <div class="profile-img"><span>Photo</span></div>
-                    <h3>i forget his name</h3>
-                    <span class="profile-title">the unremembered</span>
-                    <p class="profile-blurb">i remembered his name while writing this. in elementary school a dude moved to my school for a single year in 5th grade. his name was harry. he was smart. we both liked space and math.</p>
-                </article>
 
-                <article class="profile-card">
-                    <div class="profile-img"><span>Photo</span></div>
-                    <h3>rohan</h3>
-                    <span class="profile-title">wohwee</span>
-                    <p class="profile-blurb">another smart guy who liked math who went to my elementary school was named rohan. he was cool. i called him wohwee for some reason until i realized he didnt like that. he switched to a diff school for middle school :(</p>
-                </article>
+                <div class="event-entry">
+                    <div class="meridian">
+                        <div class="meridian-node"></div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Integration Bee</h3>
+                        <p class="reveal">
+                            A semesterly event inspired by MIT's, but less competitive and more fun. Come to play, hang
+                            out, or just watch physicists struggle with Gaussians.
+                        </p>
+                    </div>
+                </div>
 
-                <article class="profile-card">
-                    <div class="profile-img"><span>Photo</span></div>
-                    <h3>emerson</h3>
-                    <span class="profile-title">the only girl in this list</span>
-                    <p class="profile-blurb">emerson was a girl who was also in my elementary school and also switched to the same school as rohan afterwards. she was rlly cute i had a small (not small) crush on her</p>
-                </article>
+                <div class="event-entry">
+                    <div class="meridian">
+                        <div class="meridian-node"></div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Advising</h3>
+                        <p class="reveal">
+                            Semesterly sessions on course registration led by upperclassmen. Additional occasional
+                            sessions on research, REUs, and graduate school applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-                <article class="profile-card">
-                    <div class="profile-img"><span>Photo</span></div>
-                    <h3>gunner</h3>
-                    <span class="profile-title">he who mans the guns</span>
-                    <p class="profile-blurb">gunner was another guy who was in my elementary school and switched to that same school afterwards. he was also cool. i liked gunner.</p>
-                </article>
-
-            </div>-->
+            <p class="events-note">
+                For exact dates and times, see the <a href="/events/index.html">events page</a>. Join the
+                <a href="/contact/index.html">Discord</a> to stay up to date.
+            </p>
         </section>
 
-
-        <!-- we can prolly remove this and just be happy with the link to terriercentral -->
-        <section id="constitution-grant-add-this-id-to-css-or-something" class="about-section"> <!-- thanks katherine -->
-            <p>this section serves no purpose, but i just want to point out that when we originally made this website and thought this section would be used for the club constitution, katherine decided to give this section
-                the id "constitution-grant-add-this-id-to-css-or-something"</p>
+        <!-- like a general description of what meetings sorta look like -->
+        <section class="meeting-section reveal">
+            <p>
+                Our meetings usually start about 5-10 minutes after the scheduled time to allow for people to arrive late,
+                and to give some time to chat. The meeting itself can either wrap up 10 minutes early, or run 20 minutes
+                over, or just devolve back into aimless chatting and socializing, depending on how everyone is feeling.
+            </p>
+            <p>
+                There's no requirement for you to stay for the full meeting, or for you to come to every meeting. If you
+                think one of our meetings looks interesting or fun, feel free to swing by.
+            </p>
+            <p>
+                We try to bring pizza when we can, but BU club guidelines have made this
+                difficult recently, so we can't guarentee it unfortunately. However, we <strong>can</strong> guarentee
+                food for bigger events, and (small) prizes for competitions.
+            </p>
+            <div class="card-watermark">\[\forall\]</div>
         </section>
+
+        <!-- links -->
+        <section class="action-section">
+            <a href="/leadership/">Meet the Students in Charge</a>
+            <a href="/events/">See Our Events This Semester</a>
+        </section>
+
     </div>
 </main>
 
 <footer></footer>
 
+<script>
+    const mission = document.querySelector('.mission-content');
+    if (mission) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.2 });
+        observer.observe(mission);
+    }
+</script>
 </body>
 </html>
 

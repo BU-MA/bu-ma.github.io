@@ -63,9 +63,12 @@ const HIGHLIGHT_WINDOW_DAYS = 14;
         renderHighlights(highlighted);
         renderAccordion(later);
 
-        if (window.MathJax) {
-            window.MathJax.typesetPromise();
-        }
+        const typesetTargets = [featuredContainer, highlightsContainer, accordionContainer].filter(Boolean);
+        window.MathJax
+            ? window.MathJax.typesetPromise(typesetTargets).then(() => {
+                highlightsContainer?.querySelectorAll('.event-card').forEach(setUpReadMore)
+            })
+            : highlightsContainer?.querySelectorAll('.event-card').forEach(setUpReadMore);
 
     } catch (error) {
         console.error("Failed to load upcoming events:", error);
@@ -140,7 +143,6 @@ const HIGHLIGHT_WINDOW_DAYS = 14;
             });
 
             highlightsContainer.appendChild(card);
-            setUpReadMore(card);
         });
     }
 
@@ -215,22 +217,15 @@ const HIGHLIGHT_WINDOW_DAYS = 14;
     // Only reveals "Read more" if the description is actually being clamped —
     // short descriptions never show the button at all.
     function setUpReadMore(card) {
-        const finish = () => {
-            const desc = card.querySelector('.desc-clamp');
-            const toggle = card.querySelector('.read-more-toggle');
-            if (desc.scrollHeight > desc.clientHeight + 1) {
-                toggle.hidden = false;
-                toggle.addEventListener('click', () => {
-                    const expanded = desc.classList.toggle('expanded');
-                    toggle.textContent = expanded ? 'Show less' : 'Read more';
-                    toggle.setAttribute('aria-expanded', expanded);
-                });
-            }
-        };
-        if (window.MathJax) {
-            window.MathJax.typesetPromise([card]).then(finish);
-        } else {
-            finish();
+        const desc = card.querySelector('.desc-clamp');
+        const toggle = card.querySelector('.read-more-toggle');
+        if (desc.scrollHeight > desc.clientHeight + 1) {
+            toggle.hidden = false;
+            toggle.addEventListener('click', () => {
+                const expanded = desc.classList.toggle('expanded');
+                toggle.textContent = expanded ? 'Show less' : 'Read more';
+                toggle.setAttribute('aria-expanded', expanded);
+            });
         }
     }
 

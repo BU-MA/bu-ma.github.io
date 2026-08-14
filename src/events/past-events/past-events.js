@@ -42,29 +42,36 @@
             const startTime = new Date(event.datetime);
             const endTime = new Date(startTime.getTime() + event.duration * 60000);
 
-            const formatDate = (date) => {
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            function formatDateBadge(startTime) {
+                return startTime.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }
+            function formatDate(date) {
+                const options = { weekday: 'long', month: 'long', day: 'numeric' };
                 return date.toLocaleDateString('en-US', options);
-            };
+            }
 
             const formatTime = (time) => {
                 return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
             };
 
             eventCard.innerHTML = `
-                <h3>${event.title}</h3>
-                <div class="event-details">
-                    <p><strong>Date:</strong> ${formatDate(startTime)}</p>
-                    <p><strong>Time:</strong> ${formatTime(startTime)} - ${formatTime(endTime)}</p>
-                    <p><strong>Location:</strong> ${event.location}</p>
+                <div class="card-top">
+                    <span class="date-badge">${formatDateBadge(startTime)}</span>
+                    <button class="add-to-calendar" aria-label="Add to calendar">
+                        <span class="add-to-calendar-icon">+</span>
+                        <span class="tooltip" role="tooltip">Add to calendar</span>
+                    </button>
                 </div>
-                <p class="event-description">${event.description}</p>
+                <h3>${event.title}</h3>
+                <p class="event-meta">${formatDate(startTime)} &middot; ${formatTime(startTime)} &ndash; ${formatTime(endTime)} &middot; ${event.location}</p>
+                <p class="event-description desc-clamp">${event.description}</p>
+                <button class="read-more-toggle" aria-expanded="false" hidden>Read more</button>
             `;
 
             eventListContainer.appendChild(eventCard);
 
             if (window.MathJax) {
-                window.MathJax.typesetPromise();
+                window.MathJax.typesetPromise(eventCard);
             }
         });
 
