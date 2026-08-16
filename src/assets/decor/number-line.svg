@@ -1,0 +1,12 @@
+<!-- number-line.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+    <g fill="none" stroke="#000" stroke-width="4" stroke-linecap="round">
+        <line x1="20" y1="150" x2="280" y2="150"/>
+        <line x1="60" y1="135" x2="60" y2="165"/>
+        <line x1="120" y1="135" x2="120" y2="165"/>
+        <line x1="180" y1="135" x2="180" y2="165"/>
+        <line x1="240" y1="135" x2="240" y2="165"/>
+        <path d="M265,140 L280,150 L265,160"/>
+    </g>
+    <circle cx="150" cy="150" r="10" fill="#000"/>
+</svg>

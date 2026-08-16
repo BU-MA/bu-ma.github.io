@@ -1,4 +1,10 @@
-@import url('theme.css');
+@import url(/src/styles/theme.css);
+
+/* navbar styling */
+@import url(/src/styles/standard-navbar.css);
+/* footer styling */
+@import url(/src/styles/standard-footer.css);
+
 
 body, html {
     height: 100%;

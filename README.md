@@ -25,10 +25,9 @@ brainstorming some ideas for stuff to add
 
 ## some todo stuff
 
-- see comments in /events/index.html for comments on how to finish that page
+- the past semester events pages are not good. need to do some work on past-events.js to get that running correctly
 - css for (talks -> posts)
 - css for contacts
-- css for about
 - silly page
 - alum page
 - css for past sem events pages
@@ -37,4 +36,24 @@ brainstorming some ideas for stuff to add
 - light mode & notifs
 - set a default theme
 - mobile + accessibility considerations
-- fix up the backgrounds in /leadership/index.html
+- edit content of leadership page
+- possibly edit content of about page
+
+
+
+
+example code that can go into a `post-detail.css`-themed post
+```html
+    <h2>On the Schedule</h2>
+    <p>General meetings and Putnam practice both continue on their usual nights:</p>
+    <div class="post-schedule">
+      <div class="schedule-row">
+        <span class="schedule-day">Wed</span>
+        <span class="schedule-detail">General meetings &middot; CDS 365, 6&ndash;7pm</span>
+      </div>
+      <div class="schedule-row">
+        <span class="schedule-day">Mon</span>
+        <span class="schedule-detail">Putnam practice with Prof. Weinstein &middot; CDS 365, 5:30&ndash;7:30pm</span>
+      </div>
+    </div>
+```

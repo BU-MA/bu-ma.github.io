@@ -1,4 +1,10 @@
-@import url('/src/styles/theme.css');
+@import url(/src/styles/theme.css);
+
+/* navbar styling */
+@import url(/src/styles/standard-navbar.css);
+/* footer styling */
+@import url(/src/styles/standard-footer.css);
+
 
 /* ======================
    Basic styles
@@ -33,106 +39,6 @@ h1, h2, h3, h4 {
 }
 
 /* ======================
-   Site nav
-   ====================== */
-
-.site-nav {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--surface-color);
-    border-bottom: 1px solid var(--border-color);
-    transition: box-shadow 0.3s ease;
-}
-.site-nav.scrolled {
-    box-shadow: 0 8px 24px rgba(var(--shadow-rgb), 0.35);
-}
-
-.site-nav-inner {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    min-height: 4.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-}
-
-.brand {
-    font-family: var(--font-family-headings);
-    font-size: 1.15rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    white-space: nowrap;
-}
-
-.site-nav nav {
-    position: relative;
-}
-
-ul.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 0.25rem;
-}
-ul.nav-links li a {
-    position: relative;
-    color: var(--text-color);
-    font-weight: bold;
-    display: block;
-    padding: 0.5rem 1rem;
-    transition: color 0.2s ease;
-}
-ul.nav-links li a::after {
-    content: '';
-    position: absolute;
-    left: 0.9rem;
-    right: 0.9rem;
-    bottom: 0.35rem;
-    height: 2px;
-    background: var(--primary-color);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-ul.nav-links li a:hover,
-ul.nav-links li a.active {
-    color: var(--primary-color-darker);
-}
-ul.nav-links li a:hover::after,
-ul.nav-links li a.active::after {
-    transform: scaleX(1);
-}
-
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-@media (max-width: 700px) {
-    .nav-toggle { display: block; }
-    ul.nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        flex-direction: column;
-        background: var(--surface-color);
-        border: 1px solid var(--border-color);
-        border-radius: var(--radius-sm);
-        padding: 0.5rem;
-        box-shadow: 0 8px 20px rgba(var(--shadow-rgb), 0.3);
-    }
-    ul.nav-links.open { display: flex; }
-}
-
-/* ======================
    Page hero
    ====================== */
 
@@ -141,7 +47,7 @@ ul.nav-links li a.active::after {
     position: relative;
     overflow: hidden;
     padding: 8rem 0;
-    background-color: transparent; /* Removed the solid background so the canvas is visible */
+    background-color: transparent;
 }
 
 .hero-split-container {
@@ -151,7 +57,7 @@ ul.nav-links li a.active::after {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 1; /* Keeps content above the canvas */
+    z-index: 1;
 }
 
 .hero-text {
@@ -173,10 +79,9 @@ ul.nav-links li a.active::after {
     max-width: 400px;
 }
 
-/* --- Glassmorphic Subscribe Card --- */
+/* --- subscribe card --- */
 .subscribe-hero-card {
     flex: 0 1 420px;
-    /* Hardcoded dark fallback with transparency so the blur works across all themes */
     background: rgba(20, 20, 25, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -202,6 +107,7 @@ ul.nav-links li a.active::after {
 
 .subscribe-btn { width: 100%; text-align: center; display: block; }
 
+/* floating math symbols live in here */
 .hero-field {
     position: absolute;
     inset: 0;
@@ -217,7 +123,6 @@ ul.nav-links li a.active::after {
 .f4 { top: 70%; left: 78%; font-size: 3rem;   animation-duration: 15s; animation-delay: -2s; }
 
 
-/* Same cta-button treatment used in home.css / manifold.css / sheaf.css */
 .cta-button {
     position: relative;
     overflow: hidden;
@@ -281,10 +186,8 @@ main .container {
 
 
 /* ==========================================================================
-   TIER 1: FEATURED EVENT ("Up Next")
-   The single next upcoming event. This should be the loudest thing on the
-   page. Current treatment: a "ticket stub" — a date block torn off from
-   the details, dashed perforation line between them.
+   FEATURED EVENT
+   this card is for the next upcoming event. its the loudest thing on the page.
    ========================================================================== */
 
 .event-featured {
@@ -388,9 +291,9 @@ main .container {
 
 
 /* ==========================================================================
-   TIER 2: HIGHLIGHTED EVENTS ("Coming Up" — next two weeks)
-   Reuses .event-card (below) so it stays visually related to the featured
-   card, just smaller and grid-packed instead of full width.
+   HIGHLIGHTED EVENTS
+   The events that are coming up in the next 2 weeks
+   full cards but smaller than the featured card
    ========================================================================== */
 
 .event-highlight-grid {
@@ -400,17 +303,14 @@ main .container {
     margin-top: 1rem;
 }
 
-/* small accent that only applies inside the highlight grid, so the plain
-   .event-card used on the past-events pages is untouched */
 .event-highlight-grid .event-card {
     border-bottom: 3px solid var(--secondary-color);
 }
 
 
 /* ==========================================================================
-   TIER 3: REST OF THE SEMESTER (collapsed accordion)
-   Same expand/collapse mechanism as the homepage FAQ (grid-template-rows
-   0fr -> 1fr), just re-skinned as a compact row instead of a question card.
+   REST OF THE SEMESTER
+   an expandable/collapsable list of all remaining events
    ========================================================================== */
 
 .event-accordion {
@@ -690,25 +590,6 @@ main .container {
     transform: translateY(-3px);
     box-shadow: 0 8px 18px rgba(var(--shadow-rgb), 0.3);
 }
-
-/* ======================
-   Footer
-   ====================== */
-
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 1.5rem 0;
-    background: var(--surface-color);
-    border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
-}
-footer p {
-    color: var(--text-color-muted);
-    font-size: 0.85rem;
-    line-height: 1.6;
-}
-
 
 /* ======================
    Reduced motion

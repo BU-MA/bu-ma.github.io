@@ -275,7 +275,7 @@ a {
 
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    min-height: 4.5rem; /* Ensures height remains stable when content is hidden */
+    min-height: 4.5rem; /* ensures height remains stable when content is hidden */
 
     background-color: var(--surface-color); /* can be made more complex if desired */
 }

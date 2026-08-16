@@ -4,10 +4,9 @@
  */
 
 const THEMES = [
-    { id: 'control', name: 'Control', swatch: '#ff3c3c' },
+    { id: 'paradise', name: 'Paradise', swatch: '#b66467' },
     { id: 'catppuccin-mocha', name: 'Catppuccin Mocha', swatch: '#cba6f7' },
     { id: 'rose-pine', name: 'Rose Pine', swatch: '#ebbcba' },
-    { id: 'paradise', name: 'Paradise', swatch: '#b66467' },
     { id: 'kanagawa', name: 'Kanagawa', swatch: '#7e9cd8' },
     { id: 'carbonfox', name: 'Carbonfox', swatch: '#33b1ff' },
 ];

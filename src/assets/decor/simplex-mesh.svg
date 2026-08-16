@@ -1,0 +1,12 @@
+<!-- simplex-mesh.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+    <g fill="none" stroke="#000" stroke-width="4">
+        <path d="M40,260 L150,60 L260,260 Z"/>
+        <path d="M95,160 L205,160"/>
+        <path d="M150,60 L150,260"/>
+    </g>
+    <g fill="#000">
+        <circle cx="40" cy="260" r="6"/><circle cx="260" cy="260" r="6"/><circle cx="150" cy="60" r="6"/>
+        <circle cx="95" cy="160" r="5"/><circle cx="205" cy="160" r="5"/><circle cx="150" cy="260" r="5"/>
+    </g>
+</svg>

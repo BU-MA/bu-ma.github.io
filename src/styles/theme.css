@@ -5,34 +5,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css');
 
+
 /* ============================
-   Control (default / original theme)
+   Paradise / default
    ============================ */
 :root,
-[data-theme="control"] {
-    --primary-color: #ff3c3c;
-    --primary-color-darker: #d63030;
-    --primary-color-lighter: #ff6b6b;
-    --primary-rgb: 255, 60, 60;
-    --text-on-primary: #ffffff;
-    --secondary-color: #4fd1c5;
-    --secondary-rgb: 79, 209, 197;
+[data-theme="paradise"] {
+    --primary-color: #b66467;
+    --primary-color-darker: #9c5759;
+    --primary-color-lighter: #dd797c;
+    --primary-rgb: 182, 100, 103;
+    --text-on-primary: #181818;
+    --secondary-color: #a988b0;
+    --secondary-rgb: 141, 163, 185;
+    --third-color: #8AA6A2;
+    --third-rgb: 169, 136, 176;
 
-    --background-color: #1e1e1e;
-    --surface-color: #2a2a2a;
-    --surface-color-alt: #333333;
-    --border-color: #444444;
+    --background-color: #111111;
+    --surface-color: #181818;
+    --surface-color-alt: #0d0d0d;
+    --border-color: #424242;
 
-    --text-color: #e0e0e0;
-    --text-color-muted: #a0a0a0;
+    --text-color: #e8e3e3;
+    --text-color-muted: #6e6a86;
 
-    --shadow-rgb: 0, 0, 0;
+    --shadow-rgb: 10, 10, 10;
 
-    --radius: 8px;
-    --radius-sm: 4px;
+    --radius: 0px;
+    --radius-sm: 0px;
 
-    --font-family-headings: 'Roboto Mono', monospace;
-    --font-family-body: 'Roboto', sans-serif;
+    --font-family-headings: 'STIX Two Text', serif;
+    --font-family-body: 'STIX Two Text', serif;
 }
 
 /* ============================
@@ -93,34 +96,6 @@
 
     --radius: 16px;
     --radius-sm: 8px;
-
-    --font-family-headings: 'STIX Two Text', serif;
-    --font-family-body: 'STIX Two Text', serif;
-}
-
-[data-theme="paradise"] {
-    --primary-color: #b66467;
-    --primary-color-darker: #9c5759;
-    --primary-color-lighter: #dd797c;
-    --primary-rgb: 182, 100, 103;
-    --text-on-primary: #181818;
-    --secondary-color: #a988b0;
-    --secondary-rgb: 141, 163, 185;
-    --third-color: #8AA6A2;
-    --third-rgb: 169, 136, 176;
-
-    --background-color: #111111;
-    --surface-color: #181818;
-    --surface-color-alt: #0d0d0d;
-    --border-color: #424242;
-
-    --text-color: #e8e3e3;
-    --text-color-muted: #6e6a86;
-
-    --shadow-rgb: 10, 10, 10;
-
-    --radius: 0px;
-    --radius-sm: 0px;
 
     --font-family-headings: 'STIX Two Text', serif;
     --font-family-body: 'STIX Two Text', serif;
@@ -187,8 +162,8 @@
     --radius: 0px;
     --radius-sm: 0px;
 
-    --font-family-headings: 'Roboto Mono', monospace;
-    --font-family-body: 'Roboto', sans-serif;
+    --font-family-headings: 'STIX Two Text', serif;
+    --font-family-body: 'STIX Two Text', serif;
 }
 
 

@@ -1,0 +1,8 @@
+<!-- braid-diagram.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+    <g fill="none" stroke="#000" stroke-width="6" stroke-linecap="round">
+        <path d="M60,20 C60,80 180,80 180,140 C180,200 60,200 60,260"/>
+        <path d="M180,20 C180,80 60,80 60,140 C60,200 180,200 180,260"/>
+        <path d="M240,20 L240,260"/>
+    </g>
+</svg>

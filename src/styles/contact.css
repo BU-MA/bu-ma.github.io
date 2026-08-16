@@ -1,73 +1,14 @@
-@import url('/src/styles/theme.css');
+@import url(/src/styles/theme.css);
 
-/* Center the content vertically within the main area */
-main .container {
-    min-height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-container {
-    padding: 2.5rem;
-    margin-top: 2rem;
-    background-color: var(--surface-color);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 700px; /* Adjust width as needed */
-    text-align: center;
-}
-
-.contact-container h2 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-}
-
-.contact-methods {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap; /* Allows items to stack on smaller screens */
-}
-
-.contact-item {
-    background-color: #3a3a3a;
-    padding: 1.5rem 2rem;
-    border-radius: 8px;
-    min-width: 260px;
-    transition: transform 0.2s ease;
-}
-
-.contact-item:hover {
-    transform: translateY(-5px);
-}
-
-.contact-item h3 {
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-}
-
-.contact-item a {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    text-decoration: underline;
-    text-decoration-color: var(--primary-color);
-}
+/* navbar styling */
+@import url(/src/styles/standard-navbar.css);
+/* footer styling */
+@import url(/src/styles/standard-footer.css);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* ======================
+   Basic styles
+   ====================== */
 
 * {
     margin: 0;
@@ -76,105 +17,281 @@ main .container {
 }
 
 body {
-    font-family: var(--font-family-body);
-    line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: var(--font-family-body);
+    line-height: 1.6;
 }
 
 a {
-    color: var(--primary-color);
     text-decoration: none;
+    color: var(--secondary-color);
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: var(--font-family-headings);
 }
 
-header {
-    background: var(--surface-color);
-    padding: 2rem 0;
+/* ======================
+   Icon utility
+   ====================== */
+
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    background-color: currentColor;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+.icon-email     { -webkit-mask-image: url('/src/assets/mail-icon.svg');       mask-image: url('/src/assets/mail-icon.svg'); }
+.icon-discord   { -webkit-mask-image: url('/src/assets/discord-icon.svg');    mask-image: url('/src/assets/discord-icon.svg'); }
+.icon-instagram { -webkit-mask-image: url('/src/assets/instagram-icon.svg');  mask-image: url('/src/assets/instagram-icon.svg'); }
+.icon-form      { -webkit-mask-image: url('/src/assets/form-icon.svg');       mask-image: url('/src/assets/form-icon.svg'); }
+
+/* ======================
+   Page hero
+   ====================== */
+
+.page-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 4rem 0 3rem;
     text-align: center;
-    border-bottom: 2px solid var(--primary-color);
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
+.hero-field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background: var(--surface-color);
-    margin-top: 2rem;
-    border-top: 1px solid #444;
-}
+.f1 { top: 15%; left: 10%; font-size: 3.5rem; animation-duration: 16s; }
+.f2 { top: 60%; left: 20%; font-size: 2.5rem; animation-duration: 13s; animation-delay: -3s; }
+.f3 { top: 25%; left: 82%; font-size: 4rem;   animation-duration: 18s; animation-delay: -6s; }
+.f4 { top: 70%; left: 78%; font-size: 3rem;   animation-duration: 15s; animation-delay: -2s; }
 
-.container {
-    max-width: 960px;
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1.5rem;
 }
 
-/* navbar */
-
-nav {
-    background: #333;
-    padding: 0.5rem 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li a {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background-color 0.3s ease;
-    border-radius: 4px;
-    font-family: var(--font-family-headings);
-}
-
-nav ul li a:hover {
-    background-color: var(--surface-color);
-    /* border-radius: 4px; */
-}
-
-nav a.active {
+.page-hero h1 {
     color: var(--primary-color);
-    border-radius: 4px;
+    font-size: clamp(2.2rem, 5vw, 3.1rem);
+    margin-bottom: 0.85rem;
 }
 
-/* mobile navbar */
-
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
+.hero-sub {
+    color: var(--text-color-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
-@media (max-width: 600px) { /* displays hamburger style menu if website is <= 600px wide */
-    .nav-toggle {
-        display: block;
+/* ==========================================================================
+   Contact cards
+   ========================================================================== */
+
+.contact-methods {
+    padding: 4rem 1.5rem 2rem;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    --card-cut: 3rem;
+    --border-width: 1.5px;
+    --decor-flip: 1;
+
+    position: relative;
+    isolation: isolate;
+    display: block;
+    background-color: var(--border-color);
+    padding: var(--border-width);
+    clip-path: polygon(0 0, calc(100% - var(--card-cut)) 0, 100% var(--card-cut), 100% 100%, 0 100%);
+    box-shadow: 0 16px 38px rgba(var(--shadow-rgb), 0.3);
+}
+
+.contact-card-inner {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background-color: var(--surface-color);
+    padding: 2.75rem 3.75rem 2.75rem 3rem;
+    clip-path: polygon(0 0, calc(100% - var(--card-cut)) 0, 100% var(--card-cut), 100% 100%, 0 100%);
+    overflow: hidden;
+}
+.contact-card-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: radial-gradient(circle at 100% 0%, rgba(var(--accent-rgb), 0.15), transparent 60%);
+}
+
+/* corner-masked decor */
+.contact-card-decor {
+    position: absolute;
+    right: -2.5rem;
+    bottom: -2.5rem;
+    width: var(--decor-size, 260px);
+    height: var(--decor-size, 260px);
+    z-index: -1;
+    background-color: var(--accent);
+    opacity: 0.07;
+    -webkit-mask-image: var(--decor-image);
+    mask-image: var(--decor-image);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transform: scaleX(var(--decor-flip));
+    pointer-events: none;
+}
+
+.contact-card-badge {
+    flex-shrink: 0;
+    position: relative;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 7px var(--surface-color), 0 8px 20px rgba(var(--accent-rgb), 0.4);
+}
+.contact-card-badge::after {
+    content: '';
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 0.55;
+    animation: badgeRing 1.5s ease-out infinite;
+}
+@keyframes badgeRing {
+    0%   { transform: scale(1); opacity: 0.55; }
+    100% { transform: scale(1.35); opacity: 0; }
+}
+.contact-card-badge .icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-on-primary);
+}
+
+.contact-card-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 0;
+}
+.contact-card-content h3 {
+    font-size: 1.45rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+.contact-card-content p {
+    color: var(--text-color-muted);
+    line-height: 1.6;
+    max-width: 46ch;
+    margin-bottom: 1.5rem;
+}
+
+.contact-card-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.9rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--accent);
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    color: var(--accent);
+    transition: color 0.35s ease;
+}
+.contact-card-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.contact-card-cta:hover,
+.contact-card-cta:focus-visible { color: var(--text-on-primary); }
+.contact-card-cta:hover::before,
+.contact-card-cta:focus-visible::before { transform: scaleX(1); }
+.contact-card-cta:focus-visible { outline: 2px solid var(--secondary-color); outline-offset: 3px; }
+
+/* ======================
+   bottom glowiung accent thjignyu
+   ====================== */
+
+.bottom-accent {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, transparent, rgba(var(--primary-rgb), 0.05));
+    margin-top: 1.5rem;
+}
+
+/* ======================
+   Mobile
+   ====================== */
+
+@media (max-width: 700px) {
+    .contact-card,
+    .contact-card-inner {
+        clip-path: none;
     }
-    .nav-links {
-        display: none;
+    .contact-card-inner {
         flex-direction: column;
-        width: 100%;
+        text-align: center;
+        padding: 2.5rem 2rem;
     }
-    .nav-links.open {
-        display: flex;
+    .contact-card-content p {
+        margin-left: auto;
+        margin-right: auto;
     }
-    nav .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+}
+
+/* ======================
+   Reduced motion
+   ====================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .floater,
+    .contact-card-badge::after {
+        animation: none !important;
+    }
+    .contact-card-cta {
+        transition: none;
     }
 }

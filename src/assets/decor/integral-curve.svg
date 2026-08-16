@@ -1,0 +1,9 @@
+<!-- integral-curve.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+    <g fill="none" stroke="#000">
+        <path d="M20,260 L280,260" stroke-width="4"/>
+        <path d="M20,260 C80,60 220,60 280,260" stroke-width="6"/>
+        <path d="M100,260 L100,150" stroke-width="3" stroke-dasharray="5 8"/>
+        <path d="M200,260 L200,150" stroke-width="3" stroke-dasharray="5 8"/>
+    </g>
+</svg>

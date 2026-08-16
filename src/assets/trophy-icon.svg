@@ -1,0 +1,4 @@
+<!-- trophy-icon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M6 3h12v2h3v2c0 2.2-1.8 4-4 4h-.3A6 6 0 0 1 13 14.9V17h3v2H8v-2h3v-2.1A6 6 0 0 1 7.3 11H7c-2.2 0-4-1.8-4-4V5h3V3Zm0 4H5c0 1.1.9 2 2 2V7Zm12 0v2c1.1 0 2-.9 2-2h-2Z"/>
+</svg>

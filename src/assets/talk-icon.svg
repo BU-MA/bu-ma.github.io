@@ -1,0 +1,4 @@
+<!-- talk-icon.svg — presentation screen -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M3 4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7l3 5H9l3-5H4a1 1 0 0 1-1-1V4Zm3 3v2h6V7H6Zm0 4v2h10v-2H6Z"/>
+</svg>

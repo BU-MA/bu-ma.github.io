@@ -4,57 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Contact</title>
-    <link rel="stylesheet" href="../src/styles/contact.css">
-    <link rel="icon" type="image/png" href="../src/assets/logo.png">
-    <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
+
+    <script>
+        (function () {
+            const saved = localStorage.getItem('buma-theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/src/styles/contact.css">
+    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/src/components/load-components.js" defer></script>
+    <script src="/src/misc-js/theme-switcher.js" defer></script>
+    <script src="/src/leadership/leadership.js" defer></script>
+
+    <meta property="og:title" content="BUMA - Contact">
+    <meta property="og:description" content="Get in touch with us.">
+    <meta property="og:image" content="https://bu-ma.github.io/src/assets/logo.png">
+    <meta property="og:url" content="https://bu-ma.github.io/contact/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<header>
-    <div class="container">
-        <h1>Contact Us</h1>
+
+<header class="site-nav" id="siteNav">
+    <div class="site-nav-inner">
+        <span class="brand text-full">Boston University Mathematics Association</span>
+        <span class="brand text-mobile">BUMA</span>
+        <nav data-page="contact" aria-label="Primary"></nav>
     </div>
 </header>
 
-<!-- FALL 2026 PREP NOTES
-TODO -------------------------------------------------------------------------------------------------------------------\
-  - this page has the worst damn css on the website it looks like fucking crap
-  - add a qr code for the insta handle
-  - theres usually a way to make the discord invite look nicer
-  - we can also add some css to make the email link look cool
-  - lets update this form and actually use it xd
-TODO -------------------------------------------------------------------------------------------------------------------
--->
-
-<nav data-page="contact"></nav>
+<div class="page-hero">
+    <div class="hero-field" aria-hidden="true">
+        <span class="floater f1">\( \zeta \)</span>
+        <span class="floater f2">\( \mathbb{R} \)</span>
+        <span class="floater f3">\( \varphi \)</span>
+        <span class="floater f4">\( \cong \)</span>
+    </div>
+    <div class="hero-inner">
+        <h1>Get in Touch</h1>
+        <p class="hero-sub">Make sure to smash that like button</p>
+    </div>
+</div>
 
 <main>
-    <div class="container">
-        <section class="contact-container">
-            <h2>Contact/Join</h2>
+    <section class="contact-methods">
+        <div class="contact-list">
 
-            <div class="contact-methods">
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <a href="mailto:[bumaa@bu.edu]" target="_blank">bumaa@bu.edu</a>
+            <article class="contact-card"
+                     style="--accent: var(--primary-color); --accent-rgb: var(--primary-rgb);
+                             --decor-image: url('/src/assets/decor/node-network.svg');">
+                <div class="contact-card-inner">
+                    <div class="contact-card-decor" aria-hidden="true"></div>
+                    <div class="contact-card-badge" aria-hidden="true">
+                        <span class="icon icon-discord"></span>
+                    </div>
+                    <div class="contact-card-content">
+                        <h3>Join the Conversation</h3>
+                        <p>
+                            Discord is where our most up-to-date announcements are posted, and is the easiest way to reach
+                            many of our board members. It's also a great place to hang out with the community!
+                        </p>
+                        <a class="contact-card-cta" href="https://discord.gg/xRJ5QDhapW" target="_blank" rel="noopener noreferrer">Join our Discord &rarr;</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h3>Discord</h3>
-                    <a href="https://discord.gg/xRJ5QDhapW" target="_blank" rel="noopener noreferrer">Join here</a>
+            </article>
+
+            <article class="contact-card"
+                     style="--accent: var(--secondary-color); --accent-rgb: var(--secondary-rgb);
+                             --decor-image: url('/src/assets/decor/commutative-square.svg');">
+                <div class="contact-card-inner">
+                    <div class="contact-card-decor" aria-hidden="true"></div>
+                    <div class="contact-card-badge" aria-hidden="true">
+                        <span class="icon icon-email"></span>
+                    </div>
+                    <div class="contact-card-content">
+                        <h3>Email</h3>
+                        <p>
+                            The best place to send formal inquiries and important information. We also send out weekly
+                            announcements to our email list; feel free to ask us to add you!
+                        </p>
+                        <a class="contact-card-cta" href="mailto:bumaa@bu.edu">bumaa@bu.edu &rarr;</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h3>Instagram</h3>
-                    <a href="https://www.instagram.com/bostonu_ma" target="_blank">bostonu_ma</a>
+            </article>
+
+            <article class="contact-card"
+                     style="--accent: var(--primary-color); --accent-rgb: var(--primary-rgb);
+                             --decor-image: url('/src/assets/decor/elliptic_curve_katherine.svg'); --decor-flip: -1;">
+                <div class="contact-card-inner">
+                    <div class="contact-card-decor" aria-hidden="true"></div>
+                    <div class="contact-card-badge" aria-hidden="true">
+                        <span class="icon icon-instagram"></span>
+                    </div>
+                    <div class="contact-card-content">
+                        <h3>Instagram</h3>
+                        <p>
+                            A great place to see event announcements and pictures from recent meetings. Follow us!
+                        </p>
+                        <a class="contact-card-cta" href="https://www.instagram.com/bostonu_ma" target="_blank" rel="noopener noreferrer">@bostonu_ma &rarr;</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h3>Form</h3>
-                    <a href="https://forms.gle/BG1tYDvSckc8wmyF9" target="_blank">Tell us a little about yourself! Even if you've been with the club for a while, you should fill this out if
-                    you haven't.</a>
+            </article>
+
+            <article class="contact-card"
+                     style="--accent: var(--secondary-color); --accent-rgb: var(--secondary-rgb);
+                             --decor-image: url('/src/assets/decor/torus_wireframe.svg');">
+                <div class="contact-card-inner">
+                    <div class="contact-card-decor" aria-hidden="true"></div>
+                    <div class="contact-card-badge" aria-hidden="true">
+                        <span class="icon icon-form"></span>
+                    </div>
+                    <div class="contact-card-content">
+                        <h3>New Here?</h3>
+                        <p>Tell us a bit about yourself, even if you've been around a while.</p>
+                        <a class="contact-card-cta" href="https://forms.gle/BG1tYDvSckc8wmyF9" target="_blank" rel="noopener noreferrer">Fill out the form &rarr;</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="bottom-accent">
+    </section>
 </main>
 
 <footer></footer>
+
 </body>
 </html>

@@ -1,44 +1,115 @@
 [
   {
-    "title": "TEST EVENT -3",
-    "location": "CDS 365",
-    "description": "This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \\(\\sigma : \\Delta^n \\to X \\)",
-    "datetime": "2026-08-09T17:00:00",
-    "duration": 60
-  },
-  {
-    "title": "TEST EVENT -2",
-    "location": "CDS 365",
-    "description": "This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \\(\\sigma : \\Delta^n \\to X \\)",
-    "datetime": "2026-08-10T17:00:00",
-    "duration": 60
-  },
-  {
-    "title": "TEST EVENT -1",
-    "location": "CDS 365",
-    "description": "This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \\(\\sigma : \\Delta^n \\to X \\)",
-    "datetime": "2026-08-12T17:00:00",
-    "duration": 60
-  },
-  {
     "title": "TEST EVENT 0",
     "location": "CDS 365",
     "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
-    "datetime": "2026-09-08T17:00:00",
+    "datetime": "2026-08-20T17:00:00",
     "duration": 60
   },
   {
     "title": "TEST EVENT 2",
     "location": "CDS 365",
     "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
-    "datetime": "2026-09-09T17:00:00",
+    "datetime": "2026-08-21T17:00:00",
     "duration": 60
   },
   {
     "title": "TEST EVENT 3",
     "location": "CDS 365",
     "description": "This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \\(F : \\mathcal{C}\\to\\mathcal{S}et\\)",
-    "datetime": "2026-09-09T18:00:00",
+    "datetime": "2026-08-22T18:00:00",
     "duration": 60
+  },
+
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-09-14T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-09-21T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-09-28T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-10-05T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-10-12T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-10-19T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-10-26T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-11-02T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-11-09T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-11-16T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-11-23T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-11-30T17:30:00",
+    "duration": 120
+  },
+  {
+    "title": "Putnam Problem Solving Session",
+    "location": "CDS 365",
+    "description": "We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with <a href=\"https://www.bu.edu/math/profile/david-fried/\" target=\"_blank\">Professor David Fried</a>.",
+    "datetime": "2026-12-07T17:30:00",
+    "duration": 120
   }
 ]
