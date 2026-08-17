@@ -4,57 +4,147 @@ PRODID:-//BUMA//Events//EN
 CALSCALE:GREGORIAN
 X-WR-CALNAME:BUMA Events
 BEGIN:VEVENT
-UID:buma-event-0-1786294800000@bu-ma.github.io
-DTSTAMP:20260808T031243Z
-DTSTART:20260809T170000Z
-DTEND:20260809T180000Z
-SUMMARY:TEST EVENT -3
-LOCATION:CDS 365
-DESCRIPTION:This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \(\sigma : \Delta^n \to X \)
-END:VEVENT
-BEGIN:VEVENT
-UID:buma-event-1-1786381200000@bu-ma.github.io
-DTSTAMP:20260808T031243Z
-DTSTART:20260810T170000Z
-DTEND:20260810T180000Z
-SUMMARY:TEST EVENT -2
-LOCATION:CDS 365
-DESCRIPTION:This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \(\sigma : \Delta^n \to X \)
-END:VEVENT
-BEGIN:VEVENT
-UID:buma-event-2-1786554000000@bu-ma.github.io
-DTSTAMP:20260808T031243Z
-DTSTART:20260812T170000Z
-DTEND:20260812T180000Z
-SUMMARY:TEST EVENT -1
-LOCATION:CDS 365
-DESCRIPTION:This is a predescription for a really awesome preevent. I think that I prelike this preevent and it will prebe precool. Here is some simplex \(\sigma : \Delta^n \to X \)
-END:VEVENT
-BEGIN:VEVENT
-UID:buma-event-3-1788886800000@bu-ma.github.io
-DTSTAMP:20260808T031243Z
-DTSTART:20260908T170000Z
-DTEND:20260908T180000Z
+UID:buma-event-0-1787245200000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20260820T170000Z
+DTEND:20260820T180000Z
 SUMMARY:TEST EVENT 0
 LOCATION:CDS 365
 DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
 END:VEVENT
 BEGIN:VEVENT
-UID:buma-event-4-1788973200000@bu-ma.github.io
-DTSTAMP:20260808T031243Z
-DTSTART:20260909T170000Z
-DTEND:20260909T180000Z
+UID:buma-event-1-1787331600000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20260821T170000Z
+DTEND:20260821T180000Z
 SUMMARY:TEST EVENT 2
 LOCATION:CDS 365
 DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
 END:VEVENT
 BEGIN:VEVENT
-UID:buma-event-5-1788976800000@bu-ma.github.io
-DTSTAMP:20260808T031243Z
-DTSTART:20260909T180000Z
-DTEND:20260909T190000Z
+UID:buma-event-2-1787421600000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20260822T180000Z
+DTEND:20260822T190000Z
 SUMMARY:TEST EVENT 3
 LOCATION:CDS 365
 DESCRIPTION:This is a description for a really awesome event. I think that I like this event and it will be cool. Here is some functor \(F : \mathcal{C}\to\mathcal{S}et\)
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-3-1789407000000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20260914T173000Z
+DTEND:20260914T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-4-1790011800000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20260921T173000Z
+DTEND:20260921T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-5-1790616600000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20260928T173000Z
+DTEND:20260928T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-6-1791221400000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261005T173000Z
+DTEND:20261005T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-7-1791826200000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261012T173000Z
+DTEND:20261012T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-8-1792431000000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261019T173000Z
+DTEND:20261019T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-9-1793035800000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261026T173000Z
+DTEND:20261026T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-10-1793640600000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261102T173000Z
+DTEND:20261102T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-11-1794245400000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261109T173000Z
+DTEND:20261109T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-12-1794850200000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261116T173000Z
+DTEND:20261116T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-13-1795455000000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261123T173000Z
+DTEND:20261123T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-14-1796059800000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261130T173000Z
+DTEND:20261130T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
+END:VEVENT
+BEGIN:VEVENT
+UID:buma-event-15-1796664600000@bu-ma.github.io
+DTSTAMP:20260816T054755Z
+DTSTART:20261207T173000Z
+DTEND:20261207T193000Z
+SUMMARY:Putnam Problem Solving Session
+LOCATION:CDS 365
+DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, Putnam-style problems. These problems should be accessible to most undergraduate students with an understanding of calculus and proofs. Hosted in collaboration with Professor David Fried.
 END:VEVENT
 END:VCALENDAR
