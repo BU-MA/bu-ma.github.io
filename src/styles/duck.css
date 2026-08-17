@@ -9,6 +9,12 @@
 body {
     text-align: center;
     overflow-x: hidden; /* for some reason i wanted to prevent horizontal scrollbars, im scared to touch it */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-family-headings);
+    color: var(--third-color);
 }
 
 img {
@@ -66,31 +72,8 @@ img {
     100% { background-color: rgba(238, 130, 238, 0.5); } /* Violet */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-h1, h2, h3, h4 {
-    font-family: var(--font-family-headings);
-    color: var(--third-color);
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
+@media (prefers-reduced-motion: reduce) {
+    #spinny-image,
+    #blinking-text { animation: none; }
 }

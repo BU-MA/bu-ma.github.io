@@ -5,27 +5,12 @@
 /* footer styling */
 @import url(/src/styles/standard-footer.css);
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
+/* ======================
+   global styles
+   ====================== */
 
-a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
-
-h1, h2, h3, h4 {
-    font-family: var(--font-family-headings);
-}
+body { line-height: 1.6; }
 
 .container {
     max-width: 1000px;
@@ -34,7 +19,7 @@ h1, h2, h3, h4 {
 }
 
 /* ======================
-   HERO
+   hero
    ====================== */
 
 .about-hero {
@@ -68,34 +53,15 @@ h1, h2, h3, h4 {
     width: 25ch;
 }
 
-.hero-field {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
+/* floating math symbols each get one of these classes to determine their location and animation properties */
 .hero-field .f1 { top: 10%; left: 8%; font-size: 3rem; animation-duration: 16s; }
 .hero-field .f2 { top: 65%; left: 15%; font-size: 2.2rem; animation-duration: 13s; animation-delay: -3s; }
 .hero-field .f3 { top: 20%; left: 85%; font-size: 3.5rem; animation-duration: 18s; animation-delay: -6s; }
 .hero-field .f4 { top: 70%; left: 80%; font-size: 2.8rem; animation-duration: 15s; animation-delay: -2s; }
 
-.floater {
-    position: absolute;
-    font-family: var(--font-family-headings);
-    color: var(--primary-color);
-    opacity: 0.08;
-    animation: floatSymbol 14s ease-in-out infinite;
-}
-
-@keyframes floatSymbol {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-18px) rotate(4deg); }
-}
 
 /* ======================
-   MISSION
+   mission statement
    ====================== */
 
 .mission-section {
@@ -206,7 +172,7 @@ h1, h2, h3, h4 {
 }
 
 /* ======================
-   WHAT WE DO
+   "what we do" section
    ====================== */
 
 .events-section {
@@ -385,7 +351,7 @@ h1, h2, h3, h4 {
 }
 
 /* ======================
-   MEETING DESCRIPTION
+   meeting description or smt
    ====================== */
 
 .meeting-section {
@@ -428,7 +394,7 @@ h1, h2, h3, h4 {
 }
 
 /* ======================
-   ACTION LINKS
+   action links aka buttons at the bottom of the screen
    ====================== */
 
 .action-section {
@@ -490,23 +456,9 @@ h1, h2, h3, h4 {
     transform: translateX(6px);
 }
 
-/* ======================
-   REVEAL ANIMATION
-   ====================== */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* ======================
-   ACCESSIBILITY
+   accessibility
    ====================== */
 
 a:focus-visible,
@@ -528,18 +480,11 @@ button:focus-visible {
 }
 
 /* ======================
-   REDUCED MOTION
+   reduced motion
    ====================== */
 
 @media (prefers-reduced-motion: reduce) {
-    .floater {
-        animation: none;
-    }
-
-    .mission-section::before,
-    .stats-section::before {
-        animation: none;
-    }
+    .mission-section::before { animation: none; }
 
     .mission-rule,
     .mission-text p,
@@ -566,51 +511,23 @@ button:focus-visible {
         transition: none;
     }
 
-    .stat {
-        transition: none;
-    }
-
-    .stat:hover {
-        transform: none;
-    }
-
     .action-section a,
     .action-section a::before {
-        transition: none;
-    }
-
-    .reveal {
-        opacity: 1;
-        transform: none;
         transition: none;
     }
 }
 
 /* ======================
-   MOBILE
+   mobile
    ====================== */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .event-entry {
         gap: 1.25rem;
     }
 
     .meridian {
         min-height: 30px;
-    }
-
-    .stats-section {
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .stat {
-        flex: 1 1 40%;
-        padding: 0;
-    }
-
-    .stat-sep {
-        display: none;
     }
 
     .action-section {

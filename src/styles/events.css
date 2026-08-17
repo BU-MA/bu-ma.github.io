@@ -7,30 +7,10 @@
 
 
 /* ======================
-   Basic styles
+   global styles
    ====================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-h1, h2, h3, h4 {
-    font-family: var(--font-family-headings);
-}
+body { line-height: 1.6; }
 
 .container {
     width: 90%;
@@ -39,7 +19,7 @@ h1, h2, h3, h4 {
 }
 
 /* ======================
-   Page hero
+   page hero
    ====================== */
 
 /* --- Hero Layout --- */
@@ -107,15 +87,6 @@ h1, h2, h3, h4 {
 
 .subscribe-btn { width: 100%; text-align: center; display: block; }
 
-/* floating math symbols live in here */
-.hero-field {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
 /* each floating math symbol also has one of these classes to manage position, size, and animation */
 .f1 { top: 15%; left: 10%; font-size: 3.5rem; animation-duration: 16s; }
 .f2 { top: 60%; left: 20%; font-size: 2.5rem; animation-duration: 13s; animation-delay: -3s; }
@@ -151,8 +122,9 @@ h1, h2, h3, h4 {
 }
 .cta-button:hover::after { left: 130%; }
 
+
 /* ======================
-   Main content
+   main content
    ====================== */
 
 main {
@@ -274,7 +246,8 @@ main .container {
     font-size: 1rem;
 }
 
-@media (max-width: 640px) {
+/* mobile */
+@media (max-width: 700px) {
     .event-featured {
         flex-direction: column;
     }
@@ -592,13 +565,10 @@ main .container {
 }
 
 /* ======================
-   Reduced motion
+   reduced motion
    ====================== */
 
 @media (prefers-reduced-motion: reduce) {
-    .floater {
-        animation: none !important;
-    }
     .event-card,
     .past-events-container li a,
     .cta-button,
@@ -609,14 +579,4 @@ main .container {
     .event-row-cta {
         transition: none;
     }
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
 }

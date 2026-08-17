@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - About</title>
 
-    <script>
-        const saved = localStorage.getItem('buma-theme');
-        if (saved) document.documentElement.setAttribute('data-theme', saved);
-    </script>
 
     <link rel="stylesheet" href="../src/styles/about.css">
     <link rel="icon" type="image/png" href="../src/assets/logo.png">
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/src/components/load-components.js" defer></script>
-    <script src="/src/misc-js/theme-switcher.js" defer></script>
-    <script src="/src/leadership/leadership.js" defer></script>
-    <script src="/src/css-redesign-showcase/js/manifold.js" defer></script>
+    <script src="/src/misc-js/load-theme.js"></script> <!-- load the currently active theme -->
+    <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
+    <script src="/src/misc-js/theme-switcher.js" defer></script> <!-- adds the theme switcher -->
+    <script src="/src/leadership/leadership.js" defer></script> <!-- adds a shadow to mobile nav -->
+    <script src="/src/misc-js/scroll-reveal.js" defer></script>  <!-- scroll reveal effect -->
 
     <meta property="og:title" content="BUMA - About">
     <meta property="og:description" content="All about the best math club at BU.">
@@ -71,7 +68,7 @@
                         here at BU. Membership is extremely low-committment, and the only prerequisite is interest.
                     </p>
                 </div>
-                <div class="card-watermark">\(\mathrm{d}\omega\otimes\gamma^*\eta\)</div>
+                <div class="card-watermark" aria-hidden="true">\(\mathrm{d}\omega\otimes\gamma^*\eta\)</div>
 
                 <div class="mission-rule rule-bottom"></div>
             </div>
@@ -96,7 +93,7 @@
                         <div class="meridian-node"></div>
                     </div>
                     <div class="event-info">
-                        <h3>Putnam Problem Solving</h3>
+                        <h3 class="reveal">Putnam Problem Solving</h3>
                         <p class="reveal">
                             Fall semester sessions led by <a href="https://www.bu.edu/math/profile/david-fried/" target="_blank">
                             Professor David Fried</a>. We solve practice problems for the annual
@@ -113,7 +110,7 @@
                         <div class="meridian-node"></div>
                     </div>
                     <div class="event-info">
-                        <h3>Talks</h3>
+                        <h3 class="reveal">Talks</h3>
                         <p class="reveal">
                             Professor-led and student-led talks on anything we consider interesting. Our topics range
                             from music theory to the most abstract nonsense humanity has conceived of. Prerequisites are
@@ -127,7 +124,7 @@
                         <div class="meridian-node"></div>
                     </div>
                     <div class="event-info">
-                        <h3>Social Events</h3>
+                        <h3 class="reveal">Social Events</h3>
                         <p class="reveal">
                             Puzzle nights, ice cream socials, trivial nights, competitions, and more. Often in
                             collaboration with other clubs.
@@ -141,7 +138,7 @@
                         <div class="meridian-node"></div>
                     </div>
                     <div class="event-info">
-                        <h3>Integration Bee</h3>
+                        <h3 class="reveal">Integration Bee</h3>
                         <p class="reveal">
                             A semesterly event inspired by MIT's, but less competitive and more fun. Come to play, hang
                             out, or just watch physicists struggle with Gaussians.
@@ -154,7 +151,7 @@
                         <div class="meridian-node"></div>
                     </div>
                     <div class="event-info">
-                        <h3>Advising</h3>
+                        <h3 class="reveal">Advising</h3>
                         <p class="reveal">
                             Semesterly sessions on course registration led by upperclassmen. Additional occasional
                             sessions on research, REUs, and graduate school applications.
@@ -163,7 +160,7 @@
                 </div>
             </div>
 
-            <p class="events-note">
+            <p class="events-note class">
                 For exact dates and times, see the <a href="/events/index.html">events page</a>. Join the
                 <a href="/contact/index.html">Discord</a> to stay up to date.
             </p>
@@ -185,11 +182,11 @@
                 difficult recently, so we can't guarentee it unfortunately. However, we <strong>can</strong> guarentee
                 food for bigger events, and (small) prizes for competitions.
             </p>
-            <div class="card-watermark">\[\forall\]</div>
+            <div class="card-watermark" aria-hidden="true">\[\forall\]</div>
         </section>
 
         <!-- links -->
-        <section class="action-section">
+        <section class="action-section reveal">
             <a href="/leadership/">Meet the Students in Charge</a>
             <a href="/events/">See Our Events This Semester</a>
         </section>
@@ -214,31 +211,3 @@
 </script>
 </body>
 </html>
-
-
-<!-- FALL 2026 PREP NOTES
-TODO -------------------------------------------------------------------------------------------------------------------
-  1. Our Mission
-    - Do we want to update this? I kinda wanna. Ill brainstorm
-  2. Events
-    - Do we wanna update this? I think it's good
-  3. The Society of Mathematics
-    - I want to keep some mention of SOM on our website, but IDK if it should be on this page. and definitely it should
-      go further down
-  4. Leadership
-    - Status of Alysa? I assume she's going to a general board member but would like to confirm
-    - Add Bala as Secretary
-    - Why isn't Nick here? Add Nick as treasurer
-    - All update bio
-    - Ophelia has graduated. I commented her out. Should we add a legacy leadership page?
-    - Should leadership be its own page?
-  5. More?
-    - When I think of an "About" page, I wanna know a lot more about the club.
-    - Add notes on low committment, past events
-    - Current sem meeting times
-    - how to give a talk
-    - how meetings generally look
-    - we are friendly
-    - pictures of meetings (GET THESE)
-TODO -------------------------------------------------------------------------------------------------------------------
--->

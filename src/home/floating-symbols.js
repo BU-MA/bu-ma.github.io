@@ -74,7 +74,7 @@ const symbolOptions = [
     '\\(\\Gamma(X,-)\\)', '\\(\\mathrm{d}\\)', '\\(\\mathcal{O}_X\\)',
     '\\(\\mathcal{H}om\\)', '\\(\\mathbb{H}\\mathrm{om}\\)', '\\(\\mathfrak{so}\\)',
     '\\(\\mathfrak{sl}\\)', '\\(\\mathfrak{o}\\)', '\\(\\mathfrak{su}\\)',
-    '\\(\\mathfral{gl}\\)', '\\(\\Omega^{p,q}\\)',
+    '\\(\\mathfrak{gl}\\)', '\\(\\Omega^{p,q}\\)',
 
     // category theory
     '\\(\\circ\\)', '\\(\\dashv\\)', '\\(\\pitchfork\\)', '\\(\\varinjlim\\)',

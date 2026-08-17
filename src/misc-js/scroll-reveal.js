@@ -1,5 +1,5 @@
 /*
- * Manifold redesign: reveals sections with a fade+slide as they scroll into view.
+ * Scroll reveal: reveals sections with a fade+slide as they scroll into view.
  * Uses IntersectionObserver so it only fires once per element and costs nothing
  * once revealed. Falls back to showing everything immediately if unsupported.
  *

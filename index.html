@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Home</title>
 
-    <script>
-        (function () {
-            const saved = localStorage.getItem('buma-theme');
-            if (saved) document.documentElement.setAttribute('data-theme', saved);
-        })();
-    </script>
 
     <link rel="stylesheet" href="/src/styles/home.css">
     <link rel="icon" type="image/png" href="/src/assets/logo.png">
@@ -18,6 +12,8 @@
     <!-- loads mathjax for latex support -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <script src="/src/misc-js/load-theme.js"></script> <!-- load the currently active theme -->
+    <script src="/src/misc-js/scroll-reveal.js" defer></script> <!-- scroll reveal effect -->
     <script src="/src/components/load-components.js" defer></script> <!-- loads the navbar and footer -->
     <script src="/src/misc-js/theme-switcher.js" defer></script> <!-- adds the theme switcher -->
     <script src="/src/home/titlecard-scroller.js" defer></script> <!-- handles scrolling the title card -->
@@ -28,22 +24,14 @@
 </head>
 <body>
 
-<!--
-TODO
-    - i want to have the following pages:
-    home | about | leadership | events | posts | contact | posts | silly
-    - add a light theme
-    - add notifications on theme switch so when someone swaps to light theme i can say "why...?"
--->
-
 
 <!-- this spacer div manages the title-card height during the animation. dont remove -->
 <div id="title-spacer"></div>
 
-<div class="title-card" id="titleCard">
+<div class="title-card reveal" id="titleCard">
 
     <!-- floating math symbols -->
-    <div class="title-field" aria-hidden="true">
+    <div class="title-field reveal" aria-hidden="true">
         <span class="floater f1">\( \sum \)</span>
         <span class="floater f2">\( \pi \)</span>
         <span class="floater f3">\( \infty \)</span>
@@ -54,12 +42,12 @@ TODO
 
     <!-- header line -->
     <div class="title-primary">
-        <span class="brand text-full">Boston University Mathematics Association</span>
-        <span class="brand text-scrolled">Boston University Mathematics Association</span>
-        <span class="brand text-mobile">BUMA</span>
+        <h1 class="brand text-full reveal">Boston University Mathematics Association</h1>
+        <h1 class="brand text-scrolled reveal">Boston University Mathematics Association</h1>
+        <h1 class="brand text-mobile reveal">BUMA</h1>
     </div>
 
-    <div class="title-extra">
+    <div class="title-extra reveal">
         <!--
         The inner div is required to restrict text width; otherwise when animating bar -> card you get a weird-looking
         animation where the text spawns in too long, and then the characters stream into new lines as the card shrinks
@@ -76,8 +64,9 @@ TODO
 </div>
 
 
+
 <!-- theorem of the week here -->
-<div id="theorem-of-the-week" class="side-clamp-card shine-card">
+<div id="theorem-of-the-week" class="side-clamp-card shine-card reveal">
     <div id="theorem-eyebrow" class="card-eyebrow">Theorem of the Week (#5)</div>
 
     <div class="theorem-body">
@@ -103,7 +92,7 @@ TODO
 
 
 
-<div id="about">
+<div id="about" class="reveal">
     <div class="about-header">
         <h2>What is BUMA?</h2>
     </div>
@@ -203,7 +192,6 @@ TODO
         </div>
     </div>
 </div>
-
 
 <footer></footer>
 </body>

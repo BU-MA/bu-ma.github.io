@@ -324,11 +324,6 @@ a {
 .title-card.scrolled .text-scrolled {
     display: block;
 }
-@media (max-width: 600px) {
-    .title-extra { max-height: 400px; }
-    .title-card.scrolled .text-scrolled { display: none; }
-    .title-card.scrolled .text-mobile { display: block; }
-}
 
 /*
  * This section handles the floating math symbols.
@@ -804,11 +799,6 @@ i wanna see if i can add a light glow to the card
     gap: 1rem;
     align-items: start;
 }
-@media (max-width: 768px) { /* 1 per row on mobile */
-    .faq-question-wrapper {
-        grid-template-columns: 1fr;
-    }
-}
 
 .faq h2 {
     color: var(--primary-color);
@@ -917,4 +907,97 @@ footer {
     font-size: 0.85rem;
     margin-top: 1rem;
     line-height: 1.6;
+}
+
+
+/* ========================
+   MOBILE
+   ======================== */
+@media (max-width: 700px) {
+    /* the desktop title-card leans on 80vw/40vw absolute positioning
+       math that assumes a lot of horizontal room. none of it holds on
+       a phone, so mobile gets a normal-flow stacked layout instead of
+       trying to force the same trick into a 320px box */
+    .title-card,
+    .title-card.scrolled {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .title-primary,
+    .title-card.scrolled .title-primary {
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .title-extra { max-height: 400px; }
+    .title-extra-inner { width: 100%; max-width: 100%; }
+    .title-card.scrolled .text-scrolled { display: none; }
+    .title-card.scrolled .text-mobile { display: block; }
+    .title-card .text-mobile { display: block; }
+    .title-card .text-full { display: none; }
+
+    /* nav collapses into the hamburger */
+    .title-nav,
+    .title-card.scrolled .title-nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        left: auto;
+        bottom: auto;
+    }
+
+    nav {
+        padding: 0.5rem 0 0;
+        display: flex;
+        justify-content: center;
+        /* position:relative already set at the base (non-mobile) nav rule —
+           that's what lets the dropdown below anchor to this, not the card */
+    }
+
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* the dropdown is now its own opaque panel, not part of the (transparent)
+       hero card growing — so it can't bleed through to whatever's behind it */
+    nav ul.nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        width: max-content;
+        min-width: 10rem;
+        max-width: calc(100vw - 2rem);
+        box-sizing: border-box;
+        background: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        padding: 0.75rem;
+        box-shadow: 0 8px 20px rgba(var(--shadow-rgb), 0.3);
+        z-index: 10;
+    }
+    nav ul.nav-links.open { display: flex; }
+
+
+    #about {
+        grid-template-columns: 1fr;
+        margin: 2rem 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .faq-question-wrapper { grid-template-columns: 1fr; }
 }

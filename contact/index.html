@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Contact</title>
 
-    <script>
-        (function () {
-            const saved = localStorage.getItem('buma-theme');
-            if (saved) document.documentElement.setAttribute('data-theme', saved);
-        })();
-    </script>
 
     <link rel="stylesheet" href="/src/styles/contact.css">
     <link rel="icon" type="image/png" href="/src/assets/logo.png">
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/src/misc-js/load-theme.js"></script> <!-- load the currently active theme -->
+    <script src="/src/misc-js/scroll-reveal.js" defer></script> <!-- scroll reveal effect -->
     <script src="/src/components/load-components.js" defer></script>
     <script src="/src/misc-js/theme-switcher.js" defer></script>
     <script src="/src/leadership/leadership.js" defer></script>
@@ -37,7 +33,7 @@
     </div>
 </header>
 
-<div class="page-hero">
+<div class="page-hero reveal">
     <div class="hero-field" aria-hidden="true">
         <span class="floater f1">\( \zeta \)</span>
         <span class="floater f2">\( \mathbb{R} \)</span>
@@ -54,7 +50,7 @@
     <section class="contact-methods">
         <div class="contact-list">
 
-            <article class="contact-card"
+            <article class="contact-card reveal"
                      style="--accent: var(--primary-color); --accent-rgb: var(--primary-rgb);
                              --decor-image: url('/src/assets/decor/node-network.svg');">
                 <div class="contact-card-inner">
@@ -73,7 +69,7 @@
                 </div>
             </article>
 
-            <article class="contact-card"
+            <article class="contact-card reveal"
                      style="--accent: var(--secondary-color); --accent-rgb: var(--secondary-rgb);
                              --decor-image: url('/src/assets/decor/commutative-square.svg');">
                 <div class="contact-card-inner">
@@ -92,7 +88,7 @@
                 </div>
             </article>
 
-            <article class="contact-card"
+            <article class="contact-card reveal"
                      style="--accent: var(--primary-color); --accent-rgb: var(--primary-rgb);
                              --decor-image: url('/src/assets/decor/elliptic_curve_katherine.svg'); --decor-flip: -1;">
                 <div class="contact-card-inner">
@@ -110,7 +106,7 @@
                 </div>
             </article>
 
-            <article class="contact-card"
+            <article class="contact-card reveal"
                      style="--accent: var(--secondary-color); --accent-rgb: var(--secondary-rgb);
                              --decor-image: url('/src/assets/decor/torus_wireframe.svg');">
                 <div class="contact-card-inner">

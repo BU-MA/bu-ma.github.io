@@ -2,8 +2,7 @@
  * Defines the root colors used by the website. Many other CSS files import this to set their colors and fonts.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css');
+@import url('https://fonts.googleapis.com/css2?700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
 /* ============================
@@ -87,7 +86,7 @@
     --background-color: #191724;
     --surface-color: #1f1d2e;
     --surface-color-alt: #26233a;
-    --border-color: #9ccfd8; /* or eb6f92 */
+    --border-color: #524f67; /* or eb6f92 */
 
     --text-color: #e0def4;
     --text-color-muted: #6e6a86;
@@ -167,10 +166,38 @@
 }
 
 
-/*
- * styles for the theme switcher
- * these do not change
- */
+/* ====================
+   shared base typography
+
+   files can overrule these declarations if they want to do smt different
+   but these rules are mostly universal
+   ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family-body);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-family-headings);
+}
+
+
+/* ===================
+   theme switcher
+   =================== */
 
 .theme-switcher {
     position: fixed;
@@ -284,7 +311,7 @@
 }
 
 /* =====================
-   Card text stylings
+   card text styles
    ===================== */
 
 /*
@@ -316,6 +343,34 @@
     font-weight: 700;
 }
 
+
+/* ===================
+   icons and icon utilities
+   =================== */
+
+.icon {
+    display: inline-block;
+    background-color: currentColor;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+.icon-email        { -webkit-mask-image: url('/src/assets/mail-icon.svg');       mask-image: url('/src/assets/mail-icon.svg'); }
+.icon-newsletter    { -webkit-mask-image: url('/src/assets/mail-icon.svg');       mask-image: url('/src/assets/mail-icon.svg'); }
+.icon-discord       { -webkit-mask-image: url('/src/assets/discord-icon.svg');    mask-image: url('/src/assets/discord-icon.svg'); }
+.icon-instagram     { -webkit-mask-image: url('/src/assets/instagram-icon.svg');  mask-image: url('/src/assets/instagram-icon.svg'); }
+.icon-form          { -webkit-mask-image: url('/src/assets/form-icon.svg');       mask-image: url('/src/assets/form-icon.svg'); }
+.icon-website       { -webkit-mask-image: url('/src/assets/website-icon.svg');    mask-image: url('/src/assets/website-icon.svg'); }
+.icon-talk          { -webkit-mask-image: url('/src/assets/talk-icon.svg');       mask-image: url('/src/assets/talk-icon.svg'); }
+.icon-putnam        { -webkit-mask-image: url('/src/assets/putnam-icon.svg');     mask-image: url('/src/assets/putnam-icon.svg'); }
+.icon-theorem       { -webkit-mask-image: url('/src/assets/theorem-icon.svg');    mask-image: url('/src/assets/theorem-icon.svg'); }
+.icon-competition   { -webkit-mask-image: url('/src/assets/trophy-icon.svg');     mask-image: url('/src/assets/trophy-icon.svg'); }
+
+
+
 /* ======================
    floating math symbols
    ====================== */
@@ -328,27 +383,76 @@
     opacity: 0.1;
     animation: floatSymbol 14s ease-in-out infinite;
 }
+
 @keyframes floatSymbol {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50%      { transform: translateY(-18px) rotate(4deg); }
 }
 
+/* .hero-field is a wrapper for the floating symbol backdrop */
+.hero-field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
 
-@media (max-width: 600px) { /* displays hamburger style menu if website is <= 600px wide */
-    .nav-toggle {
-        display: block;
+@media (prefers-reduced-motion: reduce) {
+    .floater { animation: none !important; }
+}
+
+
+/* ======================
+   page hero
+   ====================== */
+
+/* a fairly universal shared container for the page hero */
+.page-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 4rem 0 3rem;
+    text-align: center;
+}
+
+
+/* ======================
+   scroll reveal
+   ====================== */
+
+/*
+ * import /src/misc-js/scroll-reveal.js and any item marked with the reveal class will have an animation when scrolled
+ * to
+*/
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-    .nav-links.open {
-        display: flex;
-    }
-    nav .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+}
+
+
+/* accessibility feature */
+.visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
 }

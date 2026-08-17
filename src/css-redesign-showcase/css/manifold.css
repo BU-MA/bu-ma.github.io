@@ -250,7 +250,7 @@ nav a.active::after {
     padding: 2.75rem 0;
 }
 
-/* scroll-reveal: fades/slides up once when scrolled into view (see manifold.js) */
+/* scroll-reveal: fades/slides up once when scrolled into view (see scroll-reveal.js) */
 .reveal {
     opacity: 0;
     transform: translateY(24px);

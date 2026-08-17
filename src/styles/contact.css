@@ -7,73 +7,29 @@
 
 
 /* ======================
-   Basic styles
+   global styles
    ====================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+body { line-height: 1.6; }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-h1, h2, h3 {
-    font-family: var(--font-family-headings);
-}
 
 /* ======================
-   Icon utility
+   icons
    ====================== */
 
+/* this page prefers larger icons than usual */
 .icon {
-    display: inline-block;
     width: 20px;
     height: 20px;
     flex-shrink: 0;
-    background-color: currentColor;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
 }
-.icon-email     { -webkit-mask-image: url('/src/assets/mail-icon.svg');       mask-image: url('/src/assets/mail-icon.svg'); }
-.icon-discord   { -webkit-mask-image: url('/src/assets/discord-icon.svg');    mask-image: url('/src/assets/discord-icon.svg'); }
-.icon-instagram { -webkit-mask-image: url('/src/assets/instagram-icon.svg');  mask-image: url('/src/assets/instagram-icon.svg'); }
-.icon-form      { -webkit-mask-image: url('/src/assets/form-icon.svg');       mask-image: url('/src/assets/form-icon.svg'); }
+
 
 /* ======================
-   Page hero
+   page hero
    ====================== */
 
-.page-hero {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 4rem 0 3rem;
-    text-align: center;
-}
-
-.hero-field {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
+/* floating math symbols each get one of these classes to determine their location and animation properties */
 .f1 { top: 15%; left: 10%; font-size: 3.5rem; animation-duration: 16s; }
 .f2 { top: 60%; left: 20%; font-size: 2.5rem; animation-duration: 13s; animation-delay: -3s; }
 .f3 { top: 25%; left: 82%; font-size: 4rem;   animation-duration: 18s; animation-delay: -6s; }
@@ -99,9 +55,9 @@ h1, h2, h3 {
     line-height: 1.7;
 }
 
-/* ==========================================================================
-   Contact cards
-   ========================================================================== */
+/* ======================
+   contact cards
+   ====================== */
 
 .contact-methods {
     padding: 4rem 1.5rem 2rem;
@@ -251,6 +207,7 @@ h1, h2, h3 {
 .contact-card-cta:focus-visible::before { transform: scaleX(1); }
 .contact-card-cta:focus-visible { outline: 2px solid var(--secondary-color); outline-offset: 3px; }
 
+
 /* ======================
    bottom glowiung accent thjignyu
    ====================== */
@@ -262,8 +219,9 @@ h1, h2, h3 {
     margin-top: 1.5rem;
 }
 
+
 /* ======================
-   Mobile
+   mobile
    ====================== */
 
 @media (max-width: 700px) {
@@ -283,11 +241,10 @@ h1, h2, h3 {
 }
 
 /* ======================
-   Reduced motion
+   reduced motion
    ====================== */
 
 @media (prefers-reduced-motion: reduce) {
-    .floater,
     .contact-card-badge::after {
         animation: none !important;
     }

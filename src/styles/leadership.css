@@ -7,28 +7,14 @@
 
 
 /* ======================
-   basic styles
+   global styles
    ====================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family-body);
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-a {
-    text-decoration: none;
-    color: var(--secondary-color);
 }
 
 main {
@@ -47,27 +33,7 @@ main {
    just a title and some floating math symbols
    ====================== */
 
-.page-hero {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 4rem 0 3rem;
-    text-align: center;
-}
-
 /* --- decor --- */
-
-/*
- * floating math symbols live in the hero-field
- * the hero-field lives behind the hero itself and is otherwise invisible
- */
-.hero-field {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
 
 /* each floating math symbol also has one of these classes to manage position, size, and animation */
 .f1 { top: 15%; left: 10%; font-size: 3.5rem; animation-duration: 16s; }
@@ -172,7 +138,6 @@ main {
 
 /* defining the actual shape of the left card */
 .profile-card-left {
-    transform: translateX(-4px);
     padding: 2rem calc(var(--slant-bottom) + 2rem) 2rem var(--gutter-side);
     clip-path: polygon(
             0 0,
@@ -183,20 +148,14 @@ main {
 
     --extras-translate-X: 40%; /* default value */
 }
-.profile-card-left:hover { /* hover effect */
-    transform: translateX(0);
-}
 
 /* defining the shape of the right card, which is essentially just the opposite of the left */
 .profile-card-right {
-    transform: translateX(4px);
     padding: 2rem var(--gutter-side) 2rem calc(var(--slant-bottom) + 2rem);
     clip-path: polygon(var(--slant-top) 0, 100% 0, 100% 100%, var(--slant-bottom) 100%);
 
 }
-.profile-card-right:hover { /* hover effect */
-    transform: translateX(0px);
-}
+
 .profile-card-right .profile-card-inner {
     flex-direction: row-reverse; /* Puts the photo on the right for right cards */
 }
@@ -407,7 +366,7 @@ main {
 /* --- icons --- */
 
 /*
- * u can put an icon with the contact method. to add more icons, just make an svg and a new icon class
+ * u can put an icon with the contact method. to add more icons, just make an svg and a new icon class in theme.css
  * usage looks like <span class="icon icon-type"></span>
  * eg <span class="icon icon-email"></span>
 */
@@ -415,34 +374,7 @@ main {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
-
-    /* the color is applied to the background, and the SVG punches a hole in it */
-    background-color: currentColor;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
 }
-
-/* links of each icon to its file. to add more icons, make a class here. */
-.icon-email {
-    -webkit-mask-image: url('/src/assets/mail-icon.svg');
-    mask-image: url('/src/assets/mail-icon.svg');
-}
-
-.icon-discord {
-    -webkit-mask-image: url('/src/assets/discord-icon.svg');
-    mask-image: url('/src/assets/discord-icon.svg');
-}
-
-.icon-website {
-    -webkit-mask-image: url('/src/assets/website-icon.svg');
-    mask-image: url('/src/assets/website-icon.svg');
-}
-
 
 
 /* ======================

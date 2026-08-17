@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUMA - Leadership</title>
 
-    <script>
-        (function () {
-            const saved = localStorage.getItem('buma-theme');
-            if (saved) document.documentElement.setAttribute('data-theme', saved);
-        })();
-    </script>
 
     <link rel="stylesheet" href="/src/styles/leadership.css">
     <link rel="icon" type="image/png" href="/src/assets/logo.png">
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/src/misc-js/theme-switcher.js" defer></script>
-
     <script src="/src/components/load-components.js" defer></script>
+    <script src="/src/misc-js/load-theme.js"></script> <!-- load the currently active theme -->
+    <script src="/src/misc-js/scroll-reveal.js" defer></script> <!-- scroll reveal effect -->
 
     <meta property="og:title" content="BUMA - Leadership">
     <meta property="og:description" content="Meet the students who run the Boston University Mathematics Association.">
@@ -37,7 +32,7 @@
     </div>
 </header>
 
-<div class="page-hero">
+<div class="page-hero reveal">
     <div class="hero-field" aria-hidden="true">
         <span class="floater f1">\( \widehat{\otimes} \)</span>
         <span class="floater f2">\( \pi \)</span>
@@ -96,14 +91,14 @@
                         <h4>Contact</h4>
                         <div class="contact-links">
                             <!-- email link -->
-                            <a href="mailto:kqlguo@bu.edu" aria-label="email">
-                                <span class="icon icon-email"></span>
+                            <a href="mailto:kqlguo@bu.edu">
+                                <span class="icon icon-email" aria-hidden="true"></span>
                                 kqlguo@bu.edu
                             </a>
 
                             <!-- discord item -->
                             <span class="contact-item">
-                                <span class="icon icon-discord"></span>
+                                <span class="icon icon-discord" aria-hidden="true"></span>
                                 mathoderaytube
                             </span>
                         </div>
@@ -119,8 +114,8 @@
                     --bg-image-left: url('/src/assets/decor/cy-mfld.svg');
                     --bg-image-right: url('/src/assets/decor/commutative-tesseract.svg');
                     --accent-color: var(--secondary-color);
-                    --bg-size-left: 500px;
-                    --bg-translate-X-left: -50%;
+                    --bg-size-left: 650px;
+                    --bg-translate-X-left: -40%;
                     --bg-translate-Y-left: -40%;
                     --bg-size-right: 1000px;
                     --bg-translate-X-right: 40%;
@@ -165,19 +160,19 @@
                         <h4>Contact</h4>
                         <div class="contact-links">
                             <!-- email link -->
-                            <a href="mailto:gtalbert@bu.edu" aria-label="email">
-                                <span class="icon icon-email"></span>
+                            <a href="mailto:gtalbert@bu.edu">
+                                <span class="icon icon-email" aria-hidden="true"></span>
                                 gtalbert@bu.edu
                             </a>
 
                             <!-- discord item -->
                             <span class="contact-item">
-                                <span class="icon icon-discord"></span>
+                                <span class="icon icon-discord" aria-hidden="true"></span>
                                 theholychickn
                             </span>
 
                             <!-- website link -->
-                            <a href="/duck.html" target="_blank" aria-label="Personal Website">
+                            <a href="/duck.html" target="_blank">
                                 <span class="icon icon-website"></span>
                                 Personal Website
                             </a>
@@ -235,8 +230,8 @@
                         <h4>Contact</h4>
                         <div class="contact-links">
                             <!-- email link -->
-                            <a href="mailto:ningke@bu.edu" aria-label="email">
-                                <span class="icon icon-email"></span>
+                            <a href="mailto:ningke@bu.edu">
+                                <span class="icon icon-email" aria-hidden="true"></span>
                                 ningke@bu.edu
                             </a>
                         </div>
@@ -281,8 +276,8 @@
                         <h4>Contact</h4>
                         <div class="contact-links">
                             <!-- email link -->
-                            <a href="mailto:balam@bu.edu" aria-label="email">
-                                <span class="icon icon-email"></span>
+                            <a href="mailto:balam@bu.edu">
+                                <span class="icon icon-email" aria-hidden="true"></span>
                                 balam@bu.edu
                             </a>
                         </div>
@@ -338,8 +333,8 @@
                         <h4>Contact</h4>
                         <div class="contact-links">
                             <!-- email link -->
-                            <a href="mailto:??????@bu.edu" aria-label="email">
-                                <span class="icon icon-email"></span>
+                            <a href="mailto:??????@bu.edu">
+                                <span class="icon icon-email" aria-hidden="true"></span>
                                 ??????@bu.edu
                             </a>
                         </div>
@@ -393,7 +388,7 @@
 
                             <!-- discord item -->
                             <span class="contact-item">
-                                <span class="icon icon-discord"></span>
+                                <span class="icon icon-discord" aria-hidden="true"></span>
                                 spuddy5379
                             </span>
                         </div>

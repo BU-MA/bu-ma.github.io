@@ -59,7 +59,7 @@
     "title": "Dirichlet's Prime Number Theorem",
     "location": "CDS 365",
     "description": "Our board member Ophelia You will be presenting a proof of Dirichlet's prime number theorem, which is part of her senior thesis. The theorem states that any two positive coprime integers \\(a\\) and \\(d\\), the series of numbers \\(\\{a,a+d,a+2d,a+3d,\\ldots\\}\\) contains infinitely many prime numbers.",
-    "datetime:": "2026-04-13T18:00:00",
+    "datetime": "2026-04-13T18:00:00",
     "duration": 60
   },
   {

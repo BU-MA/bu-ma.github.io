@@ -34,6 +34,8 @@
     const links = document.querySelector('.nav-links');
     console.log('toggle found:', toggle, 'links found:', links);
     if (toggle && links) {
-        toggle.addEventListener('click', () => links.classList.toggle('open'));
+        toggle.addEventListener('click', () => {
+            toggle.setAttribute('aria-expanded', links.classList.toggle('open'));
+        });
     }
 })();

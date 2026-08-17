@@ -7,54 +7,14 @@
 
 
 /* ======================
-   Basic styles
+   global styles
    ====================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+body { line-height: 1.6; }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-h1, h2, h3 {
-    font-family: var(--font-family-headings);
-}
 
 /* ======================
-   Icon utility
-   ====================== */
-
-.icon {
-    display: inline-block;
-    background-color: currentColor;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-}
-.icon-talk        { -webkit-mask-image: url('/src/assets/talk-icon.svg');    mask-image: url('/src/assets/talk-icon.svg'); }
-.icon-putnam      { -webkit-mask-image: url('/src/assets/putnam-icon.svg');  mask-image: url('/src/assets/putnam-icon.svg'); }
-.icon-theorem     { -webkit-mask-image: url('/src/assets/theorem-icon.svg'); mask-image: url('/src/assets/theorem-icon.svg'); }
-.icon-newsletter  { -webkit-mask-image: url('/src/assets/mail-icon.svg');    mask-image: url('/src/assets/mail-icon.svg'); }
-.icon-competition { -webkit-mask-image: url('/src/assets/trophy-icon.svg');  mask-image: url('/src/assets/trophy-icon.svg'); }
-.icon-discord     { -webkit-mask-image: url('/src/assets/discord-icon.svg'); mask-image: url('/src/assets/discord-icon.svg'); }
-
-/* ======================
-   Reading progress bar
+   reading progress bar
    ====================== */
 
 .reading-progress {
@@ -69,7 +29,7 @@ h1, h2, h3 {
 }
 
 /* ======================
-   Category color mapping
+   category color mapping
    ====================== */
 
 body[data-category="talks"] {
@@ -99,7 +59,7 @@ body[data-category="competitions"] {
 }
 
 /* ======================
-   Post Hero
+   post Hero
    ====================== */
 
 .post-hero {
@@ -253,30 +213,18 @@ body[data-category="competitions"] {
     z-index: 1;
 }
 
-.post-hero .hero-field {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
+.post-hero .floater { opacity: 0.15; }
 
-.post-hero .floater {
-    position: absolute;
-    font-family: var(--font-family-headings);
-    color: var(--primary-color);
-    opacity: 0.15;
-    animation: floatSymbol 16s ease-in-out infinite;
-}
-
+/* floating math symbols each get one of these classes to determine their location and animation properties */
 .post-hero .f1 { top: 12%; left: 8%;  font-size: 2.8rem; animation-duration: 16s; }
 .post-hero .f2 { top: 65%; left: 18%; font-size: 2.2rem; animation-duration: 13s; animation-delay: -3s; }
 .post-hero .f3 { top: 28%; left: 82%; font-size: 3.2rem; animation-duration: 19s; animation-delay: -6s; }
 .post-hero .f4 { top: 68%; left: 69%; font-size: 2.4rem; animation-duration: 14s; animation-delay: -1s; }
 
-/* ==========================================================================
-   Post body typography
-   ========================================================================== */
+
+/* ======================
+   body typography
+   ====================== */
 
 .post-body { padding: 3rem 0 2rem; }
 
@@ -417,8 +365,9 @@ body[data-category="competitions"] {
     font-size: 0.88rem;
 }
 
+
 /* ======================
-   Figure
+   figures
    ====================== */
 
 .post-figure {
@@ -457,7 +406,11 @@ body[data-category="competitions"] {
     font-family: var(--font-family-headings);
 }
 
-/* schedule strip - a plain bordered list for "at a glance" info like meeting times. */
+/* ======================
+   schedule strip
+   a plain bordered list for listing info in a sorta nice way
+   ====================== */
+
 .post-schedule {
     margin: 1.5rem 0 2.5rem;
     border-top: 1px solid var(--border-color);
@@ -482,7 +435,11 @@ body[data-category="competitions"] {
     color: var(--text-color);
 }
 
-/* divider: faded lines running into a small glyph */
+/* ======================
+   divider
+   use two divider lines between a glyph like \S
+   ====================== */
+
 .post-divider {
     display: flex;
     align-items: center;
@@ -503,9 +460,9 @@ body[data-category="competitions"] {
     opacity: 0.8;
 }
 
-/* ==========================================================================
-   Closing CTA
-   ========================================================================== */
+/* ======================
+   closing cta
+   ====================== */
 
 .post-end-cta {
     display: flex;
@@ -537,19 +494,9 @@ body[data-category="competitions"] {
 .post-end-button .arrow { transition: transform 0.3s ease; }
 .post-end-button:hover .arrow { transform: translateX(4px); }
 
-/* ======================
-   Reveal-on-scroll
-   ====================== */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.revealed { opacity: 1; transform: translateY(0); }
 
 /* ======================
-   Mobile
+   mobile
    ====================== */
 
 @media (max-width: 700px) {
@@ -561,16 +508,15 @@ body[data-category="competitions"] {
     .schedule-row { flex-wrap: wrap; gap: 0.4rem 1.25rem; }
 }
 
+
 /* ======================
-   Reduced motion
+   reduced motion
    ====================== */
 
 @media (prefers-reduced-motion: reduce) {
-    .floater { animation: none !important; }
     .post-hero-back,
     .post-end-button,
     .reading-progress {
         transition: none;
     }
-    .reveal { opacity: 1; transform: none; transition: none; }
 }

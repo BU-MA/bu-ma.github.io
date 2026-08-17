@@ -1,46 +1,14 @@
 {
   "posts": [
     {
-      "title": "Fall 2026 Pre-Semester Newsletter",
-      "date": "2026-08-16",
-      "category": "newsletter",
-      "author": "Grant Talbert",
-      "excerpt": "As the summer winds to a close and the fall semester approaches, us here at BUMA have a lot of exciting things to announce!",
-      "url": "/posts/fall-2026-presemester-newsletter/",
-      "featured": true,
-      "accent": "Pre-Semester Newsletter"
-    },
-    {
-      "title": "Putnam Problem of the Week #0: Placeholder Title",
-      "date": "2026-07-10",
-      "category": "putnam",
-      "author": "BUMA",
-      "excerpt": "Placeholder text for a placeholder problem.",
-      "url": "#"
-    },
-    {
-      "title": "Theorem of the Week #0: Placeholder Title",
-      "date": "2026-07-10",
-      "category": "theorem",
-      "author": "BUMA",
-      "excerpt": "Yoneda's lemma is my spirit animal.",
-      "url": "#"
-    },
-    {
-      "title": "Introduction to Group Theory",
-      "date": "2026-03-02",
+      "title": "\\(L^1\\) Geometry",
+      "date": "2025-10-10",
       "category": "talks",
-      "author": "BUMA",
-      "excerpt": "I still can't believe you made me improv this talk, Katherine.",
-      "url": "#"
-    },
-    {
-      "title": "Integration Bee Results - Fall 2025",
-      "date": "2025-12-08",
-      "category": "competitions",
-      "author": "BUMA",
-      "excerpt": "Final standings and a couple of the harder problems from this semester's Integration Bee.",
-      "url": "#"
+      "author": "Katherine Guo",
+      "excerpt": "In mathematics, a metric is an abstraction of the notion of distance. There are an important class of metrics, called \\(L^p\\) metrics, where \\(p\\) is either a positive integer, or \\(\\infty\\). We will focus on the \\(L^1\\) metric, and will explore common geometric constructions using this new version of distance. We will explore some questions about \\(L^1\\) geometry.",
+      "url": "/src/talks/l1-geometry-katherine-f25.pdf",
+      "featured": false,
+      "accent": "Geometry"
     },
     {
       "title": "A Friendly Introduction to Abstract Nonsense",
@@ -49,7 +17,7 @@
       "author": "Grant Talbert",
       "excerpt": "Category theory is a unifying language for mathematics, which explains striking connections between distant branches of math. These notes introduce categories, functors, natural transformations, and universal constructions, guided by examples from basic set theory and algebra.",
       "url": "/src/talks/categories-grant-f25.pdf",
-      "featured": false,
+      "featured": true,
       "accent": "Abstract Nonsense"
     }
   ]

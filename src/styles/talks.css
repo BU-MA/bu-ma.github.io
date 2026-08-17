@@ -7,73 +7,22 @@
 
 
 /* ======================
-   Basic styles
+   global styles
    ====================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+body { line-height: 1.6; }
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: var(--secondary-color);
-}
-
-h1, h2, h3 {
-    font-family: var(--font-family-headings);
-}
 
 /* ======================
-   Icon utility
+   page hero
    ====================== */
 
-.icon {
-    display: inline-block;
-    background-color: currentColor;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-}
-.icon-talk        { -webkit-mask-image: url('/src/assets/talk-icon.svg');    mask-image: url('/src/assets/talk-icon.svg'); }
-.icon-putnam      { -webkit-mask-image: url('/src/assets/putnam-icon.svg');  mask-image: url('/src/assets/putnam-icon.svg'); }
-.icon-theorem     { -webkit-mask-image: url('/src/assets/theorem-icon.svg'); mask-image: url('/src/assets/theorem-icon.svg'); }
-.icon-newsletter  { -webkit-mask-image: url('/src/assets/mail-icon.svg');    mask-image: url('/src/assets/mail-icon.svg'); }
-.icon-competition { -webkit-mask-image: url('/src/assets/trophy-icon.svg');  mask-image: url('/src/assets/trophy-icon.svg'); }
-
-/* ======================
-   Page hero
-   ====================== */
-
-.page-hero {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 4rem 0 3rem;
-    text-align: center;
-}
-.hero-field {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
+/* floating math symbols each get one of these classes to determine their location and animation properties */
 .f1 { top: 15%; left: 10%; font-size: 3.5rem; animation-duration: 16s; }
 .f2 { top: 60%; left: 20%; font-size: 2.5rem; animation-duration: 13s; animation-delay: -3s; }
 .f3 { top: 25%; left: 82%; font-size: 4rem;   animation-duration: 18s; animation-delay: -6s; }
 .f4 { top: 70%; left: 78%; font-size: 3rem;   animation-duration: 15s; animation-delay: -2s; }
+
 .hero-inner {
     position: relative;
     z-index: 1;
@@ -81,6 +30,7 @@ h1, h2, h3 {
     margin: 0 auto;
     padding: 0 1.5rem;
 }
+
 .page-hero h1 {
     display: inline-block;
     background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
@@ -91,15 +41,17 @@ h1, h2, h3 {
     font-size: clamp(2.2rem, 5vw, 3.1rem);
     margin-bottom: 0.85rem;
 }
+
 .hero-sub {
     color: var(--text-color-muted);
     font-size: 1.05rem;
     line-height: 1.7;
 }
 
-/* ==========================================================================
-   Featured post
-   ========================================================================== */
+
+/* ======================
+   featured post
+   ====================== */
 
 .post-featured {
     --cover-width: 300px;
@@ -225,9 +177,10 @@ h1, h2, h3 {
 .post-featured-cta .arrow { transition: transform 0.3s ease; }
 .post-featured-cta:hover .arrow { transform: translateX(4px); }
 
-/* ==========================================================================
-   Filter bar
-   ========================================================================== */
+
+/* ======================
+   filter bar
+   ====================== */
 
 .post-filters {
     display: flex;
@@ -259,9 +212,10 @@ h1, h2, h3 {
     color: var(--text-on-primary);
 }
 
-/* ==========================================================================
-   Post list rows
-   ========================================================================== */
+
+/* ======================
+   post list
+   ====================== */
 
 .posts-list {
     max-width: 1040px;
@@ -488,22 +442,12 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
-/* ======================
-   Reveal-on-scroll
-   ====================== */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.revealed { opacity: 1; transform: translateY(0); }
 
 /* ======================
-   Mobile
+   mobile
    ====================== */
 
-@media (max-width: 760px) {
+@media (max-width: 700px) {
     .post-featured {
         grid-template-columns: 1fr;
         min-height: 0;
@@ -531,11 +475,10 @@ h1, h2, h3 {
 }
 
 /* ======================
-   Reduced motion
+   reduced motion
    ====================== */
 
 @media (prefers-reduced-motion: reduce) {
-    .floater { animation: none !important; }
     .post-featured-cta,
     .post-row::after,
     .post-row-date::before,
@@ -546,5 +489,4 @@ h1, h2, h3 {
     .filter-button {
         transition: none;
     }
-    .reveal { opacity: 1; transform: none; transition: none; }
 }
