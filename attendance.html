@@ -12,30 +12,11 @@
 
 </head>
 
-<!-- FALL 2026 PREP NOTES
-TODO -------------------------------------------------------------------------------------------------------------------
-  - We could make all the forms beforehand and save a map (meetingDate to link) and just have a script that finds the
-    link corresponding to todays date and pipe that link into the QR code generator
-TODO -------------------------------------------------------------------------------------------------------------------
-so far i have added that script iw as talking about, but did no testing because i was too tired.
--->
-
 <body>
 <div id="qrcode"></div>
-<p>The math department requires us to take attendance. Sorry!</p>
+<p style="margin-top: 1rem;">The math department requires us to take attendance. Sorry!</p>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-
-<script>
-    // Create a new QR code instance
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
-        text: "https://forms.gle/7yhTPbNwTEmpKLCJ6",
-        width: 200,
-        height: 200,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-    });
-</script>
+<script src="/src/misc-js/attendance-qr-code-generator.js"></script>
 </body>
 </html>
