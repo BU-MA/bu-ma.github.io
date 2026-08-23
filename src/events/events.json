@@ -23,14 +23,14 @@
   {
     "title": "Trivia Night",
     "location": "CDS 365",
-    "description": "???",
+    "description": "Tonight is our trivia night! We've prepared a list of fun math questions, that are designed to be accessible to anyone, and the winners will win a prize at the end! This is a great chance to unwind and just have some <i>fun</i>, so make sure to come by tonight.",
     "datetime": "2026-09-30T17:00:00",
     "duration": 60
   },
   {
     "title": "Currently unplanned!",
     "location": "CDS 365",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "We're working on planning this meeting, and will announce it when we know what we're doing. %FLAG% this is the grad panel but i dont wanna announce it till we finalize plans",
     "datetime": "2026-10-07T17:00:00",
     "duration": 60,
     "_comment": "this is supposed to be the grad panel, but not announcing it till we have plans"
@@ -38,7 +38,7 @@
   {
     "title": "Currently unplanned!",
     "location": "CDS 365",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "We're working on planning this meeting, and will announce it when we know what we're doing. %FLAG% this is the physics night",
     "datetime": "2026-10-14T17:00:00",
     "duration": 60,
     "_comment": "this is the physics night"
@@ -46,7 +46,7 @@
   {
     "title": "Currently unplanned!",
     "location": "CDS 365",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "We're working on planning this meeting, and will announce it when we know what we're doing. %FLAG% possible prof talk",
     "datetime": "2026-10-21T17:00:00",
     "duration": 60,
     "_comment": "this is a professor talk"
@@ -54,7 +54,7 @@
   {
     "title": "Currently unplanned!",
     "location": "CDS 365",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "We're working on planning this meeting, and will announce it when we know what we're doing. %FLAG% new eboard",
     "datetime": "2026-10-28T17:00:00",
     "duration": 60,
     "_comment": "this is an intentionally unplanned meeting for the new eboard to tackle"
@@ -76,7 +76,7 @@
   {
     "title": "Currently unplanned!",
     "location": "CDS 365",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "We're working on planning this meeting, and will announce it when we know what we're doing. %FLAG% new eboard",
     "datetime": "2026-11-18T17:00:00",
     "duration": 60,
     "_comment": "this is an intentionally unplanned meeting for the new eboard to tackle"
@@ -84,7 +84,7 @@
   {
     "title": "No Meeting Today",
     "location": "N/A",
-    "description": "Enjoy your Thanksgiving break!",
+    "description": "Enjoy your Thanksgiving break! %FLAG% will remove this later tyoday",
     "datetime": "2026-11-25T17:00:00",
     "duration": 60,
     "_comment": "remove this later"
