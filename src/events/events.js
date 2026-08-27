@@ -64,11 +64,14 @@ const HIGHLIGHT_WINDOW_DAYS = 14;
         renderAccordion(later);
 
         const typesetTargets = [featuredContainer, highlightsContainer, accordionContainer].filter(Boolean);
-        window.MathJax
-            ? window.MathJax.typesetPromise(typesetTargets).then(() => {
-                highlightsContainer?.querySelectorAll('.event-card').forEach(setUpReadMore)
-            })
-            : highlightsContainer?.querySelectorAll('.event-card').forEach(setUpReadMore);
+        // Wait on BOTH the math typesetting and the webfont before measuring
+        // anything for the read-more buttons. Either one finishing late on its
+        // own was enough to make the overflow check lie.
+        Promise.all([
+            window.MathJax ? window.MathJax.typesetPromise(typesetTargets) : Promise.resolve(),
+            document.fonts ? document.fonts.ready : Promise.resolve(),
+        ]).then(() => highlightsContainer?.querySelectorAll('.event-card').forEach(setUpReadMore));
+
 
     } catch (error) {
         console.error("Failed to load upcoming events:", error);
@@ -216,6 +219,9 @@ const HIGHLIGHT_WINDOW_DAYS = 14;
 
     // Only reveals "Read more" if the description is actually being clamped —
     // short descriptions never show the button at all.
+    // Callers MUST wait for both MathJax typesetting and document.fonts.ready
+    // before calling this, or the measurement below happens against whatever
+    // font/markup was present at that moment instead of the final layout.
     function setUpReadMore(card) {
         const desc = card.querySelector('.desc-clamp');
         const toggle = card.querySelector('.read-more-toggle');

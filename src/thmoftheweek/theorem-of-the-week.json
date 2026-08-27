@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Generalized Stokes' Theorem",
+    "statement": "Let \\(M\\) be an orientable \\(n\\)-manifold, and let \\(\\omega\\) be a smooth \\((n-1)\\)-form on \\(M\\). Then \\[ \\int_{M}\\mathrm{d}\\omega=\\int_{\\partial M}\\omega.\\]",
+    "postUrl": "/404.html"
+  },
+  {
+    "name": "Yoneda's Lemma",
+    "statement": "Let \\( \\mathcal{C} \\) be a locally small category, let \\( \\mathcal{S}et \\) be the category of sets, and let \\( F : \\mathcal{C}\\to\\mathcal{S}et \\) be any functor. Then for all objects \\( x\\in\\mathcal{C}\\), there is an isomorphism of sets (i.e. a bijection)\n\\[\n\\varphi_x : \\operatorname{Nat}(\\mathcal{C}(x,-),F)\\cong F(x),\n\\]\nnatural in \\( x \\).",
+    "postUrl": "/404.html"
+  },
+  {
+    "name": "Fermat's Little Theorem",
+    "statement": "Let \\( p \\) be a prime, and let \\( a \\) be an integer not divisible by \\( p \\). Then\n\\[\na^{p-1} \\equiv 1 \\pmod{p}.\n\\]",
+    "postUrl": "/404.html"
+  }
+]

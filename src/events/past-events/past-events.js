@@ -6,6 +6,10 @@
  * ```
  * <div class="past-event-list" data-semester="fall-2025.json></div>
  * ```
+ *
+ * NOTE: this used to render a <button class="read-more-toggle" hidden> and just... never touch it again — no
+ * listener, never unhidden. Wired it up the same way events.js does, waiting on MathJax + the webfont before
+ * measuring clamp overflow (see setUpReadMore in events.js for why that matters).
  */
 
 (async function loadPastEvents() {
@@ -69,14 +73,28 @@
             `;
 
             eventListContainer.appendChild(eventCard);
-
-            if (window.MathJax) {
-                window.MathJax.typesetPromise(eventCard);
-            }
         });
+
+        Promise.all([
+            window.MathJax ? window.MathJax.typesetPromise(eventListContainer) : Promise.resolve(),
+            document.fonts ? document.fonts.ready : Promise.resolve(),
+        ]).then(() => eventListContainer.querySelectorAll('.event-card').forEach(setUpReadMore));
 
     } catch (error) {
         console.error("Failed to load past events:", error);
         eventListContainer.innerHTML = '<p>Sorry, we were unable to load the event schedule.</p>';
+    }
+
+    function setUpReadMore(card) {
+        const desc = card.querySelector('.desc-clamp');
+        const toggle = card.querySelector('.read-more-toggle');
+        if (desc.scrollHeight > desc.clientHeight + 1) {
+            toggle.hidden = false;
+            toggle.addEventListener('click', () => {
+                const expanded = desc.classList.toggle('expanded');
+                toggle.textContent = expanded ? 'Show less' : 'Read more';
+                toggle.setAttribute('aria-expanded', expanded);
+            });
+        }
     }
 })();

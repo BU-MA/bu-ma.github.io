@@ -1,5 +1,13 @@
 /*
  * Defines the root colors used by the website. Many other CSS files import this to set their colors and fonts.
+ *
+ * LIGHT MODE: every theme now also has a [data-theme="x"][data-mode="light"] variant below its dark block.
+ * Applied via the same mechanism as themes — see theme-switcher.js, which now toggles a `data-mode` attribute
+ * on <html> in addition to `data-theme`, and persists it under a separate 'buma-mode' localStorage key.
+ * Catppuccin's light variant is the real "Latte" palette, and Rosé Pine's is the real "Dawn" palette — both are
+ * official alternate palettes for those color schemes. Kanagawa and Carbonfox don't have an official light
+ * counterpart, so those two are built from the same accent hues rather than a known palette — give those two
+ * a closer look than the other three.
  */
 
 @import url('https://fonts.googleapis.com/css2?700&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -37,8 +45,30 @@
     --font-family-body: 'STIX Two Text', serif;
 }
 
+[data-theme="paradise"][data-mode="light"] {
+    --primary-color: #a3555a;
+    --primary-color-darker: #8a4448;
+    --primary-color-lighter: #c47275;
+    --primary-rgb: 163, 85, 90;
+    --text-on-primary: #fdf8f7;
+    --secondary-color: #7c6486;
+    --secondary-rgb: 124, 100, 134;
+    --third-color: #4f7570;
+    --third-rgb: 79, 117, 112;
+
+    --background-color: #f7f1ef;
+    --surface-color: #ffffff;
+    --surface-color-alt: #efe4e1;
+    --border-color: #ddcdc9;
+
+    --text-color: #2a201f;
+    --text-color-muted: #8a7570;
+
+    --shadow-rgb: 60, 40, 38;
+}
+
 /* ============================
-   Catppuccin Mocha
+   Catppuccin Mocha / Latte
    ============================ */
 [data-theme="catppuccin-mocha"] {
     --primary-color: #cba6f7;        /* Mauve */
@@ -68,8 +98,31 @@
     --font-family-body: 'STIX Two Text', serif;
 }
 
+/* Catppuccin Latte — the official light counterpart to Mocha */
+[data-theme="catppuccin-mocha"][data-mode="light"] {
+    --primary-color: #8839ef;        /* Mauve */
+    --primary-color-darker: #7028cc;
+    --primary-color-lighter: #7287fd; /* Lavender */
+    --primary-rgb: 136, 57, 239;
+    --text-on-primary: #eff1f5;
+    --secondary-color: #fe640b;      /* Peach */
+    --secondary-rgb: 254, 100, 11;
+    --third-color: #04a5e5;          /* Sky */
+    --third-rgb: 4, 165, 229;
+
+    --background-color: #eff1f5; /* Base */
+    --surface-color: #ffffff;
+    --surface-color-alt: #e6e9ef; /* Mantle */
+    --border-color: #acb0be;      /* Surface2 */
+
+    --text-color: #4c4f69;        /* Text */
+    --text-color-muted: #6c6f85;  /* Subtext0 */
+
+    --shadow-rgb: 76, 79, 105;
+}
+
 /* ============================
-   Rosé Pine
+   Rosé Pine / Dawn
    Source: https://rosepinetheme.com/palette/
    ============================ */
 [data-theme="rose-pine"] {
@@ -98,6 +151,29 @@
 
     --font-family-headings: 'STIX Two Text', serif;
     --font-family-body: 'STIX Two Text', serif;
+}
+
+/* Rosé Pine Dawn — the official light counterpart */
+[data-theme="rose-pine"][data-mode="light"] {
+    --primary-color: #d7827e; /* Rose */
+    --primary-color-darker: #c46864;
+    --primary-color-lighter: #ea9d34; /* Gold, used as a lighter accent step */
+    --primary-rgb: 215, 130, 126;
+    --text-on-primary: #faf4ed;
+    --secondary-color: #286983; /* Pine */
+    --secondary-rgb: 40, 105, 131;
+    --third-color: #b4637a; /* Love */
+    --third-rgb: 180, 99, 122;
+
+    --background-color: #faf4ed; /* Base */
+    --surface-color: #fffaf3;    /* Surface */
+    --surface-color-alt: #f2e9e1; /* Overlay */
+    --border-color: #cecacd;     /* Highlight Med */
+
+    --text-color: #575279;       /* Text */
+    --text-color-muted: #797593; /* Subtle */
+
+    --shadow-rgb: 87, 82, 121;
 }
 
 /* ============================
@@ -132,6 +208,33 @@
     --font-family-headings: 'STIX Two Text', serif;
     --font-family-body: 'STIX Two Text', serif;
 }
+
+/* No official Kanagawa light palette exists — built from the same hues,
+   darkened slightly for contrast on a warm paper-white background. */
+[data-theme="kanagawa"][data-mode="light"] {
+    --primary-color: #4d6fb3;
+    --primary-color-darker: #3a5690;
+    --primary-color-lighter: #7e9cd8;
+    --primary-rgb: 77, 111, 179;
+    --text-on-primary: #f2ecbc;
+
+    --secondary-color: #c4622a;
+    --secondary-rgb: 196, 98, 42;
+
+    --third-color: #6f9450;
+    --third-rgb: 111, 148, 80;
+
+    --background-color: #f2ecbc; /* lotus paper white */
+    --surface-color: #f9f5d7;
+    --surface-color-alt: #e5ded0;
+    --border-color: #c9c2a2;
+
+    --text-color: #545464;
+    --text-color-muted: #8a8980;
+
+    --shadow-rgb: 84, 84, 100;
+}
+
 /* ============================
    Carbonfox
    ============================ */
@@ -165,6 +268,32 @@
     --font-family-body: 'STIX Two Text', serif;
 }
 
+/* No official light Carbonfox — adapted from IBM Carbon's "White" theme,
+   keeping the same accent hues (darkened for AA contrast on white). */
+[data-theme="carbonfox"][data-mode="light"] {
+    --primary-color: #0f62fe;
+    --primary-color-darker: #0043ce;
+    --primary-color-lighter: #4589ff;
+    --primary-rgb: 15, 98, 254;
+    --text-on-primary: #ffffff;
+
+    --secondary-color: #d02670;
+    --secondary-rgb: 208, 38, 112;
+
+    --third-color: #198038;
+    --third-rgb: 25, 128, 56;
+
+    --background-color: #ffffff;
+    --surface-color: #f4f4f4;
+    --surface-color-alt: #e0e0e0;
+    --border-color: #c6c6c6;
+
+    --text-color: #161616;
+    --text-color-muted: #6f6f6f;
+
+    --shadow-rgb: 22, 22, 22;
+}
+
 
 /* ====================
    shared base typography
@@ -183,6 +312,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font-family-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -210,7 +340,8 @@ h1, h2, h3, h4 {
     gap: 0.75rem;
 }
 
-.theme-switcher-toggle {
+.theme-switcher-toggle,
+.mode-switcher-toggle {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -222,7 +353,8 @@ h1, h2, h3, h4 {
     transition: transform 0.2s ease;
 }
 
-.theme-switcher-toggle:hover {
+.theme-switcher-toggle:hover,
+.mode-switcher-toggle:hover {
     transform: scale(1.08);
 }
 
@@ -441,6 +573,9 @@ h1, h2, h3, h4 {
     .reveal {
         opacity: 1;
         transform: none;
+        transition: none;
+    }
+    body {
         transition: none;
     }
 }

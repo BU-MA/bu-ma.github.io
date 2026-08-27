@@ -1,0 +1,26 @@
+<svg viewBox="0 0 300 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+    <rect width="300" height="460" fill="var(--surface-color-alt)"/>
+
+    <!-- podium, first place taller than second/third -->
+    <g opacity="0.9">
+        <rect x="130" y="70" width="60" height="90" fill="var(--secondary-color)"/>
+        <rect x="60" y="105" width="60" height="55" fill="var(--secondary-color)" opacity="0.65"/>
+        <rect x="200" y="120" width="60" height="40" fill="var(--secondary-color)" opacity="0.4"/>
+        <text x="160" y="120" text-anchor="middle" font-family="var(--font-family-headings)" font-size="24"
+              font-weight="800" fill="var(--surface-color-alt)">1</text>
+        <text x="90" y="140" text-anchor="middle" font-family="var(--font-family-headings)" font-size="20"
+              font-weight="800" fill="var(--surface-color-alt)">2</text>
+        <text x="230" y="148" text-anchor="middle" font-family="var(--font-family-headings)" font-size="18"
+              font-weight="800" fill="var(--surface-color-alt)">3</text>
+    </g>
+
+    <text x="30" y="40" font-family="var(--font-family-headings)" font-size="14" font-weight="700"
+          letter-spacing="2" fill="var(--secondary-color)">COMPETITION RESULTS</text>
+
+    <text x="30" y="300" font-family="var(--font-family-headings)" font-size="26" font-weight="800"
+          fill="var(--text-color)">{{title_tspans}}</text>
+
+    <line x1="30" y1="{{author_y}}" x2="65" y2="{{author_y}}" stroke="var(--secondary-color)" stroke-width="2"/>
+    <text x="75" y="{{author_y}}" dy="4" font-family="var(--font-family-headings)" font-size="14"
+          fill="var(--text-color-muted)">{{author}}</text>
+</svg>

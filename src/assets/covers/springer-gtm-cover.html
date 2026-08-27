@@ -1,0 +1,83 @@
+<svg viewBox="0 0 320 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <style>
+      .gtm-sub { font-family: var(--font-family-headings); font-size: 11px; font-style: italic; fill: var(--text-color-muted); letter-spacing: 0.05em; }
+      .gtm-author { font-family: var(--font-family-headings); font-size: 13px; font-weight: 600; fill: var(--primary-color); letter-spacing: 0.03em; }
+      .gtm-title { font-family: var(--font-family-headings); font-size: 20px; font-weight: 700; fill: var(--text-color); }
+      .gtm-label { font-family: var(--font-family-headings); font-size: 10px; fill: var(--text-color-muted); }
+      .gtm-math { font-family: var(--font-family-headings); font-size: 13px; font-style: italic; fill: var(--text-color); }
+    </style>
+
+    <!-- Arrowhead markers for the commutative diagram -->
+    <marker id="gtm-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--primary-color)"/>
+    </marker>
+    <marker id="gtm-arrow-dashed" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--secondary-color)"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="320" height="460" fill="var(--surface-color-alt)"/>
+
+  <!-- Iconic Top GTM Header Strip -->
+  <rect x="0" y="0" width="320" height="14" fill="var(--primary-color)"/>
+  <line x1="0" y1="14" x2="320" y2="14" stroke="var(--primary-color-darker)" stroke-width="1"/>
+
+  <!-- Series Header -->
+  <text x="30" y="48" class="gtm-sub">Graduate Texts in Mathematics</text>
+
+  <!-- Author Name (Classic GTM places Author above Title) -->
+  <text x="30" y="78" class="gtm-author">{{author}}</text>
+
+  <!-- Title -->
+  <text x="30" y="118" class="gtm-title">
+    {{title_tspans}}
+  </text>
+
+  <!-- Horizontal Divider -->
+  <line x1="30" y1="205" x2="290" y2="205" stroke="var(--border-color)" stroke-width="1"/>
+
+  <!-- Central Commutative Diagram (Iconic GTM Center Piece) -->
+  <g transform="translate(30, 220)">
+    <!-- Diagram Frame -->
+    <rect x="0" y="0" width="260" height="160" fill="var(--surface-color)" stroke="var(--border-color)" stroke-width="1"/>
+
+    <!-- Faint Background Grid -->
+    <path d="M 0 40 L 260 40 M 0 80 L 260 80 M 0 120 L 260 120" stroke="var(--border-color)" stroke-opacity="0.25" stroke-width="0.5" stroke-dasharray="2,4"/>
+    <path d="M 65 0 L 65 160 M 130 0 L 130 160 M 195 0 L 195 160" stroke="var(--border-color)" stroke-opacity="0.25" stroke-width="0.5" stroke-dasharray="2,4"/>
+
+    <!-- Nodes -->
+    <text x="50" y="45" class="gtm-math" text-anchor="middle">Ext¹(A, B)</text>
+    <text x="210" y="45" class="gtm-math" text-anchor="middle">Tor₁(A, C)</text>
+    <text x="50" y="125" class="gtm-math" text-anchor="middle">Hⁿ(X; ℤ)</text>
+    <text x="210" y="125" class="gtm-math" text-anchor="middle">Hⁿ⁺¹(Y; ℚ)</text>
+
+    <!-- Solid Arrows -->
+    <path d="M 92 40 L 165 40" stroke="var(--primary-color)" stroke-width="1.5" marker-end="url(#gtm-arrow)"/>
+    <text x="128" y="32" class="gtm-label" fill="var(--primary-color)" text-anchor="middle">f*</text>
+
+    <path d="M 50 58 L 50 106" stroke="var(--primary-color)" stroke-width="1.5" marker-end="url(#gtm-arrow)"/>
+    <text x="38" y="85" class="gtm-label" fill="var(--primary-color)" text-anchor="middle">d</text>
+
+    <path d="M 210 58 L 210 106" stroke="var(--primary-color)" stroke-width="1.5" marker-end="url(#gtm-arrow)"/>
+    <text x="222" y="85" class="gtm-label" fill="var(--primary-color)" text-anchor="middle">∂</text>
+
+    <path d="M 90 120 L 160 120" stroke="var(--primary-color)" stroke-width="1.5" marker-end="url(#gtm-arrow)"/>
+    <text x="125" y="135" class="gtm-label" fill="var(--primary-color)" text-anchor="middle">g*</text>
+
+    <!-- Dashed Universal Property Arrow -->
+    <path d="M 82 55 L 178 110" stroke="var(--secondary-color)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#gtm-arrow-dashed)"/>
+    <text x="135" y="75" class="gtm-label" fill="var(--secondary-color)" text-anchor="middle">∃! η</text>
+  </g>
+
+  <!-- Springer Bottom Bar -->
+  <line x1="0" y1="410" x2="320" y2="410" stroke="var(--primary-color)" stroke-width="2"/>
+
+  <!-- Springer Logo & Brand Text -->
+  <g transform="translate(30, 423)">
+    <!-- Knight Chess Piece Path -->
+    <path d="M 6 20 C 4 20 3 18 3 16 C 3 14 5 13 7 13 C 7 10 9 8 11 6 C 10 5 9 5 8 5 C 9 3 11 2 13 2 C 16 2 18 4 18 7 C 20 8 21 10 21 12 C 19 12 18 11 17 11 C 16 13 15 15 15 17 C 17 17 18 18 18 19 C 16 20 12 20 6 20 Z" fill="var(--primary-color)"/>
+    <text x="28" y="15" font-family="var(--font-family-headings)" font-size="14" font-weight="700" fill="var(--text-color)" letter-spacing="0.06em">Springer</text>
+  </g>
+</svg>

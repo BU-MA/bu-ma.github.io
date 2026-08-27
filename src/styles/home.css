@@ -691,7 +691,7 @@ nav ul.nav-links li a:hover::after {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    margin: 2rem;
+    margin: 2rem 15vw;
 }
 
 .upcoming-events h2 {
