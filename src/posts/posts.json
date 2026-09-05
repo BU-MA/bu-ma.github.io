@@ -18,8 +18,7 @@
       "excerpt": "Category theory is a unifying language for mathematics, which explains striking connections between distant branches of math. These notes introduce categories, functors, natural transformations, and universal constructions, guided by examples from basic set theory and algebra.",
       "url": "/src/talks/categories-grant-f25.pdf",
       "featured": true,
-      "accent": "Abstract Nonsense",
-      "cover": "/src/assets/covers/springer-gtm-cover.html"
+      "accent": "Abstract Nonsense"
     }
   ]
 }

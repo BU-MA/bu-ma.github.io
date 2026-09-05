@@ -15,39 +15,76 @@ const THEME_STORAGE_KEY = 'buma-theme';
 const MODE_STORAGE_KEY = 'buma-mode';
 
 (function themeSwitcher() {
-    const applyTheme = themeId => {
-        document.documentElement.setAttribute('data-theme', themeId);
-        localStorage.setItem(THEME_STORAGE_KEY, themeId);
-        document.querySelectorAll('.theme-swatch').forEach(btn => btn.classList.toggle('active', btn.dataset.themeId === themeId));
+    const normalizeMode = mode => mode === 'light' ? 'light' : 'dark';
+
+    const updateModeButton = mode => {
+        const modeToggle = document.querySelector('.mode-switcher-toggle');
+        if (!modeToggle) return;
+
+        modeToggle.textContent = mode === 'light' ? '🌙' : '☀️';
+        modeToggle.setAttribute('aria-pressed', String(mode === 'light'));
+        modeToggle.title = mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
     };
 
-    const applyMode = mode => {
-        document.documentElement.setAttribute('data-mode', mode);
-        localStorage.setItem(MODE_STORAGE_KEY, mode);
-        const modeToggle = document.querySelector('.mode-switcher-toggle');
-        if (modeToggle) modeToggle.textContent = mode === 'light' ? '🌙' : '☀️';
+    const applyTheme = (themeId, persist = true) => {
+        document.documentElement.setAttribute('data-theme', themeId);
+        if (persist) localStorage.setItem(THEME_STORAGE_KEY, themeId);
+
+        document.querySelectorAll('.theme-swatch').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.themeId === themeId);
+        });
+    };
+
+    const applyMode = (mode, persist = true) => {
+        const normalizedMode = normalizeMode(mode);
+        document.documentElement.setAttribute('data-mode', normalizedMode);
+        if (persist) localStorage.setItem(MODE_STORAGE_KEY, normalizedMode);
+        updateModeButton(normalizedMode);
+    };
+
+    const syncFromStorage = () => {
+        const storedMode = normalizeMode(localStorage.getItem(MODE_STORAGE_KEY));
+        const liveMode = normalizeMode(document.documentElement.getAttribute('data-mode'));
+
+        // load-theme.js normally handles this before first paint. This sync is
+        // important for BFCache/page restores, where the DOM can be restored
+        // with stale attributes while localStorage already contains the new mode.
+        if (storedMode !== liveMode) applyMode(storedMode, false);
+        else updateModeButton(liveMode);
+
+        const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        if (storedTheme && storedTheme !== document.documentElement.getAttribute('data-theme')) {
+            applyTheme(storedTheme, false);
+        }
     };
 
     const buildWidget = () => {
+        // Guard against accidental duplicate script inclusion.
+        if (document.querySelector('.theme-switcher')) return;
+
         const wrapper = document.createElement('div');
         wrapper.className = 'theme-switcher';
 
         const currentTheme = localStorage.getItem(THEME_STORAGE_KEY) || THEMES[0].id;
-        const currentMode = localStorage.getItem(MODE_STORAGE_KEY) || 'dark';
+        const currentMode = normalizeMode(
+            document.documentElement.getAttribute('data-mode') ||
+            localStorage.getItem(MODE_STORAGE_KEY)
+        );
 
-        // --- light/dark toggle, sits above the palette button ---
         const modeToggle = document.createElement('button');
+        modeToggle.type = 'button';
         modeToggle.className = 'mode-switcher-toggle';
         modeToggle.setAttribute('aria-label', 'Toggle light/dark mode');
-        modeToggle.textContent = currentMode === 'light' ? '🌙' : '☀️';
-        // reads the LIVE attribute at click time, not the `currentMode` captured
-        // when the widget was built — that was the "only works once" bug, since
-        // the old handler kept computing the same target every single click
-        modeToggle.addEventListener('click', () =>
-            applyMode(document.documentElement.getAttribute('data-mode') === 'light' ? 'dark' : 'light'));
+        modeToggle.addEventListener('click', event => {
+            event.preventDefault();
+            event.stopPropagation();
 
-        // --- palette toggle + panel, same as before ---
+            const liveMode = normalizeMode(document.documentElement.getAttribute('data-mode'));
+            applyMode(liveMode === 'light' ? 'dark' : 'light');
+        });
+
         const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
         toggleBtn.className = 'theme-switcher-toggle';
         toggleBtn.setAttribute('aria-label', 'Change color scheme');
         toggleBtn.textContent = '🎨';
@@ -57,31 +94,51 @@ const MODE_STORAGE_KEY = 'buma-mode';
 
         THEMES.forEach(theme => {
             const option = document.createElement('button');
+            option.type = 'button';
             option.className = 'theme-swatch';
             option.style.backgroundColor = theme.swatch;
             option.dataset.themeId = theme.id;
             option.setAttribute('aria-label', theme.name);
             option.title = theme.name;
             if (theme.id === currentTheme) option.classList.add('active');
-            option.addEventListener('click', () => applyTheme(theme.id));
+            option.addEventListener('click', event => {
+                event.preventDefault();
+                event.stopPropagation();
+                applyTheme(theme.id);
+            });
             panel.appendChild(option);
         });
 
-        toggleBtn.addEventListener('click', e => {
-            e.stopPropagation();
+        toggleBtn.addEventListener('click', event => {
+            event.preventDefault();
+            event.stopPropagation();
             panel.classList.toggle('open');
         });
 
-        // close the panel if you click anywhere outside it
-        document.addEventListener('click', e => {
-            if (!wrapper.contains(e.target)) panel.classList.remove('open');
+        document.addEventListener('click', event => {
+            if (!wrapper.contains(event.target)) panel.classList.remove('open');
         });
 
         [panel, toggleBtn, modeToggle].forEach(el => wrapper.appendChild(el));
         document.body.appendChild(wrapper);
+
+        applyMode(currentMode, false);
+        applyTheme(currentTheme, false);
     };
 
-    document.readyState === 'loading'
-        ? document.addEventListener('DOMContentLoaded', buildWidget)
-        : buildWidget();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', buildWidget, { once: true });
+    } else {
+        buildWidget();
+    }
+
+    // Back/forward cache restores are common on desktop browsers and can leave
+    // the restored DOM out of sync with localStorage. Re-sync whenever a page
+    // becomes active again.
+    window.addEventListener('pageshow', syncFromStorage);
+
+    // Keep other open tabs/windows in sync as well.
+    window.addEventListener('storage', event => {
+        if (event.key === MODE_STORAGE_KEY || event.key === THEME_STORAGE_KEY) syncFromStorage();
+    });
 })();

@@ -1,35 +1,35 @@
 [
   {
     "title": "First Meeting of the Fall!",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "Welcome back to another semester of BUMA! As usual, our first meeting is just a chill night where we get to know our new members, and to just hang out and chat. Feel free to bring board games or card games if you want!",
     "datetime": "2026-09-09T17:00:00",
     "duration": 60
   },
   {
     "title": "Celebrating this year's Fields medal winners",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "The <a href=\"https://en.wikipedia.org/wiki/Fields_Medal\">Fields Medal</a> is an annual award for amazing young mathematicians, and is frequently called the \"Nobel Prize of Mathematics\". We'll be honoring this year's Fields Medalists, as well as honoring the mathematician Jean-Pierre Serre's 100th birthay, which was on September 15th!",
     "datetime": "2026-09-16T17:00:00",
     "duration": 60
   },
   {
     "title": "Introduction to Differential Geometry",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "Differential geometry is a fascinating field of mathematics that all started from one question: \"how do I do calculus on a surface?\" This seemingly innocent question has led to a fascinating combination of calculus, linear and multilinear algebra, algebraic geometry, topology, and more. Differential geometry sits at the heart of almost all modern mathematical physics, making it one of the most applied fields to be generally considered \"pure math\". In this talk, we will introduce the basic ideas of differential geometry; namely the notion of a smooth \\(n\\)-manifold, partial and total derivatives on a manifold, vector fields, differential forms, and integration on manifolds & Stokes' theorem. Calculus background will be assumed; multivariate calculus and linear algebra background will be helpful.",
     "datetime": "2026-09-23T17:00:00",
     "duration": 60
   },
   {
     "title": "Trivia Night",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "Tonight is our trivia night! We've prepared a list of fun math questions, that are designed to be accessible to anyone, and the winners will win a prize at the end! This is a great chance to unwind and just have some <i>fun</i>, so make sure to come by tonight.",
     "datetime": "2026-09-30T17:00:00",
     "duration": 60
   },
   {
     "title": "Currently unplanned!",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
     "datetime": "2026-10-07T17:00:00",
     "duration": 60,
@@ -37,7 +37,7 @@
   },
   {
     "title": "Currently unplanned!",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
     "datetime": "2026-10-14T17:00:00",
     "duration": 60,
@@ -45,7 +45,7 @@
   },
   {
     "title": "Currently unplanned!",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
     "datetime": "2026-10-21T17:00:00",
     "duration": 60,
@@ -53,7 +53,7 @@
   },
   {
     "title": "Currently unplanned!",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
     "datetime": "2026-10-28T17:00:00",
     "duration": 60,
@@ -61,21 +61,21 @@
   },
   {
     "title": "Definitions Bash",
-    "location": "CDS 365",
-    "description": "???",
+    "location": "CDS 548",
+    "description": "TODO: write this",
     "datetime": "2026-11-04T17:00:00",
     "duration": 60
   },
   {
     "title": "Registration Advising",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "It's time to pick your classes for the next semester! Our upperclassmen will be offering advice on what classes to take, which professors are the best, and how to plan out your major. We'll also be giving some advice on REUs, research, and thesis work.",
     "datetime": "2026-11-11T17:00:00",
     "duration": 60
   },
   {
     "title": "Currently unplanned!",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
     "datetime": "2026-11-18T17:00:00",
     "duration": 60,
@@ -83,14 +83,14 @@
   },
   {
     "title": "Integration Techniques",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "In preparation for next meeting's <i>integration bee</i>, we will be going over various integration techniques that are commonly used in competition-style integral problems. If you're thinking about coming to the integration bee, you should swing by today to get some practice.",
     "datetime": "2026-12-02T17:00:00",
     "duration": 60
   },
   {
     "title": "Integration Bee",
-    "location": "CDS 365",
+    "location": "CDS 548",
     "description": "To close out the semester, we're hosting our semesterly <strong>integration bee</strong>! The Integration Bee, modeled off of MIT's annual Integration Bee, is a fun competition to see who is the best at integration. Even if you don't want to participate, you can still come make fun of physicists as they fail Gaussians (somehow). Hosted in collaboration with <a href=\"https://www.instagram.com/buphoton/\" target=\"blank\">Photon</a>, the BU physics club!",
     "datetime": "2026-12-09T17:00:00",
     "duration": 60

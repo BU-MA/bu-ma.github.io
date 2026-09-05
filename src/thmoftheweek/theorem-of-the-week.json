@@ -1,5 +1,10 @@
 [
   {
+    "name": "Coming Soon!",
+    "statement": "We should be finished setting this up by September 7th!",
+    "postUrl": "/404.html"
+  },
+  {
     "name": "Generalized Stokes' Theorem",
     "statement": "Let \\(M\\) be an orientable \\(n\\)-manifold, and let \\(\\omega\\) be a smooth \\((n-1)\\)-form on \\(M\\). Then \\[ \\int_{M}\\mathrm{d}\\omega=\\int_{\\partial M}\\omega.\\]",
     "postUrl": "/404.html"
