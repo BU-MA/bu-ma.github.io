@@ -5,124 +5,124 @@ CALSCALE:GREGORIAN
 X-WR-CALNAME:BUMA Events
 BEGIN:VEVENT
 UID:buma-event-0-1788973200000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20260909T170000Z
 DTEND:20260909T180000Z
 SUMMARY:First Meeting of the Fall!
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:Welcome back to another semester of BUMA! As usual, our first meeting is just a chill night where we get to know our new members, and to just hang out and chat. Feel free to bring board games or card games if you want!
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-1-1789578000000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20260916T170000Z
 DTEND:20260916T180000Z
 SUMMARY:Celebrating this year's Fields medal winners
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:The Fields Medal is an annual award for amazing young mathematicians, and is frequently called the "Nobel Prize of Mathematics". We'll be honoring this year's Fields Medalists, as well as honoring the mathematician Jean-Pierre Serre's 100th birthay, which was on September 15th!
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-2-1790182800000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20260923T170000Z
 DTEND:20260923T180000Z
 SUMMARY:Introduction to Differential Geometry
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:Differential geometry is a fascinating field of mathematics that all started from one question: "how do I do calculus on a surface?" This seemingly innocent question has led to a fascinating combination of calculus, linear and multilinear algebra, algebraic geometry, topology, and more. Differential geometry sits at the heart of almost all modern mathematical physics, making it one of the most applied fields to be generally considered "pure math". In this talk, we will introduce the basic ideas of differential geometry; namely the notion of a smooth \(n\)-manifold, partial and total derivatives on a manifold, vector fields, differential forms, and integration on manifolds & Stokes' theorem. Calculus background will be assumed; multivariate calculus and linear algebra background will be helpful.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-3-1790787600000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20260930T170000Z
 DTEND:20260930T180000Z
 SUMMARY:Trivia Night
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:Tonight is our trivia night! We've prepared a list of fun math questions, that are designed to be accessible to anyone, and the winners will win a prize at the end! This is a great chance to unwind and just have some fun, so make sure to come by tonight.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-4-1791392400000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261007T170000Z
 DTEND:20261007T180000Z
 SUMMARY:Currently unplanned!
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:We're working on planning this meeting, and will announce it when we know what we're doing.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-5-1791997200000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261014T170000Z
 DTEND:20261014T180000Z
 SUMMARY:Currently unplanned!
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:We're working on planning this meeting, and will announce it when we know what we're doing.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-6-1792602000000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261021T170000Z
 DTEND:20261021T180000Z
 SUMMARY:Currently unplanned!
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:We're working on planning this meeting, and will announce it when we know what we're doing.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-7-1793206800000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261028T170000Z
 DTEND:20261028T180000Z
 SUMMARY:Currently unplanned!
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:We're working on planning this meeting, and will announce it when we know what we're doing.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-8-1793811600000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261104T170000Z
 DTEND:20261104T180000Z
 SUMMARY:Definitions Bash
-LOCATION:CDS 365
-DESCRIPTION:???
+LOCATION:CDS 548
+DESCRIPTION:TODO: write this
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-9-1794416400000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261111T170000Z
 DTEND:20261111T180000Z
 SUMMARY:Registration Advising
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:It's time to pick your classes for the next semester! Our upperclassmen will be offering advice on what classes to take, which professors are the best, and how to plan out your major. We'll also be giving some advice on REUs, research, and thesis work.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-10-1795021200000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261118T170000Z
 DTEND:20261118T180000Z
 SUMMARY:Currently unplanned!
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:We're working on planning this meeting, and will announce it when we know what we're doing.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-11-1796230800000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261202T170000Z
 DTEND:20261202T180000Z
 SUMMARY:Integration Techniques
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:In preparation for next meeting's integration bee, we will be going over various integration techniques that are commonly used in competition-style integral problems. If you're thinking about coming to the integration bee, you should swing by today to get some practice.
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-12-1796835600000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261209T170000Z
 DTEND:20261209T180000Z
 SUMMARY:Integration Bee
-LOCATION:CDS 365
+LOCATION:CDS 548
 DESCRIPTION:To close out the semester, we're hosting our semesterly integration bee! The Integration Bee, modeled off of MIT's annual Integration Bee, is a fun competition to see who is the best at integration. Even if you don't want to participate, you can still come make fun of physicists as they fail Gaussians (somehow). Hosted in collaboration with Photon, the BU physics club!
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-13-1789407000000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20260914T173000Z
 DTEND:20260914T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -131,7 +131,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-14-1790011800000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20260921T173000Z
 DTEND:20260921T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -140,7 +140,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-15-1790616600000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20260928T173000Z
 DTEND:20260928T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -149,7 +149,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-16-1791221400000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261005T173000Z
 DTEND:20261005T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -158,7 +158,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-17-1791826200000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261012T173000Z
 DTEND:20261012T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -167,7 +167,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-18-1792431000000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261019T173000Z
 DTEND:20261019T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -176,7 +176,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-19-1793035800000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261026T173000Z
 DTEND:20261026T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -185,7 +185,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-20-1793640600000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261102T173000Z
 DTEND:20261102T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -194,7 +194,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-21-1794245400000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261109T173000Z
 DTEND:20261109T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -203,7 +203,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-22-1794850200000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261116T173000Z
 DTEND:20261116T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -212,7 +212,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-23-1795455000000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261123T173000Z
 DTEND:20261123T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -221,7 +221,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-24-1796059800000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261130T173000Z
 DTEND:20261130T193000Z
 SUMMARY:Putnam Problem Solving Session
@@ -230,7 +230,7 @@ DESCRIPTION:We solve problems from previous Putnam exams, and other difficult, P
 END:VEVENT
 BEGIN:VEVENT
 UID:buma-event-25-1796664600000@bu-ma.github.io
-DTSTAMP:20260823T231117Z
+DTSTAMP:20260905T142326Z
 DTSTART:20261207T173000Z
 DTEND:20261207T193000Z
 SUMMARY:Putnam Problem Solving Session
