@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUMA - Euler's Formula</title>
+
+    <link rel="stylesheet" href="/src/styles/post-detail.css">
+    <link rel="icon" type="image/png" href="/src/assets/logo.png">
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/src/components/load-components.js" defer></script>
+    <script src="/src/misc-js/theme-switcher.js" defer></script>
+    <script src="/src/leadership/leadership.js" defer></script>
+    <script src="/src/posts/post-detail.js" defer></script>
+    <script src="/src/misc-js/load-theme.js"></script>
+    <script src="/src/misc-js/scroll-reveal.js" defer></script>
+
+    <meta property="og:title" content="BUMA - Euler's Formula">
+    <meta property="og:description" content="Discover Euler's Formula, our 1st Theorem of the Week of the fall semester!">
+    <meta property="og:image" content="https://bu-ma.github.io/src/assets/logo.png">
+    <meta property="og:type" content="article">
+</head>
+<body data-category="theorem">
+
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+<header class="site-nav" id="siteNav">
+    <div class="site-nav-inner">
+        <span class="brand text-full">Boston University Mathematics Association</span>
+        <span class="brand text-mobile">BUMA</span>
+        <nav aria-label="Primary"></nav>
+    </div>
+</header>
+
+<header class="post-hero">
+    <div class="hero-watermark" aria-hidden="true">&sect;</div>
+
+    <div class="hero-field" aria-hidden="true">
+        <span class="floater f1">\( \forall \)</span>
+        <span class="floater f2">\( \exists \)</span>
+        <span class="floater f3">\( \cong \)</span>
+        <span class="floater f4">\( \Rightarrow \)</span>
+    </div>
+
+    <div class="hero-inner">
+        <a class="post-hero-back" href="/posts/">
+            <span class="back-arrow">&larr;</span> All Posts
+        </a>
+
+        <div class="post-hero-kicker">
+      <span class="post-hero-badge" aria-hidden="true">
+        <span class="icon icon-theorem"></span>
+      </span>
+            <span class="post-hero-eyebrow">Theorem of the Week</span>
+        </div>
+
+        <h1>Theorem of the Week<br><span>Euler's Formula</span></h1>
+
+        <p class="post-hero-byline">
+            Grant Talbert <span class="sep">&middot;</span> September 7, 2026 <span class="sep">&middot;</span> X min read
+        </p>
+
+        <div class="post-hero-chips">
+            <span class="hero-chip">FIELD / TOPIC</span>
+            <!-- Add more chips if useful. -->
+            <!-- <span class="hero-chip">Another Topic</span> -->
+        </div>
+    </div>
+</header>
+
+<main class="post-body">
+    <div class="post-content">
+
+        <!-- Short opening paragraph that tells the reader why this theorem is interesting. -->
+        <p class="post-lede">
+            Euler's formula is one of the most striking results in all of mathematics, in both its simplicity and its profound
+            applications.
+        </p>
+
+        <blockquote class="post-pullquote">
+            <p>
+                <strong>Theorem (Euler's Formula).</strong>
+                Let \(\theta\) be a real number. Then
+                \[
+                e^{i\theta} = \sin\theta + i\cos\theta.
+                \]
+            </p>
+        </blockquote>
+
+        <p class="post-lede">
+            A <i>fascinating</i> corollary of this result is given by simply setting \(\theta = \pi\). If we plug this in, then we get
+            \[ e^{i\pi} = \sin\pi + i\cos\pi. \]
+            Recall that \(\sin\pi = -1\) and \(\cos\pi = 0\). Thus,
+            \[ e^{i\pi} = -1. \]
+            This result is so important that it has its own name: <i>Euler's Identity</i>.
+        </p>
+
+        <h2>Background</h2>
+
+        <p>
+            Euler's formula has been known for around 300 years, and is one of the most important equations in the history
+            of mathematics. It forms the backbone of a huge portion of complex analysis, and has applications everywhere in physics,
+            and essentially anywhere complex numbers show up. Moreover, the proof of the statement is so simple that you
+            can fully comprehend it with only knowledge of calculus 2.
+        </p>
+
+        <p>
+            To understand the proof, we need to recall the power series expansions of \(e^x\), \(\sin x\), and \(\cos x\).
+            If you've never seen a power series expansion, the idea is to write a function \(f\) as an infinite sum of polynomials.
+            Essentially, we start by choosing a point \(x_0\in\mathbb{R}\), theb approximate the function near that point
+            using a constant function, then we refine the approximation
+            by adding a linear function, then we refine further by adding a quadratic function, and so on ad infimum. A
+            full power series expansion of a function \(f\), centered at a point \( x_0\in\mathbb{R}\) is a sum
+            \[ \sum_{n=0}^{\infty} a_n (x-x_0)^n, \]
+            where each \(a_n\) is whatever real number makes the approximation as good as possible.
+        </p>
+
+        <p>
+            There is a theorem known as <i>Taylor's theorem</i>, which tells us how to calculate each of these \(a_n\)s
+            using the derivatives of \(f\). Writing \(f^{(n)}(x)\) for the \(n\)th derivative of \(f\), we have
+            \[ a_n = \frac{f^{(n)}(x)}{n!} ,\]
+            where \(n!\) is the factorial.
+        </p>
+
+        <p>
+            Using this theorem, we can calculate the power series expansions of the functions \(e^x\), \(\cos x\), and
+            \(\sin x\) (about \(x=0\)):
+            \[ e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}, \]
+            \[ \sin x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}, \]
+            \[ \cos x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}. \]
+        </p>
+
+        <div class="post-divider" aria-hidden="true">
+            <span class="divider-line"></span>
+            <span class="divider-glyph">&sect;</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <h2>Proof</h2>
+
+        <p>
+            All we need to prove Euler's formula is these power series expansions. Let \(\theta\) be a real number. We
+            will simply substitute \(i\theta\) for \(x\) in the series expansion for \(e^{x}\):
+            \[ e^{i\theta} = \sum_{n=0}^{\infty} \frac{(i\theta)^n}{n!}. \]
+            Now recall that by definition, \(i^2 = -1\). This means \(i^3 = -i\) and \(i^4 = 1\), and then it repeats.
+            In particular, \(i^k = i^{k + 4n}\) for any integers \(k,n\).
+        </p>
+
+        <p>
+            Notice that the even powers of \(i\) are all real numbers, and the odd powers of \(i\) are complex numbers.
+            We can exploit this fact to split the power series expansion of \(e^{i\theta}\) into a real and an
+            imaginary part:
+            \[
+            e^{i\theta} = \sum_{n=0}^{\infty} \frac{(i\theta)^n}{n!} = \sum_{n=0}^{\infty} \frac{(-1)^{n}\theta^{2n}}{(2n)!} + \sum_{n=0}^{\infty} \frac{i(-1)^n\theta^{2n+1}}{(2n+1)!}
+            =\sum_{n=0}^{\infty} \frac{(-1)^{n}\theta^{2n}}{(2n)!} + i\sum_{n=0}^{\infty} \frac{(-1)^n\theta^{2n+1}}{(2n+1)!}.
+            \]
+            Take some time to convince yourself that these equalities work. Notice that because the sum is infinite, we can rewrite the sum over all evens and odds
+            as sums from \(n=0\) to \(\infty\) in the exact way we did here.
+        </p>
+        <p>
+            This looks a bit more complicated, but we are essentially done the proof. Notice that our earlier power series
+            expansions of \(\sin\) and \(\cos\) were simply
+            \[\sin\theta = \sum_{n=0}^{\infty} \frac{(-1)^{n}\theta^{2n+1}}{(2n+1)!},\]
+            \[\cos\theta = \sum_{n=0}^{\infty} \frac{(-1)^n\theta^{2n}}{(2n)!}.\]
+            Both of these are inside of our expansion of \(e^{i\theta}\). In particular, the first sum is cos, and the
+            second sum is \(i\sin\)! So we have
+            \[e^{i\theta} = \sum_{n=0}^{\infty} \frac{(-1)^{n}\theta^{2n}}{(2n)!} + i\sum_{n=0}^{\infty} \frac{(-1)^n\theta^{2n+1}}{(2n+1)!} = \cos\theta + i\sin\theta .\]
+            Thus, we have proven the theorem. \(\blacksquare\)
+        </p>
+
+        <h2>Why It Is Interesting</h2>
+
+        <p>
+            As explained earlier, this reveals the absolutely fascinating revelation that \(e^{i\pi}=-1\). It's an absolutely
+            beautiful fact of mathematics that the three (unrelated!) constants \(e,\pi,i\) combine in this particular
+            way to give the number \(-1\).
+        </p>
+
+        <p>
+            However, Euler's formula also gives a version of polar coordinates for complex numbers. Let's say we have
+            a complex number \(z = a + bi\). We can draw the complex numbers using two axes, a real axis and an imaginary axis.
+            This looks something like:
+        </p>
+
+        <p>IMAGE</p>
+
+        <p>
+            Notice that in the above image, we've drawn a right triangle in the complex plane with side lengths \(a\) and
+            \(b\). Let \(H\) be the length of the hypotenuse of the triangle.
+            From our knowledge of trigonometry, the length of the horizontal leg is the cosine of the angle \(\theta\) times the hypotenuse.
+            Since this horizontal leg is the real part of the number \(z\), we have \(H\cos\theta = a\). Similarly,
+            the length of the vertical leg is the sine of the angle \(\theta\) times the hypotenuse, which is the imaginary part of the number \(z\).
+            Thus, \(H\sin\theta = b\). Since we can write \(z = a+bi\), we can thus write
+            \[ z = H\cos\theta + iH\sin\theta = H(\cos\theta + i\sin\theta) = He^{i\theta}. \]
+            Thus, if we are given a complex number \(z\), we can write it in polar coordinates by finding the angle \(\theta\)
+            and the hypotenuse \(H\). These problems are solved by simple geometry: the angle \(\theta\) can be calculated
+            using \(\arctan(b/a)\) (one must take care to take the arctangent in the proper domain), and the hypotenuse is
+            simply the distance formula \(H = \sqrt{a^2 + b^2}\).
+        </p>
+
+        <p>
+            This formula also allows us to do cool stuff, like calculate \(i^i\). We can write \(i = 0+i1\), and note
+            that \(\cos(\pi/2)=0\) and \(\sin(\pi/2)=1\). Thus, Euler's formula says
+            \[i = \cos(\pi / 2) + i\sin(\pi/2) = e^{i\pi/2}.\]
+            We now simply use the properties of exponents to calculate
+            \[i^i = \left(e^{i\pi/2}\right)^i = e^{i(i\pi/2)} = e^{i^2\pi/2} = e^{-\pi/2}.\]
+        </p>
+
+        <p>
+            We can also do stuff like calculating the \(i\)th (principal) root of \(i\): \(\sqrt[i]{i}\). Simply recall that
+            \[ \sqrt[n](x) = x^{1/n}.\]
+            Thus, we have
+            \[ \sqrt[i]{i} = i^{1/i}. \]
+            Recall that \(i=e^{i\pi/2}\). Thus
+            \[ i^{1/i} = \left(e^{i\pi/2}\right)^{1/i} = e^{i\pi/2i} = e^{\pi/2}.\]
+        </p>
+
+        <!-- Optional figure. Delete if not needed. -->
+        <!--
+        <figure class="post-figure">
+          <img class="post-figure-frame" src="/src/assets/YOUR-IMAGE.png" alt="DESCRIPTION OF IMAGE">
+          <figcaption>CAPTION</figcaption>
+        </figure>
+        -->
+
+        <!-- Optional callout. Useful for references, submissions, links, etc. Delete if unnecessary. -->
+        <div class="post-callout">
+            <div class="post-callout-badge" aria-hidden="true"><span class="icon icon-theorem"></span></div>
+            <div class="post-callout-text">
+                <strong>Want to learn more?</strong>
+                ADD A SHORT REFERENCE / RESOURCE DESCRIPTION HERE.
+                <a class="post-callout-link" href="LINK-HERE" target="_blank" rel="noopener noreferrer">
+                    Read More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <i style="color: var(--text-color-muted)">Written by AUTHOR NAME.</i>
+
+    </div>
+
+    <div class="post-end-cta">
+        <a class="post-end-button" href="/posts/">Back to All Posts <span class="arrow">&rarr;</span></a>
+    </div>
+</main>
+
+<footer></footer>
+
+</body>
+</html>
