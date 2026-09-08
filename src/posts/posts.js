@@ -240,6 +240,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     filterBar.insertAdjacentHTML('beforebegin', await renderFeatured(featured));
     filterBar.insertAdjacentElement('afterend', listContainer);
 
+    if (window.MathJax?.typesetPromise) {
+        await MathJax.typesetPromise();
+    }
+
     /* ---------- Filters ---------- */
     const filters = document.querySelectorAll('.filter-button');
     const rows    = document.querySelectorAll('.post-row');
