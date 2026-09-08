@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "title": "Fall 2026 Newsletter 1",
+      "date": "2026-09-07",
+      "category": "newsletter",
+      "author": "Grant Talbert",
+      "excerpt": "I hope everyone is having a great end of their summer. Here at BUMA, we've been hard at work trying to make the coming school year something special. Here's what's new this year, and a peek into our upcoming schedule.",
+      "url": "/posts/fall-2026-newsletter-1/",
+      "featured": true,
+      "accent": "Newsletter 1"
+    },
+    {
       "title": "\\(L^1\\) Geometry",
       "date": "2025-10-10",
       "category": "talks",
@@ -17,7 +27,7 @@
       "author": "Grant Talbert",
       "excerpt": "Category theory is a unifying language for mathematics, which explains striking connections between distant branches of math. These notes introduce categories, functors, natural transformations, and universal constructions, guided by examples from basic set theory and algebra.",
       "url": "/src/talks/categories-grant-f25.pdf",
-      "featured": true,
+      "featured": false,
       "accent": "Abstract Nonsense"
     }
   ]

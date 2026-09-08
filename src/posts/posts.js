@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     /* ---------- Config ---------- */
     const CATEGORY_META = {
         talks:        { label: 'Talk Notes',        icon: 'icon-talk' },
-        putnam:       { label: 'Putnam POTW',       icon: 'icon-putnam' },
+        //putnam:       { label: 'Putnam POTW',       icon: 'icon-putnam' },
         theorem:      { label: 'Theorem of the Week', icon: 'icon-theorem' },
         newsletter:   { label: 'Newsletter',        icon: 'icon-newsletter' },
         competitions: { label: 'Competitions',      icon: 'icon-competition' },
@@ -168,8 +168,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const buttonText = (cat) => {
         if (cat === "talks") {
             return `Read the notes <span class=\"arrow\">&rarr;</span>`
-        } else if (cat === "putnam") {
-            return `Read the notes <span class=\"arrow\">&rarr;</span>`
+        //} else if (cat === "putnam") {
+        //    return `Read the notes <span class=\"arrow\">&rarr;</span>`
         } else if (cat === "theorem") {
             return `Read the notes <span class=\"arrow\">&rarr;</span>`
         } else if (cat === "newsletter") {
