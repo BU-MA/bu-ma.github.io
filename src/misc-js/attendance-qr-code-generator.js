@@ -61,7 +61,7 @@
 
     // finds the first entry in dateToLink whose date is greater or equal to the current time
     const targetDate = dateToLink.keys().toArray()
-        .sort((a, b) => a.getTime() - b.getTime())
+        .sort((a, b) => b.getTime() - a.getTime())
         .find(date => (date.getTime() - PREFIRE_TIME) <= now.getTime())
 
     if (!targetDate) { return; }
