@@ -19,6 +19,8 @@ jobs:
           node-version: '20'
 
       - name: Generate ICS file
+        env:
+          TZ: America/New_York
         run: node src/misc-js/generate-ics.js
 
       - name: Commit updated ICS file
