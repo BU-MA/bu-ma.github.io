@@ -13,7 +13,7 @@
 
 
 // FIRST POST -- ensure it is set to the date of the first post for this sem
-const EPOCH = '2026-09-06';
+const EPOCH = '2026-09-13';
 
 // en-CA formats as YYYY-MM-DD, which is convenient for re-parsing below
 const nyDateString = date =>
