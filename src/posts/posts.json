@@ -1,13 +1,23 @@
 {
   "posts": [
     {
+      "title": "Fall 2026 Newsletter 2",
+      "date": "2026-09-21",
+      "category": "newsletter",
+      "author": "Grant Talbert",
+      "excerpt": "We're recruiting for our E-Board! We're looking for a few people who are enthusiastic about fostering the BU mathematics community to join us in running the club. This newsletter focuses on the details of our recruitment, so you can see if this is something you're interested in.",
+      "url": "/posts/fall-2026-newsletter-2/",
+      "featured": true,
+      "accent": "Newsletter 2"
+    },
+    {
       "title": "Fall 2026 Newsletter 1",
       "date": "2026-09-07",
       "category": "newsletter",
       "author": "Grant Talbert",
       "excerpt": "I hope everyone is having a great end of their summer. Here at BUMA, we've been hard at work trying to make the coming school year something special. Here's what's new this year, and a peek into our upcoming schedule.",
       "url": "/posts/fall-2026-newsletter-1/",
-      "featured": true,
+      "featured": false,
       "accent": "Newsletter 1"
     },
     {
