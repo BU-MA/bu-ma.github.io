@@ -36,25 +36,25 @@
     "_comment": "this is supposed to be the grad panel, but not announcing it till we have plans"
   },
   {
-    "title": "Currently unplanned!",
+    "title": "Registration Advising",
     "location": "CDS 548",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "It's time to pick your classes for the next semester! Our upperclassmen will be offering advice on what classes to take, which professors are the best, and how to plan out your major. We'll also be giving some advice on REUs, research, and thesis work.",
     "datetime": "2026-10-14T17:00:00",
     "duration": 60,
     "_comment": "registration advising"
   },
   {
-    "title": "Currently unplanned!",
+    "title": "Debate Night",
     "location": "CDS 548",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "TODO: this",
     "datetime": "2026-10-21T17:00:00",
     "duration": 60,
     "_comment": "this is a professor talk"
   },
   {
-    "title": "Currently unplanned!",
+    "title": "Proof Workshop",
     "location": "CDS 548",
-    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
+    "description": "To help students transition to proof-based mathematics, tonight we will be introducing various proof techniques, and giving advice on how to best approach a proof.",
     "datetime": "2026-10-28T17:00:00",
     "duration": 60,
     "_comment": "this is an intentionally unplanned meeting for the new eboard to tackle"
@@ -67,9 +67,9 @@
     "duration": 60
   },
   {
-    "title": "Registration Advising",
+    "title": "Currently unplanned!",
     "location": "CDS 548",
-    "description": "It's time to pick your classes for the next semester! Our upperclassmen will be offering advice on what classes to take, which professors are the best, and how to plan out your major. We'll also be giving some advice on REUs, research, and thesis work.",
+    "description": "We're working on planning this meeting, and will announce it when we know what we're doing.",
     "datetime": "2026-11-11T17:00:00",
     "duration": 60
   },

@@ -8,5 +8,10 @@
     "name": "Euler's Formula",
     "statement": "Let \\(\\theta\\) be any real number. Then\n\\[ e^{i\\theta} = \\cos\\theta + i\\sin\\theta. \\]",
     "postUrl": "/src/thmoftheweek/fall-2026/eulers-formula/"
+  },
+  {
+    "name": "We will start this next semester...",
+    "statement": "We just didn't have the time this semester. We apologize!",
+    "postUrl": "/404.html"
   }
 ]
